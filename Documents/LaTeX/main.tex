@@ -1,5 +1,5 @@
 \documentclass[11pt,oneside]{book}
-\usepackage[english, italian]{babel} 
+\usepackage[english]{babel} 
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
 \usepackage{subfigure}
@@ -19,7 +19,7 @@
 \addbibresource{sections/bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
@@ -47,7 +47,8 @@
 	tabsize=2,	                   % sets default tabsize to 2 spaces
 	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
-%%%%%%%%%%%%%
+
+
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
 \definecolor{cyan}{rgb}{0.0,0.6,0.6}
@@ -58,6 +59,7 @@
 \definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
 \definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
+
 \lstdefinelanguage{FLY}
 {
   morestring=[b]",
@@ -67,6 +69,7 @@
   keywordstyle=\color{javapurple},
   morekeywords={func,var,while, if, then, else,for, in, println, fly ,on,thenall,as,then,require,native}% list your attributes here
 }
+
 
 \lstset{language=FLY,
 basicstyle=\ttfamily\scriptsize,
@@ -81,10 +84,9 @@ numbersep=10pt,
 tabsize=4,
 showspaces=false,
 showstringspaces=false}
-%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{document}
-\selectlanguage{italian}
 
+
+\begin{document}
 \begin{titlepage}
 \begin{center}
 \epsfig{file=figures/logo_standard.jpg,width=2.5truecm}\\[0.2truecm]
