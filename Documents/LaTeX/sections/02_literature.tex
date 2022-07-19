@@ -3,7 +3,20 @@ distances from all the test targets in the class under test.
 
 
 One of the most popular multi-objective algorithms for this problem is the Non-dominated Sorting Genetic Algorithm II (NSGA-II).
+This algorithm is based on three principles:
+\begin{itemize}
+    \item It uses elitism when evolving the population: the most fit individuals are carried over along the offsprings.
+    \item It uses an explicit diversity-preserving mechanism, the Crowding distance.
+    \item It emphasizes the non-dominated solutions, as its name suggests.
+\end{itemize}
 
+First of all, in the context of test cases, domination can be expressed by the following relation:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.7]{./figures/test_Case_domination.PNG}
+    \caption{Test case domination}
+    \label{fig:test case domination}
+\end{figure}
 
 
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm [1] is an approach that focuses on ..., and has been developed as an evolution 
