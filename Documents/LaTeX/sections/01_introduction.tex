@@ -10,11 +10,37 @@ La \figurename~\ref{fig:esempio} è una figura di esempio.
 
 Things to add:
 \begin{itemize}
-    \item Types of test coverage
+    \item where different types of coverage are useful
 \end{itemize}
 
 
+\subsection*{Coverage testing}
+Coverage is one of the metrics employed during testing to asses what portion of the source code is "covered" by the test suite i.e., 
+what portion of the code is executed when the tests run. Coverage is essential to extract information about the general quality of a test suite
+and helps determining how comprehensively the software is being verified.
+As a result, coverage can be classified as a white-box testing technique.
 
+
+Source code coverage can be expressed according to different sub-metrics:
+\begin {itemize}
+    \item Statement coverage aims ... . This result is typically expressed as a percentage.
+    \item Branch coverage, also known as decision coverage, measures how many decision stracture have been fully explored by the test cases.
+    \item Mutation coverage:
+    \item Function coverage measures how many functions have been called by the test cases.
+    \item Condition coverage determines the number of boolean conditions/expressions executed in the conditional statements.
+\end {itemize}
+
+A high coverage can sometimes be deceiving, however: in the case of Machine Learning Systems (MLS), where typically the source code is made up 
+of a sequence of library functions and API invocations [2], thus resulting in very high statement and branch coverage with realtively modest
+test suites.
+Additionally, the effectiveness of such systems is highly determined by the dataset employed for model training and validation, which
+cannot be covered by tradition test cases.
+
+Coverage can also be measured at any testing levels; while at the unit test-level we focus mostly on the coverage of statements and branches,
+at the system-testing level, the coverage targets shift towards more complex elements, such as menu items, business transactions or other
+operations that require multiple components of the system to work properly.
+
+\subsection*{Automatic test case generation}
 Test case generation can be seen as a multi-objective problem, given that the goal is to cfover multiple test targets.
 
 Search-based approaches for test case generation use optimization algorithms to attempt to find 
@@ -23,3 +49,6 @@ evolutionary search approach for test case generation; starting from an initial,
 test cases, the algorithm keeps evolving the individuals according to simulated natural evolution theory principles.
 In this context, a typical fitness function of a GA would measure the distance between the execution trace of the generated test cases
 and the coverage targets.
+
+
+\subsection*{Testing in the Internet of Things}
