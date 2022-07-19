@@ -11,6 +11,7 @@ La \figurename~\ref{fig:esempio} è una figura di esempio.
 Things to add:
 \begin{itemize}
     \item where different types of coverage are useful
+    \item Add formulas for coverage kinds
 \end{itemize}
 
 
@@ -23,12 +24,18 @@ As a result, coverage can be classified as a white-box testing technique.
 
 Source code coverage can be expressed according to different sub-metrics:
 \begin {itemize}
-    \item Statement coverage aims ... . This result is typically expressed as a percentage.
+    \item Statement coverage aims executing every single statement in the code.
     \item Branch coverage, also known as decision coverage, measures how many decision stracture have been fully explored by the test cases.
-    \item Mutation coverage:
+    \item Mutation coverage, also known as fault-based testing, aims at purposefully introducing faults in the program in order to 
+            check whether or not the test suite is able to identify them. If the fault is correctly detected, the mutant is "killed".
+            One issue of mutation is scalability, since generating and compiling the mutants, before running the test cases, can be time
+            consuming end quickly exhaust testing resources. Additionally, the introduced mutations can be classified as weak or strong:
+            with strong mutation, the artificial fault is propagated to an observable behaviour, while weak mutants are confined to more 
+            specific environments.
     \item Function coverage measures how many functions have been called by the test cases.
     \item Condition coverage determines the number of boolean conditions/expressions executed in the conditional statements.
 \end {itemize}
+To reach statement coverage, it is sufficient to execute a branch in which the statement is control dependent.
 
 A high coverage can sometimes be deceiving, however: in the case of Machine Learning Systems (MLS), where typically the source code is made up 
 of a sequence of library functions and API invocations [2], thus resulting in very high statement and branch coverage with realtively modest
