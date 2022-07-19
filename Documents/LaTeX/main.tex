@@ -16,7 +16,7 @@
 \usepackage[final,bookmarks,breaklinks,colorlinks,allcolors=black]{hyperref}
 \usepackage{color}
 \usepackage[block=ragged,backend=biber,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\addbibresource{sections/bibliography.bib} % The filename of the bibliography
+\addbibresource{sections/04_bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 
@@ -116,7 +116,7 @@ Academic Year 2021-2022
 
 \pagenumbering{roman}
 \chapter*{Abstract}
-\input{sections/abstract.tex}
+\input{sections/00_abstract.tex}
 
 
 
@@ -127,15 +127,15 @@ Academic Year 2021-2022
 \chapter{Introduction}
 \setcounter{page}{1} 	% devono seguire solo il primo capitolo
 \pagenumbering{arabic}	% devono seguire solo il primo capitolo
-\input{sections/introduction.tex}
+\input{sections/01_introduction.tex}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Literature}
-\input{sections/literature.tex}
+\input{sections/02_literature.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusions}
-\input{sections/conclusions.tex}
+\input{sections/03_conclusions.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \nocite{*}
