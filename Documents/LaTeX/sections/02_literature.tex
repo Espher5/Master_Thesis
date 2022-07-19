@@ -18,6 +18,12 @@ First of all, in the context of test cases, domination can be expressed by the f
     \label{fig:test case domination}
 \end{figure}
 
+The NSGA-II algorithm works as follows:
+\begin{itemize}
+    \item Perform non-dominated sorting in the combination of parent and offspring populations and classify them by fronts.
+    \item Build new population according to front raking.
+    \item It emphasizes the non-dominated solutions, as its name suggests.
+\end{itemize}
 
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm [1] is an approach that focuses on ..., and has been developed as an evolution 
 of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
