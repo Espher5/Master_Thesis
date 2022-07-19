@@ -1,5 +1,3 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Riferimento articolo~\cite{articleExample}, riferimento libro~\cite{bookExample}, riferimento online~\cite{siteExample}, riferimento tesi~\cite{thesisExample}.
-
 La \figurename~\ref{fig:esempio} è una figura di esempio.
 
 \begin{figure}[htbp]
@@ -8,3 +6,20 @@ La \figurename~\ref{fig:esempio} è una figura di esempio.
     \caption{Questa è una immagine di esempio}
     \label{fig:esempio}
 \end{figure}
+
+
+Things to add:
+\begin{itemize}
+    \item Types of test coverage
+\end{itemize}
+
+
+
+Test case generation can be seen as a multi-objective problem, given that the goal is to cfover multiple test targets.
+
+Search-based approaches for test case generation use optimization algorithms to attempt to find 
+the best candidate test case with the objective to maximize fault detection. Genetic Algorithms (GAs) are an example of an
+evolutionary search approach for test case generation; starting from an initial, often randomlly genrated, population of 
+test cases, the algorithm keeps evolving the individuals according to simulated natural evolution theory principles.
+In this context, a typical fitness function of a GA would measure the distance between the execution trace of the generated test cases
+and the coverage targets.
