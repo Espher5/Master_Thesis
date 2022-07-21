@@ -1,11 +1,14 @@
-The simplest way of approaching the search problem is by iteratively determining a coverage goal (i.e. a particular branch), and executing the GA to find a test case that achieves this coverage. 
+The simplest way of approaching the evolutionary search problem for test case generation is by iteratively determining a coverage goal in the source code (i.e. a particular branch), and executing the GA to find a test case that achieves this coverage. 
 A strategy for iterative search typically includes:
 \begin{itemize}
-    \item Enumerate the targets to cover, i.e. the individual branches.
-    \item 
+    \item Enumerating the targets to cover, i.e. the individual branches.
+    \item Performing the single-objective search for each target, until all the targets are covered, or the budget has expired.
+    \item Building the final test suite by combining 
 \end{itemize}
 
-Focusing on one coverage goal is ultimately a poor strategy, however, since it assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. A search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget.
+
+
+Focusing on one coverage goal at a time is ultimately a poor strategy, however, since it assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. A search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget.
 
 Additionally, covering a particular branch may have collateral coverage over other branches in the test case's path; this suggests that multi-target approaches may reveal more effective. These approaches are known as whole test suites approaches and their goal is to evolve the entire test suite simultaneously, rather than iteratively covering the single branches/statements.
 
@@ -64,7 +67,7 @@ Figure 2.2 summarizes the main loop of the algorithm:
 
 
 In the context of software engineering, NSGA-II has been applied to problems such as software refactoring and test case prioritization,
-with two or three objectives. If the number of objectives begins to grow, however, the performance of the algorithm doesn't scale up well \cite{article3}.
+with two or three objectives. If the number of objectives begins to grow, however, the performance of the algorithm doesn't scale up well \cite{DBLP:journals/csur/LiLTY15}.
 To overcome these limitation,
 
 
@@ -83,4 +86,4 @@ DynaMOSA has been employed with Java classes.
 
 
 
-Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{article4} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
+Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
