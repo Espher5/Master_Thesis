@@ -1,17 +1,20 @@
+\subsection*{Problem formulation}
 The simplest way of approaching the evolutionary search problem for test case generation is by iteratively determining a coverage goal in the source code (i.e. a particular branch), and executing the GA to find a test case that achieves this coverage. 
 A strategy for iterative search typically includes:
 \begin{itemize}
     \item Enumerating the targets to cover, i.e. the individual branches.
     \item Performing the single-objective search for each target, until all the targets are covered, or the budget has expired.
-    \item Building the final test suite by combining 
+    \item Building the final test suite by combining all the generated test cases.
 \end{itemize}
 
+\textbf{Formal problem formulation}
 
+Focusing on one coverage goal at a time is ultimately a poor strategy, however. Foremost, a search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget \cite{DBLP:journals/tse/FraserA13}.
+Secondly, the order by which coverage targets are selected may end up largely impacting the final performance.
+Additionally, this approach assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. Finally, covering a particular branch may have collateral coverage over other branches in the test case's path.
 
-Focusing on one coverage goal at a time is ultimately a poor strategy, however, since it assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. A search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget.
-
-Additionally, covering a particular branch may have collateral coverage over other branches in the test case's path; this suggests that multi-target approaches may reveal more effective. These approaches are known as whole test suites approaches and their goal is to evolve the entire test suite simultaneously, rather than iteratively covering the single branches/statements.
-
+These issues suggest that multi-target evolutionary approaches may reveal more effective and reliable. These approaches are known as whole test suites approaches and their goal is to evolve the entire test suite simultaneously, rather than iteratively covering the single branches/statements.
+\cite{QSIC11}
 
 ------------------------------------------------------------------------------------------
 Specifically, the fitness function is mainly based on two measures:
@@ -23,6 +26,7 @@ As the branch distance value could be arbitrarily greater than the approach
 level, it is common to normalize the value of the branch distance.
 ------------------------------------------------------------------------------------------
 
+\subsection*{State of the art}
 EvoSuite is an example of an evolutionary algorithm that optimizes the whole test suite towards just one coverage criterion, rather than generating test cases directed towards multiple coverage criteria.
 With EvoSuite, any collateral coverage isn't a concern since all coverage is intentional, given that the ultimate goal is to generate the whole test suite.
 The algorithm starts with a randomly generated population of test suites.
@@ -73,7 +77,7 @@ To overcome these limitation,
 
 MOSA...
 
-DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{article1} is an approach that focuses on ..., and has been developed as an evolution of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
+DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{DBLP:journals/tse/PanichellaKT18} is an approach that focuses on ..., and has been developed as an evolution of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
 \begin{itemize}
     \item instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion. This criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
     \item The search is focused only on the uncovered coverage targets.
@@ -87,3 +91,5 @@ DynaMOSA has been employed with Java classes.
 
 
 Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
+
+Tested with MOSA but not with DynaMOSA.
