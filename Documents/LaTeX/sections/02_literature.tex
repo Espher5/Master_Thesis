@@ -1,19 +1,34 @@
-EvoSuite is an example of an evolutionary algorithm that optimizes a test suite towards just one coverage criterion, rather than generating test cases directed towards multiple coverage criteria.
+The simplest way of approaching the search problem is by iteratively determining a coverage goal (i.e. a particular branch), and executing the GA to find a test case that achieves this coverage. 
+A strategy for iterative search typically includes:
+\begin{itemize}
+    \item Enumerate the targets to cover, i.e. the individual branches.
+    \item 
+\end{itemize}
 
-When dealing with an evolutionary search-based approach for testing coverage, focusing on one coverage goal is a poor strategy, since it assumes that all coverage goal are equally important and independent of each other. This, however is not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied.ù
-Additionally, covering a particular branch may have collateral coverage over other branches in the test case's path. With EvoSuite, this isn't a concern since all coverage is intentional.
+Focusing on one coverage goal is ultimately a poor strategy, however, since it assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. A search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget.
 
-EvoSuite starts with a randomly generated population of test suites.
+Additionally, covering a particular branch may have collateral coverage over other branches in the test case's path; this suggests that multi-target approaches may reveal more effective. These approaches are known as whole test suites approaches and their goal is to evolve the entire test suite simultaneously, rather than iteratively covering the single branches/statements.
+
+
+------------------------------------------------------------------------------------------
+Specifically, the fitness function is mainly based on two measures:
+approach level and branch distance. The approach level represents how
+far is the execution path of a given test case from covering the target branch,
+while the branch distance represents how far is the input data from changing the
+boolean value of the condition of the decision node nearest to the target branch.
+As the branch distance value could be arbitrarily greater than the approach
+level, it is common to normalize the value of the branch distance.
+------------------------------------------------------------------------------------------
+
+EvoSuite is an example of an evolutionary algorithm that optimizes the whole test suite towards just one coverage criterion, rather than generating test cases directed towards multiple coverage criteria.
+With EvoSuite, any collateral coverage isn't a concern since all coverage is intentional, given that the ultimate goal is to generate the whole test suite.
+The algorithm starts with a randomly generated population of test suites.
 The fitness function rewards better coverage of the source code; if two suites have the same coverage, the one with fewer statements is chosen. For each test suite, its fitness is measured by executing all of its test cases and keeping track of the executed methods and of the minimal branch distance for each branch.
 
 \textbf{Expand on bloat in EvoSuite}
 
 
-
-
-When formulating the test case search problem as a many-objective optimization problem, the goal is to minimize all the individual distances from all the test targets in the class under test.
-
-One of the most popular multi-objective algorithms for this problem is the Non-dominated Sorting Genetic Algorithm II (NSGA-II). This algorithm is based on three principles:
+Another popular algorithm for multi-target search problems is the Non-dominated Sorting Genetic Algorithm II (NSGA-II). This algorithm is based on three principles:
 
 \begin{itemize}
     \item It uses elitism when evolving the population: the most fit individuals are carried over along the offsprings.
@@ -22,7 +37,7 @@ One of the most popular multi-objective algorithms for this problem is the Non-d
 \end{itemize}
 
 First of all, in the context of test cases, domination can be expressed by the following relation:
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
     \includegraphics[scale=0.4]{./figures/test_Case_domination.PNG}
     \caption{Test case domination}
@@ -40,7 +55,7 @@ The NSGA-II algorithm works as follows:
 
 
 Figure 2.2 summarizes the main loop of the algorithm:
-\begin{figure}[h]
+\begin{figure}[!h]
     \centering
     \includegraphics[scale=0.1]{./figures/nsga-ii.png}
     \caption{NSGA-II algorithm main loop}
@@ -53,6 +68,8 @@ with two or three objectives. If the number of objectives begins to grow, howeve
 To overcome these limitation,
 
 
+MOSA...
+
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{article1} is an approach that focuses on ..., and has been developed as an evolution of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
 \begin{itemize}
     \item instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion. This criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
@@ -62,7 +79,8 @@ DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{article1} is an approac
 
 In many-objective optimization problems, candidate solutions are typically evaluated in terms of Pareto dominance and Pareto optimality.
 
-
 DynaMOSA has been employed with Java classes.
 
-Traditionally, with evolutionary search-based approaches, the algorithm is applied multiple times,  once for each coverage criterion; doing so may ... Ultimately, however, the effectiveness of the solution depends on the problem
+
+
+Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{article4} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
