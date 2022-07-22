@@ -16,7 +16,7 @@
 \usepackage[final,bookmarks,breaklinks,colorlinks,allcolors=black]{hyperref}
 \usepackage{color}
 \usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\addbibresource{sections/04_bibliography.bib} % The filename of the bibliography
+\addbibresource{sections/06_bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 
@@ -123,19 +123,21 @@ Academic Year 2021-2022
 \tableofcontents
 \pagestyle{plain}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Introduction}
-\setcounter{page}{1} 	% devono seguire solo il primo capitolo
-\pagenumbering{arabic}	% devono seguire solo il primo capitolo
+\setcounter{page}{1} 	% must only follow the first chapter
+\pagenumbering{arabic}	% must only follow the first chapter
 \input{sections/01_introduction.tex}
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Problem formulation}
+\input{sections/02_problem_formulation.tex}
+
 \chapter{Literature}
-\input{sections/02_literature.tex}
+\input{sections/03_literature.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusions}
-\input{sections/03_conclusions.tex}
+\input{sections/05_conclusions.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \nocite{*}
