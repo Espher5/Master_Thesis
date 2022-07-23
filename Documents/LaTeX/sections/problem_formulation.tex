@@ -5,7 +5,7 @@ what portion of the code is executed when the tests run; it is essential to extr
 Source code coverage can be expressed according to different criteria:
 \begin {itemize}
     \item Statement coverage aims executing every single statement in the code.
-    \item Branch coverage, also known as decision coverage, measures how many decision structure have been fully explored by the test cases.
+    \item Branch coverage, also known as decision coverage, measures how many decision structure have been fully explored by the test cases. Out of all the branches in a program, some may be unreachable/infeasible \cite{DBLP:conf/issta/YatesM89}, i.e. there is no input configuration that will result in their execution, due to a developer error; as a result, when performing coverage testing, such branches may pose a threat since, if undetected, may drain test budget.
     \item Mutation coverage, also known as fault-based testing, aims at purposefully introducing faults in the program in order to 
             check whether the test suite is able to identify them. If the fault is correctly detected, the mutant is "killed".
             One issue of mutation is scalability, since generating and compiling the mutants, before running the test cases, can be time-consuming end quickly exhaust testing resources. Additionally, the introduced mutations can be classified as weak or strong: with strong mutation, the artificial fault is propagated to an observable behavior, while weak mutants are confined to more 
@@ -71,7 +71,19 @@ A strategy for iterative search typically includes:
     \item Building the final test suite by combining all the generated test cases.
 \end{itemize}
 
-\textbf{Formal problem formulation}
+
+Formally, the search problem for branch coverage can be formulated as follows:
+\newtheorem{prob}{Problem}
+\begin{prob}
+    Let $ B = \{b_1,...,b_k\} $ be the set of branches in a program; find a test suite $ T = \{t_1,...,t_n \} $ of n test cases that covers all feasible branches, minimizing the fitness function:
+    \begin{equation}
+        min f_B (T) = |M| - |M_T| + \sum_{b \in B} d(b, T)
+    \end{equation}
+    where $|M|$ is the total number of methods, $|M_T|$ is the number of executed methods by all test cases in T, and d(b, T) indicates the minimal normalized branch distance for branch $ b \in B $
+\end{prob}
+
+
+Add infeasible branches
 
 Focusing on one coverage goal at a time can be a poor strategy, however. Foremost, a search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget \cite{DBLP:journals/tse/FraserA13}.
 Secondly, the order by which coverage targets are selected may end up largely impacting the final performance.
@@ -113,3 +125,6 @@ Studies in literature \cite{DBLP:conf/ppsn/HandlLK08} have demonstrated that whe
 The new problem can then be formulated as follows \cite{DBLP:journals/tse/PanichellaKT18}:
 
 As a result of the nature of this problem, the fitness function doesn't stem from the aggregated fitness scores of the individual test cases anymore; rather, it is measured according to the multi-objective nature of optimality, with the goals of minimizing each of the fitness functions of the generated test case population.
+
+
+
