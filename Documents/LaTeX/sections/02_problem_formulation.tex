@@ -107,6 +107,9 @@ While being more effective than the iterative approach, algorithms based on WS p
 ------------------------------------------------------------------------------------------
 
 \section{Many-objective search}
-The final approach consists in performing a many-objective search; here different coverage targets are considered different objectives to be optimized.
+The final approach consists in performing a many-objective search; here different coverage targets are considered different objectives to be optimized. 
+Studies in literature \cite{DBLP:conf/ppsn/HandlLK08} have demonstrated that when applying many-objective search to a complex problem previously approached with single-objective search may bring improvements, since the probability of being trapped in a local maxima is reduced, also leading to a faster convergence rate \cite{DBLP:conf/icst/PanichellaKT15}.
+
 The new problem can then be formulated as follows \cite{DBLP:journals/tse/PanichellaKT18}:
 
+As a result of the nature of this problem, the fitness function doesn't stem from the aggregated fitness scores of the individual test cases anymore; rather, it is measured according to the multi-objective nature of optimality, with the goals of minimizing each of the fitness functions of the generated test case population.

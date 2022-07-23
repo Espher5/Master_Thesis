@@ -1,3 +1,4 @@
+\section{EvoSuite}
 EvoSuite is an example of an evolutionary algorithm that optimizes the whole test suite towards just one coverage criterion, rather than generating test cases directed towards multiple coverage criteria.
 With EvoSuite, any collateral coverage isn't a concern since all coverage is intentional, given that the ultimate goal is to generate the whole test suite.
 The algorithm starts with a randomly generated population of test suites.
@@ -6,7 +7,11 @@ The fitness function rewards better coverage of the source code; if two suites h
 \textbf{Expand on bloat in EvoSuite}
 
 
-Another popular algorithm for multi-target search problems is the Non-dominated Sorting Genetic Algorithm II (NSGA-II). This algorithm is based on three principles:
+
+
+
+\section{NSGA-II}
+A popular algorithm for many-objective search problems is the Non-dominated Sorting Genetic Algorithm II (NSGA-II). This algorithm is based on three principles:
 
 \begin{itemize}
     \item It uses elitism when evolving the population: the most fit individuals are carried over along the offsprings.
@@ -43,19 +48,32 @@ Figure 2.2 summarizes the main loop of the algorithm:
 
 In the context of software engineering, NSGA-II has been applied to problems such as software refactoring and test case prioritization,
 with two or three objectives. If the number of objectives begins to grow, however, the performance of the algorithm doesn't scale up well \cite{DBLP:journals/csur/LiLTY15}.
-To overcome these limitation,
+To overcome these limitations, there have been various adjustments and optimization of this algorithm...
 
 
-------------------------------------------------------------------------------------------
-MOSA...
-
-Following the same underlying idea,
-Panichella et al. [29] recently proposed MOSA (Many-Objective Sorting Algorithm), an algorithm where the whole test suite approach is re-formulated as
-a many-objective problem, where different branches are considered as different
-objectives to be optimized
-------------------------------------------------------------------------------------------
 
 
+
+\section{SPEA2}
+Strength Pareto Evolutionary Algorithm (SPEA2)
+Similarly to NSGA-II, SPEA2 isn't suitable for problems with more than three objectives. []
+
+
+
+
+\section{MOSA}
+MOSA \cite{DBLP:conf/icst/PanichellaKT15} is a GA proposed as an improvement over NSGA-II and SPEA2 for many-objective test case generation. With this algorithm, coverage of the different branches makes up the set of objectives to be optimized
+
+As the first step, MOSA starts from a randomly generated initial population of test cases. 
+To create the next generation, MOSA generates offsprings by implementing the classic operations of selection, crossover and mutation. 
+Before selection occurs however, for each uncovered branch, the test case with the lowest objective score(branch distance + approach level) is determined; these test cases will have assigned the rank 0 and will make up the first front. The remainder of the test cases will be sorted according to the traditional NSGA-II approach.
+
+After the rank assignment step is complete, the crowding distance is calculated to determine which individuals to select: the individuals with higher distance from the rest are given a higher chance of being selected. The algorithm attempts to select as many test cases as possible, starting from front 0,  until the population size is reached
+
+Finally, MOSA uses an archive population that keeps track of the best performing test cases, in order to form the final test suite.
+
+
+\section{DynaMOSA}
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{DBLP:journals/tse/PanichellaKT18} is an approach that focuses on ..., and has been developed as an evolution of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
 \begin{itemize}
     \item instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion. This criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
@@ -69,6 +87,9 @@ DynaMOSA has been employed with Java classes.
 
 
 
+
+
+\section{OCELOT}
 Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
 
 Tested with MOSA but not with DynaMOSA.
