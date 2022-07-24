@@ -26,7 +26,13 @@ In the context of test cases, domination can be expressed by the following relat
 \end{dominance}
 
 \begin{algorithm}
-    \caption{NSGA-II}
+    \caption{MOSA}
+    \hspace*{\algorithmicindent} \textbf{Input:} 
+    $ U = \{u_1,...,u_m\} $ the set of coverage targets of a program
+    Population size $ M $
+
+    \hspace*{\algorithmicindent} \textbf{Output:}
+    A test suite T
     
     \begin{algorithmic}[1]
         \Begin
@@ -104,8 +110,70 @@ After the rank assignment step is complete, the crowding distance is calculated 
 
 Finally, MOSA uses an archive population that keeps track of the best performing test cases, in order to form the final test suite.
 
+\begin{algorithm}
+    \caption{MOSA}
+    \hspace*{\algorithmicindent} \textbf{Input:} 
+    $ U = \{u_1,...,u_m\} $ the set of coverage targets of a program
+    Population size $ M $
+
+    \hspace*{\algorithmicindent} \textbf{Output:}
+    A test suite T
+    
+    \begin{algorithmic}[1]
+        \Begin
+            \State $ t \leftarrow 0 $ // current generation
+            \State $ P_t \leftarrow $ RANDOM-POPULATION($ M $) 
+            \State $ archive \leftarrow $ UPDATE-ARCHIVE($ P_t $, \O ) 
+
+            \While {$ not (search\_budget\_consumed) $}
+                \State $ Q_t \leftarrow $  GENERATE-OFFSPRING($ P_t $)
+                \State $ archive \leftarrow $ UPDATE-ARCHIVE($ P_t $, \O) 
+                \State $ R_t \leftarrow P_t \cup Q_t $
+                \State $ F \leftarrow $  PREFERENCE-SORTING($ R_t $)
+                \State $ P_{t + 1} \leftarrow 0 $
+                \State $ d \leftarrow 1 $
+
+                \While {$ (|P_{t + 1}| + |F_d| \leqslant M) $}
+                    CROWDING-DISTANCE-ASSIGNMENT($ F_d $)
+                    \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d $
+                    \State $ d \leftarrow d + 1 $
+                \EndWhile
+
+                Sort($ F_d $) // according to the crowding distance
+                \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d[1: (M - |P_{t + 1}|)] $
+                \State $ t \leftarrow t + 1 $
+            \EndWhile
+
+            \State $ S \leftarrow archive $
+        \End
+    \end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{PREFERENCE-SORTING}
+    \hspace*{\algorithmicindent} \textbf{Input:} 
+    A set of candidate test cases T
+    Popultation size M
+
+    \hspace*{\algorithmicindent} \textbf{Output:}
+    Non-dominated ranking assignment $ F $
+    
+    \begin{algorithmic}[1]
+        \Begin
+
+        \End 
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+
 
 \section{DynaMOSA}
+One of the limitations of MOSA is its inability to consider the implicit dependencies between targets, which simply appear as independent objectives to optimize. Such dependencies can be quite common in practice: most commonly, there exist branches which may only be satisfied if and only if other branches in the outer scope have been already covered. 
+
+
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{DBLP:journals/tse/PanichellaKT18} is an approach that focuses on ..., and has been developed as an evolution of MOSA. This latter solution implements a many-objective GA to tackle test case generation and has three main features: 
 \begin{itemize}
     \item instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion. This criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
@@ -116,6 +184,42 @@ DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{DBLP:journals/tse/Panic
 In many-objective optimization problems, candidate solutions are typically evaluated in terms of Pareto dominance and Pareto optimality.
 
 DynaMOSA has been employed with Java classes.
+\begin{algorithm}
+    \caption{DynaMOSA}
+    \hspace*{\algorithmicindent} \textbf{Input:} 
+    $ U = \{u_1,...,u_m\} $ the set of coverage targets of a program
+    Population size $ M $
+
+    \hspace*{\algorithmicindent} \textbf{Output:}
+    A test suite T
+    
+    \begin{algorithmic}[1]
+        \Begin
+            \State $ t \leftarrow 0 $ // current generation
+            \State $ P_t \leftarrow $ RANDOM-POPULATION($ M $) 
+
+            \While {$ not (search\_budget\_consumed) $}
+                \State $ Q_t \leftarrow $  GENERATE-OFFSPRING($ P_t $)
+                \State $ R_t \leftarrow P_t \cup Q_t $
+                \State $ F \leftarrow $  FAST-NONDOMINATED-SORT($ R_t $)
+                \State $ P_{t + 1} \leftarrow 0 $
+                \State $ d \leftarrow 1 $
+
+                \While {$ (|P_{t + 1}| + |F_d| \leqslant M) $}
+                    CROWDING-DISTANCE-ASSIGNMENT($ F_d $)
+                    \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d $
+                    \State $ d \leftarrow d + 1 $
+                \EndWhile
+
+                Sort($ F_d $) // according to the crowding distance
+                \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d[1: (M - |P_{t + 1}|)] $
+                \State $ t \leftarrow t + 1 $
+            \EndWhile
+
+            \State $ S \leftarrow P_t $
+        \End
+    \end{algorithmic}
+\end{algorithm}
 
 
 
