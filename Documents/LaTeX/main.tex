@@ -2,10 +2,9 @@
 
 \usepackage{array}
 \usepackage{acro}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\usepackage[ruled, lined, linesnumbered, noend ]{algorithm2e}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage[labelfont=it,textfont={it}]{caption}
+\usepackage{caption}
 \usepackage{color}
 \usepackage[english]{babel} 
 \usepackage{epsfig}
@@ -23,7 +22,9 @@
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 \addbibresource{sections/bibliography.bib} % The filename of the bibliography
-\algdef{SE}{Begin}{End}{\textbf{begin}}{\textbf{end}}
+
+
+%\algdef{SE}{Begin}{End}{\textbf{begin}}{\textbf{end}}
 
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -123,6 +124,7 @@
     \chapter*{Abstract}
     \input{sections/abstract.tex}
     \input{sections/list_of_figures.tex}
+
 
     \tableofcontents
     \pagestyle{plain}
