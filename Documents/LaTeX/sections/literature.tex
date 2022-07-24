@@ -19,14 +19,42 @@ A popular algorithm for many-objective search problems is the Non-dominated Sort
     \item It emphasizes the non-dominated solutions, as its name suggests.
 \end{itemize}
 
-First of all, in the context of test cases, domination can be expressed by the following relation:
-\begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.4]{./figures/test_Case_domination.PNG}
-    \caption{Test case domination}
-    \label{fig:test case domination}
-\end{figure}
+In the context of test cases, domination can be expressed by the following relation:
+\newtheorem{dominance}{Definition}
+\begin{dominance}
+    A test case $ x $ dominates another test case $ y $, also written $ x  \prec y $ if and only if ...
+\end{dominance}
 
+\begin{algorithm}
+    \caption{NSGA-II}
+    
+    \begin{algorithmic}[1]
+        \Begin
+            \State $ t \leftarrow 0 $ // current generation
+            \State $ P_t \leftarrow $ RANDOM-POPULATION($ M $) 
+
+            \While {$ not (search\_budget\_consumed) $}
+                \State $ Q_t \leftarrow $  GENERATE-OFFSPRING($ P_t $)
+                \State $ R_t \leftarrow P_t \cup Q_t $
+                \State $ F \leftarrow $  FAST-NONDOMINATED-SORT($ R_t $)
+                \State $ P_{t + 1} \leftarrow 0 $
+                \State $ d \leftarrow 1 $
+
+                \While {$ (|P_{t + 1}| + |F_d| \leqslant M) $}
+                    CROWDING-DISTANCE-ASSIGNMENT($ F_d $)
+                    \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d $
+                    \State $ d \leftarrow d + 1 $
+                \EndWhile
+
+                Sort($ F_d $) // according to the crowding distance
+                \State $ P_{t + 1} \leftarrow P_{t + 1} \cup F_d[1: (M - |P_{t + 1}|)] $
+                \State $ t \leftarrow t + 1 $
+            \EndWhile
+
+            \State $ S \leftarrow P_t $
+        \End
+    \end{algorithmic}
+\end{algorithm}
 
 The NSGA-II algorithm works as follows:
 \begin{itemize}
@@ -54,9 +82,13 @@ To overcome these limitations, there have been various adjustments and optimizat
 
 
 
+
+
+
 \section{SPEA2}
 Strength Pareto Evolutionary Algorithm (SPEA2)
 Similarly to NSGA-II, SPEA2 isn't suitable for problems with more than three objectives. []
+
 
 
 

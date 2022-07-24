@@ -6,7 +6,8 @@
 \usepackage{subfigure}
 \usepackage{epsfig}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage[linesnumbered,lined,commentsnumbered,italiano]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
 \usepackage{fancybox}
 \usepackage{listings}
 \usepackage{url}
@@ -17,8 +18,11 @@
 \usepackage[final,bookmarks,breaklinks,colorlinks,allcolors=black]{hyperref}
 \usepackage{color}
 \usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\addbibresource{sections/06_bibliography.bib} % The filename of the bibliography
+\addbibresource{sections/bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+
+\algdef{SE}{Begin}{End}{\textbf{begin}}{\textbf{end}}
 
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -49,11 +53,9 @@
 	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
-
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.6}
 \definecolor{cyan}{rgb}{0.0,0.6,0.6}
-
 
 \definecolor{javared}{rgb}{0.6,0,0} % for strings
 \definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
@@ -70,7 +72,6 @@
   keywordstyle=\color{javapurple},
   morekeywords={func,var,while, if, then, else,for, in, println, fly ,on,thenall,as,then,require,native}% list your attributes here
 }
-
 
 \lstset{language=FLY,
 basicstyle=\ttfamily\scriptsize,
@@ -117,7 +118,7 @@ Academic Year 2021-2022
 
 \pagenumbering{roman}
 \chapter*{Abstract}
-\input{sections/00_abstract.tex}
+\input{sections/abstract.tex}
 
 
 
@@ -128,17 +129,17 @@ Academic Year 2021-2022
 \chapter{Introduction}
 \setcounter{page}{1} 	% must only follow the first chapter
 \pagenumbering{arabic}	% must only follow the first chapter
-\input{sections/01_introduction.tex}
+\input{sections/introduction.tex}
 
 \chapter{Problem formulation}
-\input{sections/02_problem_formulation.tex}
+\input{sections/problem_formulation.tex}
 
 \chapter{Literature}
-\input{sections/03_literature.tex}
+\input{sections/literature.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusions}
-\input{sections/05_conclusions.tex}
+\input{sections/conclusions.tex}
 
 \chapter{Math reference}
 \input{sections/math_reference.tex}
