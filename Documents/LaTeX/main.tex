@@ -1,27 +1,28 @@
 \documentclass[11pt,oneside]{book}
-\usepackage[english]{babel} 
-\usepackage{microtype}
+
+\usepackage{array}
 \usepackage{acro}
-\usepackage[utf8]{inputenc}
-\usepackage{subfigure}
-\usepackage{epsfig}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{algpseudocode}
 \usepackage{algorithm}
-\usepackage{fancybox}
-\usepackage{listings}
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{todonotes}
-\usepackage{moreverb}
+\usepackage{algpseudocode}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage[labelfont=it,textfont={it}]{caption}
-\usepackage[final,bookmarks,breaklinks,colorlinks,allcolors=black]{hyperref}
 \usepackage{color}
+\usepackage[english]{babel} 
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{moreverb}
+\usepackage{subfigure}
+\usepackage{todonotes}
+\usepackage{url}
+
+\usepackage[utf8]{inputenc}
+\usepackage[final,bookmarks,breaklinks,colorlinks,allcolors=black]{hyperref}
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 \addbibresource{sections/bibliography.bib} % The filename of the bibliography
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-
-
 \algdef{SE}{Begin}{End}{\textbf{begin}}{\textbf{end}}
 
 
@@ -63,8 +64,7 @@
 \definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
 
 
-\lstdefinelanguage{FLY}
-{
+\lstdefinelanguage{FLY} {
   morestring=[b]",
   morecomment=[l]{//},
   morecomment=[s]{/}{/},
@@ -73,80 +73,78 @@
   morekeywords={func,var,while, if, then, else,for, in, println, fly ,on,thenall,as,then,require,native}% list your attributes here
 }
 
-\lstset{language=FLY,
-basicstyle=\ttfamily\scriptsize,
-keywordstyle=\color{javapurple}\bfseries,
-stringstyle=\color{javared},
-commentstyle=\color{javagreen},
-morecomment=[s][\color{javadocblue}]{/*}{/},
-numbers=left,
-numberstyle=\tiny\color{black},
-stepnumber=1,
-numbersep=10pt,
-tabsize=4,
-showspaces=false,
-showstringspaces=false}
+\lstset {
+    language=FLY,
+    basicstyle=\ttfamily\scriptsize,    
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/*}{/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
 
 
 \begin{document}
-\begin{titlepage}
-\begin{center}
-\epsfig{file=figures/logo_standard.jpg,width=2.5truecm}\\[0.2truecm]
-{\Large Universit\`a degli Studi di Salerno}\\[0.2truecm]
-{\large Dipartimento di Informatica}\\
-\hrulefill
-\vfill
-{\large Tesi di Laurea di I livello in }\\[0.2truecm]
-{\Large Informatica}\\
-\vfill\vfill
-{\Huge Template tesi ISISLab}
-\vfill\vfill
+    \begin{titlepage}
+        \begin{center}
+            \epsfig{file=figures/logo_standard.jpg,width=2.5truecm}\\[0.2truecm]
+            {\Large Universit\`a degli Studi di Salerno}\\[0.2truecm]
+            {\large Dipartimento di Informatica}\\
+            \hrulefill
+            \vfill
+            {\large Tesi di Laurea di I livello in }\\[0.2truecm]
+            {\Large Informatica}\\
+            \vfill\vfill
+            {\Huge Template tesi ISISLab}
+            \vfill\vfill
+            
+            
+            {\bf Relatore} \hfill {\bf Candidato}\ \ \\
+            Giuseppe Scanniello \hfill Michelangelo Esposito\\
+            {\bf Correlatore} \hfill {\bf }\ \ \\
+            Dott. Nome Cognome \hfill \ \ \\
+            
+            \vfill
+            \hrulefill 
+            
+            Academic Year 2021-2022
+        
+        \end{center}
+    \end{titlepage}
 
 
-{\bf Relatore} \hfill {\bf Candidato}\ \ \\
-Nome Cognome \hfill Nome Cognome\\
-{\bf Correlatore} \hfill {\bf }\ \ \\
-Dott. Nome Cognome \hfill \ \ \\
+    \pagenumbering{roman}
+    \chapter*{Abstract}
+    \input{sections/abstract.tex}
+    \input{sections/list_of_figures.tex}
 
-\vfill
-\hrulefill 
+    \tableofcontents
+    \pagestyle{plain}
 
-Academic Year 2021-2022
+    \chapter{Introduction}
+    \setcounter{page}{1} 	% must only follow the first chapter
+    \pagenumbering{arabic}	% must only follow the first chapter
+    \input{sections/introduction.tex}
 
-\end{center}
-\end{titlepage}
+    \chapter{Problem formulation}
+    \input{sections/problem_formulation.tex}
 
-\pagenumbering{roman}
-\chapter*{Abstract}
-\input{sections/abstract.tex}
+    \chapter{Literature}
+    \input{sections/literature.tex}
 
+    \chapter{Conclusions}
+    \input{sections/conclusions.tex}
 
+    \chapter{Math reference}
+    \input{sections/math_reference.tex}
 
-\tableofcontents
-\pagestyle{plain}
+    \nocite{*}
+    \printbibliography[title={Bibliography}] 
 
-
-\chapter{Introduction}
-\setcounter{page}{1} 	% must only follow the first chapter
-\pagenumbering{arabic}	% must only follow the first chapter
-\input{sections/introduction.tex}
-
-\chapter{Problem formulation}
-\input{sections/problem_formulation.tex}
-
-\chapter{Literature}
-\input{sections/literature.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Conclusions}
-\input{sections/conclusions.tex}
-
-\chapter{Math reference}
-\input{sections/math_reference.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nocite{*}
-\printbibliography[title={Bibliography}] 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
