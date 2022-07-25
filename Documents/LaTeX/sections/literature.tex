@@ -91,19 +91,50 @@ To overcome these limitations, there have been various adjustments and optimizat
 
 
 
-
-
-
+\newpage
 \section{SPEA2}
-Strength Pareto Evolutionary Algorithm (SPEA2)
-Similarly to NSGA-II, SPEA2 isn't suitable for problems with more than three objectives. []
+Strength Pareto Evolutionary Algorithm (SPEA) is another multi-objective evolutionary search algorithm based on the concept of Pareto domination for fitness and selection, originally proposed by Zitzler and Thiele in 1999 \cite{DBLP:journals/tec/ZitzlerT99}. SPEA2 was presented as an evolution of the algorithm by the same authors \cite{DBLP:journals/tec/ZitzlerT01}.
+A  peculiarity of SPEA2 is that it uses an archive to store non-dominated solutions generated in each iteration; as we will see later, the archive approach is also employed by more modern solutions.
+\newline \newline
+During the evolution, a strength value is calculated for each individual in each generation and is used for the selection of the fittest individuals. For any solution $ i $, this strength value is measured based on the numbers of $ j $ individuals, belonging to the archive and the population, dominated by $ i $.
+\newline 
+
+\begin{algorithm}[H]
+    \caption{SPEA2}
+
+    \SetKwInOut{Input}{input}
+    \SetKwInOut{Output}{output}
+    \SetKwBlock{Beginn}{beginn}{ende}
+
+    \DontPrintSemicolon   
+
+    \Input {
+        $ U = \{u_1,...,u_m\} $ the set of coverage targets of a program \newline 
+        An archive A \newline
+        Population size $ M $
+    }
+    \Begin {
+        $ P_t \gets $ RANDOM-POPULATION($ M $)\;
+        \While{$ not (search\_budget\_consumed) $} {
+            CALCULATE-STRENGTH($ P_t $, $ A $)\;
+            UPDATE-ARCHIVE($ P_t $, $ A $)\;
+            BINARY-TOURNAMENT-SELECTION($ P_t $)\;
+            CROSOVER($ P_t $)\;
+            MUTATION ($ P_t $)\;
+        }
+    }
+\end{algorithm}
+
+If the size of the archive doesn't reach the population size, dominated individuals are used to fill up the remaining spaces.
+Similarly to NSGA-II isn't suitable for problems with more than three objectives\cite{DBLP:conf/icccsec/LiuZ19}.
 
 
 
 
 
+\newpage
 \section{MOSA}
-MOSA \cite{DBLP:conf/icst/PanichellaKT15} is a GA proposed as an improvement over NSGA-II and SPEA2 for many-objective test case generation. With this algorithm, coverage of the different branches makes up the set of objectives to be optimized. The main characteristic about MOSA is that instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion; this criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
+MOSA \cite{DBLP:conf/icst/PanichellaKT15} is a GA proposed as an improvement over NSGA-II and SPEA2 for many-objective test case generation, with the main goal of allowing for a higher number of objectives to optimize. With this algorithm, the coverage of the different branches makes up the set of objectives to be optimized. The main characteristic about MOSA is that instead of ranking candidates for selection based on their Pareto optimality, it uses a preference criterion; this criterion selects the test case with the lowest objective score for each uncovered target; these selected individuals are given a higher chance of survival, while other test cases are ranked with the traditional NSGA-II approach.
 
 
 As the first step, MOSA starts from a randomly generated initial population of test cases. 
@@ -238,7 +269,7 @@ After the rank assignment step is complete, the crowding distance is calculated 
 \end{algorithm}
 
 \newpage
-Finally, MOSA uses an archivee population that keeps track of the best performing test cases, in order to form the final test suite. The archive is continuously updated as follows:
+Finally, MOSA uses an archived population that keeps track of the best performing test cases, in order to form the final test suite. The archive is continuously updated as follows:
 
 \begin{algorithm}[H]
     \caption{UPDATE-ARCHIVE}
@@ -302,7 +333,7 @@ Before introducing the algorithm, a few definitions are needed \cite{DBLP:journa
     (Control dependency graph): The graph $ G = \langle N, E, s \rangle $, consisting of nodes $ n \in N $ that represent program statements, and edges $ e \in E \subseteq N X N $ that represent control dependencies between program statements, is called control dependency graph. Node $ s \in N $ represents the entry node, which is connected to all nodes that are not under the control dependency of another node.
 \end{definition}
 
-\\
+
 This definition can be extended to other coverage criteria. For example, given two branches $ b1 $ and $ b2 $,  we say that $ b1 $ holds a control dependency on $ b2 $ if $ b1 $ is postdominated by a statement $ s1 $ which holds a control dependency on a node $ s2 $ that postdominates $ b2 $.
 
 DynaMOSA uses the control dependency graph to identify which targets are independent from each other and which ones can be covered only after satisfying previous targets in the graph.
