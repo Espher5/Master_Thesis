@@ -22,6 +22,10 @@ Coverage can also be measured at any testing levels; while at the unit test-leve
 A coverage goal is a particular target that we want to cover in respect to the chosen criterion, i.e. a particular branch of an if statement.
 
 
+
+
+
+\newpage
 \section{An overview on search problems}
 As humans, everyday we perform search: from looking for our car keys in the house to searching for a new book to purchase, this action is engraved in our daily life.
 In the same way, search is one of the most fundamental operations on which computer science has focused since its early days: performing efficient search is the core operation of many classes of algorithms, such as the ones responsible for route planning, computer vision, robotics, automated software testing, puzzle solving, and many others.
@@ -53,12 +57,20 @@ In this context, a typical fitness function of a GA would measure the distance b
 and the coverage targets.
 
 
+
+
+
+\newpage
 \section{Search-based test case generation}
-Search-based approaches for test case generation use optimization algorithms to attempt to find 
-the best candidate test case with the objective to maximize fault detection. 
+Search-based approaches applied to automatic test case generation employ optimization algorithms to attempt to find the best candidate test cases with the objective to maximize the coverage of the test suite according to the chosen criterion. 
+In this section we will provide a formal definition of these problems, before discussing the various starategy that can be applied to solve them.
 
 
-\section{Iterative single-target search}
+\textbf{...Formal problem definition...}
+
+
+
+\subsection{Iterative single-target search}
 The simplest way of approaching the evolutionary search problem for test case generation is by iteratively determining a coverage goal in the source code (i.e. a particular branch), and executing the GA to find a test case that achieves this coverage. 
 A strategy for iterative search typically includes:
 \begin{itemize}
@@ -67,26 +79,13 @@ A strategy for iterative search typically includes:
     \item Building the final test suite by combining all the generated test cases.
 \end{itemize}
 
-
-Formally, the search problem for branch coverage can be formulated as follows:
-\newtheorem{prob}{Problem}
-\begin{prob}
-    Let $ B = \{b_1,...,b_k\} $ be the set of branches in a program; find a test suite $ T = \{t_1,...,t_n \} $ of n test cases that covers all feasible branches, minimizing the fitness function:
-    \begin{equation}
-        min f_B (T) = |M| - |M_T| + \sum_{b \in B} d(b, T)
-    \end{equation}
-    where $|M|$ is the total number of methods, $|M_T|$ is the number of executed methods by all test cases in T, and d(b, T) indicates the minimal normalized branch distance for branch $ b \in B $
-\end{prob}
-
-
-Add infeasible branches
-
 Focusing on one coverage goal at a time can be a poor strategy, however. Foremost, a search algorithms could get "trapped" while attempting to cover an expensive branch and waste a large portion of the testing budget \cite{DBLP:journals/tse/FraserA13}.
 Secondly, the order by which coverage targets are selected may end up largely impacting the final performance.
 Additionally, this approach assumes that all coverage goal are equally important and independent of each other; this is often not the case as, for example, covering the true branch of an if statement may be easier than covering the true branch of another if statement that requires a complex chain of operations to be properly satisfied. Finally, covering a particular branch may have collateral coverage over other branches in the test case's path.
 
 
-\section{Whole test suite approach}
+
+\subsection{Whole test suite approach}
 The issues with iterative search suggest that multi-target evolutionary approaches may reveal more effective and reliable. These are known as whole test suites approaches (WS) \cite{QSIC11} and their goal is to evolve the entire test suite simultaneously, rather than iteratively covering the single branches/statements; this eliminates the two issues of the iterative approach: the algorithms can't get stuck on an expensive branch, since the all coverage targets are being searched simultaneously and, for the same reason, the order of test case generation becomes irrelevant, preventing adversary influence in the final test suite.
 
 
@@ -114,7 +113,7 @@ Given that the branch distance can be arbitrarily greater than the approach leve
 While being more effective than the iterative approach, algorithms based on WS principles suffer from the problems of sum-scalarization in many-objective optimization, among which the inefficient convergence occurring in the non-convex regions of the search space
 ------------------------------------------------------------------------------------------
 
-\section{Many-objective search}
+\subsection{Many-objective search}
 The final approach consists in performing a many-objective search; here different coverage targets are considered different objectives to be optimized. 
 Studies in literature \cite{DBLP:conf/ppsn/HandlLK08} have demonstrated that when applying many-objective search to a complex problem previously approached with single-objective search may bring improvements, since the probability of being trapped in a local maxima is reduced, also leading to a faster convergence rate \cite{DBLP:conf/icst/PanichellaKT15}.
 

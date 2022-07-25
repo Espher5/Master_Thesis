@@ -24,7 +24,7 @@
 \usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 \addbibresource{sections/bibliography.bib} % The filename of the bibliography
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -125,11 +125,11 @@
     \pagenumbering{roman}
     \chapter*{Abstract}
     \input{sections/abstract.tex}
-    \input{sections/list_of_figures.tex}
-
-
+    
     \tableofcontents
     \pagestyle{plain}
+
+    \input{sections/list_of_figures.tex}
 
     \chapter*{List of Acronyms and Abbreviations}
     \input{sections/acronyms.tex}
