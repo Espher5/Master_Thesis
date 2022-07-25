@@ -1,15 +1,22 @@
+In this chapter we provide a general overview of the literature  concerning evolutionary test case generation, in both the Object-Oriented and procedural contexts. 
+The main techniques and algorithms employed for the problem will be examined and compared, to act as the base for our study.
+
+
 \section{EvoSuite}
 EvoSuite is an example of an evolutionary algorithm that optimizes the whole test suite towards just one coverage criterion, rather than generating test cases directed towards multiple coverage criteria.
 With EvoSuite, any collateral coverage isn't a concern since all coverage is intentional, given that the ultimate goal is to generate the whole test suite.
 The algorithm starts with a randomly generated population of test suites.
 The fitness function rewards better coverage of the source code; if two suites have the same coverage, the one with fewer statements is chosen. For each test suite, its fitness is measured by executing all of its test cases and keeping track of the executed methods and of the minimal branch distance for each branch.
 
-\textbf{Expand on bloat in EvoSuite}
+\begin{itemize}
+    \item Expand on bloat in EvoSuite
+    \item algorithm pseudocode
+\end{itemize}
 
 
 
 
-
+\newpage
 \section{NSGA-II}
 A popular algorithm for many-objective search problems is the Non-dominated Sorting Genetic Algorithm II (NSGA-II). This algorithm is based on three principles:
 
@@ -439,8 +446,17 @@ In the case of newly covered targets, the procedure iterates over the control gr
 
 
 
+
+
+
+
 \newpage
-\section{OCELOT}
-Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-target approach based on MOSA, and new iterative single-target appproach named LIPS, Linear Independent Path-based Search.
+\section{OCELOT and object-oriented versus procedural test case generation}
+Generally speaking, both EvoSuite and MOSA/DynaMOSA have been designed with the OO paradigm in mind
+
+Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-objective approach based on MOSA, and a new iterative single-target approach named LIPS, Linear Independent Path-based Search.
+OCELOT can automatically detect the input types of a C function, without requiring any specification of parameters; Additionally it can handle the different data types of C, including pointers and structs, and produces test cases based on the Check framework \cite{Check}.
+Similarly to other tools, OCELOT is not able to generate oracles.
+For the GA implementation, OCELOT employed SBX Crossover, Polynomial Mutation and Binary Tournament Selection, for both the multi-objective and iterative approaches.
 
 Tested with MOSA but not with DynaMOSA.

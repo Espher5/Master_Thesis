@@ -1,7 +1,7 @@
 \documentclass[11pt,oneside]{book}
 
 \usepackage{array}
-\usepackage{acro}
+\usepackage[printonlyused, withpage]{acronym}
 \usepackage[ruled, lined, linesnumbered, noend ]{algorithm2e}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{caption}
@@ -9,6 +9,7 @@
 \usepackage[english]{babel} 
 \usepackage{epsfig}
 \usepackage{fancybox}
+\usepackage[acronym, nomain]{glossaries}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{microtype}
@@ -129,6 +130,9 @@
 
     \tableofcontents
     \pagestyle{plain}
+
+    \chapter*{List of Acronyms and Abbreviations}
+    \input{sections/acronyms.tex}
 
     \chapter{Introduction}
     \setcounter{page}{1} 	% must only follow the first chapter
