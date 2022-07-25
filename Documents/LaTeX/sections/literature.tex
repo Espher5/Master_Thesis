@@ -450,6 +450,7 @@ In the case of newly covered targets, the procedure iterates over the control gr
 
 
 
+
 \newpage
 \section{OCELOT and object-oriented versus procedural test case generation}
 Generally speaking, both EvoSuite and MOSA/DynaMOSA have been designed with the OO paradigm in mind
@@ -457,6 +458,8 @@ Generally speaking, both EvoSuite and MOSA/DynaMOSA have been designed with the 
 Optimal Coverage sEarch-based tooL for sOftware Testing, OCELOT \cite{DBLP:conf/ssbse/ScalabrinoGNOL16} is a test case generation tool for C programs that implements both a multi-objective approach based on MOSA, and a new iterative single-target approach named LIPS, Linear Independent Path-based Search.
 OCELOT can automatically detect the input types of a C function, without requiring any specification of parameters; Additionally it can handle the different data types of C, including pointers and structs, and produces test cases based on the Check framework \cite{Check}.
 Similarly to other tools, OCELOT is not able to generate oracles.
-For the GA implementation, OCELOT employed SBX Crossover, Polynomial Mutation and Binary Tournament Selection, for both the multi-objective and iterative approaches.
+From an implementation point of view, the GA implementation in OCELOT was realized with the JMetal, a Java framework for multi-objective optimization with meta-heuristics \cite{JMetal}. Furthermore, JNI is used as interface with the target program to try different combinations of test data.
+SBX Crossover, Polynomial Mutation and Binary Tournament Selection, for both the multi-objective and iterative approaches.
 
-Tested with MOSA but not with DynaMOSA.
+
+Running OCELOT consists of two main phases: build and run \cite{DBLP:conf/kbse/ScalabrinoGNGLG18}. Focusing on the latter, 
