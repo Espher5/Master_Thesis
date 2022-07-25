@@ -285,7 +285,7 @@ Finally, MOSA uses an archivee population that keeps track of the best performin
 \newpage
 \section{DynaMOSA}
 One of the limitations of MOSA is its inability to consider the implicit dependencies between targets, which simply appear as independent objectives to optimize. Such dependencies can be quite common in practice: most commonly, there exist branches which may only be satisfied if and only if other branches in the outer scope have been already covered. 
-
+\\\\
 DynaMOSA, Dynamic Many-Objective Sorting Algorithm \cite{DBLP:journals/tse/PanichellaKT18} is an algorithm that focuses on these dynamic dependencies, and has been proposed as an evolution of MOSA. 
 Before introducing the algorithm, a few definitions are needed \cite{DBLP:journals/tse/PanichellaKT18}:
 
@@ -302,7 +302,7 @@ Before introducing the algorithm, a few definitions are needed \cite{DBLP:journa
     (Control dependency graph): The graph $ G = \langle N, E, s \rangle $, consisting of nodes $ n \in N $ that represent program statements, and edges $ e \in E \subseteq N X N $ that represent control dependencies between program statements, is called control dependency graph. Node $ s \in N $ represents the entry node, which is connected to all nodes that are not under the control dependency of another node.
 \end{definition}
 
-
+\\
 This definition can be extended to other coverage criteria. For example, given two branches $ b1 $ and $ b2 $,  we say that $ b1 $ holds a control dependency on $ b2 $ if $ b1 $ is postdominated by a statement $ s1 $ which holds a control dependency on a node $ s2 $ that postdominates $ b2 $.
 
 DynaMOSA uses the control dependency graph to identify which targets are independent from each other and which ones can be covered only after satisfying previous targets in the graph.
