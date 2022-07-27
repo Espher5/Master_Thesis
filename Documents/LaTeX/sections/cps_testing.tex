@@ -49,4 +49,33 @@ consider such parameters as the road type and size, the
 location of other vehicles or pedestrians, the driving weather
 conditions, etc. Evidently, one of the most important requirements would be the collision avoidance
 
+
+A test case is split into at most $ m $ parts, each representing some aspect of the mission. Each part is $ E_i $.
+Each element is then described with $ n $ parameters/attributes, denoted with $ A_i $.
+As a result, each test case is represented as a $ nxm $ matrix where cell $ (i, j) $ contains the attribute value of $ A_i $ for part $ E_i $.
 -------------------------------------------------------------------------\newline
+As an example, let’s consider a car lane keeping assist
+system (LKAS). It’s main goal is to keep the vehicle within
+the road lane. One of the possible test cases to test this system
+can be a road topology, that the vehicle needs to follow. To
+design the test case, we suggest representing the road topology as a combination of road segments of different length
+and curvature. Here, each road segment would correspond
+to one environmental element and it’s parameters such as
+length and curvature - the attributes of the environmental
+element
+-------------------------------------------------------------------------\newline
+
+Finally, test cases can have restrictions $ R $, which limit the scenario length $ M $, or require particular combination of attributes.
+
+To estimate the first objective's fitness function $ F_1 $, the difference between the expected and observed behaviors is computed, which varies on a case by case basis.
+
+-------------------------------------------------------------------------\newline
+The expected behaviour $ B(TC) $is typically defined in the system
+requirements or formulated by the developers e.g., "the car
+should not deviate from the lane center for more than 1
+meter"
+-------------------------------------------------------------------------\newline
+
+To estimate the second fitness function $ F_2 $, the variability of the test case, the Jaccard distance between it and a reference test case is calculated.
+
+Implemented with Pymoo
