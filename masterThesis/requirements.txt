@@ -1,3 +1,4 @@
+beamngpy
+deap
 numpy
 pymoo
-beamngpy
