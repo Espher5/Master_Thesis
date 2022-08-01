@@ -10,21 +10,9 @@
                 "turn_right"
             ],
             "markov_chain": [
-                [
-                    ["straight", "straight", 0.1],
-                    ["straight", "turn_left", 0.45],
-                    ["straight", "turn_right", 0.45]
-                ],
-                [
-                    ["turn_left", "straight", 0.2],
-                    ["turn_left", "turn_left", 0.4],
-                    ["turn_left", "turn_right", 0.4]
-                ],
-                [
-                    ["turn_right", "straight", 0.2],
-                    ["turn_right", "turn_left", 0.4],
-                    ["turn_right", "turn_right", 0.4]
-                ]
+                [0.1, 0.45, 0.45],
+                [0.2, 0.4, 0.4],
+                [0.2, 0.4, 0.4]
             ]
         },
         {
@@ -42,56 +30,6 @@
                 "min": 0,
                 "max": 85
             }
-        }
-    ],
-
-    "markov_chain": [
-        {
-            "attribute1": "straight",
-            "attribute2": "straight",
-            "probability": 0.2
-        },
-        {
-            "attribute1": "straight",
-            "attribute2": "turn_left",
-            "probability": 0.4
-        },
-        {
-            "attribute1": "straight",
-            "attribute2": "turn_right",
-            "probability": 0.4
-        },
-
-        {
-            "attribute1": "turn_left",
-            "attribute2": "straight",
-            "probability": 0.2
-        },
-        {
-            "attribute1": "turn_left",
-            "attribute2": "turn_left",
-            "probability": 0.4
-        },
-        {
-            "attribute1": "turn_left",
-            "attribute2": "turn_right",
-            "probability": 0.4
-        },
-
-        {
-            "attribute1": "turn_right",
-            "attribute2": "straight",
-            "probability": 0.2
-        },
-        {
-            "attribute1": "turn_right",
-            "attribute2": "turn_left",
-            "probability": 0.4
-        },
-        {
-            "attribute1": "turn_right",
-            "attribute2": "turn_right",
-            "probability": 0.4
         }
     ]
 }
