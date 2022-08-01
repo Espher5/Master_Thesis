@@ -1,0 +1,27 @@
+[
+    {
+        "name": "road_segment_type",
+        "type": "string",
+        "values": [
+            "straight",
+            "turn_left",
+            "turn_right"
+        ]
+    },
+    {
+        "name": "straight_road_length",
+        "type": "int",
+        "values": {
+            "min": 5,
+            "max": 50
+        }
+    },
+    {
+        "name": "road_turn_angle",
+        "type": "int",
+        "values": {
+            "min": 0,
+            "max": 85
+        }
+    }
+]
