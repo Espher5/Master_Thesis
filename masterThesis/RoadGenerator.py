@@ -70,7 +70,7 @@ class RoadGenerator:
         self._vector_mapper.go_straight(5)
         self._road_points.append(
             tuple(
-                (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1] /2)
+                (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1] / 2)
             )
         )
 
@@ -85,61 +85,19 @@ class RoadGenerator:
             new_state = np.random.choice(
                 self._transition_names[index], p=self._transition_probs[index]
             )
-            value = -1
 
-            if state == 'straight':
-                # Keep going straight
-                if new_state == 'SS':
-                    value = np.random.choice(self._length_values)
-                    flag = self._vector_mapper.go_straight(value)
-
-                # Transition from going straight to turning left
-                elif new_state == 'SL':
-                    state = 'left'
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_left(value)
-
-                # Transition from going straight to turning right
-                elif new_state == 'SR':
-                    state = 'right'
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_right(value)
-
-            elif state == 'left':
-                # Transition from turning left to going straight
-                if new_state == 'LS':
-                    state = 'straight'
-                    value = np.random.choice(self._length_values)
-                    flag = self._vector_mapper.go_straight(value)
-
-                # Keep turning left
-                elif new_state == 'LL':
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_left(value)
-
-                # Transition from turning left to turning right
-                elif new_state == 'LR':
-                    state = 'right'
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_right(value)
-
-            elif state == 'right':
-                # Transition from turning right to going straight
-                if new_state == 'RS':
-                    value = np.random.choice(self._length_values)
-                    flag = self._vector_mapper.go_straight(value)
-
-                # Transition from turning right to turning left
-                elif new_state == 'RL':
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_left(value)
-
-                # Keep turning right
-                elif new_state == 'RR':
-                    value = np.random.choice(self._angle_values)
-                    flag = self._vector_mapper.turn_right(value)
+            if new_state in ['SS', 'LS', 'RS']:
+                state = 'straight'
+                value = np.random.choice(self._length_values)
+                flag = self._vector_mapper.go_straight(value)
             else:
-                print('Error')
+                value = np.random.choice(self._angle_values)
+                if new_state in ['SL', 'LL', 'RL']:
+                    state = 'left'
+                    flag = self._vector_mapper.turn_left(value)
+                else:
+                    state = 'right'
+                    flag = self._vector_mapper.turn_right(value)
 
             # Checks for maneuver outcome and updates state list and road points
             self._states.append([state, value])
@@ -222,13 +180,11 @@ class RoadGenerator:
 
 
 if __name__ == "__main__":
-
-    # steps = [5, 6, 7]
-    i = 0
+    j = 0
     road = RoadGenerator(250, 5, 50, 10, 70)
-    while i < 100:  # generate N number of schedules
-        print("generating test case" + str(i))
+    while j < 100:
+        print("generating test case" + str(j))
 
         road.generate_test_case()
         road.write_states_to_file()
-        i += 1
+        j += 1
