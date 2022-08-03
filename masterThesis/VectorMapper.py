@@ -7,11 +7,13 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 import matplotlib.pyplot as plt
 
-"""
-Class that conducts transformations to vectors automatically 
-and produces a set of points corresponding to a road
-"""
+
 class VectorMapper:
+    """
+    Class that conducts transformations to vectors automatically
+    and produces a set of points corresponding to a road
+    """
+
     def __init__(self, map_size):
         self._map_size = map_size
         self._width = 10
@@ -25,6 +27,19 @@ class VectorMapper:
 
         self._option = None
         self._road_point = None
+
+    @property
+    def current_pos(self):
+        return self._current_pos
+
+    @property
+    def init_pos(self):
+        return self._init_pos
+
+    @property
+    def init_end(self):
+        return self._init_end
+
 
     # Randomly selects an initial position from the middle of one of the boundaries
     def _init_position(self):
@@ -65,7 +80,6 @@ class VectorMapper:
         """check if point is in the acceptable range"""
         return ((0 + 4) < point[0] < (self._max_x - 4)) and ((0 + 4) < point[1] < (self._max_y - 4))
 
-
     def go_straight(self, distance):
         a = self._current_pos[0]
         b = self._current_pos[1]
@@ -93,15 +107,15 @@ class VectorMapper:
 
         if len(self._all_positions) < 2:
             if sector == 0:
-                R = np.array([[0, -1], [1, 0]])  # Anticlockwise
+                r = np.array([[0, -1], [1, 0]])  # Anticlockwise
             elif sector == 1:
-                R = np.array([[0, 1], [-1, 0]])  # Clockwise
+                r = np.array([[0, 1], [-1, 0]])  # Clockwise
             elif sector == 2:
-                R = np.array([[0, 1], [-1, 0]])
+                r = np.array([[0, 1], [-1, 0]])
             else:
-                R = np.array([[0, -1], [1, 0]])
+                r = np.array([[0, -1], [1, 0]])
 
-            u_v_ = R.dot(u_v)
+            u_v_ = r.dot(u_v)
             p_a_ = p_a + u_v_ * distance
             p_b_ = p_b + u_v_ * distance
 
@@ -109,15 +123,15 @@ class VectorMapper:
             self._all_positions.append(self._current_pos)
             return True
         else:
-            R = np.array([[0, -1], [1, 0]])
-            u_v_ = R.dot(u_v)
+            r = np.array([[0, -1], [1, 0]])
+            u_v_ = r.dot(u_v)
             p_a_ = p_a + u_v_ * test_distance  # Make a small perturbation
             p_b_ = p_b + u_v_ * test_distance
             new_pos = [p_a_, p_b_]
 
             if self._in_polygon(new_pos):
-                R = np.array([[0, 1], [-1, 0]])
-                u_v = R.dot(u_v)
+                r = np.array([[0, 1], [-1, 0]])
+                u_v = r.dot(u_v)
                 p_a_ = p_a + u_v * distance
                 p_b_ = p_b + u_v * distance
                 self._current_pos = [p_a_, p_b_]
@@ -180,14 +194,14 @@ class VectorMapper:
         o_b = (o_o - p_b) / o_b_norm
         o_a = (o_o - p_a) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
                 [np.cos(math.radians(angle)), np.sin(math.radians(angle))],
                 [-np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
@@ -204,15 +218,15 @@ class VectorMapper:
         o_b = (p_b - o_o) / o_b_norm
         o_a = (p_a - o_o) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
                 [np.cos(math.radians(angle)), np.sin(math.radians(angle))],
                 [-np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
 
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
 
@@ -232,14 +246,14 @@ class VectorMapper:
         o_b = (o_o - p_b) / o_b_norm
         o_a = (o_o - p_a) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
                 [np.cos(math.radians(angle)), -np.sin(math.radians(angle))],
                 [np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
@@ -257,7 +271,7 @@ class VectorMapper:
         o_b = (p_b - o_o) / o_b_norm
         o_a = (p_a - o_o) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
                 [np.cos(math.radians(angle)), -np.sin(math.radians(angle))],
                 [np.sin(math.radians(angle)), np.cos(math.radians(angle))],
