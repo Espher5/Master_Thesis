@@ -9,7 +9,7 @@ GENETIC_ALGORITHM = {
 MODEL = {
     'speed': 9,
     'map_size': 200,
-    'steer_angle': 12,
+    'steering_angle': 12,
     'min_length': 5,
     'max_length': 50,
     'min_angle': 10,

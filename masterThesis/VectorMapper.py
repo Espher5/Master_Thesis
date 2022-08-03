@@ -40,7 +40,6 @@ class VectorMapper:
     def init_end(self):
         return self._init_end
 
-
     # Randomly selects an initial position from the middle of one of the boundaries
     def _init_position(self):
         option = random.randint(0, 3)
@@ -277,8 +276,8 @@ class VectorMapper:
                 [np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
