@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba7dae8-a1b9-4457-8167-e6142eb2f47d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoadGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.json" beforeDir="false" afterPath="$PROJECT_DIR$/init.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/points.json" beforeDir="false" afterPath="$PROJECT_DIR$/points.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roads.json" beforeDir="false" afterPath="$PROJECT_DIR$/roads.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/init.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/points.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/points.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roads.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/roads.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.RoadGenerator (1)">
     <configuration name="RoadGenerator (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.RoadGenerator (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.VectorMapper" />
         <item itemvalue="Python.beamn_test" />
         <item itemvalue="Python tests.Python tests in BeamNGTest.py" />

@@ -12,9 +12,9 @@ class RoadGenerator:
     """
 
     def __init__(self, map_size, min_len, max_len, min_angle, max_angle):
-        self._file = 'roads.json'
-        self._init_file = 'init.json'
-        self._points_file = 'points.json'
+        self._file = 'json/roads.json'
+        self._init_file = 'json/init.json'
+        self._points_file = 'json/points.json'
         self._road_points = []
         self._init_states = ['straight', 'left', 'right']
         self._states = []
