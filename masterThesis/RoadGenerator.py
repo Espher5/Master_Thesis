@@ -35,7 +35,7 @@ class RoadGenerator:
         self._min_angle = min_angle
         self._max_angle = max_angle
         self._step_angle = cf.MODEL['angle_step']
-        self._length_values = [
+        self._angle_values = [
             i for i in range(self._min_angle, self._max_angle + 1, self._step_angle)
         ]
 
@@ -73,18 +73,98 @@ class RoadGenerator:
                 (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1] /2)
             )
         )
+
+        # Go straight initially
         self._states.append(['straight', 5])
         state = 'straight'
         flag = True
 
         while flag:
+            # Choose next state according to current state and transition table
+            index = self._init_states.index(state)
+            new_state = np.random.choice(
+                self._transition_names[index], p=self._transition_probs[index]
+            )
+
             if state == 'straight':
-                pass
+                # No state change
+                if new_state == 'SS':
+                    value = np.random.choice(self._length_values)
+                    self._states.append([state, value])
+
+                    flag = self._vector_mapper.go_straight(value)
+                    if not flag:
+                        del self._road_points[-1]
+                        del self._states[-1]
+                        if len(self._road_points) <= 2:
+                            self._correct_manouver()
+
+                    self._road_points.append(
+                        tuple(
+                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
+                        )
+                    )
+
+                # Transition from going straight to turning left
+                elif new_state == 'SL':
+                    state = 'left'
+                    value = np.random.choice(self._angle_values)
+                    self._states.append([state, value])
+
+                    flag = self._vector_mapper.turn_left(value)
+                    if not flag:
+                        self._correct_manouver()
+                    self._road_points.append(
+                        tuple(
+                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
+                        )
+                    )
+
+                # Transition from going straight to turning right
+                else:
+                    state = 'right'
+                    value = np.random.choice(self._angle_values)
+                    self._states.append([state, value])
+
+                    flag = self._vector_mapper.turn_right(value)
+                    if not flag:
+                        self._correct_manouver()
+                    self._road_points.append(
+                        tuple(
+                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
+                        )
+                    )
+
+
             elif state == 'left':
-                pass
+                if new_state == 'LS':
+                    pass
+                elif new_state == 'LL':
+                    pass
+                else:
+                    pass
             elif state == 'right':
-                pass
+                if new_state == 'LS':
+                    pass
+                elif new_state == 'LL':
+                    pass
+                else:
+                    pass
             else:
                 print('Error')
 
-        
+    # Deals with movement failure
+    def _correct_manouver(self):
+        del self._road_points[-1]
+        del self._states[-1]
+        if len(self._road_points) <= 2:
+            self._vector_mapper.go_straight(1)
+            self._road_points.append(
+                tuple(
+                    (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
+                )
+            )
+        return self._states_to_dict()
+
+    def _states_to_dict(self):
+        pass
