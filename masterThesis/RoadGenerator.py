@@ -85,76 +85,77 @@ class RoadGenerator:
             new_state = np.random.choice(
                 self._transition_names[index], p=self._transition_probs[index]
             )
+            value = -1
 
             if state == 'straight':
-                # No state change
+                # Keep going straight
                 if new_state == 'SS':
                     value = np.random.choice(self._length_values)
-                    self._states.append([state, value])
-
                     flag = self._vector_mapper.go_straight(value)
-                    if not flag:
-                        del self._road_points[-1]
-                        del self._states[-1]
-                        if len(self._road_points) <= 2:
-                            self._correct_manouver()
-
-                    self._road_points.append(
-                        tuple(
-                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
-                        )
-                    )
 
                 # Transition from going straight to turning left
                 elif new_state == 'SL':
                     state = 'left'
                     value = np.random.choice(self._angle_values)
-                    self._states.append([state, value])
-
                     flag = self._vector_mapper.turn_left(value)
-                    if not flag:
-                        self._correct_manouver()
-                    self._road_points.append(
-                        tuple(
-                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
-                        )
-                    )
 
                 # Transition from going straight to turning right
-                else:
+                elif new_state == 'SR':
                     state = 'right'
                     value = np.random.choice(self._angle_values)
-                    self._states.append([state, value])
-
                     flag = self._vector_mapper.turn_right(value)
-                    if not flag:
-                        self._correct_manouver()
-                    self._road_points.append(
-                        tuple(
-                            (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2
-                        )
-                    )
-
 
             elif state == 'left':
+                # Transition from turning left to going straight
                 if new_state == 'LS':
-                    pass
+                    state = 'straight'
+                    value = np.random.choice(self._length_values)
+                    flag = self._vector_mapper.go_straight(value)
+
+                # Keep turning left
                 elif new_state == 'LL':
-                    pass
-                else:
-                    pass
+                    value = np.random.choice(self._angle_values)
+                    flag = self._vector_mapper.turn_left(value)
+
+                # Transition from turning left to turning right
+                elif new_state == 'LR':
+                    state = 'right'
+                    value = np.random.choice(self._angle_values)
+                    flag = self._vector_mapper.turn_right(value)
+
             elif state == 'right':
-                if new_state == 'LS':
-                    pass
-                elif new_state == 'LL':
-                    pass
-                else:
-                    pass
+                # Transition from turning right to going straight
+                if new_state == 'RS':
+                    value = np.random.choice(self._length_values)
+                    flag = self._vector_mapper.go_straight(value)
+
+                # Transition from turning right to turning left
+                elif new_state == 'RL':
+                    value = np.random.choice(self._angle_values)
+                    flag = self._vector_mapper.turn_left(value)
+
+                # Keep turning right
+                elif new_state == 'RR':
+                    value = np.random.choice(self._angle_values)
+                    flag = self._vector_mapper.turn_right(value)
             else:
                 print('Error')
 
+            # Checks for maneuver outcome and updates state list and road points
+            self._states.append([state, value])
+            if not flag:
+                self._correct_maneuver()
+            self._road_points.append(tuple(
+                (self._vector_mapper.current_pos[0] + self._vector_mapper.current_pos[1]) / 2)
+            )
+
+            # Last point may go over the boundary
+            del self._road_points[-1]
+            del self._states[-1]
+            return self._states_to_dict()
+
     # Deals with movement failure
-    def _correct_manouver(self):
+    def _correct_maneuver(self):
         del self._road_points[-1]
         del self._states[-1]
         if len(self._road_points) <= 2:
@@ -167,4 +168,67 @@ class RoadGenerator:
         return self._states_to_dict()
 
     def _states_to_dict(self):
-        pass
+        test_cases = dict()
+        i = 0
+
+        for element in self._states:
+            test_cases["st" + str(i)] = {}
+            test_cases["st" + str(i)]["state"] = element[0]
+            test_cases["st" + str(i)]["value"] = int(element[1])
+            i += 1
+
+        return test_cases
+
+    def write_states_to_file(self):
+        if os.stat(self._file).st_size == 0:
+            test_cases = {}
+        else:
+            with open(self._file) as f:
+                test_cases = json.load(f)
+
+        if os.stat(self._init_file).st_size == 0:
+            positions = {}
+        else:
+            with open(self._init_file) as f:
+                positions = json.load(f)
+
+        if os.stat(self._points_file).st_size == 0:
+            points = {}
+        else:
+            with open(self._points_file) as f:
+                points = json.load(f)
+
+        n = len(test_cases)
+        tc = 'tc' + str(n)
+        test_cases[tc] = dict()
+        positions[tc] = {'a': self._init_a, 'b': self._init_b}
+        points[tc] = self._road_points
+
+        i = 0
+        for element in self._states:
+            test_cases[tc]["st" + str(i)] = {}
+            test_cases[tc]["st" + str(i)]["state"] = str(element[0])
+            test_cases[tc]["st" + str(i)]["value"] = int(element[1])
+            i += 1
+
+        with open(self._file, "w") as outfile:
+            json.dump(test_cases, outfile)
+
+        with open(self._init_file, "w") as outfile:
+            json.dump(positions, outfile)
+
+        with open(self._points_file, "w") as outfile:
+            json.dump(points, outfile)
+
+
+if __name__ == "__main__":
+
+    # steps = [5, 6, 7]
+    i = 0
+    road = RoadGenerator(250, 5, 50, 10, 70)
+    while i < 100:  # generate N number of schedules
+        print("generating test case" + str(i))
+
+        road.generate_test_case()
+        road.write_states_to_file()
+        i += 1
