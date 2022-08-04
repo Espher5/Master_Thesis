@@ -1,4 +1,8 @@
-beamngpy
+beamngpy~=1.23.1
 deap
-numpy
-pymoo
+numpy~=1.23.1
+pymoo~=0.6.0
+
+scipy~=1.9.0
+Shapely~=1.8.2
+matplotlib~=3.5.2
