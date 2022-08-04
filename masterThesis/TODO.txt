@@ -1,6 +1,0 @@
-Refactor VectorMapper.py
-Refactor RoadGenerator.py
-
-car_road -> VectorMapper
-road_gen -> RoadGenerator
-vehicle -> Car

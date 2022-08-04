@@ -1,6 +1,6 @@
 import config as cf
 
-from vehicle import Car
+from Car import Car
 from VectorMapper import VectorMapper
 
 
