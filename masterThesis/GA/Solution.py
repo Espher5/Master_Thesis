@@ -21,8 +21,8 @@ class Solution:
     def evaluate_fitness(self):
         road = self._road_points
         if not road:
-            self._get_points()
-            self._remove_invalid_cases()
+            self.get_points()
+            self.remove_invalid_cases()
             road = self._road_points
             print('Points was empty...')
 
@@ -38,7 +38,9 @@ class Solution:
         self._road_points = self._road_builder.get_points_from_states(self._states)
 
     def remove_invalid_cases(self):
-        self._states, self._road_points = self._road_builder.remove_invalid_cases(self._road_points, self.n_states)
+        self.states, self._road_points = self._road_builder.remove_invalid_cases(
+            self._road_points, self.states
+        )
 
     @staticmethod
     def calculate_novelty(old, new):

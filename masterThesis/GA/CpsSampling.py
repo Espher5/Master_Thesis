@@ -10,8 +10,8 @@ class CpsSampling(Sampling):
     def _do(self, problem, n_samples, **kwargs):
         generator = RoadGenerator(
             cf.MODEL['map_size'],
-            cf.MODEL['min_len'],
-            cf.MODEL['max_len'],
+            cf.MODEL['min_length'],
+            cf.MODEL['max_length'],
             cf.MODEL['min_angle'],
             cf.MODEL['max_angle']
         )

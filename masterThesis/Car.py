@@ -86,8 +86,8 @@ class Car:
         plt.close(fig)
 
     def go_straight(self):
-        self._x = self._speed * np.cos(math.radians(self._angle)) / 2.3 + self.x
-        self._y = self._speed * np.sin(math.radians(self._angle)) / 2.3 + self.y
+        self._x = self._speed * np.cos(math.radians(self._angle)) / 2.3 + self._x
+        self._y = self._speed * np.sin(math.radians(self._angle)) / 2.3 + self._y
         self._tot_x.append(self._x)
         self._tot_y.append(self._y)
         return
@@ -95,8 +95,8 @@ class Car:
     def turn_right(self):
         self._steer_angle = math.degrees(math.atan(1 / self._speed * 2 * self._distance))
         self._angle = -self._steer_angle + self._angle
-        self._x = self._speed * np.cos(math.radians(self._angle)) / 3 + self.x
-        self._y = self._speed * np.sin(math.radians(self._angle)) / 3 + self.y
+        self._x = self._speed * np.cos(math.radians(self._angle)) / 3 + self._x
+        self._y = self._speed * np.sin(math.radians(self._angle)) / 3 + self._y
         self._tot_x.append(self._x)
         self._tot_y.append(self._y)
         return
@@ -160,27 +160,27 @@ class Car:
 
                 current_pos = [(self._x, self._y)]
                 while (current_length < mini_road.length) and i < 1000:
-                    distance = self.get_distance(mini_road, self.x, self.y)
+                    distance = self.get_distance(mini_road, self._x, self._y)
                     self._distance = distance
 
                     self._tot_dist.append(distance)
 
                     if distance <= 1:
                         self.go_straight()
-                        current_pos.append((self.x, self.y))
+                        current_pos.append((self._x, self._y))
                         self._speed += 0.3
 
                     else:
 
                         angle = -1 + self._angle
-                        x = self._speed * np.cos(math.radians(angle)) + self.x
-                        y = self._speed * np.sin(math.radians(angle)) + self.y
+                        x = self._speed * np.cos(math.radians(angle)) + self._x
+                        y = self._speed * np.sin(math.radians(angle)) + self._y
 
                         distance_right = self.get_distance(mini_road, x, y)
 
                         angle = 1 + self._angle
-                        x = self._speed * np.cos(math.radians(angle)) + self.x
-                        y = self._speed * np.sin(math.radians(angle)) + self.y
+                        x = self._speed * np.cos(math.radians(angle)) + self._x
+                        y = self._speed * np.sin(math.radians(angle)) + self._y
 
                         distance_left = self.get_distance(mini_road, x, y)
 

@@ -11,7 +11,8 @@ from itertools import combinations
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.factory import get_performance_indicator
 from pymoo.optimize import minimize
-from pymoo.termination.default import MultiObjectiveSpaceTermination # !
+from pymoo.termination.ftol import MultiObjectiveSpaceTermination
+from pymoo.termination.robust import RobustTermination
 
 import config as cf
 from CpsProblem import CpsProblem
@@ -19,6 +20,24 @@ from CpsSampling import CpsSampling
 from CpsCrossover import CpsCrossover
 from CpsMutation import CpsMutation
 from CpsDuplicates import CpsDuplicates
+
+
+algorithm = NSGA2(
+    pop_size=cf.GENETIC_ALGORITHM["population"],
+    sampling=CpsSampling(),
+    crossover=CpsCrossover(cf.GENETIC_ALGORITHM["crossover_rate"]),
+    mutation=CpsMutation(cf.GENETIC_ALGORITHM["mutation_rate"]),
+    eliminate_duplicates=CpsDuplicates(),
+)
+
+
+termination = MultiObjectiveSpaceTermination(
+    tol=0.0025,
+    #n_last=cf.GENETIC_ALGORITHM["generations"],
+    #nth_gen=5,
+    #n_max_gen=cf.GENETIC_ALGORITHM["generations"],
+    #n_max_evals=None,
+)
 
 
 def plot_convergence(res):
@@ -52,7 +71,7 @@ def plot_car_path(road_points, car_path, fitness, novelty, generation, i):
     bottom = 0
 
     ax.set_title(
-        "Test case fitenss " + str(fitness) + " novely " + str(novelty), fontsize=17
+        "Test case fitness " + str(fitness) + " novelty " + str(novelty), fontsize=17
     )
 
     ax.set_xlim(bottom, top)
@@ -63,24 +82,6 @@ def plot_car_path(road_points, car_path, fitness, novelty, generation, i):
 
     fig.savefig(save_path + "\\" + "tc_" + str(i) + ".jpg")
     plt.close(fig)
-
-
-algorithm = NSGA2(
-    pop_size=cf.GENETIC_ALGORITHM["population"],
-    sampling=CpsSampling(),
-    crossover=CpsCrossover(cf.GENETIC_ALGORITHM["crossover_rate"]),
-    mutation=CpsMutation(cf.GENETIC_ALGORITHM["mutation_rate"]),
-    eliminate_duplicates=CpsDuplicates(),
-)
-
-
-termination = MultiObjectiveSpaceTermination(
-    tol=0.0025,
-    n_last=cf.GENETIC_ALGORITHM["generations"],
-    nth_gen=5,
-    n_max_gen=cf.GENETIC_ALGORITHM["generations"],
-    n_max_evals=None,
-)
 
 
 def save_results(res):
@@ -205,7 +206,7 @@ if __name__ == "__main__":
         res = minimize(
             CpsProblem(),
             algorithm,
-            ("generations", cf.GENETIC_ALGORITHM["generations"]),
+            ("n_gen", cf.GENETIC_ALGORITHM["generations"]),
             seed=seed,
             verbose=True,
             save_history=True,
@@ -226,7 +227,6 @@ if __name__ == "__main__":
         for gen in range(0, len(res.history)):
 
             i = 0
-            # print(gen)
             minim = 0
             hv_list = []
             while i < len(res.history[gen].opt):

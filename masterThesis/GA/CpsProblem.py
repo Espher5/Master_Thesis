@@ -7,6 +7,6 @@ class CpsProblem(Problem):
 
     def _evaluate(self, designs, out, *args, **kwargs):
         res = designs[0]
-        res.eval_fitness()
+        res.evaluate_fitness()
         out['F'] = [res.fitness, res.novelty]
         out['G'] = 8 - res.fitness * (-1)
