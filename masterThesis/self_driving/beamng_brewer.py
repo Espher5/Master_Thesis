@@ -1,4 +1,5 @@
 import json
+import logging as log
 
 from beamngpy import BeamNGpy, Scenario, Vehicle
 from beamngpy.sensors import Camera
@@ -30,8 +31,23 @@ class BeamNGCamera:
 
 
 class BeamNGBrewer:
-    def __init__(self, beamng_home=None, beamng_user=None, road_nodes: List4DTuple = None):
+    def __init__(self, beamng_home=None, beamng_user=None, reuse_beamng=True, road_nodes: List4DTuple = None):
+        self.reuse_beamng = reuse_beamng
+        if self.reuse_beamng:
+            # This represents the running BeamNG simulator. Since we use launch=True this should automatically
+            # shut down when the main python process exits or when we call self.beamng_process.stop()
+            self.beamng_process = BeamNGpy('localhost', 64256, home=beamng_home, user=beamng_user)
+            self.beamng_process = self.beamng_process.open(launch=True)
+
+        # This is used to bring up each simulation without restarting the simulator
         self.beamng = BeamNGpy('localhost', 64256, home=beamng_home, user=beamng_user)
+
+        # We need to wait until this point otherwise the BeamNG loggers's level will be (re)configured by BeamNGpy
+        log.info("Disabling BEAMNG logs")
+        for id in ["beamngpy", "beamngpy.beamngpycommon", "beamngpy.BeamNGpy", "beamngpy.beamng", "beamngpy.Scenario", "beamngpy.Vehicle"]:
+            logger = log.getLogger(id)
+            logger.setLevel(log.CRITICAL)
+            logger.disabled = True
 
         self.vehicle: Vehicle = None
         self.camera: BeamNGCamera = None
@@ -56,7 +72,16 @@ class BeamNGBrewer:
         self.camera = BeamNGCamera(self.beamng, 'brewer_camera')
         return self.camera
 
+    # TODO COnsider to transform brewer into a ContextManager or get rid of it...
     def bring_up(self):
+
+        if self.reuse_beamng:
+            # This assumes BeamNG is already running
+            self.beamng.open(launch=False)
+        else:
+            self.beamng.open(launch=True)
+
+        # After 1.18 to make a scenario one needs a running instance of BeamNG
         self.scenario = Scenario('tig', 'tigscenario')
         if self.vehicle:
             self.scenario.add_vehicle(self.vehicle, pos=self.vehicle_start_pose.pos, rot=self.vehicle_start_pose.rot)
@@ -65,12 +90,15 @@ class BeamNGBrewer:
             self.scenario.add_camera(self.camera.camera, self.camera.name)
 
         self.scenario.make(self.beamng)
-        if not self.beamng.server:
-            self.beamng.open()
-        self.beamng.pause()
+
         self.beamng.set_deterministic()
+
         self.beamng.load_scenario(self.scenario)
+
         self.beamng.start_scenario()
+
+        # Pause the simulator only after loading and starting the scenario
+        self.beamng.pause()
 
     def __del__(self):
         if self.beamng:
