@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bba7dae8-a1b9-4457-8167-e6142eb2f47d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Car.py" beforeDir="false" afterPath="$PROJECT_DIR$/Car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/CpsCrossover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/CpsMutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/CpsSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/CpsSampling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/Optimize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/Solution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VectorMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/VectorMapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +47,7 @@
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Optimize">
+  <component name="RunManager" selected="Python.test">
     <configuration name="Car" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,27 +111,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="VectorMapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VectorMapper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,13 +132,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python tests.Python tests in test.py" />
         <item itemvalue="Python.Optimize" />
         <item itemvalue="Python.Car" />
         <item itemvalue="Python.RoadGenerator (1)" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.VectorMapper" />
       </list>
     </recent_temporary>
   </component>
