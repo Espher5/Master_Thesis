@@ -7,17 +7,18 @@ from random import randint
 from typing import List, Tuple
 
 from shapely.geometry import Point
-from self_driving.bbox import RoadBoundingBox
-from code_pipeline.tests_generation import RoadTestFactory
+from ..self_driving.bbox import RoadBoundingBox
+from ..code_pipeline.tests_generation import RoadTestFactory
 
 import math
 import numpy as np
 import logging as log
 
-from self_driving.road_polygon import RoadPolygon
+from ..self_driving.road_polygon import RoadPolygon
 
 Tuple4F = Tuple[float, float, float, float]
 Tuple2F = Tuple[float, float]
+
 
 def catmull_rom_spline(p0, p1, p2, p3, num_points=20):
     """p0, p1, p2, and p3 should be (x,y) point pairs that define the Catmull-Rom spline.
@@ -249,7 +250,7 @@ if __name__ == "__main__":
     map_size = 250
     beamng_home = r"C:\Users\vinni\bng_competition\BeamNG.research.v1.7.0.0"
 
-    from code_pipeline.beamng_executor import BeamngExecutor
+    from ..code_pipeline.beamng_executor import BeamngExecutor
     executor = BeamngExecutor(time_budget=time_budget, map_size=map_size, beamng_home=beamng_home)
 
     roadgen = JanusGenerator(time_budget, executor, map_size)

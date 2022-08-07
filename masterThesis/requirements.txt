@@ -1,3 +1,4 @@
+# SBST requirements
 beamngpy==1.23.1
 click==8.0.3
 colorama==0.4.4
@@ -24,3 +25,6 @@ Shapely==1.8.0
 tensorflow==2.4.1
 tomli==1.2.2
 zipp==3.6.0
+
+# Other requirements
+pymoo~=0.6.0
