@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba7dae8-a1b9-4457-8167-e6142eb2f47d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Documents/LaTeX/sections/random_stuff.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../Documents/LaTeX/sections/random_stuff.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Car.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGenerator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VectorMapper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/CpsCrossover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/CpsDuplicates.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/CpsDuplicates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/CpsMutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/CpsProblem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/CpsSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/CpsSampling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_old/Solution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/init.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/points.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json/roads.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +147,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in C:/Users/Michelangelo/Desktop/Master_Thesis/masterThesis/test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,7 +164,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python tests.Python tests in test.py" />
+        <item itemvalue="Python tests.Python tests in C:/Users/Michelangelo/Desktop/Master_Thesis/masterThesis/test.py" />
         <item itemvalue="Python.Optimize" />
         <item itemvalue="Python.Car" />
         <item itemvalue="Python.RoadGenerator (1)" />

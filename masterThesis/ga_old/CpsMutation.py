@@ -18,7 +18,7 @@ class CpsMutation(Mutation):
             s = X[i, 0]
             if s is None:
                 print("S i none")
-            if (r < self.mut_rate) and (s is not None):  # cf.ga["mut_rate"]:
+            if (r < self.mut_rate) and (s is not None):  # cf.ga_old["mut_rate"]:
                 #
                 # for some reason it seems we must do a deep copy
                 # and replace the original object

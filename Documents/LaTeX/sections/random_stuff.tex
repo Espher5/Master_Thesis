@@ -9,17 +9,11 @@ Model-based testing can be generalized into the X-in-the-loop paradigm, which co
 
 
 
-Formally, the search problem for branch coverage can be formulated as follows:
 
-\begin{problem}(Branch coverage):
-    Let $ B = \{b_1,...,b_k\} $ be the set of branches in a program; find a test suite $ T = \{t_1,...,t_n \} $ of n test cases that covers all feasible branches, minimizing the fitness function:
-    \begin{equation}
-        min f_B (T) = |M| - |M_T| + \sum_{b \in B} d(b, T)
-    \end{equation}
-    where $|M|$ is the total number of methods, $|M_T|$ is the number of executed methods by all test cases in T, and d(b, T) indicates the minimal normalized branch distance for branch $ b \in B $
-\end{problem}
+Diversity promoted in both AmbieGen and DeepJanus
 
+To produce a realistic road, DeepJanus uses the Catmull-Rom cubic splines approach, interpolating its curves to obtain a 2D point sequence
 
-
-1) Apply automated coverage testing for the software-in-the-loop stage
-2) Multi-objective approach in the context of the input values of the considered environment, i.e. for a braking system, consider the following parameters as objectives to tune in order to maximize faults: precipitation, fogginess, visibility range)
+Catmull Splines ref: Edwin Catmull and Raphael Rom. 1974. A Class of Local Interpolating Splines.
+In Computer Aided Geometric Design, R. E. Barnhill and R. F. Riesenfeld (Eds.).
+Academic Press, 317 – 326. https://doi.org/10.1016/B978-0-12-079050-0.50020-5
