@@ -1,7 +1,7 @@
-import config as cf
+from old import config as cf
 
-from Car import Car
-from VectorMapper import VectorMapper
+from old.Car import Car
+from old.VectorMapper import VectorMapper
 
 
 class Solution:

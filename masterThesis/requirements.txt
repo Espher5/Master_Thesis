@@ -29,3 +29,4 @@ zipp==3.6.0
 # Other requirements
 pymoo~=0.6.0
 deap==1.3.2
+similaritymeasures

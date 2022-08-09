@@ -12,9 +12,8 @@ from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.factory import get_performance_indicator
 from pymoo.optimize import minimize
 from pymoo.termination.ftol import MultiObjectiveSpaceTermination
-from pymoo.termination.robust import RobustTermination
 
-import config as cf
+from old import config as cf
 from CpsProblem import CpsProblem
 from CpsSampling import CpsSampling
 from CpsCrossover import CpsCrossover

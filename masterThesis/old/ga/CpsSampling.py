@@ -1,9 +1,9 @@
 import numpy as np
 from pymoo.core.sampling import Sampling
 
-import config as cf
+from old import config as cf
 from Solution import Solution
-from RoadGenerator import RoadGenerator
+from old.RoadGenerator import RoadGenerator
 
 
 class CpsSampling(Sampling):
