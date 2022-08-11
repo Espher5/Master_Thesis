@@ -1,21 +1,9 @@
 import unittest
 import json
 
-from code_pipeline.tests_evaluation import RoadTestEvaluator, OOBAnalyzer
-
-from numpy import linspace
-
-
-
-import matplotlib.colors as mc
-import colorsys
-
-from shapely.geometry import Point, LineString
 from matplotlib import pyplot as plt
-import matplotlib.patches as patches
 
-from descartes import PolygonPatch
-from self_driving.simulation_data import SimulationDataRecord
+from sbst_pipeline.self_driving.simulation_data import SimulationDataRecord
 
 def _load_test_data(execution_data_file):
     # Load the execution data
@@ -37,7 +25,7 @@ class PlotExperimentDataTest(unittest.TestCase):
 
     def test_plot_oob_percentage(self):
         
-        road_data, execution_data = _load_test_data("./test.0001.json")
+        road_data, execution_data = _load_test_data("test.0001.json")
         oob_percentages = [state.oob_percentage for state in execution_data]
         plt.figure()
         plt.plot(oob_percentages)

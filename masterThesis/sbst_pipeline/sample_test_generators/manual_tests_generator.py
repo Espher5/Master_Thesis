@@ -2,7 +2,7 @@ import numpy as np
 import math
 import logging as log
 
-from code_pipeline.tests_generation import RoadTestFactory
+from sbst_pipeline.code_pipeline.tests_generation import RoadTestFactory
 
 
 class ManualTestsGenerator():

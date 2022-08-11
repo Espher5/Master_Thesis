@@ -1,6 +1,6 @@
 import unittest
-from code_pipeline.validation import TestValidator
-from code_pipeline.tests_generation import RoadTestFactory
+from sbst_pipeline.code_pipeline.validation import TestValidator
+from sbst_pipeline.code_pipeline.tests_generation import RoadTestFactory
 import inspect
 
 class ValidationTest(unittest.TestCase):

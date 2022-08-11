@@ -1,12 +1,12 @@
 import unittest
 import json
 
-from self_driving.simulation_data import SimulationDataRecord
+from sbst_pipeline.self_driving.simulation_data import SimulationDataRecord
 
 class LoadDataFromJsonTest(unittest.TestCase):
 
     def test_load_the_data_from_json(self):
-        path_json = "./results/test.0001.json"
+        path_json = "results/test.0001.json"
         with open(path_json, 'r') as f:
             obj = json.loads(f.read())
 

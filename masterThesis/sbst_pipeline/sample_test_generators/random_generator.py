@@ -1,5 +1,5 @@
 from random import randint
-from code_pipeline.tests_generation import RoadTestFactory
+from sbst_pipeline.code_pipeline.tests_generation import RoadTestFactory
 from time import  sleep
 
 import logging as log

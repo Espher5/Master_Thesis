@@ -1,21 +1,21 @@
 from tensorflow.python.keras.models import load_model
 
-from code_pipeline.executors import AbstractTestExecutor
+from sbst_pipeline.code_pipeline.executors import AbstractTestExecutor
 
 import time
 import traceback
 from typing import Tuple
 
-from self_driving.beamng_brewer import BeamNGBrewer
-from self_driving.beamng_car_cameras import BeamNGCarCameras
+from sbst_pipeline.self_driving.beamng_brewer import BeamNGBrewer
+from sbst_pipeline.self_driving.beamng_car_cameras import BeamNGCarCameras
 # maps is a global variable in the module, which is initialized to Maps()
-from self_driving.beamng_tig_maps import maps, LevelsFolder
-from self_driving.beamng_waypoint import BeamNGWaypoint
-from self_driving.nvidia_prediction import NvidiaPrediction
-from self_driving.simulation_data import SimulationDataRecord, SimulationData
-from self_driving.simulation_data_collector import SimulationDataCollector
-from self_driving.utils import get_node_coords, points_distance
-from self_driving.vehicle_state_reader import VehicleStateReader
+from sbst_pipeline.self_driving.beamng_tig_maps import maps, LevelsFolder
+from sbst_pipeline.self_driving.beamng_waypoint import BeamNGWaypoint
+from sbst_pipeline.self_driving.nvidia_prediction import NvidiaPrediction
+from sbst_pipeline.self_driving.simulation_data import SimulationDataRecord, SimulationData
+from sbst_pipeline.self_driving.simulation_data_collector import SimulationDataCollector
+from sbst_pipeline.self_driving.utils import get_node_coords, points_distance
+from sbst_pipeline.self_driving.vehicle_state_reader import VehicleStateReader
 
 from shapely.geometry import Point
 

@@ -1,7 +1,6 @@
 import unittest
 from click.testing import CliRunner
-from time import sleep
-from competition import generate
+from sbst_pipeline.competition import generate
 
 # FOR SOME REASONS THOSE TESTS WORK ONLY IF WE START ONE AFTER THE OTHER MANUALLY
 # I suspect this might be because we exended the Command class from click

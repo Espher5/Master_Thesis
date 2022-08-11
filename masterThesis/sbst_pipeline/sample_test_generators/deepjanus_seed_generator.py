@@ -7,14 +7,14 @@ from random import randint
 from typing import List, Tuple
 
 from shapely.geometry import Point
-from ..self_driving.bbox import RoadBoundingBox
-from ..code_pipeline.tests_generation import RoadTestFactory
+from sbst_pipeline.self_driving.bbox import RoadBoundingBox
+from sbst_pipeline.code_pipeline.tests_generation import RoadTestFactory
 
 import math
 import numpy as np
 import logging as log
 
-from ..self_driving.road_polygon import RoadPolygon
+from sbst_pipeline.self_driving.road_polygon import RoadPolygon
 
 Tuple4F = Tuple[float, float, float, float]
 Tuple2F = Tuple[float, float]
@@ -250,7 +250,7 @@ if __name__ == "__main__":
     map_size = 250
     beamng_home = r"C:\Users\vinni\bng_competition\BeamNG.research.v1.7.0.0"
 
-    from ..code_pipeline.beamng_executor import BeamngExecutor
+    from sbst_pipeline.code_pipeline.beamng_executor import BeamngExecutor
     executor = BeamngExecutor(time_budget=time_budget, map_size=map_size, beamng_home=beamng_home)
 
     roadgen = JanusGenerator(time_budget, executor, map_size)

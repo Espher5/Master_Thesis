@@ -1,5 +1,3 @@
-from math import sqrt
-
 from self_driving.bbox import RoadBoundingBox
 import numpy as np
 

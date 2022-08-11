@@ -12,7 +12,7 @@ class RunOneGeneratorTest(unittest.TestCase):
         BEAMNG_HOME="C://BeamNG.tech.v0.23.5.1"
         BEAMNG_USER="C://BeamNG.tech.v0.23.5.1_userpath"
 
-        from competition import generate
+        from sbst_pipeline.competition import generate
         runner = CliRunner()
         result = runner.invoke(generate, ['--visualize-tests',
                                           '--time-budget', '10'

@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba7dae8-a1b9-4457-8167-e6142eb2f47d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old/VectorMapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/VectorMapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/old/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODOS" beforeDir="false" afterPath="$PROJECT_DIR$/TODOS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/dave2_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/dave2_executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_generation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/GUIDELINES.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/documentation/GUIDELINES.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/deepjanus_seed_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/deepjanus_seed_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/manual_tests_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/manual_tests_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/random_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/random_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_brewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_brewer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/nvidia_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/nvidia_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/commandline_parsing_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/commandline_parsing_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/features_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/features_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/load_data_for_analysis_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/load_data_for_analysis_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/oob_percentage_collection_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/oob_percentage_collection_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/smoke_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/smoke_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/timing_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/timing_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/unique_obe_unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/unique_obe_unit_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/validation_unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/validation_unit_tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,33 +65,14 @@
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\old" />
-      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\json" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline" />
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\old" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline\sample_test_generators" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
-    <configuration name="Optimize (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ga" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ga/Optimize.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.swat_generator">
     <configuration name="RoadGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,6 +115,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="car_road" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline\sample_test_generators\car_road.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="swat_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline\sample_test_generators\swat_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,34 +178,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.swat_generator" />
+        <item itemvalue="Python.car_road" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.VectorMapper" />
         <item itemvalue="Python.RoadGenerator" />
-        <item itemvalue="Python.Optimize (1)" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>

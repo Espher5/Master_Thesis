@@ -1,9 +1,9 @@
 import unittest
 import json
 
-from code_pipeline.test_analysis import compute_all_features
-from code_pipeline.tests_generation import RoadTestFactory
-from self_driving.simulation_data import SimulationDataRecord
+from sbst_pipeline.code_pipeline.test_analysis import compute_all_features
+from sbst_pipeline.code_pipeline.tests_generation import RoadTestFactory
+from sbst_pipeline.self_driving.simulation_data import SimulationDataRecord
 
 def _load_test_data(execution_data_file):
     # Load the execution data
@@ -18,7 +18,7 @@ def _load_test_data(execution_data_file):
 class TestFeatureComputation(unittest.TestCase):
 
     def test_compute_all_features(self):
-        path_json = "./results/test.0001.json"
+        path_json = "results/test.0001.json"
 
         road_data, execution_data = _load_test_data(path_json)
         the_test = RoadTestFactory.create_road_test(road_data)

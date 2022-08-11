@@ -1,7 +1,7 @@
 import unittest
 import json
 
-from code_pipeline.tests_evaluation import RoadTestEvaluator, OOBAnalyzer
+from sbst_pipeline.code_pipeline.tests_evaluation import RoadTestEvaluator, OOBAnalyzer
 
 from numpy import linspace
 
@@ -10,9 +10,8 @@ from numpy import linspace
 import matplotlib.colors as mc
 import colorsys
 
-from shapely.geometry import Point, LineString
+from shapely.geometry import LineString
 from matplotlib import pyplot as plt
-import matplotlib.patches as patches
 
 from descartes import PolygonPatch
 
@@ -98,7 +97,7 @@ class UniqueOBETest(unittest.TestCase):
 
 
 
-from self_driving.simulation_data import SimulationDataRecord
+from sbst_pipeline.self_driving.simulation_data import SimulationDataRecord
 
 class RoadTestEvaluatorTest(unittest.TestCase):
 
@@ -145,7 +144,7 @@ class RoadTestEvaluatorTest(unittest.TestCase):
         # plt.gca().set(xlim=(-30, map_size + 30), ylim=(-30, map_size + 30))
 
     def test_obe(self):
-        road_data, execution_data = self._load_test_data("./test.0001.json")
+        road_data, execution_data = self._load_test_data("test.0001.json")
 
         # Extract the "Interesting" road segment. This returns the interpolated data to ease computing
         # the distances

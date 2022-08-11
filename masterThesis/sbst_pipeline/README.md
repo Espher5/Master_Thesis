@@ -74,7 +74,7 @@ More information can be found on the SBST tool competition website: [https://sbs
 
 [Sample test generators](sample_test_generators/README.md): sample test generators already integrated with the code pipeline for illustrative purposes 
 
-[Requirements](requirements.txt): contains the list of the required packages.
+[Requirements](../requirements.txt): contains the list of the required packages.
 
 
 ## License ##

@@ -1,6 +1,6 @@
 import unittest
 from click.testing import CliRunner
-from competition import generate
+from sbst_pipeline.competition import generate
 from unittest.mock import patch
 import tempfile
 
