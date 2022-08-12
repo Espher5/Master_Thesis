@@ -1,4 +1,3 @@
 python competition.py --time-budget 100 --executor beamng --map-size 200 --module-name sample_test_generators.one_test_generator --class-name OneTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
 
 
-road_gen creates the initial test case population

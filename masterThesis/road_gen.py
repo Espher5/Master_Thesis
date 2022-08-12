@@ -182,7 +182,7 @@ if __name__ == "__main__":
     j = 0
     road = RoadGenerator(250, 5, 50, 10, 70)
     while j < 100:
-        print("generating test case" + str(j))
+        print("Generating test case " + str(j) + '...')
 
         road.generate_test_case()
         road.write_states_to_file()
