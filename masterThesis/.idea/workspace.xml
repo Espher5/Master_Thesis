@@ -2,30 +2,124 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba7dae8-a1b9-4457-8167-e6142eb2f47d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/masterThesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/masterThesis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/old/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TODOS" beforeDir="false" afterPath="$PROJECT_DIR$/TODOS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/dave2_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/dave2_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_generation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/GUIDELINES.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/documentation/GUIDELINES.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/deepjanus_seed_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/deepjanus_seed_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/manual_tests_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/manual_tests_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/random_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/random_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_brewer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_brewer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/nvidia_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/nvidia_prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/commandline_parsing_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/commandline_parsing_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/features_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/features_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/load_data_for_analysis_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/load_data_for_analysis_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/oob_percentage_collection_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/oob_percentage_collection_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/smoke_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/smoke_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/timing_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/timing_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/unique_obe_unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/unique_obe_unit_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/validation_unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/sbst_pipeline/tests/validation_unit_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/beamng_executor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/dave2_executor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/executors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/test_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/test_generation_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_evaluation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/tests_generation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/code_pipeline/visualization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/competition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/dave2/self-driving-car-010-2020.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/FAQ.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/GUIDELINES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/INSTALL.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/figures/road_sample.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/documentation/figures/sample_road.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/line_white_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/line_white_n.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/line_yellow_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/materials.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/road_asphalt_2lane_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/road_asphalt_2lane_n.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/road_asphalt_2lane_s.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/road/road_rubber_sticky_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/terrains/Grass-01-D.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/terrains/Grass-01-N.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/terrains/Macro_grass.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/terrains/Overlay_Grass-01.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/art/terrains/materials.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main.decals.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/CameraBookmarks/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/PlayerDropPoints/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/Water/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/generated/items.level.json-readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/items.level.readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/sky_and_sun/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/MissionGroup/vegetation/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/main/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/terrain.ter" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/terrain.terrain.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/terrain.terrainheightmap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/levels_template/tig/tig-version.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/car_road.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/deepjanus_seed_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/figures/janus_road.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/figures/one_road.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/manual_tests_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/one_test_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/random_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/road_gen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/sample_test_generators/swat_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/bbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_brewer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_car_cameras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_pose.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_road_imagery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_tig_maps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/beamng_waypoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/decal_road.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/edit_distance_polyline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/image_processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/nvidia_prediction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/oob_monitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/road_points.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/road_polygon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/simulation_data_collector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/self_driving/vehicle_state_reader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/commandline_parsing_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/features_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/load_data_for_analysis_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/no-oobs/generation_stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/no-oobs/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/no-oobs/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/no-oobs/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_1/road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_1/road.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_1/simulation.full.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_1/simulation.partial.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_2/road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_2/road.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_2/simulation.full.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/obes/execution_2/simulation.partial.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/oob_percentage_collection_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/results/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/generation_stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0006.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0007.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/sample_test_generators_data/test.0008.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/smoke_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/some-oobs/generation_stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/some-oobs/oob_stats.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/some-oobs/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/some-oobs/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/some-oobs/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/timing_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/unique_obe_unit_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sbst_pipeline/tests/validation_unit_tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,15 +159,15 @@
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\json" />
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis" />
+      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline" />
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\old" />
       <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\sbst_pipeline\sample_test_generators" />
-      <recent name="C:\Users\Michelangelo\Desktop\Master_Thesis\masterThesis\json" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.swat_generator">
-    <configuration name="RoadGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.road_gen">
+    <configuration name="car_road (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,32 +175,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/RoadGenerator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="VectorMapper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/VectorMapper.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/car_road.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,6 +209,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="road_gen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/road_gen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="swat_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +251,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="vehicle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,11 +259,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vehicle.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,11 +274,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.road_gen" />
+        <item itemvalue="Python.vehicle" />
+        <item itemvalue="Python.car_road (1)" />
         <item itemvalue="Python.swat_generator" />
         <item itemvalue="Python.car_road" />
-        <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.VectorMapper" />
-        <item itemvalue="Python.RoadGenerator" />
       </list>
     </recent_temporary>
   </component>
