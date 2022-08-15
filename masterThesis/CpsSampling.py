@@ -6,7 +6,7 @@ import config as cf
 from road_gen import RoadGen
 
 
-class MyTcSampling(Sampling):
+class CpsSampling(Sampling):
     def _do(self, problem, n_samples, **kwargs):
         # singleton = OnlyOne()
 

@@ -5,7 +5,7 @@ import config as cf
 import random as rm
 
 
-class MyTcMutation(Mutation):
+class CpsMutation(Mutation):
     def __init__(self, mut_rate):
         super().__init__()
         self.mut_rate = mut_rate

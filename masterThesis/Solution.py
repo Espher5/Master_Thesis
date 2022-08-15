@@ -1,5 +1,5 @@
-from vehicle import Car
 import config as cf
+from vehicle import Car
 from car_road import Map
 
 
@@ -16,6 +16,26 @@ class Solution:
         self.intp_points = []
         self.too_sharp = 0
         self.just_fitness = 0
+
+    @property
+    def states(self):
+        return self._states
+
+    @states.setter
+    def states(self, value):
+        self._states = value
+
+    @property
+    def n_states(self):
+        return len(self.states)
+
+    @property
+    def fitness(self):
+        return self._fitness
+
+    @fitness.setter
+    def fitness(self, value: float):
+        self._fitness = value
 
     def eval_fitness(self):
 
@@ -68,22 +88,4 @@ class Solution:
         # print("NOVELTY", novelty)
         return -novelty
 
-    @property
-    def states(self):
-        return self._states
 
-    @states.setter
-    def states(self, value):
-        self._states = value
-
-    @property
-    def n_states(self):
-        return len(self.states)
-
-    @property
-    def fitness(self):
-        return self._fitness
-
-    @fitness.setter
-    def fitness(self, value: float):
-        self._fitness = value

@@ -3,10 +3,11 @@ from pymoo.model.crossover import Crossover
 from Solution import Solution
 import random as rm
 
-class MyTcCrossover(Crossover):
+
+class CpsCrossover(Crossover):
     def __init__(self, cross_rate):
 
-        # define the crossover: number of parents and number of offsprings
+        # Define the crossover: number of parents and number of offsprings
         super().__init__(2, 2)
         self.cross_rate = cross_rate
 

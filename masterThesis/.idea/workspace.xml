@@ -3,7 +3,56 @@
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyDuplicates.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsDuplicates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsProblem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTcCrossOver.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsCrossover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTcMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsMutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTcSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsSampling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODOS" beforeDir="false" afterPath="$PROJECT_DIR$/TODOS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/MyDuplicates.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/MyProblem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/MyTcCrossOver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/MyTcMutation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/MyTcSampling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/Optimize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/RESULTS/Results.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/RESULTS/Results_dist2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/RESULTS/Results_dist3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/RESULTS/Results_dist4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/Solution.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/car_road.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/beamng_executor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/executors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/test_generation_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/tests_evaluation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/tests_generation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/code_pipeline/visualization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/init.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/points.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/road_gen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/roads.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/bbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/beamng_brewer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/beamng_pose.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/beamng_road_imagery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/beamng_tig_maps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/beamng_waypoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/decal_road.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/edit_distance_polyline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/oob_monitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/road_points.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/road_polygon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/simulation_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/simulation_data_collector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/self_driving/vehicle_state_reader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/full_model/vehicle.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +76,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Vehicle_case_study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -160,5 +209,16 @@
       <updated>1660344184122</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,30 +1,25 @@
-import config as cf
-import numpy as np
-from pymoo.algorithms.so_genetic_algorithm import GA
-from pymoo.optimize import minimize
-
-from MyProblem import MyProblem
-from MyTcMutation import MyTcMutation
-from MyTcCrossOver import MyTcCrossover
-from MyDuplicates import MyDuplicateElimination
-from pymoo.util.termination.f_tol import MultiObjectiveSpaceToleranceTermination
-from MyTcSampling import MyTcSampling
 import matplotlib.pyplot as plt
-import csv
-from datetime import datetime
+import numpy as np
+import json
 import os
 import shutil
-from shutil import make_archive
-from zipfile import ZipFile
-import json
 import time
-from scipy.spatial.distance import directed_hausdorff
-from pymoo.algorithms.nsga2 import NSGA2
-from pymoo.visualization.scatter import Scatter
-from pymoo.factory import get_performance_indicator
-import pandas as pd
-import statistics
+
 from itertools import combinations
+from zipfile import ZipFile
+
+import config as cf
+
+from pymoo.algorithms.nsga2 import NSGA2
+from pymoo.factory import get_performance_indicator
+from pymoo.optimize import minimize
+from pymoo.util.termination.f_tol import MultiObjectiveSpaceToleranceTermination
+
+from CpsProblem import CpsProblem
+from CpsMutation import CpsMutation
+from CpsCrossover import CpsCrossover
+from CpsDuplicates import CpsDuplicatesElimination
+from CpsSampling import CpsSampling
 
 
 def build_convergence(res):
@@ -46,11 +41,9 @@ def save_results(res):
     build_convergence(res)
 
     if os.listdir(cf.files["tc_file"]):
-
-
         dt_string = str(int(time.time()))
-        #  create dirtectory
-        #  prepare files
+
+        #  Create directory and prepare files
         shutil.make_archive(dt_string + "_tc_img", "zip", cf.files["tc_img"])
         shutil.make_archive(dt_string + "_tc_file", "zip", cf.files["tc_file"])
         shutil.copyfile(".\\config.py", ".\\" + dt_string + "_config.py")
@@ -160,9 +153,9 @@ algorithm = NSGA2(
     # n_offsprings=25,
     pop_size=cf.ga["population"],
     sampling=MyTcSampling(),
-    crossover=MyTcCrossover(cf.ga["cross_rate"]),
-    mutation=MyTcMutation(cf.ga["mut_rate"]),
-    eliminate_duplicates=MyDuplicateElimination(),
+    crossover=CpsCrossover(cf.ga["cross_rate"]),
+    mutation=CpsMutation(cf.ga["mut_rate"]),
+    eliminate_duplicates=CpsDuplicatesElimination(),
 )
 
 
@@ -197,14 +190,14 @@ def calc_novelty(old, new):
 
 if __name__ == "__main__":
     res_dict = {}
-    
     time_list = []
     m = 0
 
+    # Performs m separate executions of the genetic algorithm
     for m in range(30):
         fit_list = []
 
-        print("Evaluation", m)
+        print("Execution #", m + 1)
 
         t = int(time.time() * 1000)
         seed = (
@@ -213,10 +206,10 @@ if __name__ == "__main__":
             + ((t & 0x0000FF00) << 8)
             + ((t & 0x000000FF) << 24)
         )
-        print("Seed ", seed)
+        print("Generated seed ", seed)
 
         res = minimize(
-            MyProblem(),
+            CpsProblem(),
             algorithm,
             ("n_gen", cf.ga["n_gen"]),
             seed=seed,
@@ -237,9 +230,7 @@ if __name__ == "__main__":
         hv = get_performance_indicator("hv", ref_point=np.array([0, 0]))
 
         for gen in range(0, len(res.history)):
-
             i = 0
-            # print(gen)
             minim = 0
             hv_list = []
             while i < len(res.history[gen].opt):
@@ -282,7 +273,6 @@ if __name__ == "__main__":
             nov = calc_novelty(current1[0].states, current2[0].states)
             novelty_list2.append(nov)
 
-        # res_dict["run" + str(m)]["fitness"] = fit_list
         res_dict["run" + str(m)]["novelty_20"] = sum(novelty_list) / len(novelty_list)
         res_dict["run" + str(m)]["novelty_10"] = sum(novelty_list2) / len(novelty_list2)
         res_dict["run" + str(m)]["novelty"] = sum(novelty_list_old) / len(

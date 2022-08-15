@@ -1,7 +1,7 @@
 from pymoo.model.problem import Problem
 
 
-class MyProblem(Problem):
+class CpsProblem(Problem):
     def __init__(self):
         super().__init__(n_var=1, n_obj=2, n_constr=1, elementwise_evaluation=True)
 
