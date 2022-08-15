@@ -6,71 +6,67 @@
         },
         "st1": {
             "state": "left",
-            "value": 45
+            "value": 65
         },
         "st2": {
-            "state": "left",
-            "value": 35
+            "state": "right",
+            "value": 15
         },
         "st3": {
-            "state": "right",
-            "value": 25
+            "state": "left",
+            "value": 50
         },
         "st4": {
-            "state": "right",
-            "value": 80
-        },
-        "st5": {
-            "state": "right",
-            "value": 35
-        },
-        "st6": {
-            "state": "right",
+            "state": "left",
             "value": 30
         },
+        "st5": {
+            "state": "left",
+            "value": 20
+        },
+        "st6": {
+            "state": "left",
+            "value": 45
+        },
         "st7": {
-            "state": "right",
-            "value": 70
+            "state": "left",
+            "value": 85
         },
         "st8": {
             "state": "right",
-            "value": 20
+            "value": 10
         },
         "st9": {
-            "state": "straight",
-            "value": 29
+            "state": "right",
+            "value": 25
         },
         "st10": {
-            "state": "left",
-            "value": 70
+            "state": "right",
+            "value": 85
         },
         "st11": {
             "state": "right",
-            "value": 30
+            "value": 65
         },
         "st12": {
-            "state": "straight",
-            "value": 8
+            "state": "right",
+            "value": 80
         },
         "st13": {
-            "state": "left",
-            "value": 15
+            "state": "straight",
+            "value": 31
         },
         "st14": {
             "state": "left",
-            "value": 40
+            "value": 45
         },
         "st15": {
-            "state": "straight",
-            "value": 27
+            "state": "right",
+            "value": 35
         },
         "st16": {
-            "state": "right",
-            "value": 30
-        },
-        "st17": {
             "state": "left",
-            "value": 20
+            "value": 60
         }
     },
     "tc1": {
@@ -79,76 +75,56 @@
             "value": 5
         },
         "st1": {
-            "state": "left",
-            "value": 55
+            "state": "straight",
+            "value": 10
         },
         "st2": {
             "state": "right",
-            "value": 15
+            "value": 65
         },
         "st3": {
             "state": "left",
-            "value": 35
+            "value": 20
         },
         "st4": {
             "state": "right",
-            "value": 70
+            "value": 50
         },
         "st5": {
             "state": "left",
-            "value": 80
+            "value": 15
         },
         "st6": {
             "state": "right",
-            "value": 10
+            "value": 35
         },
         "st7": {
-            "state": "left",
-            "value": 75
+            "state": "straight",
+            "value": 31
         },
         "st8": {
-            "state": "left",
-            "value": 40
+            "state": "right",
+            "value": 75
         },
         "st9": {
-            "state": "left",
-            "value": 55
+            "state": "straight",
+            "value": 21
         },
         "st10": {
-            "state": "right",
-            "value": 15
+            "state": "straight",
+            "value": 41
         },
         "st11": {
-            "state": "straight",
-            "value": 27
+            "state": "right",
+            "value": 80
         },
         "st12": {
-            "state": "right",
-            "value": 45
+            "state": "straight",
+            "value": 23
         },
         "st13": {
-            "state": "right",
-            "value": 60
-        },
-        "st14": {
             "state": "left",
-            "value": 10
-        },
-        "st15": {
-            "state": "right",
-            "value": 30
-        },
-        "st16": {
-            "state": "left",
-            "value": 85
-        },
-        "st17": {
-            "state": "right",
-            "value": 60
-        },
-        "st18": {
-            "state": "straight",
-            "value": 15
+            "value": 80
         }
     },
     "tc2": {
@@ -158,27 +134,47 @@
         },
         "st1": {
             "state": "right",
-            "value": 60
+            "value": 10
         },
         "st2": {
-            "state": "straight",
-            "value": 13
-        },
-        "st3": {
             "state": "right",
-            "value": 65
-        },
-        "st4": {
-            "state": "straight",
-            "value": 18
-        },
-        "st5": {
-            "state": "left",
             "value": 60
         },
+        "st3": {
+            "state": "straight",
+            "value": 42
+        },
+        "st4": {
+            "state": "right",
+            "value": 50
+        },
+        "st5": {
+            "state": "right",
+            "value": 55
+        },
         "st6": {
+            "state": "right",
+            "value": 55
+        },
+        "st7": {
             "state": "left",
-            "value": 65
+            "value": 45
+        },
+        "st8": {
+            "state": "right",
+            "value": 15
+        },
+        "st9": {
+            "state": "left",
+            "value": 25
+        },
+        "st10": {
+            "state": "straight",
+            "value": 48
+        },
+        "st11": {
+            "state": "right",
+            "value": 75
         }
     },
     "tc3": {
@@ -188,67 +184,67 @@
         },
         "st1": {
             "state": "left",
-            "value": 45
+            "value": 60
         },
         "st2": {
             "state": "right",
-            "value": 30
+            "value": 10
         },
         "st3": {
-            "state": "straight",
-            "value": 9
+            "state": "left",
+            "value": 85
         },
         "st4": {
             "state": "left",
-            "value": 25
+            "value": 20
         },
         "st5": {
-            "state": "straight",
-            "value": 8
+            "state": "left",
+            "value": 30
         },
         "st6": {
-            "state": "right",
-            "value": 55
+            "state": "left",
+            "value": 80
         },
         "st7": {
-            "state": "right",
-            "value": 50
+            "state": "left",
+            "value": 35
         },
         "st8": {
             "state": "right",
-            "value": 30
+            "value": 15
         },
         "st9": {
             "state": "right",
-            "value": 65
+            "value": 30
         },
         "st10": {
-            "state": "straight",
-            "value": 43
+            "state": "right",
+            "value": 25
         },
         "st11": {
-            "state": "straight",
-            "value": 14
+            "state": "right",
+            "value": 60
         },
         "st12": {
-            "state": "left",
-            "value": 10
+            "state": "straight",
+            "value": 9
         },
         "st13": {
-            "state": "left",
-            "value": 50
+            "state": "right",
+            "value": 70
         },
         "st14": {
             "state": "left",
-            "value": 75
+            "value": 15
         },
         "st15": {
             "state": "straight",
-            "value": 38
+            "value": 21
         },
         "st16": {
-            "state": "straight",
-            "value": 24
+            "state": "left",
+            "value": 65
         }
     },
     "tc4": {
@@ -258,63 +254,51 @@
         },
         "st1": {
             "state": "left",
-            "value": 80
+            "value": 40
         },
         "st2": {
-            "state": "right",
-            "value": 25
-        },
-        "st3": {
             "state": "straight",
             "value": 22
         },
-        "st4": {
-            "state": "left",
-            "value": 45
-        },
-        "st5": {
-            "state": "left",
-            "value": 15
-        },
-        "st6": {
-            "state": "left",
-            "value": 55
-        },
-        "st7": {
+        "st3": {
             "state": "right",
-            "value": 20
+            "value": 75
         },
-        "st8": {
-            "state": "left",
-            "value": 70
-        },
-        "st9": {
+        "st4": {
             "state": "right",
             "value": 10
         },
-        "st10": {
+        "st5": {
             "state": "right",
-            "value": 40
+            "value": 20
         },
-        "st11": {
+        "st6": {
             "state": "right",
-            "value": 35
+            "value": 80
         },
-        "st12": {
+        "st7": {
+            "state": "straight",
+            "value": 24
+        },
+        "st8": {
             "state": "left",
             "value": 25
         },
-        "st13": {
+        "st9": {
+            "state": "straight",
+            "value": 25
+        },
+        "st10": {
             "state": "left",
+            "value": 20
+        },
+        "st11": {
+            "state": "right",
             "value": 60
         },
-        "st14": {
+        "st12": {
             "state": "left",
-            "value": 45
-        },
-        "st15": {
-            "state": "right",
-            "value": 85
+            "value": 50
         }
     },
     "tc5": {
@@ -323,40 +307,44 @@
             "value": 5
         },
         "st1": {
-            "state": "straight",
-            "value": 25
+            "state": "right",
+            "value": 85
         },
         "st2": {
             "state": "right",
-            "value": 20
+            "value": 55
         },
         "st3": {
-            "state": "left",
-            "value": 15
+            "state": "right",
+            "value": 10
         },
         "st4": {
-            "state": "left",
-            "value": 50
+            "state": "straight",
+            "value": 41
         },
         "st5": {
-            "state": "left",
-            "value": 40
+            "state": "right",
+            "value": 10
         },
         "st6": {
-            "state": "straight",
-            "value": 30
+            "state": "left",
+            "value": 10
         },
         "st7": {
-            "state": "left",
-            "value": 60
+            "state": "straight",
+            "value": 19
         },
         "st8": {
-            "state": "straight",
-            "value": 16
+            "state": "right",
+            "value": 60
         },
         "st9": {
             "state": "straight",
-            "value": 38
+            "value": 11
+        },
+        "st10": {
+            "state": "right",
+            "value": 55
         }
     },
     "tc6": {
@@ -365,36 +353,28 @@
             "value": 5
         },
         "st1": {
-            "state": "left",
-            "value": 55
+            "state": "right",
+            "value": 75
         },
         "st2": {
-            "state": "left",
-            "value": 50
+            "state": "straight",
+            "value": 14
         },
         "st3": {
             "state": "right",
-            "value": 15
+            "value": 85
         },
         "st4": {
-            "state": "right",
+            "state": "straight",
             "value": 15
         },
         "st5": {
             "state": "left",
-            "value": 70
+            "value": 35
         },
         "st6": {
-            "state": "right",
-            "value": 10
-        },
-        "st7": {
-            "state": "right",
-            "value": 50
-        },
-        "st8": {
-            "state": "right",
-            "value": 65
+            "state": "left",
+            "value": 80
         }
     },
     "tc7": {
@@ -403,32 +383,40 @@
             "value": 5
         },
         "st1": {
-            "state": "left",
-            "value": 30
+            "state": "right",
+            "value": 70
         },
         "st2": {
-            "state": "right",
-            "value": 85
+            "state": "straight",
+            "value": 8
         },
         "st3": {
-            "state": "left",
-            "value": 35
+            "state": "right",
+            "value": 50
         },
         "st4": {
             "state": "straight",
-            "value": 25
+            "value": 35
         },
         "st5": {
             "state": "right",
-            "value": 55
+            "value": 65
         },
         "st6": {
             "state": "left",
-            "value": 35
+            "value": 45
         },
         "st7": {
             "state": "right",
-            "value": 10
+            "value": 15
+        },
+        "st8": {
+            "state": "left",
+            "value": 25
+        },
+        "st9": {
+            "state": "right",
+            "value": 75
         }
     },
     "tc8": {
@@ -438,79 +426,19 @@
         },
         "st1": {
             "state": "left",
-            "value": 50
+            "value": 35
         },
         "st2": {
             "state": "right",
-            "value": 10
+            "value": 65
         },
         "st3": {
-            "state": "right",
-            "value": 85
-        },
-        "st4": {
-            "state": "right",
-            "value": 35
-        },
-        "st5": {
-            "state": "straight",
-            "value": 15
-        },
-        "st6": {
-            "state": "left",
-            "value": 30
-        },
-        "st7": {
-            "state": "straight",
-            "value": 16
-        },
-        "st8": {
-            "state": "right",
-            "value": 65
-        },
-        "st9": {
-            "state": "right",
-            "value": 65
-        },
-        "st10": {
-            "state": "right",
-            "value": 45
-        },
-        "st11": {
-            "state": "left",
-            "value": 45
-        },
-        "st12": {
-            "state": "right",
-            "value": 70
-        },
-        "st13": {
-            "state": "left",
-            "value": 25
-        },
-        "st14": {
-            "state": "straight",
-            "value": 15
-        },
-        "st15": {
-            "state": "left",
-            "value": 85
-        },
-        "st16": {
             "state": "straight",
             "value": 11
         },
-        "st17": {
-            "state": "right",
-            "value": 35
-        },
-        "st18": {
-            "state": "straight",
-            "value": 15
-        },
-        "st19": {
+        "st4": {
             "state": "left",
-            "value": 25
+            "value": 60
         }
     },
     "tc9": {
@@ -519,28 +447,40 @@
             "value": 5
         },
         "st1": {
-            "state": "right",
-            "value": 20
-        },
-        "st2": {
-            "state": "straight",
-            "value": 19
-        },
-        "st3": {
-            "state": "right",
-            "value": 75
-        },
-        "st4": {
-            "state": "straight",
-            "value": 10
-        },
-        "st5": {
             "state": "left",
             "value": 50
         },
+        "st2": {
+            "state": "straight",
+            "value": 44
+        },
+        "st3": {
+            "state": "right",
+            "value": 25
+        },
+        "st4": {
+            "state": "straight",
+            "value": 13
+        },
+        "st5": {
+            "state": "left",
+            "value": 15
+        },
         "st6": {
             "state": "left",
-            "value": 75
+            "value": 55
+        },
+        "st7": {
+            "state": "left",
+            "value": 35
+        },
+        "st8": {
+            "state": "left",
+            "value": 50
+        },
+        "st9": {
+            "state": "right",
+            "value": 45
         }
     },
     "tc10": {
@@ -550,63 +490,47 @@
         },
         "st1": {
             "state": "left",
-            "value": 60
+            "value": 70
         },
         "st2": {
-            "state": "straight",
-            "value": 12
+            "state": "left",
+            "value": 80
         },
         "st3": {
-            "state": "straight",
-            "value": 6
+            "state": "left",
+            "value": 20
         },
         "st4": {
-            "state": "right",
-            "value": 60
+            "state": "left",
+            "value": 40
         },
         "st5": {
             "state": "right",
-            "value": 65
+            "value": 10
         },
         "st6": {
-            "state": "right",
-            "value": 40
+            "state": "left",
+            "value": 20
         },
         "st7": {
             "state": "right",
-            "value": 85
+            "value": 40
         },
         "st8": {
-            "state": "left",
-            "value": 50
+            "state": "straight",
+            "value": 15
         },
         "st9": {
             "state": "left",
-            "value": 10
+            "value": 15
         },
         "st10": {
-            "state": "right",
-            "value": 70
+            "state": "straight",
+            "value": 39
         },
         "st11": {
             "state": "right",
-            "value": 15
-        },
-        "st12": {
-            "state": "left",
-            "value": 55
-        },
-        "st13": {
-            "state": "right",
-            "value": 60
-        },
-        "st14": {
-            "state": "straight",
-            "value": 28
-        },
-        "st15": {
-            "state": "left",
-            "value": 70
+            "value": 10
         }
     },
     "tc11": {
@@ -615,28 +539,36 @@
             "value": 5
         },
         "st1": {
-            "state": "straight",
-            "value": 49
+            "state": "left",
+            "value": 30
         },
         "st2": {
-            "state": "right",
-            "value": 75
+            "state": "left",
+            "value": 25
         },
         "st3": {
-            "state": "straight",
-            "value": 49
+            "state": "right",
+            "value": 30
         },
         "st4": {
             "state": "right",
             "value": 50
         },
         "st5": {
-            "state": "straight",
-            "value": 5
+            "state": "right",
+            "value": 35
         },
         "st6": {
-            "state": "right",
+            "state": "straight",
+            "value": 34
+        },
+        "st7": {
+            "state": "straight",
             "value": 10
+        },
+        "st8": {
+            "state": "left",
+            "value": 45
         }
     },
     "tc12": {
@@ -645,20 +577,32 @@
             "value": 5
         },
         "st1": {
-            "state": "straight",
-            "value": 39
+            "state": "right",
+            "value": 40
         },
         "st2": {
             "state": "right",
-            "value": 20
+            "value": 75
         },
         "st3": {
-            "state": "straight",
-            "value": 17
+            "state": "left",
+            "value": 20
         },
         "st4": {
             "state": "left",
-            "value": 80
+            "value": 60
+        },
+        "st5": {
+            "state": "straight",
+            "value": 34
+        },
+        "st6": {
+            "state": "left",
+            "value": 45
+        },
+        "st7": {
+            "state": "right",
+            "value": 85
         }
     },
     "tc13": {
@@ -668,63 +612,43 @@
         },
         "st1": {
             "state": "right",
-            "value": 75
+            "value": 15
         },
         "st2": {
-            "state": "straight",
-            "value": 20
+            "state": "right",
+            "value": 80
         },
         "st3": {
-            "state": "right",
-            "value": 10
+            "state": "left",
+            "value": 20
         },
         "st4": {
             "state": "right",
-            "value": 75
+            "value": 10
         },
         "st5": {
-            "state": "right",
-            "value": 65
+            "state": "straight",
+            "value": 29
         },
         "st6": {
-            "state": "right",
-            "value": 35
+            "state": "left",
+            "value": 45
         },
         "st7": {
-            "state": "left",
-            "value": 25
+            "state": "right",
+            "value": 20
         },
         "st8": {
-            "state": "straight",
-            "value": 20
+            "state": "right",
+            "value": 10
         },
         "st9": {
-            "state": "right",
-            "value": 35
+            "state": "left",
+            "value": 30
         },
         "st10": {
-            "state": "straight",
-            "value": 38
-        },
-        "st11": {
             "state": "left",
-            "value": 20
-        },
-        "st12": {
-            "state": "right",
-            "value": 40
-        },
-        "st13": {
-            "state": "left",
-            "value": 25
-        },
-        "st14": {
-            "state": "right",
-            "value": 40
-        },
-        "st15": {
-            "state": "left",
-            "value": 60
+            "value": 30
         }
     },
     "tc14": {
@@ -733,36 +657,28 @@
             "value": 5
         },
         "st1": {
-            "state": "right",
-            "value": 75
+            "state": "left",
+            "value": 70
         },
         "st2": {
-            "state": "left",
-            "value": 10
+            "state": "right",
+            "value": 40
         },
         "st3": {
-            "state": "right",
-            "value": 25
+            "state": "left",
+            "value": 45
         },
         "st4": {
             "state": "left",
-            "value": 20
+            "value": 25
         },
         "st5": {
             "state": "left",
-            "value": 10
+            "value": 45
         },
         "st6": {
-            "state": "straight",
-            "value": 39
-        },
-        "st7": {
-            "state": "left",
-            "value": 55
-        },
-        "st8": {
             "state": "right",
-            "value": 50
+            "value": 75
         }
     },
     "tc15": {
@@ -771,20 +687,48 @@
             "value": 5
         },
         "st1": {
-            "state": "straight",
-            "value": 24
-        },
-        "st2": {
             "state": "right",
             "value": 40
         },
+        "st2": {
+            "state": "right",
+            "value": 55
+        },
         "st3": {
-            "state": "straight",
-            "value": 37
+            "state": "right",
+            "value": 25
         },
         "st4": {
             "state": "left",
-            "value": 70
+            "value": 80
+        },
+        "st5": {
+            "state": "straight",
+            "value": 34
+        },
+        "st6": {
+            "state": "left",
+            "value": 25
+        },
+        "st7": {
+            "state": "left",
+            "value": 20
+        },
+        "st8": {
+            "state": "left",
+            "value": 35
+        },
+        "st9": {
+            "state": "left",
+            "value": 55
+        },
+        "st10": {
+            "state": "straight",
+            "value": 10
+        },
+        "st11": {
+            "state": "right",
+            "value": 45
         }
     },
     "tc16": {
@@ -794,43 +738,31 @@
         },
         "st1": {
             "state": "right",
-            "value": 15
+            "value": 45
         },
         "st2": {
             "state": "right",
-            "value": 55
+            "value": 15
         },
         "st3": {
             "state": "right",
-            "value": 65
+            "value": 50
         },
         "st4": {
-            "state": "right",
-            "value": 15
+            "state": "straight",
+            "value": 9
         },
         "st5": {
-            "state": "straight",
-            "value": 35
+            "state": "left",
+            "value": 60
         },
         "st6": {
-            "state": "left",
-            "value": 75
+            "state": "right",
+            "value": 65
         },
         "st7": {
-            "state": "left",
-            "value": 35
-        },
-        "st8": {
-            "state": "left",
-            "value": 35
-        },
-        "st9": {
-            "state": "left",
-            "value": 15
-        },
-        "st10": {
-            "state": "right",
-            "value": 15
+            "state": "straight",
+            "value": 5
         }
     },
     "tc17": {
@@ -843,36 +775,40 @@
             "value": 15
         },
         "st2": {
-            "state": "right",
-            "value": 85
-        },
-        "st3": {
-            "state": "straight",
-            "value": 20
-        },
-        "st4": {
-            "state": "left",
-            "value": 60
-        },
-        "st5": {
-            "state": "straight",
-            "value": 32
-        },
-        "st6": {
-            "state": "left",
-            "value": 15
-        },
-        "st7": {
             "state": "left",
             "value": 45
         },
+        "st3": {
+            "state": "straight",
+            "value": 23
+        },
+        "st4": {
+            "state": "straight",
+            "value": 32
+        },
+        "st5": {
+            "state": "left",
+            "value": 55
+        },
+        "st6": {
+            "state": "left",
+            "value": 10
+        },
+        "st7": {
+            "state": "left",
+            "value": 75
+        },
         "st8": {
-            "state": "right",
-            "value": 35
+            "state": "straight",
+            "value": 32
         },
         "st9": {
+            "state": "right",
+            "value": 75
+        },
+        "st10": {
             "state": "left",
-            "value": 15
+            "value": 10
         }
     },
     "tc18": {
@@ -882,39 +818,35 @@
         },
         "st1": {
             "state": "right",
-            "value": 70
+            "value": 15
         },
         "st2": {
-            "state": "right",
-            "value": 80
+            "state": "left",
+            "value": 45
         },
         "st3": {
-            "state": "right",
+            "state": "left",
             "value": 80
         },
         "st4": {
-            "state": "right",
-            "value": 10
+            "state": "left",
+            "value": 40
         },
         "st5": {
             "state": "left",
-            "value": 75
-        },
-        "st6": {
-            "state": "left",
             "value": 65
         },
+        "st6": {
+            "state": "straight",
+            "value": 50
+        },
         "st7": {
-            "state": "left",
-            "value": 70
+            "state": "right",
+            "value": 85
         },
         "st8": {
-            "state": "straight",
-            "value": 42
-        },
-        "st9": {
-            "state": "right",
-            "value": 15
+            "state": "left",
+            "value": 10
         }
     },
     "tc19": {
@@ -923,52 +855,28 @@
             "value": 5
         },
         "st1": {
-            "state": "left",
-            "value": 20
+            "state": "straight",
+            "value": 17
         },
         "st2": {
             "state": "right",
-            "value": 80
+            "value": 40
         },
         "st3": {
             "state": "left",
-            "value": 55
+            "value": 60
         },
         "st4": {
-            "state": "straight",
-            "value": 23
+            "state": "left",
+            "value": 15
         },
         "st5": {
             "state": "right",
-            "value": 45
+            "value": 30
         },
         "st6": {
             "state": "right",
             "value": 55
-        },
-        "st7": {
-            "state": "right",
-            "value": 45
-        },
-        "st8": {
-            "state": "right",
-            "value": 35
-        },
-        "st9": {
-            "state": "straight",
-            "value": 17
-        },
-        "st10": {
-            "state": "left",
-            "value": 70
-        },
-        "st11": {
-            "state": "right",
-            "value": 25
-        },
-        "st12": {
-            "state": "left",
-            "value": 45
         }
     },
     "tc20": {
@@ -977,43 +885,43 @@
             "value": 5
         },
         "st1": {
-            "state": "left",
+            "state": "right",
             "value": 10
         },
         "st2": {
             "state": "right",
-            "value": 40
+            "value": 70
         },
         "st3": {
             "state": "straight",
-            "value": 17
+            "value": 7
         },
         "st4": {
-            "state": "right",
-            "value": 85
-        },
-        "st5": {
-            "state": "left",
-            "value": 55
-        },
-        "st6": {
-            "state": "straight",
-            "value": 24
-        },
-        "st7": {
-            "state": "left",
-            "value": 10
-        },
-        "st8": {
-            "state": "left",
-            "value": 60
-        },
-        "st9": {
             "state": "left",
             "value": 40
         },
-        "st10": {
+        "st5": {
+            "state": "straight",
+            "value": 10
+        },
+        "st6": {
+            "state": "right",
+            "value": 40
+        },
+        "st7": {
+            "state": "straight",
+            "value": 15
+        },
+        "st8": {
+            "state": "right",
+            "value": 85
+        },
+        "st9": {
             "state": "left",
+            "value": 10
+        },
+        "st10": {
+            "state": "right",
             "value": 35
         }
     },
@@ -1024,31 +932,35 @@
         },
         "st1": {
             "state": "left",
-            "value": 45
+            "value": 60
         },
         "st2": {
             "state": "left",
-            "value": 35
+            "value": 55
         },
         "st3": {
-            "state": "straight",
-            "value": 21
+            "state": "left",
+            "value": 80
         },
         "st4": {
             "state": "right",
-            "value": 40
+            "value": 45
         },
         "st5": {
-            "state": "left",
-            "value": 15
+            "state": "right",
+            "value": 50
         },
         "st6": {
-            "state": "left",
-            "value": 70
+            "state": "right",
+            "value": 10
         },
         "st7": {
             "state": "left",
-            "value": 25
+            "value": 70
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
         }
     }
 }

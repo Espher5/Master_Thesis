@@ -3,9 +3,58 @@
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsMutation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/Optimize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car_road.py" beforeDir="false" afterPath="$PROJECT_DIR$/car_road.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results_vehicle(2).json" beforeDir="false" afterPath="$PROJECT_DIR$/Results_vehicle(2).json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/generation_0.json" beforeDir="false" afterPath="$PROJECT_DIR$/TC_file/generation_0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/generation_99.json" beforeDir="false" afterPath="$PROJECT_DIR$/TC_file/generation_99.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/states_0.json" beforeDir="false" afterPath="$PROJECT_DIR$/TC_file/states_0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/states_99.json" beforeDir="false" afterPath="$PROJECT_DIR$/TC_file/states_99.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_0/tc_9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TC_img/generation_99/tc_9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/road_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/road_gen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +149,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="road_gen (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="road_gen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -108,11 +157,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/full_model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/full_model/road_gen.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/road_gen.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,10 +194,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Optimize (1)" />
-        <item itemvalue="Python.car_road" />
         <item itemvalue="Python.Optimize" />
+        <item itemvalue="Python.road_gen" />
+        <item itemvalue="Python.car_road" />
         <item itemvalue="Python.road_points" />
-        <item itemvalue="Python.road_gen (1)" />
       </list>
     </recent_temporary>
   </component>

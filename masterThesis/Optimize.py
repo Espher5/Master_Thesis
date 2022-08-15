@@ -192,7 +192,7 @@ if __name__ == "__main__":
     m = 0
 
     # Performs m separate executions of the genetic algorithm
-    for m in range(30):
+    for m in range(2):
         fit_list = []
 
         print("Execution #", m + 1)

@@ -18,12 +18,11 @@ class CpsMutation(Mutation):
             if s is None:
                 print("S i none")
             if (r < self.mut_rate) and (s is not None):  # cf.ga["mut_rate"]:
-                #
-                # for some reason it seems we must do a deep copy
+                # For some reason it seems we must do a deep copy
                 # and replace the original object
                 # pymoo seems to keep a deep copy of the best object if I change it
-                # in a mutation it will not chnage pymoo best individual and we end up
-                # with an incosistency in evaluated fitnesses
+                # in a mutation it will not change the best pymoo individual, and we end up
+                # with an inconsistency in evaluated fitness
                 sn = copy.deepcopy(s)
 
                 sn.get_points()
@@ -41,7 +40,7 @@ class CpsMutation(Mutation):
                     child["st" + str(candidates[0])] = child["st" + str(candidates[1])]
                     child["st" + str(candidates[1])] = temp
 
-                elif wr >= 20 and wr <= 40:
+                elif 20 <= wr <= 40:
 
                     num = np.random.randint(0, high=len(child))
 
@@ -123,7 +122,6 @@ class CpsMutation(Mutation):
                 sn.remove_invalid_cases()
 
                 sn.novelty = sn.calc_novelty(old_states, sn.states)
-
 
                 X[i, 0] = sn
 
