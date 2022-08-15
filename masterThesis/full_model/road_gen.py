@@ -1,10 +1,10 @@
 import numpy as np
+
 from car_road import Map
+
 import os
 import config as cf
 import json
-
-
 class RoadGen:
     """Class for generating roads"""
 
@@ -24,6 +24,7 @@ class RoadGen:
 
         self.map_size = map_size
 
+
         # state matrix
         self.transitionName = [
             ["SS", "SL", "SR"],
@@ -31,11 +32,23 @@ class RoadGen:
             ["RS", "RL", "RR"],
         ]
 
+        
         self.transitionMatrix = [
             [0.1, 0.45, 0.45],
             [0.2, 0.4, 0.4],
             [0.2, 0.4, 0.4],
         ]  # probabilities of switching states
+        
+
+
+        '''
+        self.transitionMatrix = [
+            [1/3, 1/3, 1/3],
+            [1/3, 1/3, 1/3],
+            [1/3, 1/3, 1/3],
+        ]  # probabilities of switching states
+        '''
+
 
         self.min_len = min_len
         self.max_len = max_len
@@ -52,7 +65,9 @@ class RoadGen:
             i for i in range(self.min_angle, self.max_angle + 1, self.step_ang)
         ]  # a list of angles to turn
 
-    def test_case_generate(self):
+
+
+    def test_case_generate(self): 
         """Function that produces a list with states and road points"""
 
         # initialization
@@ -66,13 +81,33 @@ class RoadGen:
         self.init_b = [int(self.car_map.init_end[0]), int(self.car_map.init_end[1])]
 
         self.road_points.append(
-            tuple(
-                (
-                    (self.init_a[0] + self.init_b[0]) / 2,
-                    (self.init_a[1] + self.init_b[1]) / 2,
-                )
-            )
+            tuple( ((self.init_a[0] + self.init_b[0]) / 2, (self.init_a[1] + self.init_b[1]) / 2) )
         )
+
+
+        '''
+
+        state = np.random.choice(self.init_states)
+        if state == "straight":
+            value = np.random.choice(self.len_values)
+        else:
+            value = np.random.choice(self.ang_values)
+
+
+        if state == "straight":
+            self.car_map.go_straight(value)
+            self.road_points.append(tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2))
+        elif state == "left":
+            self.car_map.turn_left(value)
+            self.road_points.append(tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2))
+        else:
+            self.car_map.turn_right(value)
+            self.road_points.append(tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2))
+
+
+        self.states = [[state, value]]
+
+        '''
 
         self.car_map.go_straight(5)
         self.road_points.append(
@@ -81,6 +116,7 @@ class RoadGen:
         self.states = [["straight", 5]]
         state = "straight"
         flag = True
+
 
         while flag == True:
             if state == "straight":
@@ -98,20 +134,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
 
@@ -126,20 +153,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 elif change == "SR":
@@ -153,20 +171,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 else:
@@ -187,20 +196,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
 
@@ -215,20 +215,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 elif change == "LR":
@@ -242,20 +233,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 else:
@@ -276,20 +258,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 elif change == "RL":
@@ -303,20 +276,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 elif change == "RR":
@@ -330,20 +294,11 @@ class RoadGen:
                         if len(self.road_points) <= 2:
                             self.car_map.go_straight(1)
                             self.road_points.append(
-                                tuple(
-                                    (
-                                        self.car_map.current_pos[0]
-                                        + self.car_map.current_pos[1]
-                                    )
-                                    / 2
-                                )
+                                tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                             )
                         return self.states_to_dict()
                     self.road_points.append(
-                        tuple(
-                            (self.car_map.current_pos[0] + self.car_map.current_pos[1])
-                            / 2
-                        )
+                        tuple((self.car_map.current_pos[0] + self.car_map.current_pos[1]) / 2)
                     )
                     pass
                 else:
@@ -351,6 +306,9 @@ class RoadGen:
         del self.road_points[-1]  # last point might be going over the border
         del self.states[-1]
         return self.states_to_dict()
+
+
+
 
     def states_to_dict(self):
         """Transforms a list of test cases
@@ -363,7 +321,10 @@ class RoadGen:
             test_cases["st" + str(i)]["value"] = int(element[1])
             i += 1
 
+        #print("test_cases", test_cases)
+
         return test_cases
+
 
     def write_states_to_file(self):
         """Writes the generated test case to file"""
@@ -389,7 +350,7 @@ class RoadGen:
 
         tc = "tc" + str(num)
         test_cases[tc] = {}
-        positions[tc] = {"a": self.init_a, "b": self.init_b}
+        positions[tc] = {"a": self.init_a , "b": self.init_b}
         points[tc] = self.road_points
 
         i = 0
@@ -409,9 +370,11 @@ class RoadGen:
             json.dump(points, outfile)
 
 
+
+
 if __name__ == "__main__":
 
-    # steps = [5, 6, 7]
+    #steps = [5, 6, 7]
     i = 0
     road = RoadGen(250, 5, 50, 10, 70)
     while i < 100:  # generate N number of schedules

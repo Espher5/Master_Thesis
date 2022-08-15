@@ -1,17 +1,12 @@
-import random as rm
 import numpy as np
 import math as m
 from shapely.geometry import Point
-from shapely.geometry.polygon import Polygon
+
 import matplotlib.pyplot as plt
 import json
-from road_gen import RoadGen
-from scipy.interpolate import splprep, splev, interp1d, splrep
-from shapely.geometry import LineString, Point, GeometryCollection
-from scipy.spatial import distance
+from scipy.interpolate import splprep, splev
+from shapely.geometry import LineString, Point
 from numpy.ma import arange
-import timeit
-import time
 
 
 class Car:
@@ -24,6 +19,7 @@ class Car:
         self.speed = speed
         self.map_size = map_size
         self.str_ang = steer_ang
+        self.str_ang_o = steer_ang
 
     def interpolate_road(self, road):
         # road.sort()
@@ -46,41 +42,26 @@ class Car:
         else:
             # Otheriwse, use cubic splines
             k = 3
-        # print(old_x_vals)
         f2, u = splprep([old_x_vals, old_y_vals], s=0, k=k)
-        # print(u)
 
-        step_size = 1 / (length) * 10
+
+        step_size = 1 / (length) * 8
         xnew = arange(0, 1 + step_size, step_size)
 
         x2, y2 = splev(xnew, f2)
 
-        # self.road_x = old_x_vals
-        # self.road_y = old_y_vals
-        # print(x2)
-
-        # point = np.array([125, 125])
-
-        # p = Point(125, 125)
 
         nodes = list(zip(x2, y2))
 
-        # self.image_road(x2, y2, "vehicle2.png")
-
-        # road = LineString([(t[0], t[1]) for t in nodes])
-        # r1 = p.distance(road)
 
         return nodes
 
-        # closest_index = distance.cdist([point], nodes).argmin()
-        # print(nodes[closest_index])
-        # r2 = np.linalg.norm(point - nodes[closest_index])
 
     def image_road(self, x, y, name):
 
         fig, ax = plt.subplots(figsize=(12, 12))
         # , nodes[closest_index][0], nodes[closest_index][1], 'go'
-        plt.plot(x, y, 'bo')
+        plt.plot(x, y, "bo")
 
         top = self.map_size
         bottom = 0
@@ -95,9 +76,9 @@ class Car:
 
         fig, ax = plt.subplots(figsize=(12, 12))
         # , nodes[closest_index][0], nodes[closest_index][1], 'go'
-        ax.plot(self.tot_x, self.tot_y, 'bo', label="Car path")
+        ax.plot(self.tot_x, self.tot_y, "bo", label="Car path")
 
-        ax.plot(self.road_x, self.road_y, 'yo--', label="Road")
+        ax.plot(self.road_x, self.road_y, "yo--", label="Road")
 
         top = self.map_size
         bottom = 0
@@ -118,8 +99,8 @@ class Car:
         return p.distance(road)
 
     def go_straight(self):
-        self.x = self.speed * np.cos(m.radians(self.angle)) + self.x
-        self.y = self.speed * np.sin(m.radians(self.angle)) + self.y
+        self.x = self.speed * np.cos(m.radians(self.angle)) / 2.3 + self.x
+        self.y = self.speed * np.sin(m.radians(self.angle)) / 2.3 + self.y
         self.tot_x.append(self.x)
         self.tot_y.append(self.y)
         return
@@ -127,6 +108,7 @@ class Car:
     def turn_right(self):
 
         # return
+        self.str_ang = m.degrees(m.atan(1 / self.speed * 2 * self.distance))
         self.angle = -self.str_ang + self.angle
         self.x = self.speed * np.cos(m.radians(self.angle)) / 3 + self.x
         self.y = self.speed * np.sin(m.radians(self.angle)) / 3 + self.y
@@ -137,6 +119,7 @@ class Car:
     def turn_left(self):
 
         # return
+        self.str_ang = m.degrees(m.atan(1 / self.speed * 2 * self.distance))
         self.angle = self.str_ang + self.angle
         self.x = self.speed * np.cos(m.radians(self.angle)) / 3 + self.x
         self.y = self.speed * np.sin(m.radians(self.angle)) / 3 + self.y
@@ -146,6 +129,7 @@ class Car:
 
         return
 
+
     def get_angle(self, node_a, node_b):
         vector = np.array(node_b) - np.array(node_a)
         # print("vec", vector)
@@ -153,15 +137,11 @@ class Car:
 
         angle = m.degrees(m.acos(cos))
 
-        # print("a", node_a)
-        # print("b", node_b)
-
         if node_a[1] > node_b[1]:
-            # print("angle", -angle)
             return -angle
         else:
-            # print("angle", angle)
             return angle
+
 
     def execute_road(self, nodes):
 
@@ -179,84 +159,89 @@ class Car:
         self.tot_y = []
         self.tot_dist = []
         self.final_dist = []
+        self.distance = 0
 
         road = LineString([(t[0], t[1]) for t in nodes])
+        mini_nodes1 = nodes[: round(len(nodes) / 2)]
+        mini_nodes2 = nodes[round(len(nodes) / 2) :]
+        if (len(mini_nodes1) < 2) or (len(mini_nodes2) < 2):
+            return 0, []
+        mini_road1 = LineString([(t[0], t[1]) for t in mini_nodes1])
+        mini_road2 = LineString([(t[0], t[1]) for t in mini_nodes2])
+        road_split = [mini_road1, mini_road2]
+
         if road.is_simple == False or is_too_sharp(_interpolate(nodes)) == True:
             fitness = 0
         else:
             init_pos = nodes[0]
-            # print("Init pos", init_pos)
             self.x = init_pos[0]
             self.y = init_pos[1]
 
-            # self.angle = self.get_angle(init_pos)
 
             self.angle = self.get_angle(nodes[0], nodes[1])
-
-            # print("POS x", round(init_pos[0],1), "POS Y", round(init_pos[1], 1))
-            # print("ANGLE", self.angle)
-            # self.angle = self.get_angle(init_pos)
 
             self.tot_x.append(self.x)
             self.tot_y.append(self.y)
 
-            length = np.linalg.norm(np.array([nodes[0][0], nodes[0][1]]) - np.array([nodes[-1][0], nodes[-1][1]]))
-
             i = 0
-            current_length = 0
-            norm = np.linalg.norm(np.array([self.x, self.y]) - np.array([init_pos[0], init_pos[1]]))
-            # while ((np.linalg.norm(np.array([self.x, self.y]) - np.array([init_pos[0], init_pos[1]]) )) < length):
-            while (current_length < road.length) and i < 1000:
-                # while ((current_length < road.length) or (norm < length)) and (i < 1000):
-                # while i < 10000:
-                distance = self.get_distance(road, self.x, self.y)
-                self.tot_dist.append(distance)
-                if distance > 2:
-                    self.final_dist.append(distance)
-                # print(self.x)
-                # print(self.y)
-                if distance <= 1:
-                    self.go_straight()
-                else:
-                    angle = -self.str_ang + self.angle
-                    x = self.speed * np.cos(m.radians(angle)) + self.x
-                    y = self.speed * np.sin(m.radians(angle)) + self.y
 
-                    distance_right = self.get_distance(road, x, y)
+            for p, mini_road in enumerate(road_split):
+                current_length = 0
+                if p == 1:
 
-                    angle = self.str_ang + self.angle
-                    x = self.speed * np.cos(m.radians(angle)) + self.x
-                    y = self.speed * np.sin(m.radians(angle)) + self.y
+                    self.x = mini_nodes2[0][0]
+                    self.y = mini_nodes2[0][1]
+                    self.angle = self.get_angle(mini_nodes1[-1], mini_nodes2[0])
 
-                    distance_left = self.get_distance(road, x, y)
+                current_pos = [(self.x, self.y)]
+                while (current_length < mini_road.length) and i < 1000:
+                    distance = self.get_distance(mini_road, self.x, self.y)
+                    self.distance = distance
 
-                    # print("Distance2", distance2)
-                    if distance_right < distance_left:
-                        self.turn_right()
+                    self.tot_dist.append(distance)
+
+                    if distance <= 1:
+                        self.go_straight()
+                        current_pos.append((self.x, self.y))
+                        self.speed += 0.3
+
                     else:
-                        self.turn_left()
 
-                current_road = LineString([(t[0], t[1]) for t in zip(self.tot_x, self.tot_y)])
-                current_length = current_road.length
-                norm = np.linalg.norm(np.array([self.x, self.y]) - np.array([init_pos[0], init_pos[1]]))
+                        angle = -1 + self.angle
+                        x = self.speed * np.cos(m.radians(angle)) + self.x
+                        y = self.speed * np.sin(m.radians(angle)) + self.y
 
-                i += 1
-                # print("i", i)
+                        distance_right = self.get_distance(mini_road, x, y)
 
-            # fitness = sum(self.tot_dist)/len(self.tot_dist)*(-1)
-            # fitness = max(self.tot_dist)*(-1)
-            # fitness = len(self.final_dist)*(-1)
+                        angle = 1 + self.angle
+                        x = self.speed * np.cos(m.radians(angle)) + self.x
+                        y = self.speed * np.sin(m.radians(angle)) + self.y
 
-            if current_road.is_simple:
-                fitness = max(self.tot_dist) * (-1)
-            else:
+                        distance_left = self.get_distance(mini_road, x, y)
+
+                        if distance_right < distance_left:
+                            self.turn_right()
+                            current_pos.append((self.x, self.y))
+                        else:
+                            self.turn_left()
+                            current_pos.append((self.x, self.y))
+
+                        self.speed -= 0.1
+
+                    current_road = LineString(current_pos)
+                    current_length = current_road.length
+
+
+                    i += 1
+
+
+            fitness = max(self.tot_dist) * (-1)
+
+            car_path = LineString(zip(self.tot_x, self.tot_y))
+            if car_path.is_simple == False:
                 fitness = 0
-                # print("Intersecting, ",  max(self.tot_dist)*(-1))
 
         return fitness, [self.tot_x, self.tot_y]
-
-
-# def get_distance(self, road_point):
 
 
 def find_circle(p1, p2, p3):
@@ -299,7 +284,7 @@ def min_radius(x, w=5):
 
 def _interpolate(the_test):
     """
-        Interpolate the road points using cubic splines and ensure we handle 4F tuples for compatibility
+    Interpolate the road points using cubic splines and ensure we handle 4F tuples for compatibility
     """
     rounding_precision = 3
     interpolation_distance = 1
@@ -336,19 +321,21 @@ def _interpolate(the_test):
     new_x_vals, new_y_vals = splev(unew, pos_tck)
 
     # Return the 4-tuple with default z and defatul road width
-    return list(zip([round(v, rounding_precision) for v in new_x_vals],
-                    [round(v, rounding_precision) for v in new_y_vals],
-                    [-28.0 for v in new_x_vals],
-                    [8.0 for v in new_x_vals]))
+    return list(
+        zip(
+            [round(v, rounding_precision) for v in new_x_vals],
+            [round(v, rounding_precision) for v in new_y_vals],
+            [-28.0 for v in new_x_vals],
+            [8.0 for v in new_x_vals],
+        )
+    )
 
 
 def is_too_sharp(the_test, TSHD_RADIUS=47):
     if TSHD_RADIUS > min_radius(the_test) > 0.0:
         check = True
-        # print("TOO SHARP")
     else:
         check = False
-    # print(check)
     return check
 
 
@@ -357,10 +344,8 @@ if __name__ == "__main__":
     with open("points2.json") as file:
         points = json.load(file)
 
-    for tc in points:
-        case = tc
-        road = points[case]
-        # road = car.interpolate_road(points[case])
-        # car.execute_road(points[case], case)
-        car.execute_road(car.interpolate_road(road), case)
-    # road.road_points
+    road = points["tc0"]
+
+    old_x_vals = [t[0] for t in road]
+    old_y_vals = [t[1] for t in road]
+
