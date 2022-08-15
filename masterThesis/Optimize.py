@@ -8,13 +8,12 @@ import time
 from itertools import combinations
 from zipfile import ZipFile
 
-import config as cf
-
 from pymoo.algorithms.nsga2 import NSGA2
 from pymoo.factory import get_performance_indicator
 from pymoo.optimize import minimize
 from pymoo.util.termination.f_tol import MultiObjectiveSpaceToleranceTermination
 
+import config
 from CpsProblem import CpsProblem
 from CpsMutation import CpsMutation
 from CpsCrossover import CpsCrossover
@@ -23,51 +22,50 @@ from CpsSampling import CpsSampling
 
 
 def build_convergence(res):
-    n_evals = np.arange(0, len(res.history), 1)
+    n_eval = np.arange(0, len(res.history), 1)
     opt = np.array([e.opt[0].F for e in res.history])
 
     fig, ax1 = plt.subplots(figsize=(12, 4))
     plt.title("Convergence")
-    plt.plot(n_evals, opt, "o--")
+    plt.plot(n_eval, opt, "o--")
     plt.xlabel("Number of generations")
     plt.ylabel("Fitness function value")
 
-    fig.savefig(cf.files["ga_conv"] + "conv.png")
+    fig.savefig(config.FILES["ga_conv"] + "conv.png")
     plt.close(fig)
 
 
 def save_results(res):
-
     build_convergence(res)
 
-    if os.listdir(cf.files["tc_file"]):
+    if os.listdir(config.FILES["tc_file"]):
         dt_string = str(int(time.time()))
 
         #  Create directory and prepare files
-        shutil.make_archive(dt_string + "_tc_img", "zip", cf.files["tc_img"])
-        shutil.make_archive(dt_string + "_tc_file", "zip", cf.files["tc_file"])
+        shutil.make_archive(dt_string + "_tc_img", "zip", config.FILES["tc_img"])
+        shutil.make_archive(dt_string + "_tc_file", "zip", config.FILES["tc_file"])
         shutil.copyfile(".\\config.py", ".\\" + dt_string + "_config.py")
         shutil.copyfile(".\\conv.png", ".\\" + dt_string + "_conv.png")
         shutil.copyfile(".\\vehicle.py", ".\\" + dt_string + "_vehicle.py")
 
-        zipObj = ZipFile(dt_string + "_results.zip", "w")
+        zip_obj = ZipFile(dt_string + "_results.zip", "w")
 
         # Add multiple files to the zip
-        zipObj.write(dt_string + "_tc_img.zip")
-        zipObj.write(dt_string + "_tc_file.zip")
-        zipObj.write(dt_string + "_conv.png")
-        zipObj.write(dt_string + "_config.py")
-        zipObj.write(dt_string + "_vehicle.py")
+        zip_obj.write(dt_string + "_tc_img.zip")
+        zip_obj.write(dt_string + "_tc_file.zip")
+        zip_obj.write(dt_string + "_conv.png")
+        zip_obj.write(dt_string + "_config.py")
+        zip_obj.write(dt_string + "_vehicle.py")
 
-        zipObj.close()
+        zip_obj.close()
 
         #  move the archive to the destination folder
         shutil.move(
             dt_string + "_results.zip",
-            cf.files["ga_archive"] + dt_string + "_results.zip",
+            config.FILES["ga_archive"] + dt_string + "_results.zip",
         )
 
-        #  remove files
+        #  Remove files
         os.remove(".\\" + dt_string + "_config.py")
         os.remove(".\\" + dt_string + "_vehicle.py")
         os.remove(".\\" + dt_string + "_conv.png")
@@ -75,15 +73,15 @@ def save_results(res):
         os.remove(".\\" + dt_string + "_tc_img.zip")
         os.remove(".\\" + dt_string + "_tc_file.zip")
 
-        for folder in os.listdir(cf.files["tc_img"]):
-            shutil.rmtree(cf.files["tc_img"] + folder)
+        for folder in os.listdir(config.FILES["tc_img"]):
+            shutil.rmtree(config.FILES["tc_img"] + folder)
 
-        for file in os.listdir(cf.files["tc_file"]):
-            os.remove(cf.files["tc_file"] + file)
+        for file in os.listdir(config.FILES["tc_file"]):
+            os.remove(config.FILES["tc_file"] + file)
 
     #  create new folders
     for gen in [0, len(res.history) - 1]:
-        os.mkdir(cf.files["tc_img"] + "generation_" + str(gen))
+        os.mkdir(config.FILES["tc_img"] + "generation_" + str(gen))
 
     #  build images and write tc to file
     for gen in [0, len(res.history) - 1]:
@@ -107,9 +105,9 @@ def save_results(res):
             i += 1
 
         save_path = os.path.join(
-            cf.files["tc_file"], "generation_" + str(gen) + ".json"
+            config.FILES["tc_file"], "generation_" + str(gen) + ".json"
         )
-        save_path2 = os.path.join(cf.files["tc_file"], "states_" + str(gen) + ".json")
+        save_path2 = os.path.join(config.FILES["tc_file"], "states_" + str(gen) + ".json")
         with open(save_path, "w") as outfile:
             json.dump(test_cases, outfile, indent=4)
         with open(save_path2, "w") as outfile:
@@ -130,7 +128,7 @@ def image_car_path(road_points, car_path, fitness, novelty, generation, i):
 
     ax.plot(road_x, road_y, "yo--", label="Road")
 
-    top = cf.model["map_size"]
+    top = config.MODEL["map_size"]
     bottom = 0
 
     ax.set_title(
@@ -142,7 +140,7 @@ def image_car_path(road_points, car_path, fitness, novelty, generation, i):
     ax.set_xlim(bottom, top)
     ax.legend()
 
-    save_path = os.path.join(cf.files["tc_img"], "generation_" + str(generation))
+    save_path = os.path.join(config.FILES["tc_img"], "generation_" + str(generation))
 
     fig.savefig(save_path + "\\" + "tc_" + str(i) + ".jpg")
 
@@ -151,19 +149,19 @@ def image_car_path(road_points, car_path, fitness, novelty, generation, i):
 
 algorithm = NSGA2(
     # n_offsprings=25,
-    pop_size=cf.ga["population"],
-    sampling=MyTcSampling(),
-    crossover=CpsCrossover(cf.ga["cross_rate"]),
-    mutation=CpsMutation(cf.ga["mut_rate"]),
+    pop_size=config.GA["population"],
+    sampling=CpsSampling(),
+    crossover=CpsCrossover(config.GA["cross_rate"]),
+    mutation=CpsMutation(config.GA["mut_rate"]),
     eliminate_duplicates=CpsDuplicatesElimination(),
 )
 
 
 termination = MultiObjectiveSpaceToleranceTermination(
     tol=0.0025,
-    n_last=cf.ga["n_gen"],
+    n_last=config.GA["n_gen"],
     nth_gen=5,
-    n_max_gen=cf.ga["n_gen"],
+    n_max_gen=config.GA["n_gen"],
     n_max_evals=None,
 )
 
@@ -211,7 +209,7 @@ if __name__ == "__main__":
         res = minimize(
             CpsProblem(),
             algorithm,
-            ("n_gen", cf.ga["n_gen"]),
+            ("n_gen", config.GA["n_gen"]),
             seed=seed,
             verbose=True,
             save_history=True,

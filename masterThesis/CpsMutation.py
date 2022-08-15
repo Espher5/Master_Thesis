@@ -49,15 +49,15 @@ class CpsMutation(Mutation):
                     duration_list = []
                     if child["st" + str(num)]["state"] == "straight":
                         duration_list = np.arange(
-                            cf.model["min_len"],
-                            cf.model["max_len"],
-                            cf.model["len_step"],
+                            cf.MODEL["min_len"],
+                            cf.MODEL["max_len"],
+                            cf.MODEL["len_step"],
                         )
                     else:
                         duration_list = np.arange(
-                            cf.model["min_angle"],
-                            cf.model["max_angle"],
-                            cf.model["ang_step"],
+                            cf.MODEL["min_angle"],
+                            cf.MODEL["max_angle"],
+                            cf.MODEL["ang_step"],
                         )
 
                     child["st" + str(num)][value] = int(np.random.choice(duration_list))
@@ -69,9 +69,9 @@ class CpsMutation(Mutation):
                             ["left", "right"]
                         )
                         duration_list = np.arange(
-                            cf.model["min_angle"],
-                            cf.model["max_angle"],
-                            cf.model["ang_step"],
+                            cf.MODEL["min_angle"],
+                            cf.MODEL["max_angle"],
+                            cf.MODEL["ang_step"],
                         )
                         child["st" + str(num)]["value"] = int(
                             np.random.choice(duration_list)
@@ -79,9 +79,9 @@ class CpsMutation(Mutation):
                     else:
                         child["st" + str(num)][value] = "straight"
                         duration_list = np.arange(
-                            cf.model["min_len"],
-                            cf.model["max_len"],
-                            cf.model["len_step"],
+                            cf.MODEL["min_len"],
+                            cf.MODEL["max_len"],
+                            cf.MODEL["len_step"],
                         )
                         child["st" + str(num)]["value"] = int(
                             np.random.choice(duration_list)
@@ -103,15 +103,15 @@ class CpsMutation(Mutation):
                         else:
                             if child["st" + str(c1)]["state"] == "straight":
                                 duration_list = np.arange(
-                                    cf.model["min_len"],
-                                    cf.model["max_len"],
-                                    cf.model["len_step"],
+                                    cf.MODEL["min_len"],
+                                    cf.MODEL["max_len"],
+                                    cf.MODEL["len_step"],
                                 )
                             else:
                                 duration_list = np.arange(
-                                    cf.model["min_angle"],
-                                    cf.model["max_angle"],
-                                    cf.model["ang_step"],
+                                    cf.MODEL["min_angle"],
+                                    cf.MODEL["max_angle"],
+                                    cf.MODEL["ang_step"],
                                 )
                             child["st" + str(c1)]["value"] = int(
                                 np.random.choice(duration_list)

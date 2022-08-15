@@ -11,11 +11,11 @@ class CpsSampling(Sampling):
         # singleton = OnlyOne()
 
         generator = RoadGen(
-            cf.model["map_size"],
-            cf.model["min_len"],
-            cf.model["max_len"],
-            cf.model["min_angle"],
-            cf.model["max_angle"],
+            cf.MODEL["map_size"],
+            cf.MODEL["min_len"],
+            cf.MODEL["max_len"],
+            cf.MODEL["min_angle"],
+            cf.MODEL["max_angle"],
         )
 
         X = np.full((n_samples, 1), None, dtype=np.object)

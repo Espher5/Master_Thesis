@@ -39,8 +39,8 @@ class RoadGen:
 
         self.min_len = min_len
         self.max_len = max_len
-        self.step_ang = cf.model["ang_step"]
-        self.step_len = cf.model["len_step"]
+        self.step_ang = cf.MODEL["ang_step"]
+        self.step_len = cf.MODEL["len_step"]
 
         self.min_angle = min_angle
         self.max_angle = max_angle
