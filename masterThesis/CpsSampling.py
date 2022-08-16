@@ -1,24 +1,24 @@
 import numpy as np
-from pymoo.model.sampling import Sampling
-from Solution import Solution
 
-import config as cf
+from pymoo.model.sampling import Sampling
+
+import config
 from road_gen import RoadGen
+from Solution import Solution
 
 
 class CpsSampling(Sampling):
     def _do(self, problem, n_samples, **kwargs):
-        # singleton = OnlyOne()
 
         generator = RoadGen(
-            cf.MODEL["map_size"],
-            cf.MODEL["min_len"],
-            cf.MODEL["max_len"],
-            cf.MODEL["min_angle"],
-            cf.MODEL["max_angle"],
+            config.MODEL["map_size"],
+            config.MODEL["min_len"],
+            config.MODEL["max_len"],
+            config.MODEL["min_angle"],
+            config.MODEL["max_angle"],
         )
 
-        X = np.full((n_samples, 1), None, dtype=np.object)
+        x = np.full((n_samples, 1), None, dtype=np.object)
 
         for i in range(n_samples):
             states = generator.test_case_generate()
@@ -29,6 +29,6 @@ class CpsSampling(Sampling):
             s.get_points()
             s.remove_invalid_cases()
 
-            X[i, 0] = s
+            x[i, 0] = s
 
-        return X
+        return x

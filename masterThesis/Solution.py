@@ -1,4 +1,5 @@
-import config as cf
+import config
+
 from vehicle import Car
 from car_road import Map
 
@@ -6,16 +7,16 @@ from car_road import Map
 class Solution:
     def __init__(self):
 
-        self.road_points = []
-        self.states = {}
-        self.car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
-        self.road_builder = Map(cf.MODEL["map_size"])
-        self.fitness = 0
-        self.car_path = []
-        self.novelty = 0
-        self.intp_points = []
-        self.too_sharp = 0
-        self.just_fitness = 0
+        self._road_points = []
+        self._states = {}
+        self._car = Car(config.MODEL["speed"], config.MODEL["steer_ang"], config.MODEL["map_size"])
+        self._road_builder = Map(config.MODEL["map_size"])
+        self._fitness = 0
+        self._car_path = []
+        self._novelty = 0
+        self._intp_points = []
+        self._too_sharp = 0
+        self._just_fitness = 0
 
     @property
     def states(self):
@@ -27,7 +28,7 @@ class Solution:
 
     @property
     def n_states(self):
-        return len(self.states)
+        return len(self._states)
 
     @property
     def fitness(self):
@@ -37,40 +38,43 @@ class Solution:
     def fitness(self, value: float):
         self._fitness = value
 
-    def eval_fitness(self):
+    @property
+    def novelty(self):
+        return self._novelty
 
-        road = self.road_points
+    @novelty.setter
+    def novelty(self, novelty):
+        self._novelty = novelty
+
+    def eval_fitness(self):
+        road = self._road_points
         if not road:
             self.get_points()
             self.remove_invalid_cases()
-            road = self.road_points
+            road = self._road_points
             print("Points was empty")
 
-        self.just_fitness = self.fitness
+        self._just_fitness = self._fitness
 
-        if len(self.road_points) < 2:
-            self.fitness = 0
+        if len(self._road_points) < 2:
+            self._fitness = 0
         else:
-            self.intp_points = self.car.interpolate_road(road)
-            self.fitness, self.car_path = self.car.execute_road(self.intp_points)
-
+            self._intp_points = self._car.interpolate_road(road)
+            self._fitness, self._car_path = self._car.execute_road(self._intp_points)
 
         return
 
-
     def get_points(self):
-        self.road_points = self.road_builder.get_points_from_states(self.states)
+        self._road_points = self._road_builder.get_points_from_states(self._states)
 
     def remove_invalid_cases(self):
-        self.states, self.road_points = self.road_builder.remove_invalid_cases(
-            self.road_points, self.states
+        self._states, self._road_points = self._road_builder.remove_invalid_cases(
+            self._road_points, self._states
         )
-        # self.road_points = self.car.interpolate_road(self.road_points)
 
-    def calc_novelty(self, old, new):
+    @staticmethod
+    def calc_novelty(old, new):
         novelty = 0
-        # print("OLD", old)
-        # print("NEW", new)
         difference = abs(len(new) - len(old)) / 2
         novelty += difference
         if len(new) <= len(old):
@@ -87,5 +91,3 @@ class Solution:
                 novelty += 1
         # print("NOVELTY", novelty)
         return -novelty
-
-

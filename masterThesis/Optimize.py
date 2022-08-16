@@ -21,6 +21,25 @@ from CpsDuplicates import CpsDuplicatesElimination
 from CpsSampling import CpsSampling
 
 
+ALGORITHM = NSGA2(
+    # n_offsprings=25,
+    pop_size=config.GA["population"],
+    sampling=CpsSampling(),
+    crossover=CpsCrossover(config.GA["cross_rate"]),
+    mutation=CpsMutation(config.GA["mut_rate"]),
+    eliminate_duplicates=CpsDuplicatesElimination(),
+)
+
+
+TERMINATION = MultiObjectiveSpaceToleranceTermination(
+    tol=0.0025,
+    n_last=config.GA["n_gen"],
+    nth_gen=5,
+    n_max_gen=config.GA["n_gen"],
+    n_max_evals=None,
+)
+
+
 def build_convergence(res):
     n_eval = np.arange(0, len(res.history), 1)
     opt = np.array([e.opt[0].F for e in res.history])
@@ -59,7 +78,7 @@ def save_results(res):
 
         zip_obj.close()
 
-        #  move the archive to the destination folder
+        #  Move the archive to the destination folder
         shutil.move(
             dt_string + "_results.zip",
             config.FILES["ga_archive"] + dt_string + "_results.zip",
@@ -79,11 +98,11 @@ def save_results(res):
         for file in os.listdir(config.FILES["tc_file"]):
             os.remove(config.FILES["tc_file"] + file)
 
-    #  create new folders
+    #  Create new folders
     for gen in [0, len(res.history) - 1]:
         os.mkdir(config.FILES["tc_img"] + "generation_" + str(gen))
 
-    #  build images and write tc to file
+    #  Build images and write tc to file
     for gen in [0, len(res.history) - 1]:
         test_cases = {}
         states_tc = {}
@@ -134,36 +153,13 @@ def image_car_path(road_points, car_path, fitness, novelty, generation, i):
     ax.set_title(
         "Test case fitenss " + str(fitness) + " novely " + str(novelty), fontsize=17
     )
-
     ax.set_ylim(bottom, top)
-
     ax.set_xlim(bottom, top)
     ax.legend()
 
     save_path = os.path.join(config.FILES["tc_img"], "generation_" + str(generation))
-
     fig.savefig(save_path + "\\" + "tc_" + str(i) + ".jpg")
-
     plt.close(fig)
-
-
-algorithm = NSGA2(
-    # n_offsprings=25,
-    pop_size=config.GA["population"],
-    sampling=CpsSampling(),
-    crossover=CpsCrossover(config.GA["cross_rate"]),
-    mutation=CpsMutation(config.GA["mut_rate"]),
-    eliminate_duplicates=CpsDuplicatesElimination(),
-)
-
-
-termination = MultiObjectiveSpaceToleranceTermination(
-    tol=0.0025,
-    n_last=config.GA["n_gen"],
-    nth_gen=5,
-    n_max_gen=config.GA["n_gen"],
-    n_max_evals=None,
-)
 
 
 def calc_novelty(old, new):
@@ -208,7 +204,7 @@ if __name__ == "__main__":
 
         res = minimize(
             CpsProblem(),
-            algorithm,
+            ALGORITHM,
             ("n_gen", config.GA["n_gen"]),
             seed=seed,
             verbose=True,
