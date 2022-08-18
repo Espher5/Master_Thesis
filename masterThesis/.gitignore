@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 sbst_pipeline/results/
 simulations/
+
+info.txt

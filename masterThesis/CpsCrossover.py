@@ -16,7 +16,7 @@ class CpsCrossover(Crossover):
     def _do(self, problem, x, **kwargs):
         # The input of has the following shape (n_parents, n_matings, n_var)
         _, n_matings, n_var = x.shape
-        print("Number of mationgs", n_matings)
+        # print("Number of mationgs", n_matings)
         # print("X cross shape", x.shape)
 
         # The output with the shape (n_offsprings, n_matings, n_var)

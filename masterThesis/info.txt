@@ -14,3 +14,9 @@ Each road generation will be executed, resulting in every test environment havin
 
 road_gen creates the initial test case population
 Fitness is evaluated in Solution.py
+vehicle.py contains the method execute_road, used to check how the car behaves on the actual road
+
+
+
+Reduce the number of generations compared to AmbieGen
+After 45 generations, the solution converges, before starting to diverge again after around 80 generations

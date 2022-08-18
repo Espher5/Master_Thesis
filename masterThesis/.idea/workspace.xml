@@ -2,13 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_conv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_results.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_tc_file.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_tc_img.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1660602689_vehicle.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsCrossover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsMutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CpsSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/CpsSampling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Results_vehicle(2).json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/Solution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/generation_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/generation_99.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/states_0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_file/states_99.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_0/tc_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TC_img/generation_99/tc_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660317900+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660317900+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660317916+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660317916+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318226+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318226+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318244+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318244+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318304+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318304+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318482+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660318482+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660577997+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578038+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578038+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578111+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578111+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578270+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578270+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578537+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578537+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578541+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578541+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578749+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578762+test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/1660578762+test2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/vehicle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +205,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="road_points" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="vehicle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -132,11 +213,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/full_model/self_driving" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/full_model/self_driving/road_points.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vehicle.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,10 +229,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Optimize (1)" />
+        <item itemvalue="Python.vehicle" />
         <item itemvalue="Python.Optimize" />
         <item itemvalue="Python.road_gen" />
         <item itemvalue="Python.car_road" />
-        <item itemvalue="Python.road_points" />
       </list>
     </recent_temporary>
   </component>

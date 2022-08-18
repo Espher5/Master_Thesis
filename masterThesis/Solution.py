@@ -39,12 +39,20 @@ class Solution:
         self._fitness = value
 
     @property
+    def car_path(self):
+        return self._car_path
+
+    @property
     def novelty(self):
         return self._novelty
 
     @novelty.setter
     def novelty(self, novelty):
         self._novelty = novelty
+
+    @property
+    def intp_points(self):
+        return self._intp_points
 
     def eval_fitness(self):
         road = self._road_points
