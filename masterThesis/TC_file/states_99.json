@@ -1,0 +1,830 @@
+{
+    "tc0": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "straight",
+            "value": 10
+        },
+        "st3": {
+            "state": "left",
+            "value": 25
+        },
+        "st4": {
+            "state": "right",
+            "value": 80
+        }
+    },
+    "tc1": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "straight",
+            "value": 11
+        },
+        "st3": {
+            "state": "straight",
+            "value": 6
+        },
+        "st4": {
+            "state": "left",
+            "value": 30
+        },
+        "st5": {
+            "state": "left",
+            "value": 20
+        },
+        "st6": {
+            "state": "left",
+            "value": 20
+        },
+        "st7": {
+            "state": "left",
+            "value": 25
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        }
+    },
+    "tc2": {
+        "st0": {
+            "state": "straight",
+            "value": 22
+        },
+        "st1": {
+            "state": "straight",
+            "value": 5
+        },
+        "st2": {
+            "state": "left",
+            "value": 25
+        },
+        "st3": {
+            "state": "left",
+            "value": 75
+        },
+        "st4": {
+            "state": "left",
+            "value": 15
+        },
+        "st5": {
+            "state": "straight",
+            "value": 9
+        },
+        "st6": {
+            "state": "straight",
+            "value": 18
+        },
+        "st7": {
+            "state": "straight",
+            "value": 44
+        }
+    },
+    "tc3": {
+        "st0": {
+            "state": "straight",
+            "value": 8
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "right",
+            "value": 20
+        },
+        "st3": {
+            "state": "straight",
+            "value": 5
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "left",
+            "value": 20
+        },
+        "st6": {
+            "state": "left",
+            "value": 20
+        },
+        "st7": {
+            "state": "straight",
+            "value": 6
+        }
+    },
+    "tc4": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "left",
+            "value": 25
+        },
+        "st2": {
+            "state": "right",
+            "value": 50
+        },
+        "st3": {
+            "state": "right",
+            "value": 45
+        },
+        "st4": {
+            "state": "right",
+            "value": 70
+        },
+        "st5": {
+            "state": "right",
+            "value": 55
+        },
+        "st6": {
+            "state": "straight",
+            "value": 19
+        },
+        "st7": {
+            "state": "straight",
+            "value": 8
+        },
+        "st8": {
+            "state": "straight",
+            "value": 47
+        },
+        "st9": {
+            "state": "straight",
+            "value": 30
+        }
+    },
+    "tc5": {
+        "st0": {
+            "state": "straight",
+            "value": 18
+        },
+        "st1": {
+            "state": "straight",
+            "value": 25
+        },
+        "st2": {
+            "state": "straight",
+            "value": 19
+        },
+        "st3": {
+            "state": "left",
+            "value": 55
+        },
+        "st4": {
+            "state": "left",
+            "value": 20
+        },
+        "st5": {
+            "state": "left",
+            "value": 70
+        },
+        "st6": {
+            "state": "straight",
+            "value": 5
+        },
+        "st7": {
+            "state": "left",
+            "value": 80
+        },
+        "st8": {
+            "state": "left",
+            "value": 45
+        }
+    },
+    "tc6": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 30
+        },
+        "st2": {
+            "state": "straight",
+            "value": 11
+        },
+        "st3": {
+            "state": "left",
+            "value": 25
+        },
+        "st4": {
+            "state": "straight",
+            "value": 6
+        },
+        "st5": {
+            "state": "left",
+            "value": 20
+        },
+        "st6": {
+            "state": "left",
+            "value": 60
+        },
+        "st7": {
+            "state": "left",
+            "value": 20
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        },
+        "st9": {
+            "state": "straight",
+            "value": 47
+        }
+    },
+    "tc7": {
+        "st0": {
+            "state": "straight",
+            "value": 11
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "left",
+            "value": 20
+        },
+        "st3": {
+            "state": "straight",
+            "value": 9
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "straight",
+            "value": 30
+        },
+        "st6": {
+            "state": "right",
+            "value": 20
+        }
+    },
+    "tc8": {
+        "st0": {
+            "state": "straight",
+            "value": 18
+        },
+        "st1": {
+            "state": "straight",
+            "value": 27
+        },
+        "st2": {
+            "state": "straight",
+            "value": 23
+        },
+        "st3": {
+            "state": "straight",
+            "value": 7
+        },
+        "st4": {
+            "state": "left",
+            "value": 45
+        },
+        "st5": {
+            "state": "left",
+            "value": 70
+        },
+        "st6": {
+            "state": "straight",
+            "value": 12
+        },
+        "st7": {
+            "state": "left",
+            "value": 70
+        },
+        "st8": {
+            "state": "left",
+            "value": 70
+        }
+    },
+    "tc9": {
+        "st0": {
+            "state": "straight",
+            "value": 8
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "straight",
+            "value": 11
+        },
+        "st3": {
+            "state": "straight",
+            "value": 5
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "straight",
+            "value": 6
+        },
+        "st6": {
+            "state": "left",
+            "value": 20
+        },
+        "st7": {
+            "state": "left",
+            "value": 20
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        }
+    },
+    "tc10": {
+        "st0": {
+            "state": "straight",
+            "value": 19
+        },
+        "st1": {
+            "state": "straight",
+            "value": 39
+        },
+        "st2": {
+            "state": "straight",
+            "value": 5
+        },
+        "st3": {
+            "state": "straight",
+            "value": 11
+        },
+        "st4": {
+            "state": "left",
+            "value": 45
+        },
+        "st5": {
+            "state": "left",
+            "value": 65
+        },
+        "st6": {
+            "state": "straight",
+            "value": 15
+        },
+        "st7": {
+            "state": "left",
+            "value": 70
+        },
+        "st8": {
+            "state": "left",
+            "value": 65
+        }
+    },
+    "tc11": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 30
+        },
+        "st2": {
+            "state": "straight",
+            "value": 11
+        },
+        "st3": {
+            "state": "right",
+            "value": 80
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "straight",
+            "value": 6
+        }
+    },
+    "tc12": {
+        "st0": {
+            "state": "straight",
+            "value": 35
+        },
+        "st1": {
+            "state": "straight",
+            "value": 7
+        },
+        "st2": {
+            "state": "straight",
+            "value": 28
+        },
+        "st3": {
+            "state": "left",
+            "value": 20
+        },
+        "st4": {
+            "state": "left",
+            "value": 45
+        },
+        "st5": {
+            "state": "left",
+            "value": 70
+        },
+        "st6": {
+            "state": "straight",
+            "value": 5
+        },
+        "st7": {
+            "state": "left",
+            "value": 55
+        },
+        "st8": {
+            "state": "left",
+            "value": 80
+        }
+    },
+    "tc13": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "straight",
+            "value": 11
+        },
+        "st3": {
+            "state": "left",
+            "value": 25
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "left",
+            "value": 20
+        },
+        "st6": {
+            "state": "straight",
+            "value": 6
+        },
+        "st7": {
+            "state": "left",
+            "value": 20
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        },
+        "st9": {
+            "state": "left",
+            "value": 40
+        },
+        "st10": {
+            "state": "straight",
+            "value": 16
+        }
+    },
+    "tc14": {
+        "st0": {
+            "state": "straight",
+            "value": 18
+        },
+        "st1": {
+            "state": "left",
+            "value": 20
+        },
+        "st2": {
+            "state": "straight",
+            "value": 19
+        },
+        "st3": {
+            "state": "straight",
+            "value": 25
+        },
+        "st4": {
+            "state": "left",
+            "value": 45
+        },
+        "st5": {
+            "state": "left",
+            "value": 70
+        },
+        "st6": {
+            "state": "straight",
+            "value": 5
+        },
+        "st7": {
+            "state": "left",
+            "value": 55
+        },
+        "st8": {
+            "state": "left",
+            "value": 80
+        }
+    },
+    "tc15": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 50
+        },
+        "st2": {
+            "state": "left",
+            "value": 15
+        },
+        "st3": {
+            "state": "left",
+            "value": 25
+        },
+        "st4": {
+            "state": "left",
+            "value": 75
+        },
+        "st5": {
+            "state": "straight",
+            "value": 14
+        },
+        "st6": {
+            "state": "right",
+            "value": 50
+        },
+        "st7": {
+            "state": "right",
+            "value": 80
+        }
+    },
+    "tc16": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 30
+        },
+        "st2": {
+            "state": "right",
+            "value": 25
+        },
+        "st3": {
+            "state": "straight",
+            "value": 27
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "straight",
+            "value": 6
+        }
+    },
+    "tc17": {
+        "st0": {
+            "state": "straight",
+            "value": 25
+        },
+        "st1": {
+            "state": "straight",
+            "value": 18
+        },
+        "st2": {
+            "state": "straight",
+            "value": 19
+        },
+        "st3": {
+            "state": "left",
+            "value": 70
+        },
+        "st4": {
+            "state": "left",
+            "value": 45
+        },
+        "st5": {
+            "state": "straight",
+            "value": 5
+        },
+        "st6": {
+            "state": "left",
+            "value": 70
+        },
+        "st7": {
+            "state": "left",
+            "value": 70
+        },
+        "st8": {
+            "state": "left",
+            "value": 20
+        }
+    },
+    "tc18": {
+        "st0": {
+            "state": "right",
+            "value": 45
+        },
+        "st1": {
+            "state": "left",
+            "value": 35
+        },
+        "st2": {
+            "state": "left",
+            "value": 60
+        },
+        "st3": {
+            "state": "left",
+            "value": 65
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "left",
+            "value": 40
+        },
+        "st6": {
+            "state": "right",
+            "value": 35
+        },
+        "st7": {
+            "state": "right",
+            "value": 55
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        },
+        "st9": {
+            "state": "straight",
+            "value": 5
+        },
+        "st10": {
+            "state": "left",
+            "value": 40
+        },
+        "st11": {
+            "state": "straight",
+            "value": 40
+        }
+    },
+    "tc19": {
+        "st0": {
+            "state": "straight",
+            "value": 5
+        },
+        "st1": {
+            "state": "straight",
+            "value": 47
+        },
+        "st2": {
+            "state": "straight",
+            "value": 19
+        },
+        "st3": {
+            "state": "left",
+            "value": 45
+        },
+        "st4": {
+            "state": "left",
+            "value": 35
+        },
+        "st5": {
+            "state": "left",
+            "value": 70
+        },
+        "st6": {
+            "state": "straight",
+            "value": 42
+        },
+        "st7": {
+            "state": "straight",
+            "value": 14
+        },
+        "st8": {
+            "state": "left",
+            "value": 20
+        }
+    },
+    "tc20": {
+        "st0": {
+            "state": "right",
+            "value": 45
+        },
+        "st1": {
+            "state": "left",
+            "value": 35
+        },
+        "st2": {
+            "state": "left",
+            "value": 60
+        },
+        "st3": {
+            "state": "left",
+            "value": 65
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "left",
+            "value": 40
+        },
+        "st6": {
+            "state": "straight",
+            "value": 5
+        },
+        "st7": {
+            "state": "right",
+            "value": 55
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        },
+        "st9": {
+            "state": "straight",
+            "value": 40
+        },
+        "st10": {
+            "state": "left",
+            "value": 40
+        },
+        "st11": {
+            "state": "right",
+            "value": 35
+        }
+    },
+    "tc21": {
+        "st0": {
+            "state": "right",
+            "value": 45
+        },
+        "st1": {
+            "state": "left",
+            "value": 35
+        },
+        "st2": {
+            "state": "left",
+            "value": 60
+        },
+        "st3": {
+            "state": "left",
+            "value": 65
+        },
+        "st4": {
+            "state": "left",
+            "value": 60
+        },
+        "st5": {
+            "state": "left",
+            "value": 40
+        },
+        "st6": {
+            "state": "straight",
+            "value": 5
+        },
+        "st7": {
+            "state": "right",
+            "value": 55
+        },
+        "st8": {
+            "state": "right",
+            "value": 20
+        },
+        "st9": {
+            "state": "right",
+            "value": 35
+        },
+        "st10": {
+            "state": "straight",
+            "value": 20
+        },
+        "st11": {
+            "state": "straight",
+            "value": 40
+        }
+    }
+}

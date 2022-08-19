@@ -6,7 +6,6 @@ from car_road import Map
 
 class Solution:
     def __init__(self):
-
         self._road_points = []
         self._states = {}
         self._car = Car(config.MODEL["speed"], config.MODEL["steer_ang"], config.MODEL["map_size"])
@@ -97,5 +96,4 @@ class Solution:
                     novelty += 0.5
             else:
                 novelty += 1
-        # print("NOVELTY", novelty)
         return -novelty

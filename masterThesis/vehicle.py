@@ -130,6 +130,7 @@ class Car:
         """
         Simulates the execution of the test case on the road
         """
+        print('Executing road', nodes)
         self._x = 0
         self._y = 0
 
@@ -322,14 +323,9 @@ def is_too_sharp(the_test, TSHD_RADIUS=47):
 
 if __name__ == "__main__":
     car_ = Car(3, 10, 250)
-    with open("json\\points.json") as file:
-        points = json.load(file)
+    with open("json\\roads.json") as roads_file:
+        roads_ = json.load(roads_file)
 
-    road_ = points["tc0"]
+    road_ = car_.interpolate_road(roads_['tc0'])
 
-    old_x_vals_ = [t[0] for t in road_]
-    old_y_vals_ = [t[1] for t in road_]
 
-    print(road_)
-    print(old_x_vals_)
-    print(old_y_vals_)

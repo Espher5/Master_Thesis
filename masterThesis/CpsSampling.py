@@ -23,9 +23,7 @@ class CpsSampling(Sampling):
         for i in range(n_samples):
             states = generator.test_case_generate()
             s = Solution()
-
             s.states = states
-
             s.get_points()
             s.remove_invalid_cases()
 

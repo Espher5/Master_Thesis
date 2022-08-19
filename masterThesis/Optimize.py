@@ -193,7 +193,7 @@ if __name__ == '__main__':
     for m in range(2):
         fit_list = []
 
-        print('Execution #', m + 1)
+        print('Execution #', m)
 
         t = int(time.time() * 1000)
         seed = (
@@ -223,9 +223,6 @@ if __name__ == '__main__':
         hv_values = []
         hv = get_performance_indicator('hv', ref_point=np.array([0, 0]))
 
-        print('hv_values ', hv_values)
-        print('Algorithm history: ', res.history)
-
         for gen in range(len(res.history)):
             i = 0
             minim = 0
@@ -246,6 +243,7 @@ if __name__ == '__main__':
         gen = len(res.history) - 1
         reference = res.history[gen].pop.get('X')[0]
         novelty_list_old = []
+
         for i in range(1, len(res.history[gen].opt)):
             current = res.history[gen].pop.get('X')[i]
             nov = calc_novelty(reference[0].states, current[0].states)
@@ -264,6 +262,7 @@ if __name__ == '__main__':
             novelty_list.append(nov)
 
         novelty_list2 = []
+
         for i in combinations(range(0, 10), 2):
             current1 = res.history[gen].pop.get('X')[i[0]]
             current2 = res.history[gen].pop.get('X')[i[1]]
