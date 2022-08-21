@@ -1,0 +1,1 @@
+python competition.py --visualize-tests --time-budget 7200 --executor beamng --map-size 200 --module-name ambiegen.ambiegen_generator --class-name AmbieGenTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
