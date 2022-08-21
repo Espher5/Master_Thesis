@@ -1,3 +1,4 @@
+Possible approach:
 treat each test case's oob score as an objective to maximize for fault detection -> MOSA-like algortihm
 
 given an out of lane threshold of 0.5, the car is allowed to stay out of the lane for 0.5 seconds.
@@ -5,18 +6,10 @@ Each road generation will be executed, resulting in every test environment havin
 
  By highlighting the test environments with the highest out of lane time, we will generate more faults (probably)
 
- THE GENRATOR ONLY GENERATES THE FIRST POPULATION. THE GENETIC ALGORITHM EVOLVES IT!!!!!!
-
 1 - Get how road generation works in ambiegen, including validation and check for out of line and diversity
 2 - Replicate the same thing with deap
 3 - Change the objective function
 
 
-road_gen creates the initial test case population
-Fitness is evaluated in Solution.py
-vehicle.py contains the method execute_road, used to check how the car behaves on the actual road
-
-
-
-Reduce the number of generations compared to AmbieGen
-After 45 generations, the solution converges, before starting to diverge again after around 80 generations
+Currently, the genetic evolution of test cases and the execution in the simulator are treated independently, since it
+would be too expensive to run each test in the simulator during the evolution
