@@ -1,6 +1,10 @@
 Possible approach:
 treat each test case's oob score as an objective to maximize for fault detection -> MOSA-like algortihm
 
+Currently, the genetic evolution of test cases and the execution in the simulator are treated independently, since it
+would be too expensive to run each test in the simulator during the evolution. Therefore, use the oob values of the simplified
+model to assess the fitness scores.
+
 given an out of lane threshold of 0.5, the car is allowed to stay out of the lane for 0.5 seconds.
 Each road generation will be executed, resulting in every test environment having its own (average or highest) out of lane time in the run.
 
@@ -11,5 +15,6 @@ Each road generation will be executed, resulting in every test environment havin
 3 - Change the objective function
 
 
-Currently, the genetic evolution of test cases and the execution in the simulator are treated independently, since it
-would be too expensive to run each test in the simulator during the evolution
+
+
+Try changing the crossover
