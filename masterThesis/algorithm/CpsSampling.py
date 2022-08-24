@@ -8,7 +8,7 @@ from CpsIndividual import Individual
 from road_gen import RoadGen
 
 
-class MyTcSampling(Sampling):
+class CpsSampling(Sampling):
     """
     Class that generates the initial population
     """

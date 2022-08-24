@@ -6,7 +6,7 @@ from pymoo.model.mutation import Mutation
 import config
 
 
-class MyTcMutation(Mutation):
+class CpsMutation(Mutation):
     """
     Class to perform the mutation
     """

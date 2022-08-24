@@ -5,11 +5,11 @@ from pymoo.optimize import minimize
 
 import config
 
-from CpsProblem import CpsProblem
-from ambiegen.MyTcMutation import MyTcMutation
 from CpsCrossover import CpsCrossover
-from ambiegen.MyDuplicates import MyDuplicateElimination
-from ambiegen.MyTcSampling import MyTcSampling
+from CpsDuplicates import CpsDuplicates
+from CpsMutation import CpsMutation
+from CpsProblem import CpsProblem
+from CpsSampling import CpsSampling
 
 
 def optimize():
@@ -21,10 +21,10 @@ def optimize():
     algorithm = NSGA2(
         n_offsprings=50,
         pop_size=config.GA["population"],
-        sampling=MyTcSampling(),
+        sampling=CpsSampling(),
         crossover=CpsCrossover(config.GA["crossover_rate"]),
-        mutation=MyTcMutation(config.GA["mutation_rate"]),
-        eliminate_duplicates=MyDuplicateElimination(),
+        mutation=CpsMutation(config.GA["mutation_rate"]),
+        eliminate_duplicates=CpsDuplicates(),
     )
 
     t = int(time.time() * 1000)
@@ -40,7 +40,7 @@ def optimize():
         algorithm,
         ("n_gen", config.GA["n_gen"]),
         seed=seed,
-        verbose=False,
+        verbose=True,
         save_history=True,
         eliminate_duplicates=True,
     )

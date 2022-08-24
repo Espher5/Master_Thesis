@@ -1,7 +1,7 @@
 from pymoo.model.duplicate import ElementwiseDuplicateElimination
 
 
-class MyDuplicateElimination(ElementwiseDuplicateElimination):
+class CpsDuplicates(ElementwiseDuplicateElimination):
     """
     Class to remove the same individuals
     """
