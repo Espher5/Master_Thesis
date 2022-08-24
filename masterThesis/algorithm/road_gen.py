@@ -1,6 +1,6 @@
 import numpy as np
 
-from car_road import Map
+from algorithm.car_road import Map
 
 import os
 import json

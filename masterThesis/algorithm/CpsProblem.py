@@ -1,6 +1,6 @@
 from pymoo.model.problem import Problem
 
-import config
+from algorithm import config
 
 
 class CpsProblem(Problem):

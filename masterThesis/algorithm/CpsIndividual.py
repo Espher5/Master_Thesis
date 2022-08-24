@@ -1,9 +1,9 @@
 from code_pipeline.beamng_executor import BeamngExecutor
 from code_pipeline.tests_generation import RoadTestFactory
 
-import config
-from car_road import Map
-from vehicle import Car
+from algorithm import config
+from algorithm.car_road import Map
+from algorithm.vehicle import Car
 
 
 class Individual:

@@ -3,7 +3,7 @@ import random
 
 from pymoo.model.crossover import Crossover
 
-from CpsIndividual import Individual
+from algorithm.CpsIndividual import Individual
 
 
 class CpsCrossover(Crossover):

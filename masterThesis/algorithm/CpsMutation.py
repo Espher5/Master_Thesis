@@ -3,7 +3,7 @@ import copy
 
 from pymoo.model.mutation import Mutation
 
-import config
+from algorithm import config
 
 
 class CpsMutation(Mutation):

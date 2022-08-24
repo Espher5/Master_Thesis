@@ -3,13 +3,13 @@ import time
 from pymoo.algorithms.nsga2 import NSGA2
 from pymoo.optimize import minimize
 
-import config
+from algorithm import config
 
-from CpsCrossover import CpsCrossover
-from CpsDuplicates import CpsDuplicates
-from CpsMutation import CpsMutation
-from CpsProblem import CpsProblem
-from CpsSampling import CpsSampling
+from algorithm.CpsCrossover import CpsCrossover
+from algorithm.CpsDuplicates import CpsDuplicates
+from algorithm.CpsMutation import CpsMutation
+from algorithm.CpsProblem import CpsProblem
+from algorithm.CpsSampling import CpsSampling
 
 
 def optimize():

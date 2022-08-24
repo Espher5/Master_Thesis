@@ -4,7 +4,7 @@ from time import sleep
 
 from code_pipeline.tests_generation import RoadTestFactory
 
-from Optimize import optimize
+from algorithm.Optimize import optimize
 
 
 class AlgorithmTestGenerator:

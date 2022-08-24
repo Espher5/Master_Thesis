@@ -3,9 +3,9 @@ import numpy as np
 from pymoo.model.sampling import Sampling
 
 
-import config
-from CpsIndividual import Individual
-from road_gen import RoadGen
+from algorithm import config
+from algorithm.CpsIndividual import Individual
+from algorithm.road_gen import RoadGen
 
 
 class CpsSampling(Sampling):
