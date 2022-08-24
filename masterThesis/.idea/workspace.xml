@@ -3,33 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/CpsCrossover.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/CpsDuplicateElimination.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/car_road.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/vehicle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0003.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0004.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0005.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0006.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0007.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0008.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0009.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0010.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0011.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0012.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0013.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0014.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0015.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0016.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0017.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0018.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102741386.0/test.0020.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/ambiegen.ambiegen_generator_AmbieGenTestGenerator_166102816993.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Optimize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run-commands" beforeDir="false" afterPath="$PROJECT_DIR$/run-commands" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
