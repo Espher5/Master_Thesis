@@ -1,13 +1,14 @@
 from pymoo.optimize import minimize
 
-from ambiegen_tests.MyProblem import MyProblem
-from ambiegen_tests.MyTcMutation import MyTcMutation
-from ambiegen_tests.MyTcCrossOver import MyTcCrossover
-from ambiegen_tests.MyDuplicates import MyDuplicateElimination
-from ambiegen_tests.MyTcSampling import MyTcSampling
+from algorithm.CpsProblem import CpsProblem
+from algorithm.CpsMutation import CpsMutation
+from algorithm.CpsCrossover import CpsCrossover
+from algorithm.CpsDuplicates import CpsDuplicatesElimination
+from algorithm.CpsSampling import CpsSampling
 import time
 from pymoo.algorithms.nsga2 import NSGA2
-import ambiegen_tests.config as cf
+import algorithm.config as cf
+
 
 def optimize():
     """
@@ -15,14 +16,13 @@ def optimize():
     the Pareto optimal solutions are returned
     """
 
-
     algorithm = NSGA2(
         n_offsprings=50,
-        pop_size=cf.ga["population"],
-        sampling=MyTcSampling(),
-        crossover=MyTcCrossover(cf.ga["cross_rate"]),
-        mutation=MyTcMutation(cf.ga["mut_rate"]),
-        eliminate_duplicates=MyDuplicateElimination(),
+        pop_size=cf.GA["population"],
+        sampling=CpsSampling(),
+        crossover=CpsCrossover(cf.GA["crossover_rate"]),
+        mutation=CpsMutation(cf.GA["mutation_rate"]),
+        eliminate_duplicates=CpsDuplicatesElimination(),
     )
 
     t = int(time.time() * 1000)
@@ -34,9 +34,9 @@ def optimize():
     )
 
     res = minimize(
-        MyProblem(),
+        CpsProblem(),
         algorithm,
-        ("n_gen", cf.ga["n_gen"]),
+        ("n_gen", cf.GA["n_gen"]),
         seed=seed,
         verbose=False,
         save_history=True,

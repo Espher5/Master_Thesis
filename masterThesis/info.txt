@@ -8,8 +8,13 @@ model to assess the fitness scores.
 Currently, given an out of lane threshold of 0.5, the car is allowed to stay out of the lane for 0.5 seconds.
 Each road generation will be executed in the simulated environment, resulting in every test environment having its own (average or highest) out of lane time in the run.
 
-
 The idea is that by highlighting the test environments with the highest out of lane time, we will generate configurations that will result in more faults
+
+
+Currently, the fitness is defined as the maximum distance between the car and the nearest road point during the
+execution in the simplified environment
+
+
 
 
 

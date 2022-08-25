@@ -3,8 +3,9 @@ import random
 
 
 def main():
-    x = np.full((10, 1), None, dtype=object)
-    print(x)
+    l = [1, 2, 3]
+    fitness = max(l) * (-1)
+    print(fitness)
 
 
 if __name__ == '__main__':

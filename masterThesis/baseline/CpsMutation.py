@@ -1,13 +1,13 @@
 import numpy as np
 from pymoo.model.mutation import Mutation
 import copy
-import ambiegen_tests.config as cf
+import algorithm.config as cf
 
 
-class MyTcMutation(Mutation):
-    '''
-    Module to perform the mutation
-    '''
+class CpsMutation(Mutation):
+    """
+    Class that performs the mutation operation
+    """
     def __init__(self, mut_rate):
         super().__init__()
         self.mut_rate = mut_rate
@@ -41,11 +41,11 @@ class MyTcMutation(Mutation):
                         duration_list = []
                         if child["st" + str(num)]["state"] == "straight":
                             duration_list = np.arange(
-                                cf.model["min_len"], cf.model["max_len"], 1
+                                cf.MODEL["min_len"], cf.MODEL["max_len"], 1
                             )
                         else:
                             duration_list = np.arange(
-                                cf.model["min_angle"], cf.model["max_angle"], 5
+                                cf.MODEL["min_angle"], cf.MODEL["max_angle"], 5
                             )
 
                         child["st" + str(num)][value] = int(
@@ -59,7 +59,7 @@ class MyTcMutation(Mutation):
                                 ["left", "right"]
                             )
                             duration_list = np.arange(
-                                cf.model["min_angle"], cf.model["max_angle"], 5
+                                cf.MODEL["min_angle"], cf.MODEL["max_angle"], 5
                             )
                             child["st" + str(num)]["value"] = int(
                                 np.random.choice(duration_list)
@@ -67,7 +67,7 @@ class MyTcMutation(Mutation):
                         else:
                             child["st" + str(num)][value] = "straight"
                             duration_list = np.arange(
-                                cf.model["min_len"], cf.model["max_len"], 1
+                                cf.MODEL["min_len"], cf.MODEL["max_len"], 1
                             )
                             child["st" + str(num)]["value"] = int(
                                 np.random.choice(duration_list)
@@ -89,11 +89,11 @@ class MyTcMutation(Mutation):
                         else:
                             if child["st" + str(c1)]["state"] == "straight":
                                 duration_list = np.arange(
-                                    cf.model["min_len"], cf.model["max_len"], 1
+                                    cf.MODEL["min_len"], cf.MODEL["max_len"], 1
                                 )
                             else:
                                 duration_list = np.arange(
-                                    cf.model["min_angle"], cf.model["max_angle"], 5
+                                    cf.MODEL["min_angle"], cf.MODEL["max_angle"], 5
                                 )
                             child["st" + str(c1)]["value"] = int(
                                 np.random.choice(duration_list)

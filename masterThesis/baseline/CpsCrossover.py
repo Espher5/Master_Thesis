@@ -1,12 +1,15 @@
 import numpy as np
-from pymoo.model.crossover import Crossover
-from ambiegen_tests.Solution import Solution
 import random as rm
 
-class MyTcCrossover(Crossover):
-    '''
-    Module to perform the crossover
-    '''
+from pymoo.model.crossover import Crossover
+
+from algorithm.CpsIndividual import Individual
+
+
+class CpsCrossover(Crossover):
+    """
+    Class that performs crossover operation
+    """
     def __init__(self, cross_rate):
         super().__init__(2, 2)
         self.cross_rate = cross_rate
@@ -36,7 +39,6 @@ class MyTcCrossover(Crossover):
                 tc_a = s_a.states
                 tc_b = s_b.states
 
-
                 if len(tc_a) < len(tc_b):
                     crossover_point = rm.randint(1, len(tc_a) - 1)
                 elif len(tc_b) < len(tc_a):
@@ -58,8 +60,8 @@ class MyTcCrossover(Crossover):
                     for n in range(crossover_point, len(tc_a)):
                         offb["st" + str(n)] = tc_a["st" + str(n)]
 
-                    off_a = Solution()
-                    off_b = Solution()
+                    off_a = Individual()
+                    off_b = Individual()
 
                     off_a.states = offa
                     off_b.states = offb

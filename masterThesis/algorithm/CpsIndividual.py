@@ -39,15 +39,11 @@ class Individual:
         return 
 
     def car_model_fit(self):
-
         the_executor = BeamngExecutor(cf.MODEL["map_size"])
-
         the_test = RoadTestFactory.create_road_test(self.road_points)
-
         fit = the_executor._eval_tc(the_test)
 
         return fit
-
 
     def get_points(self):
         self.road_points = self.road_builder.get_points_from_states(self.states)

@@ -1,7 +1,7 @@
 from pymoo.model.problem import Problem
 
 
-class MyProblem(Problem):
+class CpsProblem(Problem):
     '''
     Module to calculate the fitnes of the individuals
     '''

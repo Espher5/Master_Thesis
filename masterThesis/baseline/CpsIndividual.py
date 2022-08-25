@@ -1,12 +1,12 @@
 
-from ambiegen_tests.vehicle import Car
-import ambiegen_tests.config as cf
-from ambiegen_tests.car_road import Map
+from algorithm.vehicle import Car
+import algorithm.config as cf
+from algorithm.car_road import Map
 from code_pipeline.beamng_executor import BeamngExecutor
 from code_pipeline.tests_generation import RoadTestFactory
 
 
-class Solution:
+class Individual:
     """
     This is a class to represent one individual of the genetic algorithm
     """
@@ -14,8 +14,8 @@ class Solution:
 
         self.road_points = []
         self.states = {}
-        self.car = Car(cf.model["speed"], cf.model["steer_ang"], cf.model["map_size"])
-        self.road_builder = Map(cf.model["map_size"])
+        self.car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
+        self.road_builder = Map(cf.MODEL["map_size"])
         self.fitness = 0
         self.car_path = []
         self.novelty = 0
@@ -39,15 +39,11 @@ class Solution:
         return 
 
     def car_model_fit(self):
-
-        the_executor = BeamngExecutor(cf.model["map_size"])
-
+        the_executor = BeamngExecutor(cf.MODEL["map_size"])
         the_test = RoadTestFactory.create_road_test(self.road_points)
-
         fit = the_executor._eval_tc(the_test)
 
         return fit
-
 
     def get_points(self):
         self.road_points = self.road_builder.get_points_from_states(self.states)
