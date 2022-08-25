@@ -1,16 +1,13 @@
-import time
-
-from pymoo.algorithms.nsga2 import NSGA2
 from pymoo.optimize import minimize
 
-from algorithm import config
-
-from algorithm.CpsCrossover import CpsCrossover
-from algorithm.CpsDuplicates import CpsDuplicates
-from algorithm.CpsMutation import CpsMutation
-from algorithm.CpsProblem import CpsProblem
-from algorithm.CpsSampling import CpsSampling
-
+from ambiegen.MyProblem import MyProblem
+from ambiegen.MyTcMutation import MyTcMutation
+from ambiegen.MyTcCrossOver import MyTcCrossover
+from ambiegen.MyDuplicates import MyDuplicateElimination
+from ambiegen.MyTcSampling import MyTcSampling
+import time
+from pymoo.algorithms.nsga2 import NSGA2
+import ambiegen.config as cf
 
 def optimize():
     """
@@ -18,13 +15,14 @@ def optimize():
     the Pareto optimal solutions are returned
     """
 
+
     algorithm = NSGA2(
         n_offsprings=50,
-        pop_size=config.GA["population"],
-        sampling=CpsSampling(),
-        crossover=CpsCrossover(config.GA["crossover_rate"]),
-        mutation=CpsMutation(config.GA["mutation_rate"]),
-        eliminate_duplicates=CpsDuplicates(),
+        pop_size=cf.ga["population"],
+        sampling=MyTcSampling(),
+        crossover=MyTcCrossover(cf.ga["cross_rate"]),
+        mutation=MyTcMutation(cf.ga["mut_rate"]),
+        eliminate_duplicates=MyDuplicateElimination(),
     )
 
     t = int(time.time() * 1000)
@@ -36,16 +34,16 @@ def optimize():
     )
 
     res = minimize(
-        CpsProblem(),
+        MyProblem(),
         algorithm,
-        ("n_gen", config.GA["n_gen"]),
+        ("n_gen", cf.ga["n_gen"]),
         seed=seed,
-        verbose=True,
+        verbose=False,
         save_history=True,
         eliminate_duplicates=True,
     )
 
-    print("Best solution found: \nF = %s" % res.F)
+    print("Best solution found: \nF = %s" % (res.F))
     gen = len(res.history) - 1
     test_cases = {}
     i = 0
@@ -57,3 +55,4 @@ def optimize():
         test_cases["tc" + str(i)] = road_points
         i += 1
     return test_cases
+

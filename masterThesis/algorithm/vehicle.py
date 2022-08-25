@@ -1,5 +1,6 @@
 import numpy as np
 import math as m
+from shapely.geometry import Point
 
 from scipy.interpolate import splprep, splev
 from shapely.geometry import LineString, Point

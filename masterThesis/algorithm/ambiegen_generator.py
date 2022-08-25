@@ -1,16 +1,13 @@
-import logging
-
-from time import sleep
-
 from code_pipeline.tests_generation import RoadTestFactory
+from time import sleep
+import logging as log
+import ambiegen.Optimize as optim
 
-from algorithm.Optimize import optimize
 
-
-class AlgorithmTestGenerator:
+class AmbieGenTestGenerator:
     """
     This test generator creates road points using affine transformations to vectors.
-    Initially generated test cases are optimized by NSGA-2 algorithm with two objectives:
+    Initially generated test cases are optimized by NSGA2 algorithm with two objectives:
     fault revealing power and diversity. We use a simplified model of a vehicle to
     estimate the fault revealing power (as the maximum deviation from the road center).
     We use 100 generations and 100 population size. In each iteration of the generator 
@@ -26,13 +23,13 @@ class AlgorithmTestGenerator:
 
         while not self.executor.is_over():
 
-            cases = optimize()
+            cases = optim.optimize()
             print('Generated {} test cases'.format(len(cases)))
 
             for case in cases:
 
                 # Some debugging
-                logging.info(
+                log.info(
                     "Starting test generation. Remaining time %s",
                     self.executor.get_remaining_time(),
                 )
@@ -44,8 +41,8 @@ class AlgorithmTestGenerator:
                     the_test
                 )
 
-                logging.info("test_outcome %s", test_outcome)
-                logging.info("description %s", description)
+                log.info("test_outcome %s", test_outcome)
+                log.info("description %s", description)
 
                 if self.executor.road_visualizer:
                     sleep(1)

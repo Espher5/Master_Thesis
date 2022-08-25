@@ -1,6 +1,6 @@
 import numpy as np
 
-from algorithm.car_road import Map
+from ambiegen.car_road import Map
 
 import os
 import json
@@ -62,6 +62,7 @@ class RoadGen:
         """Function that produces a list with states and road points"""
 
         # initialization
+
         self.road_points = []
 
         self.init_states = ["straight", "left", "right"]

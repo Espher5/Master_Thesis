@@ -1,15 +1,13 @@
 import numpy as np
-import copy
-
 from pymoo.model.mutation import Mutation
+import copy
+import ambiegen.config as cf
 
-from algorithm import config
 
-
-class CpsMutation(Mutation):
-    """
-    Class to perform the mutation
-    """
+class MyTcMutation(Mutation):
+    '''
+    Module to perform the mutation
+    '''
     def __init__(self, mut_rate):
         super().__init__()
         self.mut_rate = mut_rate
@@ -18,8 +16,7 @@ class CpsMutation(Mutation):
         for i in range(len(X)):
             r = np.random.random()
             s = X[i, 0]
-
-            # with a probability of 40% - change the order of characters
+            # with a probabilty of 40% - change the order of characters
             if r < self.mut_rate:  # cf.ga["mut_rate"]:
 
                 sn = copy.deepcopy(s)
@@ -37,18 +34,18 @@ class CpsMutation(Mutation):
                     temp = child["st" + str(candidates[0])]
                     child["st" + str(candidates[0])] = child["st" + str(candidates[1])]
                     child["st" + str(candidates[1])] = temp
-                elif 0.2 <= wr < 0.5:
+                elif wr >= 0.2 and wr < 0.5:
                     num = np.random.randint(0, high=len(child))
                     value = np.random.choice(["state", "value"])
                     if value == "value":
                         duration_list = []
                         if child["st" + str(num)]["state"] == "straight":
                             duration_list = np.arange(
-                                config.MODEL["min_len"], config.MODEL["max_len"], 1
+                                cf.model["min_len"], cf.model["max_len"], 1
                             )
                         else:
                             duration_list = np.arange(
-                                config.MODEL["min_angle"], config.MODEL["max_angle"], 5
+                                cf.model["min_angle"], cf.model["max_angle"], 5
                             )
 
                         child["st" + str(num)][value] = int(
@@ -62,7 +59,7 @@ class CpsMutation(Mutation):
                                 ["left", "right"]
                             )
                             duration_list = np.arange(
-                                config.MODEL["min_angle"], config.MODEL["max_angle"], 5
+                                cf.model["min_angle"], cf.model["max_angle"], 5
                             )
                             child["st" + str(num)]["value"] = int(
                                 np.random.choice(duration_list)
@@ -70,7 +67,7 @@ class CpsMutation(Mutation):
                         else:
                             child["st" + str(num)][value] = "straight"
                             duration_list = np.arange(
-                                config.MODEL["min_len"], config.MODEL["max_len"], 1
+                                cf.model["min_len"], cf.model["max_len"], 1
                             )
                             child["st" + str(num)]["value"] = int(
                                 np.random.choice(duration_list)
@@ -92,11 +89,11 @@ class CpsMutation(Mutation):
                         else:
                             if child["st" + str(c1)]["state"] == "straight":
                                 duration_list = np.arange(
-                                    config.MODEL["min_len"], config.MODEL["max_len"], 1
+                                    cf.model["min_len"], cf.model["max_len"], 1
                                 )
                             else:
                                 duration_list = np.arange(
-                                    config.MODEL["min_angle"], config.MODEL["max_angle"], 5
+                                    cf.model["min_angle"], cf.model["max_angle"], 5
                                 )
                             child["st" + str(c1)]["value"] = int(
                                 np.random.choice(duration_list)
