@@ -1,21 +1,17 @@
 Possible approach:
-treat each test case's oob score as an objective to maximize for fault detection -> MOSA-like algortihm
+treat each test case's oob score (in the simplified model) as an objective to maximize for fault detection, in a MOSA-like approach
 
 Currently, the genetic evolution of test cases and the execution in the simulator are treated independently, since it
 would be too expensive to run each test in the simulator during the evolution. Therefore, use the oob values of the simplified
 model to assess the fitness scores.
 
-given an out of lane threshold of 0.5, the car is allowed to stay out of the lane for 0.5 seconds.
-Each road generation will be executed, resulting in every test environment having its own (average or highest) out of lane time in the run.
+Currently, given an out of lane threshold of 0.5, the car is allowed to stay out of the lane for 0.5 seconds.
+Each road generation will be executed in the simulated environment, resulting in every test environment having its own (average or highest) out of lane time in the run.
 
- By highlighting the test environments with the highest out of lane time, we will generate more faults (probably)
 
-1 - Get how road generation works in ambiegen, including validation and check for out of line and diversity
-2 - Replicate the same thing with deap
-3 - Change the objective function
+The idea is that by highlighting the test environments with the highest out of lane time, we will generate configurations that will result in more faults
 
 
 
-
-Try changing the crossover
-X represents the population
+Other things that may be worth to check:
+    - Crossover type & threshold

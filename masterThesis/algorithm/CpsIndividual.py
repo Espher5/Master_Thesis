@@ -14,8 +14,8 @@ class Individual:
 
         self.road_points = []
         self.states = {}
-        self.car = Car(cf.model["speed"], cf.model["steer_ang"], cf.model["map_size"])
-        self.road_builder = Map(cf.model["map_size"])
+        self.car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
+        self.road_builder = Map(cf.MODEL["map_size"])
         self.fitness = 0
         self.car_path = []
         self.novelty = 0
@@ -40,7 +40,7 @@ class Individual:
 
     def car_model_fit(self):
 
-        the_executor = BeamngExecutor(cf.model["map_size"])
+        the_executor = BeamngExecutor(cf.MODEL["map_size"])
 
         the_test = RoadTestFactory.create_road_test(self.road_points)
 

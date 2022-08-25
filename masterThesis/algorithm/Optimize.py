@@ -18,10 +18,10 @@ def optimize():
 
     algorithm = NSGA2(
         n_offsprings=50,
-        pop_size=cf.ga["population"],
+        pop_size=cf.GA["population"],
         sampling=CpsSampling(),
-        crossover=CpsCrossover(cf.ga["cross_rate"]),
-        mutation=CpsMutation(cf.ga["mut_rate"]),
+        crossover=CpsCrossover(cf.GA["crossover_rate"]),
+        mutation=CpsMutation(cf.GA["mutation_rate"]),
         eliminate_duplicates=CpsDuplicatesElimination(),
     )
 
@@ -36,7 +36,7 @@ def optimize():
     res = minimize(
         CpsProblem(),
         algorithm,
-        ("n_gen", cf.ga["n_gen"]),
+        ("n_gen", cf.GA["n_gen"]),
         seed=seed,
         verbose=False,
         save_history=True,

@@ -1,15 +1,15 @@
+import math
 import numpy as np
-import math as m
-from shapely.geometry import Point
+from numpy.ma import arange
 
 from scipy.interpolate import splprep, splev
 from shapely.geometry import LineString, Point
-from numpy.ma import arange
 
 
 class Car:
-    """Class that conducts transformations to vectors automatically,
-    using the commads "go straight", "turn left", "turn right".
+    """
+    Class that conducts transformations to vectors automatically,
+    using the commands "go straight", "turn left", "turn right".
     As a result it produces a set of points corresponding to a road
     """
 
@@ -19,8 +19,8 @@ class Car:
         self.str_ang = steer_ang
         self.str_ang_o = steer_ang
 
-    def interpolate_road(self, road):
-
+    @staticmethod
+    def interpolate_road(road):
         test_road = LineString([(t[0], t[1]) for t in road])
 
         length = test_road.length
@@ -39,14 +39,9 @@ class Car:
         else:
             k = 3
         f2, u = splprep([old_x_vals, old_y_vals], s=0, k=k)
-        # step_size = 1 / (length) * 8
-
         step_size = 1 / num_nodes
-
-        xnew = arange(0, 1 + step_size, step_size)
-
-        x2, y2 = splev(xnew, f2)
-
+        x_new = arange(0, 1 + step_size, step_size)
+        x2, y2 = splev(x_new, f2)
         nodes = list(zip(x2, y2))
 
         return nodes
@@ -56,27 +51,27 @@ class Car:
         return p.distance(road)
 
     def go_straight(self):
-        self.x = self.speed * np.cos(m.radians(self.angle)) / 2.3 + self.x
-        self.y = self.speed * np.sin(m.radians(self.angle)) / 2.3 + self.y
+        self.x = self.speed * np.cos(math.radians(self.angle)) / 2.3 + self.x
+        self.y = self.speed * np.sin(math.radians(self.angle)) / 2.3 + self.y
         self.tot_x.append(self.x)
         self.tot_y.append(self.y)
         return
 
     def turn_right(self):
 
-        self.str_ang = m.degrees(m.atan(1 / self.speed * 2 * self.distance))
+        self.str_ang = math.degrees(math.atan(1 / self.speed * 2 * self.distance))
         self.angle = -self.str_ang + self.angle
-        self.x = self.speed * np.cos(m.radians(self.angle)) / 3 + self.x
-        self.y = self.speed * np.sin(m.radians(self.angle)) / 3 + self.y
+        self.x = self.speed * np.cos(math.radians(self.angle)) / 3 + self.x
+        self.y = self.speed * np.sin(math.radians(self.angle)) / 3 + self.y
         self.tot_x.append(self.x)
         self.tot_y.append(self.y)
         return
 
     def turn_left(self):
-        self.str_ang = m.degrees(m.atan(1 / self.speed * 2 * self.distance))
+        self.str_ang = math.degrees(math.atan(1 / self.speed * 2 * self.distance))
         self.angle = self.str_ang + self.angle
-        self.x = self.speed * np.cos(m.radians(self.angle)) / 3 + self.x
-        self.y = self.speed * np.sin(m.radians(self.angle)) / 3 + self.y
+        self.x = self.speed * np.cos(math.radians(self.angle)) / 3 + self.x
+        self.y = self.speed * np.sin(math.radians(self.angle)) / 3 + self.y
 
         self.tot_x.append(self.x)
         self.tot_y.append(self.y)
@@ -87,7 +82,7 @@ class Car:
         vector = np.array(node_b) - np.array(node_a)
         cos = vector[0] / (np.linalg.norm(vector))
 
-        angle = m.degrees(m.acos(cos))
+        angle = math.degrees(math.acos(cos))
 
         if node_a[1] > node_b[1]:
             return -angle
@@ -158,14 +153,14 @@ class Car:
 
                     else:
                         angle = -1 + self.angle
-                        x = self.speed * np.cos(m.radians(angle)) + self.x
-                        y = self.speed * np.sin(m.radians(angle)) + self.y
+                        x = self.speed * np.cos(math.radians(angle)) + self.x
+                        y = self.speed * np.sin(math.radians(angle)) + self.y
 
                         distance_right = self.get_distance(mini_road, x, y)
 
                         angle = 1 + self.angle
-                        x = self.speed * np.cos(m.radians(angle)) + self.x
-                        y = self.speed * np.sin(m.radians(angle)) + self.y
+                        x = self.speed * np.cos(math.radians(angle)) + self.x
+                        y = self.speed * np.sin(math.radians(angle)) + self.y
 
                         distance_left = self.get_distance(mini_road, x, y)
 
@@ -186,7 +181,7 @@ class Car:
             fitness = max(self.tot_dist) * (-1)
 
             car_path = LineString(zip(self.tot_x, self.tot_y))
-            if car_path.is_simple == False:
+            if car_path.is_simple is False:
                 fitness = 0
 
         return fitness, [self.tot_x, self.tot_y]

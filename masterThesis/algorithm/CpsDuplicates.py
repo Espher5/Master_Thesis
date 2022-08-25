@@ -2,8 +2,8 @@ from pymoo.model.duplicate import ElementwiseDuplicateElimination
 
 
 class CpsDuplicatesElimination(ElementwiseDuplicateElimination):
-    '''
-    Module to remove the same individuals
-    '''
+    """
+    Class that removes identical individuals in the population
+    """
     def is_equal(self, a, b):
-        return a.X[0].states == b.X[0].states  # remove individuals that are the same
+        return a.X[0].states == b.X[0].states

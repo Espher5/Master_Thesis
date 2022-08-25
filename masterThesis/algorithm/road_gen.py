@@ -1,27 +1,24 @@
+import json
 import numpy as np
+import os
 
 from algorithm.car_road import Map
-
-import os
-import json
 
 
 class RoadGen:
     """
     Class for generating roads
-
-    We using a Markov chain to generate a sequence of road types.
+    A Markov Chain is used to generate a sequence of road types.
     It allows to create a better initial population
-    
     """
 
     def __init__(
         self,
         map_size,
-        min_len,  # minimal possible distance in meters
-        max_len,  # maximal possible disance to go straight in meters
-        min_angle,  # minimal angle of rotation in degrees
-        max_angle,  # maximal angle of rotation in degrees
+        min_len,    # Minimal possible distance in meters
+        max_len,    # Maximal possible distance to go straight in meters
+        min_angle,  # Minimal angle of rotation in degrees
+        max_angle,  # Maximal angle of rotation in degrees
     ):
         self.file = "roads.json"
         self.init_file = "init.json"
@@ -37,11 +34,12 @@ class RoadGen:
             ["RS", "RL", "RR"],
         ]
 
+        # Probabilities of switching states
         self.transitionMatrix = [
             [0.1, 0.45, 0.45],
             [0.2, 0.4, 0.4],
             [0.2, 0.4, 0.4],
-        ]  # probabilities of switching states
+        ]
 
         self.min_len = min_len
         self.max_len = max_len
@@ -59,8 +57,9 @@ class RoadGen:
         ]  # a list of angles to turn
 
     def test_case_generate(self):
-        """Function that produces a list with states and road points"""
-
+        """
+        Function that produces a list with states and road points
+        """
         # initialization
 
         self.road_points = []
