@@ -6,7 +6,7 @@ import algorithm.config as cf
 from algorithm.road_gen import RoadGen
 
 
-class MyTcSampling(Sampling):
+class CpsSampling(Sampling):
 
     '''
     Module to generate the initial population

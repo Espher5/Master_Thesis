@@ -4,7 +4,7 @@ from algorithm.CpsIndividual import Individual
 import random as rm
 
 
-class MyTcCrossover(Crossover):
+class CpsCrossover(Crossover):
     '''
     Module to perform the crossover
     '''

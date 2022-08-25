@@ -1,13 +1,14 @@
 from pymoo.optimize import minimize
 
-from algorithm.MyProblem import MyProblem
-from algorithm.MyTcMutation import MyTcMutation
-from algorithm.MyTcCrossOver import MyTcCrossover
-from algorithm.MyDuplicates import MyDuplicateElimination
-from algorithm.MyTcSampling import MyTcSampling
+from algorithm.CpsProblem import CpsProblem
+from algorithm.CpsMutation import CpsMutation
+from algorithm.CpsCrossover import CpsCrossover
+from algorithm.CpsDuplicates import CpsDuplicatesElimination
+from algorithm.CpsSampling import CpsSampling
 import time
 from pymoo.algorithms.nsga2 import NSGA2
 import algorithm.config as cf
+
 
 def optimize():
     """
@@ -15,14 +16,13 @@ def optimize():
     the Pareto optimal solutions are returned
     """
 
-
     algorithm = NSGA2(
         n_offsprings=50,
         pop_size=cf.ga["population"],
-        sampling=MyTcSampling(),
-        crossover=MyTcCrossover(cf.ga["cross_rate"]),
-        mutation=MyTcMutation(cf.ga["mut_rate"]),
-        eliminate_duplicates=MyDuplicateElimination(),
+        sampling=CpsSampling(),
+        crossover=CpsCrossover(cf.ga["cross_rate"]),
+        mutation=CpsMutation(cf.ga["mut_rate"]),
+        eliminate_duplicates=CpsDuplicatesElimination(),
     )
 
     t = int(time.time() * 1000)
@@ -34,7 +34,7 @@ def optimize():
     )
 
     res = minimize(
-        MyProblem(),
+        CpsProblem(),
         algorithm,
         ("n_gen", cf.ga["n_gen"]),
         seed=seed,

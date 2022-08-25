@@ -4,7 +4,7 @@ import copy
 import algorithm.config as cf
 
 
-class MyTcMutation(Mutation):
+class CpsMutation(Mutation):
     '''
     Module to perform the mutation
     '''
