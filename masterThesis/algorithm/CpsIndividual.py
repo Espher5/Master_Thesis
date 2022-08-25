@@ -6,7 +6,7 @@ from code_pipeline.beamng_executor import BeamngExecutor
 from code_pipeline.tests_generation import RoadTestFactory
 
 
-class Solution:
+class Individual:
     """
     This is a class to represent one individual of the genetic algorithm
     """

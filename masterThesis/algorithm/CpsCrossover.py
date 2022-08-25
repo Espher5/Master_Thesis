@@ -1,7 +1,8 @@
 import numpy as np
 from pymoo.model.crossover import Crossover
-from algorithm.Solution import Solution
+from algorithm.CpsIndividual import Individual
 import random as rm
+
 
 class MyTcCrossover(Crossover):
     '''
@@ -58,8 +59,8 @@ class MyTcCrossover(Crossover):
                     for n in range(crossover_point, len(tc_a)):
                         offb["st" + str(n)] = tc_a["st" + str(n)]
 
-                    off_a = Solution()
-                    off_b = Solution()
+                    off_a = Individual()
+                    off_b = Individual()
 
                     off_a.states = offa
                     off_b.states = offb

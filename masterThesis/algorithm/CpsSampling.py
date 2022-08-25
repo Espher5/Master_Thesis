@@ -1,6 +1,6 @@
 import numpy as np
 from pymoo.model.sampling import Sampling
-from algorithm.Solution import Solution
+from algorithm.CpsIndividual import Individual
 
 import algorithm.config as cf
 from algorithm.road_gen import RoadGen
@@ -23,7 +23,7 @@ class MyTcSampling(Sampling):
 
         for i in range(n_samples):
             states = generator.test_case_generate()
-            s = Solution()
+            s = Individual()
             s.states = states
             X[i, 0] = s
         return X
