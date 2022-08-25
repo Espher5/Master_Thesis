@@ -35,6 +35,7 @@ class Car:
         self._tot_x = []
         self._tot_y = []
         self._tot_dist = []
+        self._fitness = 0
 
     @staticmethod
     def interpolate_road(road):
@@ -116,7 +117,7 @@ class Car:
         road_split = [mini_road1, mini_road2]
 
         if (road.is_simple is False) or (is_too_sharp(_interpolate(nodes)) is True):
-            fitness = 0
+            self._fitness = 0
         else:
             init_pos = nodes[0]
             self._x = init_pos[0]
@@ -129,7 +130,6 @@ class Car:
 
             # "Executes" each road segment
             for p, mini_road in enumerate(road_split):
-                print(p, mini_road)
                 current_length = 0
 
                 if p == 1:
@@ -175,13 +175,13 @@ class Car:
                     current_length = current_road.length
                     i += 1
 
-            fitness = max(self._tot_dist) * (-1)
+            self._fitness = max(self._tot_dist) * (-1)
 
             car_path = LineString(zip(self._tot_x, self._tot_y))
             if car_path.is_simple is False:
-                fitness = 0
+                self._fitness = 0
 
-        return fitness, [self._tot_x, self._tot_y]
+        return self._fitness, [self._tot_x, self._tot_y]
 
     @staticmethod
     def get_distance(road, x, y):
