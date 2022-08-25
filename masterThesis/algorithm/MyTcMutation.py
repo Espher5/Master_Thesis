@@ -1,7 +1,7 @@
 import numpy as np
 from pymoo.model.mutation import Mutation
 import copy
-import ambiegen.config as cf
+import algorithm.config as cf
 
 
 class MyTcMutation(Mutation):

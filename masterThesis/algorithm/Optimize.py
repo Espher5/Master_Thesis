@@ -1,13 +1,13 @@
 from pymoo.optimize import minimize
 
-from ambiegen.MyProblem import MyProblem
-from ambiegen.MyTcMutation import MyTcMutation
-from ambiegen.MyTcCrossOver import MyTcCrossover
-from ambiegen.MyDuplicates import MyDuplicateElimination
-from ambiegen.MyTcSampling import MyTcSampling
+from algorithm.MyProblem import MyProblem
+from algorithm.MyTcMutation import MyTcMutation
+from algorithm.MyTcCrossOver import MyTcCrossover
+from algorithm.MyDuplicates import MyDuplicateElimination
+from algorithm.MyTcSampling import MyTcSampling
 import time
 from pymoo.algorithms.nsga2 import NSGA2
-import ambiegen.config as cf
+import algorithm.config as cf
 
 def optimize():
     """

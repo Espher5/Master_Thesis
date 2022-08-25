@@ -1,9 +1,9 @@
 import numpy as np
 from pymoo.model.sampling import Sampling
-from ambiegen.Solution import Solution
+from algorithm.Solution import Solution
 
-import ambiegen.config as cf
-from ambiegen.road_gen import RoadGen
+import algorithm.config as cf
+from algorithm.road_gen import RoadGen
 
 
 class MyTcSampling(Sampling):

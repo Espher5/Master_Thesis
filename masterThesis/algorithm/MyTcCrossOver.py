@@ -1,6 +1,6 @@
 import numpy as np
 from pymoo.model.crossover import Crossover
-from ambiegen.Solution import Solution
+from algorithm.Solution import Solution
 import random as rm
 
 class MyTcCrossover(Crossover):

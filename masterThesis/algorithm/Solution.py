@@ -1,7 +1,7 @@
 
-from ambiegen.vehicle import Car
-import ambiegen.config as cf
-from ambiegen.car_road import Map
+from algorithm.vehicle import Car
+import algorithm.config as cf
+from algorithm.car_road import Map
 from code_pipeline.beamng_executor import BeamngExecutor
 from code_pipeline.tests_generation import RoadTestFactory
 
