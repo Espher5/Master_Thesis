@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/algorithm/MyDuplicates.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsDuplicates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/MyProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/MyTcCrossOver.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsCrossover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/MyTcMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsMutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/MyTcSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsSampling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Optimize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/Solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsIndividual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsCrossover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/algorithm_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/car_road.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/car_road.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

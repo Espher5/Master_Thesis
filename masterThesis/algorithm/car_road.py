@@ -1,12 +1,10 @@
-#
-import random as rm
+import math
+import matplotlib.pyplot as plt
 import numpy as np
-import math as m
+import time
+
 from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
-import matplotlib.pyplot as plt
-
-import time
 
 
 class Map:
@@ -36,26 +34,24 @@ class Map:
         """select a random initial position from the middle of
         one of the boundaries
         """
-        option = rm.randint(0, 3)
         option = 1
         if option == 0:
             pos = np.array((self.max_x / 2, 5))
             end = np.array((pos[0] + self.width, pos[1]))
         elif option == 1:
-            # pos = np.array((5, self.max_y / 2))
             pos = np.array((self.max_y / 2 - self.width / 2, self.max_y / 2))
-            # end = np.array((pos[0], pos[1] - self.width))
             end = np.array((self.max_y / 2 + self.width / 2, self.max_y / 2))
         elif option == 2:
             pos = np.array((self.max_x / 2, self.max_y - 5))
             end = np.array((pos[0] + self.width, pos[1]))
-        elif option == 3:
+        else:
             pos = np.array((self.max_x - 5, self.max_y / 2))
             end = np.array((pos[0], pos[1] + self.width))
 
         return pos, end
 
-    def position_to_line(self, position):
+    @staticmethod
+    def position_to_line(position):
         x = [position[0][0], position[1][0], (position[0][0] + position[1][0]) / 2]
         y = [position[0][1], position[1][1], (position[0][1] + position[1][1]) / 2]
         return x, y
@@ -69,19 +65,11 @@ class Map:
     def point_in_range(self, a):
         """check if point is in the acceptable range"""
         # print("Point check", a)
-        if 4 <= a[0] < (self.max_x - 4) and 4 <= a[1] < (self.max_y - 4):
-            return 1
-        else:
-            return 0
+        return 1 if 4 <= a[0] < (self.max_x - 4) and 4 <= a[1] < (self.max_y - 4) else 0
 
     def point_in_range_2(self, a):
         """check if point is in the acceptable range"""
-        if ((4) < a[0] and a[0] < (self.max_x - 4)) and (
-            (4) <= a[1] and a[1] < (self.max_y - 4)
-        ):
-            return 1
-        else:
-            return 0
+        return 1 if (4 < a[0] < (self.max_x - 4)) and (4 <= a[1] < (self.max_y - 4)) else 0
 
     def go_straight(self, distance):
         a = self.current_pos[0]
@@ -92,34 +80,22 @@ class Map:
         if self.point_in_range(a) == 0 or self.point_in_range(b) == 0:
             return False
 
-        if (b - a)[1] > 0:
-            p_a = b
-            p_b = a
-        elif (b - a)[1] < 0:
-            p_a = a
-            p_b = b
-        elif (b - a)[1] == 0:
-            if (b - a)[0] > 0:
-                p_a = b
-                p_b = a
-            else:
-                p_a = a
-                p_b = b
+        p_a, p_b = self._get_pa_pb(a, b)
 
         u_v = (p_a - p_b) / np.linalg.norm(p_b - p_a)
         sector = self.get_sector()
 
         if len(self.all_position_list) < 2:
             if sector == 0:
-                R = np.array([[0, -1], [1, 0]])  # antilockwise
+                r = np.array([[0, -1], [1, 0]])  # Anticlockwise
             elif sector == 1:
-                R = np.array([[0, 1], [-1, 0]])  # clockwise
+                r = np.array([[0, 1], [-1, 0]])  # clockwise
             elif sector == 2:
-                R = np.array([[0, 1], [-1, 0]])
-            elif sector == 3:
-                R = np.array([[0, -1], [1, 0]])
+                r = np.array([[0, 1], [-1, 0]])
+            else:
+                r = np.array([[0, -1], [1, 0]])
 
-            u_v_ = R.dot(u_v)
+            u_v_ = r.dot(u_v)
 
             p_a_ = p_a + u_v_ * distance
             p_b_ = p_b + u_v_ * distance
@@ -128,15 +104,15 @@ class Map:
             self.all_position_list.append(self.current_pos)
             return True
         else:
-            R = np.array([[0, -1], [1, 0]])
-            u_v_ = R.dot(u_v)
+            r = np.array([[0, -1], [1, 0]])
+            u_v_ = r.dot(u_v)
             p_a_ = p_a + u_v_ * test_distance  # make a small perturbation
             p_b_ = p_b + u_v_ * test_distance
 
             new_pos = [p_a_, p_b_]
-            if self.in_polygon(new_pos) == True:  # check if it's in correct direction
-                R = np.array([[0, 1], [-1, 0]])
-                u_v = R.dot(u_v)
+            if self.in_polygon(new_pos) is True:  # check if it's in correct direction
+                r = np.array([[0, 1], [-1, 0]])
+                u_v = r.dot(u_v)
                 p_a_ = p_a + u_v * distance
                 p_b_ = p_b + u_v * distance
                 self.current_pos = [p_a_, p_b_]
@@ -156,23 +132,11 @@ class Map:
         if self.point_in_range(a) == 0 or self.point_in_range(b) == 0:
             return False
 
-        if (b - a)[1] > 0:
-            p_a = b
-            p_b = a
-        elif (b - a)[1] < 0:
-            p_a = a
-            p_b = b
-        elif (b - a)[1] == 0:
-            if (b - a)[0] > 0:
-                p_a = b
-                p_b = a
-            else:
-                p_a = a
-                p_b = b
+        p_a, p_b = self._get_pa_pb(a, b)
 
         new_pos = self.clockwise_turn_top(test_angle, p_a, p_b)
 
-        if self.in_polygon(new_pos) == True:
+        if self.in_polygon(new_pos) is True:
             self.current_pos = self.clockwise_turn_bot(angle, p_a, p_b)
         else:
             self.current_pos = self.clockwise_turn_top(angle, p_a, p_b)
@@ -187,26 +151,15 @@ class Map:
         if self.point_in_range(a) == 0 or self.point_in_range(b) == 0:
             return False
 
-        if (b - a)[1] > 0:
-            p_a = b
-            p_b = a
-        elif (b - a)[1] < 0:
-            p_a = a
-            p_b = b
-        elif (b - a)[1] == 0:
-            if (b - a)[0] > 0:
-                p_a = b
-                p_b = a
-            else:
-                p_a = a
-                p_b = b
+        p_a, p_b = self._get_pa_pb(a, b)
 
         new_pos = self.anticlockwise_turn_top(test_angle, p_a, p_b)
 
-        if self.in_polygon(new_pos) == True:
+        if self.in_polygon(new_pos) is True:
             self.current_pos = self.anticlockwise_turn_bot(angle, p_a, p_b)
         else:
             self.current_pos = self.anticlockwise_turn_top(angle, p_a, p_b)
+
         self.all_position_list.append(self.current_pos)
         return True
 
@@ -224,14 +177,14 @@ class Map:
         o_b = (o_o - p_b) / o_b_norm
         o_a = (o_o - p_a) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
-                [np.cos(m.radians(angle)), np.sin(m.radians(angle))],
-                [-np.sin(m.radians(angle)), np.cos(m.radians(angle))],
+                [np.cos(math.radians(angle)), np.sin(math.radians(angle))],
+                [-np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
@@ -247,15 +200,15 @@ class Map:
         o_b = (p_b - o_o) / o_b_norm
         o_a = (p_a - o_o) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
-                [np.cos(m.radians(angle)), np.sin(m.radians(angle))],
-                [-np.sin(m.radians(angle)), np.cos(m.radians(angle))],
+                [np.cos(math.radians(angle)), np.sin(math.radians(angle))],
+                [-np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
 
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
 
@@ -274,14 +227,14 @@ class Map:
         o_b = (o_o - p_b) / o_b_norm
         o_a = (o_o - p_a) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
-                [np.cos(m.radians(angle)), -np.sin(m.radians(angle))],
-                [np.sin(m.radians(angle)), np.cos(m.radians(angle))],
+                [np.cos(math.radians(angle)), -np.sin(math.radians(angle))],
+                [np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
@@ -298,14 +251,14 @@ class Map:
         o_b = (p_b - o_o) / o_b_norm
         o_a = (p_a - o_o) / o_a_norm
 
-        R = np.array(
+        r = np.array(
             [
-                [np.cos(m.radians(angle)), -np.sin(m.radians(angle))],
-                [np.sin(m.radians(angle)), np.cos(m.radians(angle))],
+                [np.cos(math.radians(angle)), -np.sin(math.radians(angle))],
+                [np.sin(math.radians(angle)), np.cos(math.radians(angle))],
             ]
         )
-        o_b_ = R.dot(o_b) * o_b_norm
-        o_a_ = R.dot(o_a) * o_a_norm
+        o_b_ = r.dot(o_b) * o_b_norm
+        o_a_ = r.dot(o_a) * o_a_norm
 
         p_a_ = o_o + o_a_
         p_b_ = o_o + o_b_
@@ -313,8 +266,10 @@ class Map:
         return [p_a_, p_b_]
 
     def in_polygon(self, new_position):
-        """checks whether a point lies within a polygon
-        between current and previous vector"""
+        """
+        Checks whether a point lies within a polygon
+        between current and previous vector
+        """
         if len(self.all_position_list) <= 1:
             return True
         current = self.all_position_list[-1]
@@ -328,16 +283,33 @@ class Map:
         )
         return polygon.contains(point)
 
-    def get_sector(self):
+    @staticmethod
+    def get_sector():
         """returns the sector of initial position"""
-
         return 1
+
+    @staticmethod
+    def _get_pa_pb(a, b):
+        if (b - a)[1] > 0:
+            p_a = b
+            p_b = a
+        elif (b - a)[1] < 0:
+            p_a = a
+            p_b = b
+        else:
+            if (b - a)[0] > 0:
+                p_a = b
+                p_b = a
+            else:
+                p_a = a
+                p_b = b
+
+        return p_a, p_b
 
     def remove_invalid_cases(self, points, states):
         points = list(points)
         new_list = [points[0]]
         new_states = {}
-        # print("ALL points", points)
         i = 1
         while i < len(points):
             if self.point_in_range_2(points[i]) == 1:
@@ -361,17 +333,17 @@ class Map:
         for state in tc:
             action = tc[state]["state"]
             if action == "straight":
-                if self.go_straight(tc[state]["value"]) == True:
+                if self.go_straight(tc[state]["value"]) is True:
                     self.position_to_center()
                     point = self.road_point
                     points.append(point)
             elif action == "left":
-                if self.turn_left(tc[state]["value"]) == True:
+                if self.turn_left(tc[state]["value"]) is True:
                     self.position_to_center()
                     point = self.road_point
                     points.append(point)
             elif action == "right":
-                if self.turn_right(tc[state]["value"]) == True:
+                if self.turn_right(tc[state]["value"]) is True:
                     self.position_to_center()
                     point = self.road_point
                     points.append(point)
@@ -380,11 +352,9 @@ class Map:
         return points
 
     def build_tc(self, points):
-
         time_ = str(int(time.time()))
 
         fig, ax = plt.subplots(figsize=(12, 12))
-        # , nodes[closest_index][0], nodes[closest_index][1], 'go'
         road_x = []
         road_y = []
         for p in points:
@@ -392,16 +362,11 @@ class Map:
             road_y.append(p[1])
 
         ax.plot(road_x, road_y, "yo--", label="Road")
-
         top = self.map_size
         bottom = 0
-
         ax.set_title("Test case fitenss ", fontsize=17)
-
         ax.set_ylim(bottom, top)
-
         ax.set_xlim(bottom, top)
-
         fig.savefig(".\\Test\\" + time_ + "+test.jpg")
         ax.legend()
         plt.close(fig)

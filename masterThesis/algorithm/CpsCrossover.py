@@ -1,13 +1,15 @@
 import numpy as np
-from pymoo.model.crossover import Crossover
-from algorithm.CpsIndividual import Individual
 import random as rm
+
+from pymoo.model.crossover import Crossover
+
+from algorithm.CpsIndividual import Individual
 
 
 class CpsCrossover(Crossover):
-    '''
-    Module to perform the crossover
-    '''
+    """
+    Class that performs crossover operation
+    """
     def __init__(self, cross_rate):
         super().__init__(2, 2)
         self.cross_rate = cross_rate
@@ -36,7 +38,6 @@ class CpsCrossover(Crossover):
             if r < self.cross_rate:
                 tc_a = s_a.states
                 tc_b = s_b.states
-
 
                 if len(tc_a) < len(tc_b):
                     crossover_point = rm.randint(1, len(tc_a) - 1)
