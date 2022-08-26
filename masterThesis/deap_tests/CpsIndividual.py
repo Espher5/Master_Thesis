@@ -1,27 +1,45 @@
+import copy
 
-from algorithm.vehicle import Car
-import algorithm.config as cf
+from vehicle import Car
+from deap_tests.core.Config import Config
+from deap_tests.core.Individual import Individual
+
 from algorithm.car_road import Map
 from code_pipeline.beamng_executor import BeamngExecutor
 from code_pipeline.tests_generation import RoadTestFactory
 
 
-class Individual:
+class CpsIndividual(Individual):
     """
     This is a class to represent one individual of the genetic algorithm
     """
     def __init__(self):
+        self._config = Config()
 
         self.road_points = []
         self.states = {}
-        self.car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
-        self.road_builder = Map(cf.MODEL["map_size"])
+        self.car = Car(
+            self._config.MODEL["speed"],
+            self._config.MODEL["steer_ang"],
+            self._config.MODEL["map_size"])
+        self.road_builder = Map(self._config.MODEL["map_size"])
 
         self.car_path = []
         self.fitness = 0
         self.novelty = 0
         self.intp_points = []
         self.too_sharp = 0
+
+    @property
+    def states(self):
+        return self.states
+
+    @states.setter
+    def states(self, states):
+        self.states = states
+
+    def clone(self) -> 'CpsIndividual':
+        return copy.deepcopy(self)
 
     def eval_fitness(self):
         road = self.road_points
@@ -39,11 +57,14 @@ class Individual:
         return 
 
     def car_model_fit(self):
-        the_executor = BeamngExecutor(cf.MODEL["map_size"])
+        the_executor = BeamngExecutor(self._config.MODEL["map_size"])
         the_test = RoadTestFactory.create_road_test(self.road_points)
         fit = the_executor._eval_tc(the_test)
 
         return fit
+
+    def mutate(self):
+        pass
 
     def get_points(self):
         self.road_points = self.road_builder.get_points_from_states(self.states)

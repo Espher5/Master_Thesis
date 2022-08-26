@@ -15,7 +15,6 @@ def optimize():
     In this function the algorithm is launched and
     the Pareto optimal solutions are returned
     """
-
     algorithm = NSGA2(
         n_offsprings=50,
         pop_size=cf.GA["population"],
@@ -43,16 +42,14 @@ def optimize():
         eliminate_duplicates=True,
     )
 
-    print("Best solution found: \nF = %s" % (res.F))
+    print("Best solution found: \nF = %s" % res.F)
     gen = len(res.history) - 1
     test_cases = {}
-    i = 0
 
+    i = 0
     while i < len(res.F):
         result = res.history[gen].pop.get("X")[i]
-
         road_points = result[0].intp_points
         test_cases["tc" + str(i)] = road_points
         i += 1
     return test_cases
-

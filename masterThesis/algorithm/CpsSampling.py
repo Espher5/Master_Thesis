@@ -10,6 +10,14 @@ class CpsSampling(Sampling):
     """
     Class that generates the initial population
     """
+    def __init__(self):
+        super().__init__()
+        self._population = []
+
+    @property
+    def population(self):
+        return self._population
+
     def _do(self, problem, n_samples, **kwargs):
         generator = RoadGen(
             cf.MODEL["map_size"],
@@ -25,4 +33,5 @@ class CpsSampling(Sampling):
             s = Individual()
             s.states = states
             x[i, 0] = s
+
         return x

@@ -9,6 +9,8 @@ class CpsProblem(Problem):
         super().__init__(n_var=1, n_obj=2, n_constr=1, elementwise_evaluation=True)
 
     def _evaluate(self, x, out, *args, **kwargs):
+        population = kwargs.get('population')
+
         s = x[0]
         s.get_points()  # transform the states into actual points (mutation and crossover operations are performed on states)
         s.remove_invalid_cases()

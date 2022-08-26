@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/algorithm/car_road.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/car_road.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsCrossover.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsDuplicates.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsIndividual.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsMutation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsProblem.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsSampling.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/Optimize.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/algorithm_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/car_road.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/road_gen.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/vehicle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsIndividual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsMutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsProblem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsSampling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseline/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/baseline/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +40,25 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/baseline" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/deap_tests" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\deap_tests" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\baseline" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\algorithm" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\ambiegen_tests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\deap_tests\core" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\algorithm" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\algorithm2" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\backup\GA" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\GA" />
-      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\backup" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CpsPopulation">
+  <component name="RunManager" selected="Python.main">
     <configuration name="CpsPopulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,48 +80,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Optimize (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Optimize.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Optimize (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backup" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backup/Optimize.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Optimize" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,6 +93,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/full_model/Optimize.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deap_tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deap_tests/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="nsga2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deap" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deap/nsga2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.nsga2" />
         <item itemvalue="Python.CpsPopulation" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Optimize" />
-        <item itemvalue="Python.Optimize (2)" />
-        <item itemvalue="Python.Optimize (1)" />
       </list>
     </recent_temporary>
   </component>

@@ -13,10 +13,12 @@ class CpsMutation(Mutation):
         self.mut_rate = mut_rate
 
     def _do(self, problem, X, **kwargs):
+        print(X)
+        print(len(X))
         for i in range(len(X)):
             r = np.random.random()
             s = X[i, 0]
-            # with a probabilty of 40% - change the order of characters
+            # with a probability of 40% - change the order of characters
             if r < self.mut_rate:  # cf.ga["mut_rate"]:
 
                 sn = copy.deepcopy(s)
