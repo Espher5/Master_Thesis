@@ -9,9 +9,8 @@ from shapely.geometry.polygon import Polygon
 
 class Map:
     """Class that conducts transformations to vectors automatically,
-    using the commads "go straight", "turn left", "turn right".
+    using the commands "go straight", "turn left", "turn right".
     As a result it produces a set of points corresponding to a road
-
     """
 
     def __init__(self, map_size):
