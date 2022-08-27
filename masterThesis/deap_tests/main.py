@@ -9,11 +9,12 @@ from deap_tests.core.Config import Config
 from deap_tests.core.Problem import Problem
 
 from deap_tests.CpsProblem import CpsProblem
+from deap_tests.CpsIndividual import CpsIndividual
 
 
 def main(problem: Problem = None):
     config = Config()
-    seed = config.get_seed()
+    random.seed(config.get_seed())
 
     # DEAP framework setup
     creator.create('Fitness', base.Fitness, weights=config.fitness_weigths)
@@ -35,11 +36,15 @@ def main(problem: Problem = None):
     logbook = tools.Logbook()
     logbook.header = 'gen', 'evals', 'min', 'max', 'avg', 'std'
 
+    print("### Initializing population....")
+    population = toolbox.population(n=config.GA['population'])
     # Evaluate the initial population.
     # Note: the fitness functions are all invalid before the first iteration since they have not been evaluated.
-    population = toolbox.population(n=config.GA['population'])
     invalid_ind = [ind for ind in population if not ind.fitness.valid]
     problem.pre_evaluate_members(invalid_ind)
+
+    ind1 = toolbox.individual()
+    print(toolbox.evaluate(ind1))
 
     fitness_values = toolbox.map(toolbox.evaluate, invalid_ind)
     for ind, fit in zip(invalid_ind, fitness_values):
@@ -50,7 +55,7 @@ def main(problem: Problem = None):
 
     record = stats.compile(population)
     logbook.record(gen=0, evals=len(invalid_ind), **record)
-    print(logbook.stream)
+    print('Logbook:', logbook.stream)
 
     # Begin the generational process
     for gen in range(1, config.GA['n_gen']):

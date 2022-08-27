@@ -26,7 +26,7 @@ class Config:
     }
 
     def __init__(self):
-        self._fitness_weights = (1.0, -1.0)
+        self._fitness_weights = (-1.0, )
 
     @property
     def fitness_weigths(self):

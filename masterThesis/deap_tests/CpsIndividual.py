@@ -13,52 +13,51 @@ class CpsIndividual(Individual):
     """
     This is a class to represent one individual of the genetic algorithm
     """
-    def __init__(self):
-        self._config = Config()
+    def __init__(self, config: Config):
+        super().__init__(config)
 
-        self.road_points = []
-        self.states = {}
+        self._road_points = []
+        self._states = {}
         self.car = Car(
             self._config.MODEL["speed"],
             self._config.MODEL["steer_ang"],
             self._config.MODEL["map_size"])
         self.road_builder = Map(self._config.MODEL["map_size"])
-
-        self.car_path = []
-        self.fitness = 0
-        self.novelty = 0
-        self.intp_points = []
-        self.too_sharp = 0
+        self._car_path = []
+        self._novelty = 0
+        self._intp_points = []
+        self._too_sharp = 0
 
     @property
     def states(self):
-        return self.states
+        return self._states
 
     @states.setter
     def states(self, states):
-        self.states = states
+        self._states = states
 
     def clone(self) -> 'CpsIndividual':
         return copy.deepcopy(self)
 
-    def eval_fitness(self):
-        road = self.road_points
+    def evaluate(self):
+        road = self._road_points
         if not road:  # if no road points were calculated yet
             self.get_points()
             self.remove_invalid_cases()
-            road = self.road_points
+            road = self._road_points
 
-        if len(self.road_points) <= 2:
-            self.fitness = 0
+        if len(self._road_points) <= 2:
+            print('A')
+            fitness = 0
         else:
-            self.intp_points = self.car.interpolate_road(road)
-            self.fitness, self.car_path = self.car.execute_road(self.intp_points)
+            self._intp_points = self.car.interpolate_road(road)
+            fitness, self._car_path = self.car.execute_road(self._intp_points)
 
-        return 
+        return (fitness, )
 
     def car_model_fit(self):
         the_executor = BeamngExecutor(self._config.MODEL["map_size"])
-        the_test = RoadTestFactory.create_road_test(self.road_points)
+        the_test = RoadTestFactory.create_road_test(self._road_points)
         fit = the_executor._eval_tc(the_test)
 
         return fit
@@ -67,10 +66,10 @@ class CpsIndividual(Individual):
         pass
 
     def get_points(self):
-        self.road_points = self.road_builder.get_points_from_states(self.states)
+        self._road_points = self.road_builder.get_points_from_states(self._states)
 
     def remove_invalid_cases(self):
-        self.states, self.road_points = self.road_builder.remove_invalid_cases(self.road_points, self.states)
+        self._states, self._road_points = self.road_builder.remove_invalid_cases(self._road_points, self._states)
 
     @staticmethod
     def calc_novelty(old, new):
@@ -93,4 +92,4 @@ class CpsIndividual(Individual):
  
     @property
     def n_states(self):
-        return len(self.states)
+        return len(self._states)

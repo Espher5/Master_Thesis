@@ -1,0 +1,6 @@
+shapely
+similaritymeasures
+tensorflow
+keras
+deap
+opencv-python
