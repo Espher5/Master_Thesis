@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/core/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/core/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Individual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/core/member.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,5 +188,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

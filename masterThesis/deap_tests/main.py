@@ -9,7 +9,6 @@ from deap_tests.core.Config import Config
 from deap_tests.core.Problem import Problem
 
 from deap_tests.CpsProblem import CpsProblem
-from deap_tests.CpsIndividual import CpsIndividual
 
 
 def main(problem: Problem = None):
