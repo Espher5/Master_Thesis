@@ -1,6 +1,6 @@
 import copy
 
-from vehicle import Car
+from deap_tests.vehicle import Car
 from deap_tests.core.Config import Config
 from deap_tests.core.Individual import Individual
 
@@ -35,6 +35,10 @@ class CpsIndividual(Individual):
     @states.setter
     def states(self, states):
         self._states = states
+
+    @property
+    def intp_points(self):
+        return self._intp_points
 
     def clone(self) -> 'CpsIndividual':
         return copy.deepcopy(self)

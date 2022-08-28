@@ -11,7 +11,7 @@ from deap_tests.core.Problem import Problem
 from deap_tests.CpsProblem import CpsProblem
 
 
-def main(problem: Problem = None):
+def optimize(problem: Problem = None):
     config = Config()
     random.seed(config.get_seed())
 
@@ -41,9 +41,6 @@ def main(problem: Problem = None):
     # Note: the fitness functions are all invalid before the first iteration since they have not been evaluated.
     invalid_ind = [ind for ind in population if not ind.fitness.valid]
     problem.pre_evaluate_members(invalid_ind)
-
-    ind1 = toolbox.individual()
-    print(toolbox.evaluate(ind1))
 
     fitness_values = toolbox.map(toolbox.evaluate, invalid_ind)
     for ind, fit in zip(invalid_ind, fitness_values):
@@ -89,4 +86,13 @@ def main(problem: Problem = None):
 
 if __name__ == "__main__":
     problem = CpsProblem()
-    final_population, search_stats = main(problem)
+    final_population, search_stats = optimize(problem)
+
+    test_cases = {}
+
+    for i, ind_ in enumerate(final_population):
+        road_points = ind_.intp_points
+        test_cases["tc" + str(i)] = road_points
+
+    print(test_cases)
+

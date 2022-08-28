@@ -5,9 +5,9 @@ from deap import creator
 from deap_tests.core.Config import Config
 from deap_tests.core.Individual import Individual
 from deap_tests.core.Problem import Problem
-from road_gen import RoadGen
+from deap_tests.road_gen import RoadGen
 
-from CpsIndividual import CpsIndividual
+from deap_tests.CpsIndividual import CpsIndividual
 
 
 class CpsProblem(Problem):

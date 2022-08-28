@@ -18,3 +18,9 @@ python competition.py --visualize-tests --time-budget 900 --executor beamng --ma
 
 # Test run on modified ambiegen
 python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name ambiegen_tests.ambiegen_generator --class-name AmbieGenTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
+
+
+
+
+# Deap commands
+python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name deap_tests.generator --class-name Generator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
