@@ -18,6 +18,8 @@ class CpsCrossover(Crossover):
         # The input of has the following shape (n_parents, n_matings, n_var)
         _, n_matings, n_var = X.shape
 
+        print(X.shape)
+
         # The output owith the shape (n_offsprings, n_matings, n_var)
         # Because there the number of parents and offsprings are equal it keeps the shape of X
         Y = np.full_like(X, None, dtype=np.object)
@@ -25,7 +27,6 @@ class CpsCrossover(Crossover):
         # for each mating provided
 
         for k in range(n_matings):
-
             r = np.random.random()
 
             s_a, s_b = X[0, k, 0], X[1, k, 0]

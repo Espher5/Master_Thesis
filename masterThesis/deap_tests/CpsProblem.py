@@ -30,8 +30,17 @@ class CpsProblem(Problem):
         individual.states = states
         return individual
 
-    def evaluate_individual(self, individual: Individual):
+    @staticmethod
+    def evaluate_individual(individual: Individual):
         return individual.evaluate()
+
+    @staticmethod
+    def mate_individual(individual1: Individual, individual2: Individual):
+        return individual1.mate(individual2)
+
+    @staticmethod
+    def mutate_individual(individual: Individual):
+        return individual.mutate()
 
     def pre_evaluate_members(self, individuals):
         return

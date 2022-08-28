@@ -36,9 +36,7 @@ class Individual:
             self.intp_points = self.car.interpolate_road(road)
             self.fitness, self.car_path = self.car.execute_road(self.intp_points)
 
-        return 
-
-
+        return
 
     def get_points(self):
         self.road_points = self.road_builder.get_points_from_states(self.states)

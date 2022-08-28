@@ -23,6 +23,7 @@ def optimize(problem: Problem = None):
     toolbox.register('individual', problem.generate_individual)
     toolbox.register('population', tools.initRepeat, list, toolbox.individual)
     toolbox.register('evaluate', problem.evaluate_individual)
+    toolbox.register('mate', problem.mate_individual)
     toolbox.register('mutate', problem.mutate_individual)
     toolbox.register('select', tools.selNSGA2)
 
@@ -59,12 +60,15 @@ def optimize(problem: Problem = None):
         offspring = tools.selTournamentDCD(population, len(population))
         offspring = [ind.clone() for ind in offspring]
 
-        """
-        for ind1, ind2 in zip(offspring[::2], offspring[1::2]):
-            toolbox.mutate(ind1)
-            toolbox.mutate(ind2)
-            del ind1.fitness.values, ind2.fitness.values
-        """
+        for child1, child2 in zip(offspring[::2], offspring[1::2]):
+            toolbox.mate(child1, child2)
+            del child1.fitness.values
+            del child2.fitness.values
+
+        for mutant in offspring:
+            toolbox.mutate(mutant)
+            del mutant.fitness.values
+
         # Evaluate the individuals with an invalid fitness
         to_eval = offspring + population
         invalid_ind = [ind for ind in to_eval]

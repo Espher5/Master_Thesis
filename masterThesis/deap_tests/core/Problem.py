@@ -8,11 +8,16 @@ class Problem:
         raise NotImplemented()
 
     @staticmethod
+    def evaluate_individual(individual: Individual):
+        raise NotImplemented()
+
+    @staticmethod
+    def mate_individual(individual1: Individual, individual2: Individual):
+        raise NotImplemented()
+
+    @staticmethod
     def mutate_individual(individual: Individual):
         individual.mutate()
-
-    def evaluate_individual(self, individual: Individual):
-        raise NotImplemented()
 
     def individual_class(self):
         raise NotImplemented()

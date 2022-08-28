@@ -11,5 +11,8 @@ class Individual:
     def evaluate(self):
         raise NotImplemented()
 
+    def mate(self, other):
+        raise NotImplemented()
+
     def mutate(self):
         raise NotImplemented()
