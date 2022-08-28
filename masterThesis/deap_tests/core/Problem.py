@@ -8,7 +8,7 @@ class Problem:
         raise NotImplemented()
 
     @staticmethod
-    def evaluate_individual(individual: Individual):
+    def evaluate_individual(individual: Individual, population: List[Individual]):
         raise NotImplemented()
 
     @staticmethod

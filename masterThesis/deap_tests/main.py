@@ -16,13 +16,14 @@ def optimize(problem: Problem = None):
     random.seed(config.get_seed())
 
     # DEAP framework setup
-    creator.create('Fitness', base.Fitness, weights=config.fitness_weigths)
+    # creator.create('Fitness', base.Fitness, weights=config.fitness_weigths * 20)
+    creator.create('Fitness', base.Fitness, weights=config.fitness_weigths )
     creator.create('Individual', problem.individual_class(), fitness=creator.Fitness)
 
     toolbox = base.Toolbox()
     toolbox.register('individual', problem.generate_individual)
     toolbox.register('population', tools.initRepeat, list, toolbox.individual)
-    toolbox.register('evaluate', problem.evaluate_individual)
+    toolbox.register('evaluate', problem.evaluate_individual, population=None)
     toolbox.register('mate', problem.mate_individual)
     toolbox.register('mutate', problem.mutate_individual)
     toolbox.register('select', tools.selNSGA2)

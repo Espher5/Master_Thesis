@@ -3,7 +3,7 @@ import time
 
 class Config:
     GA = {
-        "population": 100,
+        "population": 20,
         "n_gen": 75,
         "mutation_rate": 0.4,
         "crossover_rate": 1
@@ -26,7 +26,7 @@ class Config:
     }
 
     def __init__(self):
-        self._fitness_weights = (-1.0, )
+        self._fitness_weights = (1.0, )
 
     @property
     def fitness_weigths(self):
