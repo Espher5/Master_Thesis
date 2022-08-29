@@ -8,11 +8,17 @@ class Individual:
     def clone(self) -> 'creator.base':
         raise NotImplemented()
 
-    def evaluate(self, population):
+    def evaluate(self):
         raise NotImplemented()
 
-    def mate(self, other):
+    def penalty_function(self):
+        raise NotImplemented()
+
+    def mate(self, other: 'Individual'):
         raise NotImplemented()
 
     def mutate(self):
+        raise NotImplemented()
+
+    def novelty(self, other: 'Individual'):
         raise NotImplemented()

@@ -31,8 +31,8 @@ class CpsProblem(Problem):
         return individual
 
     @staticmethod
-    def evaluate_individual(individual: Individual, population: List[Individual]):
-        return individual.evaluate(population)
+    def evaluate_individual(individual: Individual):
+        return individual.evaluate()
 
     @staticmethod
     def mate_individual(individual1: Individual, individual2: Individual):

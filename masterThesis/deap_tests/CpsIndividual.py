@@ -51,7 +51,7 @@ class CpsIndividual(Individual):
     def clone(self) -> 'CpsIndividual':
         return copy.deepcopy(self)
 
-    def evaluate(self, population):
+    def evaluate(self):
         """
         population_fitness = []
         for ind in population:
@@ -80,7 +80,7 @@ class CpsIndividual(Individual):
             self._intp_points = self.car.interpolate_road(road)
             fitness, self._car_path = self.car.execute_road(self._intp_points)
         
-        return -fitness,
+        return (-fitness,) if 4 - fitness * (-1) < 0 else (0,)
 
     def car_model_fit(self):
         the_executor = BeamngExecutor(self._config.MODEL["map_size"])

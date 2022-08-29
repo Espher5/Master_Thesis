@@ -8,8 +8,12 @@ class Problem:
         raise NotImplemented()
 
     @staticmethod
-    def evaluate_individual(individual: Individual, population: List[Individual]):
+    def evaluate_individual(individual: Individual):
         raise NotImplemented()
+
+    @staticmethod
+    def penalty_function(individual):
+        return individual.penalty_function()
 
     @staticmethod
     def mate_individual(individual1: Individual, individual2: Individual):
