@@ -17,7 +17,7 @@ class Individual:
     def mate(self, other: 'Individual'):
         raise NotImplemented()
 
-    def mutate(self):
+    def mutate(self, prob=0.4):
         raise NotImplemented()
 
     def novelty(self, other: 'Individual'):

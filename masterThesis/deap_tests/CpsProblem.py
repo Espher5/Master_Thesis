@@ -39,8 +39,8 @@ class CpsProblem(Problem):
         return individual1.mate(individual2)
 
     @staticmethod
-    def mutate_individual(individual: Individual):
-        return individual.mutate()
+    def mutate_individual(individual: Individual, prob=0.4):
+        return individual.mutate(prob)
 
     def pre_evaluate_members(self, individuals):
         return

@@ -3,7 +3,7 @@ import time
 
 from code_pipeline.tests_generation import RoadTestFactory
 
-from deap_tests.main import optimize
+from deap_tests.Optimizer import Optimizer
 from deap_tests.CpsProblem import CpsProblem
 
 
@@ -14,8 +14,14 @@ class Generator:
         self._executor = executor
 
     def start(self):
+        optimizer = Optimizer(CpsProblem())
         while not self._executor.is_over():
-            final_population, logbook = optimize(CpsProblem())
+            final_population, logbook = optimizer.optimize()
+            ind1 = final_population[0]
+            ind2 = final_population[1]
+
+            if ind1.states == ind2.states:
+                print('Okayeg')
             test_cases = {}
 
             for i, ind_ in enumerate(final_population):

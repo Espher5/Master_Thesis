@@ -52,22 +52,6 @@ class CpsIndividual(Individual):
         return copy.deepcopy(self)
 
     def evaluate(self):
-        """
-        population_fitness = []
-        for ind in population:
-            road = ind.road_points
-            if not road:  # if no road points were calculated yet
-                ind.get_points()
-                ind.remove_invalid_cases()
-                road = ind.road_points
-
-            if len(ind.road_points) <= 2:
-                population_fitness.append(0)
-            else:
-                self._intp_points = self.car.interpolate_road(road)
-                fitness, self._car_path = self.car.execute_road(self._intp_points)
-                population_fitness.append(-fitness)
-        """
         road = self._road_points
         if not road:  # if no road points were calculated yet
             self.get_points()
@@ -80,7 +64,8 @@ class CpsIndividual(Individual):
             self._intp_points = self.car.interpolate_road(road)
             fitness, self._car_path = self.car.execute_road(self._intp_points)
         
-        return (-fitness,) if 4 - fitness * (-1) < 0 else (0,)
+        return (4 - fitness * (-1), ) if fitness < 0 else (4,)
+        #return fitness,
 
     def car_model_fit(self):
         the_executor = BeamngExecutor(self._config.MODEL["map_size"])
@@ -123,9 +108,9 @@ class CpsIndividual(Individual):
         else:
             return
 
-    def mutate(self):
+    def mutate(self, prob=0.4):
         r = np.random.random()
-        if r < self._mutation_rate:
+        if r < prob:
             sn = self.clone()
             sn.get_points()
             sn.remove_invalid_cases()

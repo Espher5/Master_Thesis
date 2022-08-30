@@ -20,8 +20,8 @@ class Problem:
         raise NotImplemented()
 
     @staticmethod
-    def mutate_individual(individual: Individual):
-        individual.mutate()
+    def mutate_individual(individual: Individual, prob=0.4):
+        individual.mutate(prob)
 
     def individual_class(self):
         raise NotImplemented()
