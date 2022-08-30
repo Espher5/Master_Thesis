@@ -17,11 +17,6 @@ class Generator:
         optimizer = Optimizer(CpsProblem())
         while not self._executor.is_over():
             final_population, logbook = optimizer.optimize()
-            ind1 = final_population[0]
-            ind2 = final_population[1]
-
-            if ind1.states == ind2.states:
-                print('Okayeg')
             test_cases = {}
 
             for i, ind_ in enumerate(final_population):

@@ -74,6 +74,11 @@ class Optimizer:
                 ind_.fitness.values = fit
             population = self._toolbox.select(population, len(population))
 
+            for i, ind in enumerate(population):
+                for j in range(len(population)):
+                    if i != j and ind.states == population[j].states:
+                        print('Same')
+
             # Vary the population
             offspring = tools.selTournamentDCD(population, len(population))
             offspring = [ind.clone() for ind in offspring]

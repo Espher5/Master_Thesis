@@ -3,96 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsCrossover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsMutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsCrossover.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsCrossover.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsDuplicates.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsDuplicates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsIndividual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsMutation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsPopulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsPopulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsProblem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/CpsSampling.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/CpsSampling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/Optimize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/algorithm_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/car_road.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/car_road.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/road_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/road_gen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseline/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm_backup/vehicle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsProblem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsProblem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deap_tests/Optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/Optimizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/core/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/core/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Individual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/core/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Problem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/Optimizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0003.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0004.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0005.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0006.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0007.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0008.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0009.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0010.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0011.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0012.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0013.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172468499.0/test.0014.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172474986.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172474986.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172497254.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172518976.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172518976.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172564529.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172564529.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0003.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0004.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0005.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0006.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0007.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0008.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0009.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0010.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0011.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0012.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0013.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0014.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0015.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0016.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0017.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0018.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172654062.0/test.0020.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172741925.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172741925.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0003.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0004.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0005.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0006.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0007.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0008.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0009.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0010.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0011.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0012.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0013.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0014.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0015.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0016.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172747664.0/test.0017.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172872813.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166172872813.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166179038530.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166179145207.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166179145207.0/test.0002.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166179159107.0/test.0001.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166179159107.0/test.0002.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

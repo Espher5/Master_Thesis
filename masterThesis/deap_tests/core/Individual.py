@@ -20,5 +20,6 @@ class Individual:
     def mutate(self, prob=0.4):
         raise NotImplemented()
 
-    def novelty(self, other: 'Individual'):
+    @staticmethod
+    def calc_novelty(old, new):
         raise NotImplemented()

@@ -48,10 +48,21 @@ class CpsIndividual(Individual):
     def road_points(self):
         return self._road_points
 
+    @property
+    def novelty(self):
+        return self._novelty
+
+    @novelty.setter
+    def novelty(self, novelty):
+        self._novelty = novelty
+
     def clone(self) -> 'CpsIndividual':
         return copy.deepcopy(self)
 
     def evaluate(self):
+        self.get_points()
+        self.remove_invalid_cases()
+
         road = self._road_points
         if not road:  # if no road points were calculated yet
             self.get_points()
@@ -63,8 +74,8 @@ class CpsIndividual(Individual):
         else:
             self._intp_points = self.car.interpolate_road(road)
             fitness, self._car_path = self.car.execute_road(self._intp_points)
-        
-        return (4 - fitness * (-1), ) if fitness < 0 else (4,)
+
+        return (4 - fitness * (-1), self._novelty, len(self.states)) if fitness < 0 else (0, self._novelty, len(self.states))
         #return fitness,
 
     def car_model_fit(self):
@@ -105,6 +116,9 @@ class CpsIndividual(Individual):
                 other.states = off_b_states
             else:
                 print('Not enough states')
+
+            self.novelty = self.calc_novelty(self.states, other.states)
+            other.novelty = other.calc_novelty(other.states, self.states)
         else:
             return
 
@@ -117,6 +131,7 @@ class CpsIndividual(Individual):
 
             wr = np.random.random()
             child = sn.states
+            old_states = child
 
             if wr < 0.2:
                 candidates = list(np.random.randint(0, high=len(child), size=2))
@@ -188,6 +203,7 @@ class CpsIndividual(Individual):
             self.states = child
             self.get_points()
             self.remove_invalid_cases()
+            self.calc_novelty(old_states, self.states)
 
     def get_points(self):
         self._road_points = self.road_builder.get_points_from_states(self._states)
