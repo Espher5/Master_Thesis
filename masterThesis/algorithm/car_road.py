@@ -31,7 +31,8 @@ class Map:
         self.all_position_list = [[self.init_pos, self.init_end]]
 
     def init_position(self):
-        """select a random initial position from the middle of
+        """
+        Select a random initial position from the middle of
         one of the boundaries
         """
         option = 1
@@ -63,12 +64,15 @@ class Map:
         # return [x, y]
 
     def point_in_range(self, a):
-        """check if point is in the acceptable range"""
-        # print("Point check", a)
+        """
+        Check if point is in the acceptable range
+        """
         return 1 if 4 <= a[0] < (self.max_x - 4) and 4 <= a[1] < (self.max_y - 4) else 0
 
     def point_in_range_2(self, a):
-        """check if point is in the acceptable range"""
+        """
+        Check if point is in the acceptable range
+        """
         return 1 if (4 < a[0] < (self.max_x - 4)) and (4 <= a[1] < (self.max_y - 4)) else 0
 
     def go_straight(self, distance):
