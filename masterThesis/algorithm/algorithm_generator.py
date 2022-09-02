@@ -32,6 +32,7 @@ class AlgorithmTestGenerator:
             test_cases.append(road_points)
 
     def start(self):
+        """
         with Manager() as manager:
             test_cases = manager.list()
             processes = []
@@ -47,6 +48,7 @@ class AlgorithmTestGenerator:
             with open('tests.json', 'a') as out:
                 json.dump(list(test_cases), out, indent=2)
         """
+
         while not self.executor.is_over():
 
             cases = optim.optimize()
@@ -71,4 +73,3 @@ class AlgorithmTestGenerator:
 
                 if self.executor.road_visualizer:
                     time.sleep(1)
-        """

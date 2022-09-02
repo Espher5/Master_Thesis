@@ -17,15 +17,4 @@ python competition.py --visualize-tests --time-budget 7200 --executor beamng --m
 python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name algorithm.algorithm_generator --class-name AlgorithmTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
 
 # Test run on modified ambiegen
-python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name ambiegen_tests.ambiegen_generator --class-name AmbieGenTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
-
-
-# Deap commands
-python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name deap_tests.generator --class-name Generator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
-
-
-F = [[-5.94879643 -1.        ]
- [-6.5574002  -0.5       ]
- [-5.42711831 -9.5       ]
- [-5.68775806 -9.        ]
- [-7.0449107  -0.        ]]
+python competition.py --visualize-tests --time-budget 900 --executor beamng --map-size 200 --module-name ambiegen.ambiegen_generator --class-name AmbieGenTestGenerator --beamng-home 'D:\Utility\BeamNG.tech.v0.24.0.2' --beamng-user 'D:\Utility\BeamNG.tech_userpath'
