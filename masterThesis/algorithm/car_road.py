@@ -24,9 +24,7 @@ class Map:
         self._radius = 15
 
         self._init_pos, self._init_end = self.init_position()
-
         self._road_point = []
-
         self._current_pos = [self._init_pos, self._init_end]
         self._all_position_list = [[self._init_pos, self._init_end]]
 
