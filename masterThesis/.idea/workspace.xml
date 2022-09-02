@@ -3,12 +3,161 @@
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsMutation.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsMutation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/CpsPopulation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsProblem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/algorithm_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsIndividual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deap_tests/CpsProblem.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/CpsProblem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/Optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/Optimizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/core/Config.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deap_tests/core/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Individual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deap_tests/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deap_tests/core/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/core/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deap_tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/deap_tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/beamng.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/beamngcommon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/scenario.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/sensors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/templates/prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/tig_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/vehicle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/beamngpy/visualiser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/archive.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/archive_impl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/folder_storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/folders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/individual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/ini_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/log_setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/member.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/misc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/nsga2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/problem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/seed_pool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/seed_pool_access_strategy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/core/seed_pool_impl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/log.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/member_seeds/population_HQ1/seed9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/trained_models_colab/self-driving-car-185-2020.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/data/trained_models_colab/self-driving-car-4600.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/line_white_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/line_white_n.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/line_yellow_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/materials.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/road_asphalt_2lane_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/road_asphalt_2lane_n.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/road_asphalt_2lane_s.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/road/road_rubber_sticky_d.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/terrains/Grass-01-D.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/terrains/Grass-01-N.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/terrains/Macro_grass.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/terrains/Overlay_Grass-01.dds" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/art/terrains/materials.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main.decals.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/CameraBookmarks/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/PlayerDropPoints/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/Water/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/generated/items.level.json-readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/items.level.readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/sky_and_sun/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/MissionGroup/vegetation/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/main/items.level.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/terrain.ter" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/terrain.terrain.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/terrain.terrainheightmap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/levels_template/tig/tig-version.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_brewer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_evaluator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_generate_seeds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_individual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_individual_set_store.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_member.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_nvidia_runner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_pose.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_problem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_road_imagery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_road_visualizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_tig_maps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/beamng_waypoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/catmull_rom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/decal_road.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/edit_distance_polyline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/greedy_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/main_beamng.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/main_beamng_generate_seeds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/nvidia_prediction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/oob_monitor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_bbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_points.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_polygon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/road_vehicle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/simulation_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/simulation_data_collector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/self_driving/vehicle_state_reader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/batch_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/beamng_car_cameras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/train-dataset-recorder-brewer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/train-from-recordings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/training_data_collector_and_writer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/training_dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepjanus/udacity_integration/udacity_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186727733.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186734466.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186734466.0/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186734466.0/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186734466.0/test.0004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/algorithm.algorithm_generator_AlgorithmTestGenerator_166186734466.0/test.0005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186499829.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186499829.0/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186499829.0/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186499829.0/test.0004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186499829.0/test.0005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0006.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186556648.0/test.0007.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186692787.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0001.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0003.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0004.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0005.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/deap_tests.generator_Generator_166186702820.0/test.0006.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-commands" beforeDir="false" afterPath="$PROJECT_DIR$/run-commands" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +189,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tesi/deepjanus" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -57,7 +207,7 @@
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\backup\GA" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.test (1)">
     <configuration name="Optimizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -79,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_beamng" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,11 +237,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deepjanus/self_driving" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WGAN" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deepjanus/self_driving/main_beamng.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WGAN/model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,7 +250,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="nsga2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -108,32 +258,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deepjanus/core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deepjanus/core/nsga2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="nsga2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="masterThesis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deap" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/deap/nsga2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,13 +292,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="masterThesis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WGAN" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WGAN/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.train" />
+        <item itemvalue="Python.model" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Optimizer" />
-        <item itemvalue="Python.main_beamng" />
-        <item itemvalue="Python.nsga2 (1)" />
-        <item itemvalue="Python.nsga2" />
       </list>
     </recent_temporary>
   </component>

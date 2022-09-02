@@ -1,5 +1,8 @@
+import json
 import logging
 import time
+
+from multiprocessing import Process, Manager
 
 from code_pipeline.tests_generation import RoadTestFactory
 
@@ -21,15 +24,35 @@ class AlgorithmTestGenerator:
         self.time_budget = time_budget
         self.executor = executor
 
-    def start(self):
+    @staticmethod
+    def _task(test_cases):
+        cases = optim.optimize()
+        for key in cases:
+            road_points = cases[key]
+            test_cases.append(road_points)
 
+    def start(self):
+        with Manager() as manager:
+            test_cases = manager.list()
+            processes = []
+            for i in range(100):
+                process = Process(target=self._task, args=(test_cases,))
+                process.start()
+                processes.append(process)
+
+            for p in processes:
+                p.join()
+
+            print(len(test_cases))
+            with open('tests.json', 'a') as out:
+                json.dump(list(test_cases), out, indent=2)
+        """
         while not self.executor.is_over():
 
             cases = optim.optimize()
             print('Generated {} test cases'.format(len(cases)))
-
+   
             for case in cases:
-
                 # Some debugging
                 logging.info(
                     "Starting test generation. Remaining time %s",
@@ -48,3 +71,4 @@ class AlgorithmTestGenerator:
 
                 if self.executor.road_visualizer:
                     time.sleep(1)
+        """

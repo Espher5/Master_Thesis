@@ -13,7 +13,7 @@ class CpsProblem(Problem):
         s.get_points()  # transform the states into actual points (mutation and crossover operations are performed on states)
         s.remove_invalid_cases()
         s.eval_fitness()
-        out["F"] = [s.fitness, s.novelty, -len(s.states)]
+        out["F"] = [s.fitness, s.novelty]
         out["G"] = 4 - s.fitness * (-1)
 
         #print('F', out['F'])

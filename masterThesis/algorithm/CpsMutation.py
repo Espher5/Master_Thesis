@@ -13,33 +13,27 @@ class CpsMutation(Mutation):
         self.mut_rate = mut_rate
 
     def _do(self, problem, X, **kwargs):
-
         for i in range(len(X)):
             r = np.random.random()
             s = X[i, 0]
             # with a probability of 40% - change the order of characters
             if r < self.mut_rate:  # cf.ga["mut_rate"]:
-
                 sn = copy.deepcopy(s)
-
                 sn.get_points()
                 sn.remove_invalid_cases()
 
                 wr = np.random.random()
                 child = sn.states
-                old_points = sn.road_points
                 old_states = child
                 if wr < 0.2:
-
                     candidates = list(np.random.randint(0, high=len(child), size=2))
                     temp = child["st" + str(candidates[0])]
                     child["st" + str(candidates[0])] = child["st" + str(candidates[1])]
                     child["st" + str(candidates[1])] = temp
-                elif wr >= 0.2 and wr < 0.5:
+                elif 0.2 <= wr < 0.5:
                     num = np.random.randint(0, high=len(child))
                     value = np.random.choice(["state", "value"])
                     if value == "value":
-                        duration_list = []
                         if child["st" + str(num)]["state"] == "straight":
                             duration_list = np.arange(
                                 cf.MODEL["min_len"], cf.MODEL["max_len"], 1
@@ -73,7 +67,6 @@ class CpsMutation(Mutation):
                             child["st" + str(num)]["value"] = int(
                                 np.random.choice(duration_list)
                             )
-
                 else:
                     cand = list(
                         np.random.randint(0, high=len(child), size=int(len(child) / 2))
