@@ -8,6 +8,10 @@ from code_pipeline.tests_generation import RoadTestFactory
 
 import algorithm.Optimize as optim
 
+import algorithm.config as cf
+from algorithm.road_gen import RoadGen
+from algorithm.CpsIndividual import Individual
+
 
 class AlgorithmTestGenerator:
     """
@@ -45,8 +49,34 @@ class AlgorithmTestGenerator:
                 p.join()
 
             print(len(test_cases))
-            with open('tests.json', 'a') as out:
-                json.dump(list(test_cases), out, indent=2)
+        """
+
+        # Generates as many low-fitness test cases
+        low_fitness_cases = []
+        low_fitness_threshold = 3
+        generator = RoadGen(
+            cf.MODEL["map_size"],
+            cf.MODEL["min_len"],
+            cf.MODEL["max_len"],
+            cf.MODEL["min_angle"],
+            cf.MODEL["max_angle"],
+        )
+        while len(low_fitness_cases) < 10:
+            states = generator.test_case_generate()
+            ind = Individual()
+            ind.states = states
+            ind.get_points()
+            ind.remove_invalid_cases()
+            ind.eval_fitness()
+
+            fitness = ind.fitness * (-1)
+            if fitness < low_fitness_threshold:
+                points = ind.road_points
+                low_fitness_cases.append(points)
+
+
+        with open('tests.json', 'a') as out:
+                #json.dump(list(test_cases), out, indent=2)
         """
 
         while not self.executor.is_over():
@@ -73,3 +103,4 @@ class AlgorithmTestGenerator:
 
                 if self.executor.road_visualizer:
                     time.sleep(1)
+        """

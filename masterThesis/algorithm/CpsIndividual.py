@@ -11,38 +11,64 @@ class Individual:
     This is a class to represent one individual of the genetic algorithm
     """
     def __init__(self):
+        self._road_points = []
+        self._states = {}
+        self._car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
+        self._road_builder = Map(cf.MODEL["map_size"])
 
-        self.road_points = []
-        self.states = {}
-        self.car = Car(cf.MODEL["speed"], cf.MODEL["steer_ang"], cf.MODEL["map_size"])
-        self.road_builder = Map(cf.MODEL["map_size"])
+        self._car_path = []
+        self._fitness = 0
+        self._novelty = 0
+        self._intp_points = []
 
-        self.car_path = []
-        self.fitness = 0
-        self.novelty = 0
-        self.intp_points = []
-        self.too_sharp = 0
+    @property
+    def states(self):
+        return self._states
+
+    @states.setter
+    def states(self, states):
+        self._states = states
+
+    @property
+    def n_states(self):
+        return len(self._states)
+
+    @property
+    def fitness(self):
+        return self._fitness
+
+    @property
+    def novelty(self):
+        return self._novelty
+
+    @novelty.setter
+    def novelty(self, novelty):
+        self._novelty = novelty
+
+    @property
+    def road_points(self):
+        return self._road_points
 
     def eval_fitness(self):
-        road = self.road_points
+        road = self._road_points
         if not road:  # if no road points were calculated yet
             self.get_points()
             self.remove_invalid_cases()
-            road = self.road_points
+            road = self._road_points
 
         if len(self.road_points) <= 2:
-            self.fitness = 0
+            self._fitness = 0
         else:
-            self.intp_points = self.car.interpolate_road(road)
-            self.fitness, self.car_path = self.car.execute_road(self.intp_points)
+            self._intp_points = self._car.interpolate_road(road)
+            self._fitness, self._car_path = self._car.execute_road(self._intp_points)
 
         return
 
     def get_points(self):
-        self.road_points = self.road_builder.get_points_from_states(self.states)
+        self._road_points = self._road_builder.get_points_from_states(self._states)
 
     def remove_invalid_cases(self):
-        self.states, self.road_points = self.road_builder.remove_invalid_cases(self.road_points, self.states)
+        self._states, self._road_points = self._road_builder.remove_invalid_cases(self._road_points, self._states)
 
     @staticmethod
     def calc_novelty(old, new):
@@ -62,7 +88,3 @@ class Individual:
             else:
                 novelty += 1
         return -novelty
- 
-    @property
-    def n_states(self):
-        return len(self.states)
