@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee1e926-25eb-4b8b-8d80-9c97fdc266a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../wgan/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/CpsIndividual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/Optimize.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/algorithm_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wgan/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wgan/.idea/wgan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../wgan/.idea/wgan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wgan/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wgan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wgan/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wgan/tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wgan/wgan/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wgan/wgan/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Tesi/deepjanus" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/wogan-sbst-main" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -53,14 +54,14 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis" />
-      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\deap_tests\core" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\algorithm" />
+      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\deap_tests\core" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\algorithm2" />
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\backup\GA" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test (1)">
-    <configuration name="Optimizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="algorithm_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="masterThesis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,11 +69,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/deap_tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Michelangelo\CS\Master_Thesis\masterThesis\deap_tests\Optimizer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/algorithm_generator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.algorithm_generator" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.model" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.Optimizer" />
       </list>
     </recent_temporary>
   </component>

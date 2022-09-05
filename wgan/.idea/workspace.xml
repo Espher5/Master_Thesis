@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64f36b69-1308-49d6-8eff-8771eafbc6fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../masterThesis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/algorithm/CpsIndividual.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/algorithm/CpsIndividual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/algorithm/Optimize.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/algorithm/Optimize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/algorithm/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/algorithm/algorithm_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../masterThesis/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wgan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wgan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wgan/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wgan/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +24,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EJ7NSxIjQFVrbvyuwd19mOH6PF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,6 +39,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michelangelo\CS\Master_Thesis\wgan" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Michelangelo\CS\Master_Thesis\wgan" />
     </key>
   </component>
@@ -75,5 +83,16 @@
       <updated>1662301792325</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

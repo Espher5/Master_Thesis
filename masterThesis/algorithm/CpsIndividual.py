@@ -49,6 +49,10 @@ class Individual:
     def road_points(self):
         return self._road_points
 
+    @property
+    def intp_points(self):
+        return self._intp_points
+
     def eval_fitness(self):
         road = self._road_points
         if not road:  # if no road points were calculated yet

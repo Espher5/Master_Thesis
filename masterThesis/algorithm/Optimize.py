@@ -37,7 +37,7 @@ def optimize():
         algorithm,
         ("n_gen", cf.GA["n_gen"]),
         seed=seed,
-        verbose=True,
+        verbose=False,
         save_history=True,
         eliminate_duplicates=True,
     )

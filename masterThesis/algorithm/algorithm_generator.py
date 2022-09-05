@@ -1,3 +1,4 @@
+import csv
 import json
 import logging
 import time
@@ -35,12 +36,13 @@ class AlgorithmTestGenerator:
             road_points = cases[key]
             test_cases.append(road_points)
 
-    def start(self):
-        """
+    def main(self):
+        test_dict = {}
+
         with Manager() as manager:
             test_cases = manager.list()
             processes = []
-            for i in range(100):
+            for i in range(8):
                 process = Process(target=self._task, args=(test_cases,))
                 process.start()
                 processes.append(process)
@@ -48,42 +50,104 @@ class AlgorithmTestGenerator:
             for p in processes:
                 p.join()
 
-            print(len(test_cases))
-        """
+            print('Generated {} high fitness test cases'.format(len(test_cases)))
 
-        # Generates as many low-fitness test cases
-        low_fitness_cases = []
-        low_fitness_threshold = 3
-        generator = RoadGen(
-            cf.MODEL["map_size"],
-            cf.MODEL["min_len"],
-            cf.MODEL["max_len"],
-            cf.MODEL["min_angle"],
-            cf.MODEL["max_angle"],
-        )
-        while len(low_fitness_cases) < 10:
-            states = generator.test_case_generate()
-            ind = Individual()
-            ind.states = states
-            ind.get_points()
-            ind.remove_invalid_cases()
-            ind.eval_fitness()
+            for i in range(len(test_cases)):
+                test_dict.update({
+                    'tc_' + str(i): {
+                        'points': test_cases[i],
+                        'score': 'hard'
+                    }
+                })
 
-            fitness = ind.fitness * (-1)
-            if fitness < low_fitness_threshold:
-                points = ind.road_points
-                low_fitness_cases.append(points)
+            # Generates as many low-fitness test cases
+            low_fitness_cases = []
+            low_fitness_threshold = 4
+            generator = RoadGen(
+                cf.MODEL["map_size"],
+                cf.MODEL["min_len"],
+                cf.MODEL["max_len"],
+                cf.MODEL["min_angle"],
+                cf.MODEL["max_angle"],
+            )
+            while len(low_fitness_cases) < len(test_cases):
+                states = generator.test_case_generate()
+                ind = Individual()
+                ind.states = states
+                ind.get_points()
+                ind.remove_invalid_cases()
+                ind.eval_fitness()
+
+                fitness = ind.fitness * (-1)
+                if fitness < low_fitness_threshold:
+                    points = ind.road_points
+                    low_fitness_cases.append(points)
+            print('Generated {} low fitness test cases'.format(len(low_fitness_cases)))
+
+            for i in range(len(low_fitness_cases)):
+                test_dict.update({
+                    'tc_' + str(i + len(test_cases)): {
+                        'points': low_fitness_cases[i],
+                        'score': 'easy'
+                    }
+                })
+
+            with open('../dict.json', 'w') as f:
+                json.dump(test_dict, f, indent=4)
+
+    def start(self):
+        unparsed_cases = []
+        test_cases = {}
+        with open('C:\\Users\\Michelangelo\\CS\Master_Thesis\\masterThesis\\generated_cases.csv', 'r') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            for row in csv_reader:
+                if line_count == 0:
+                    print(f'Column names are {", ".join(row)}')
+                    line_count += 1
+                else:
+                    unparsed_cases.append(row[1:])
+                    line_count += 1
+
+        for i, tc in enumerate(unparsed_cases):
+            road_points = []
+            j = 0
+            while len(road_points) < len(tc) / 2:
+                x = float(tc[j])
+                y = float(tc[j + 1])
+                road_points.append((x, y))
+                j += 2
+            test_cases.update({'tc' + str(i): road_points})
+        print(test_cases)
+
+        for case in test_cases:
+            # Some debugging
+            logging.info(
+                "Starting test generation. Remaining time %s",
+                self.executor.get_remaining_time(),
+            )
+
+            the_test = RoadTestFactory.create_road_test(test_cases[case])
+
+            # Try to execute the test
+            test_outcome, description, execution_data = self.executor.execute_test(
+                the_test
+            )
+
+            logging.info("test_outcome %s", test_outcome)
+            logging.info("description %s", description)
+
+            if self.executor.road_visualizer:
+                time.sleep(1)
 
 
-        with open('tests.json', 'a') as out:
-                #json.dump(list(test_cases), out, indent=2)
-        """
 
+    def start2(self):
         while not self.executor.is_over():
 
             cases = optim.optimize()
             print('Generated {} test cases'.format(len(cases)))
-   
+            print(cases)
             for case in cases:
                 # Some debugging
                 logging.info(
@@ -103,4 +167,8 @@ class AlgorithmTestGenerator:
 
                 if self.executor.road_visualizer:
                     time.sleep(1)
-        """
+
+
+if __name__ == '__main__':
+    ag = AlgorithmTestGenerator()
+    ag.main()

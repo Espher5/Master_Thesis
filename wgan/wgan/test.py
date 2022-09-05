@@ -8,36 +8,32 @@ import os
 import requests
 import numpy as np
 from sklearn import metrics
+import csv
 
 
 from tabgan.sampler import GANGenerator
 from sklearn.model_selection import train_test_split
 
-#df = pd.read_csv('https://data.heatonresearch.com/data/t81-558/auto-mpg.csv', na_values=['NA', '?'])
-#COLS_USED = ['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'year', 'origin', 'mpg']
-#COLS_TRAIN = ['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'year', 'origin']
+with open('../tests.csv') as csv_file:
+    columns = []
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        columns.append(row)
+        break
+    columns = columns[0]
 
-df = pd.read_csv('', na_values=['NA', '?'])
-COLS_USED = ['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'year', 'origin', 'mpg']
-COLS_TRAIN = ['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'year', 'origin']
-
-df = df[COLS_USED]
-
-# Handle missing value
-df['horsepower'] = df['horsepower'].fillna(df['horsepower'].median())
-
+df = pd.read_csv('../tests.csv')
+print(df)
 # Split into training and test sets
-df_x_train, df_x_test, df_y_train, df_y_test = train_test_split(
-    df.drop("mpg", axis=1),
-    df["mpg"],
-    test_size=0.20,
-    #shuffle=False,
-    random_state=42,
-)
+x = df.loc[:, 'x0': 'y9']
+y = df.loc[:, 'score']
+print(x.head())
+print(y.head())
+
+df_x_train, df_x_test, df_y_train, df_y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
 # Create dataframe versions for tabular GAN
-df_x_test, df_y_test = df_x_test.reset_index(drop=True), \
-  df_y_test.reset_index(drop=True)
+df_x_test, df_y_test = df_x_test.reset_index(drop=True), df_y_test.reset_index(drop=True)
 df_y_train = pd.DataFrame(df_y_train)
 df_y_test = pd.DataFrame(df_y_test)
 
@@ -52,9 +48,9 @@ y_test = df_y_test.values
 model = Sequential()
 # Hidden 1
 model.add(Dense(50, input_dim=x_train.shape[1], activation='relu'))
-model.add(Dense(25, activation='relu')) # Hidden 2
-model.add(Dense(12, activation='relu')) # Hidden 2
-model.add(Dense(1)) # Output
+model.add(Dense(25, activation='relu'))     # Hidden 2
+model.add(Dense(12, activation='relu'))     # Hidden 2
+model.add(Dense(1))                         # Output
 model.compile(loss='mean_squared_error', optimizer='adam')
 
 monitor = EarlyStopping(monitor='val_loss', min_delta=1e-3,
@@ -79,15 +75,18 @@ gen_x, gen_y = GANGenerator(
     },
     pregeneration_frac=2,
     only_generated_data=False,
-    gan_params = {
+    gan_params={
         "batch_size": 500,
         "patience": 25,
-        "epochs" : 500,
+        "epochs": 500,
     }).generate_data_pipe(df_x_train, df_y_train, df_x_test,
                           deep_copy=True,
                           only_adversarial=False,
                           use_adversarial=True)
-print(gen_x)
+
+
+print('Generated cases', gen_x)
+gen_x.to_csv('generated_cases.csv')
 
 print('Starting prediction...')
 pred = model.predict(gen_x.values)
