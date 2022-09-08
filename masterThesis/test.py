@@ -10,21 +10,22 @@ def main():
 
     # Truncates all test cases to 200 points and deletes the shorter ones
     parsed_cases = []
-    max_threshold = 10
+    max_threshold = 50
     for i in range(len(test_cases)):
         parsed_case = []
         tc = test_cases['tc_' + str(i)]
         points = tc['points']
-        score = tc['score']
+        fitness = tc['fitness']
 
         if len(points) >= max_threshold:
             for tup in points[: max_threshold]:
                 x = tup[0]
                 y = tup[1]
                 parsed_case += [x, y]
-            s = 1 if score == 'hard' else 0
-            parsed_case.append(s)
+
+
             parsed_cases.append(parsed_case)
+            parsed_case.append(fitness)
 
     print('{} test cases were shorter than the {} length threshold and were truncated.'
           .format(len(test_cases) - len(parsed_cases), max_threshold))
@@ -44,7 +45,7 @@ def list_to_csv(items: list):
     while i < (len(items[0]) - 1) / 2:
         columns += ['x' + str(i), 'y' + str(i)]
         i += 1
-    columns += ['score']
+    columns += ['fitness']
 
     with open('tests.csv', 'w', newline='') as outcsv:
         writer = csv.DictWriter(outcsv, fieldnames=columns)
