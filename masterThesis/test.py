@@ -10,7 +10,9 @@ def main():
 
     # Truncates all test cases to 200 points and deletes the shorter ones
     parsed_cases = []
-    max_threshold = 50
+    # The number of point pairs that should be kept for each test
+
+    max_threshold = 5
     for i in range(len(test_cases)):
         parsed_case = []
         tc = test_cases['tc_' + str(i)]

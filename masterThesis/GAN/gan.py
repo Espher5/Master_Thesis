@@ -1,11 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.callbacks import EarlyStopping
-from sklearn.model_selection import train_test_split
 import pandas as pd
-import io
-import os
-import requests
 import numpy as np
 from sklearn import metrics
 import csv
