@@ -125,21 +125,58 @@ def test_list_fitness_to_dict(test_cases, fitness_values):
     return test_dict
 
 
-def main():
-    with open('dict.json', 'r') as in_file:
-        test_cases = json.load(in_file)
+def new_points(road_points, length):
+    new_points = []
 
-    print('Test cases before truncation: ', len(test_cases))
+    step = len(road_points) / length
+    if step == 1:
+        return road_points
+
+    for i in range(length):
+        new_points.append(road_points[i + step])
+
+    return new_points
+
+
+def main():
+    with open('../dict.json', 'r') as in_file:
+        test_cases = json.load(in_file)
 
     # Truncates all test cases to 200 points and deletes the shorter ones
     parsed_cases = []
-    max_threshold = 5
+    average_length = 1
+
+    for i in range(len(test_cases)):
+        tc = test_cases['tc_' + str(i)]
+        points = tc['points']
+        average_length += len(points)
+    average_length = average_length / len(test_cases)
+    print('Average test case length: {}'.format(average_length))
+
+    print('Test cases before truncation: ', len(test_cases))
+
+    # Keeps the first and last points and
+    # Deletes tests shorter than the threshold
     for i in range(len(test_cases)):
         parsed_case = []
         tc = test_cases['tc_' + str(i)]
         points = tc['points']
         fitness = tc['fitness']
 
+        if len(points) >= average_length:
+            for tup in points[: max_threshold]:
+                x = tup[0]
+                y = tup[1]
+                parsed_case += [x, y]
+
+
+    """
+    max_threshold = 5
+    for i in range(len(test_cases)):
+        parsed_case = []
+        tc = test_cases['tc_' + str(i)]
+        points = tc['points']
+        fitness = tc['fitness']
         if len(points) >= max_threshold:
             for tup in points[: max_threshold]:
                 x = tup[0]
@@ -153,15 +190,15 @@ def main():
           .format(len(test_cases) - len(parsed_cases), max_threshold))
 
     list_to_csv(parsed_cases)
-
+    """
 
 def list_to_csv(items: list):
     """
     Parses the test cases and saves them to a csv file
     """
 
-    # Get the column names for the csv in the form
-    # x1, y1, x2, y2, ... x200, y200
+    # Get the column names for the csv in the format:
+    # {x1, y1, x2, y2, ... , fitness}
     columns = []
     i = 0
     while i < (len(items[0]) - 1) / 2:
