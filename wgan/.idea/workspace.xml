@@ -4,9 +4,12 @@
     <list default="true" id="5aaeeedd-8dda-45e9-820c-bfc0e405ecb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../masterThesis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../masterThesis/algorithm/algorithm_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/algorithm/algorithm_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/algorithm/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/algorithm/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../masterThesis/dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/dict.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../masterThesis/generated_cases.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/generated_cases.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../masterThesis/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../masterThesis/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masterThesis/generated_cases.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wgan/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wgan/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

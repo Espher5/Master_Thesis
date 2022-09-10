@@ -7,7 +7,7 @@ from code_pipeline.tests_generation import RoadTestFactory
 
 import algorithm.Optimize as optim
 
-import utils
+import algorithm.utils as utils
 
 
 class AlgorithmTestGenerator:

@@ -25,7 +25,7 @@ with open('../tests.csv') as csv_file:
 df = pd.read_csv('../tests.csv')
 print(df)
 # Split into training and test sets
-x = df.loc[:, 'x0': 'y4']
+x = df.loc[:, 'x0': 'y49']
 y = df.loc[:, 'fitness']
 print(x.head())
 print(y.head())
@@ -47,9 +47,9 @@ y_test = df_y_test.values
 # Build the neural network discriminator
 model = Sequential()
 # Hidden 1
-model.add(Dense(50, input_dim=x_train.shape[1], activation='relu'))
-model.add(Dense(25, activation='relu'))     # Hidden 2
-model.add(Dense(12, activation='relu'))     # Hidden 2
+model.add(Dense(64, input_dim=x_train.shape[1], activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(16, activation='relu'))
 model.add(Dense(1))                         # Output
 model.compile(loss='mean_squared_error', optimizer='adam')
 

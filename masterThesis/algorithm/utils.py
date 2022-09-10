@@ -14,7 +14,9 @@ def generate_random_tests(n=1):
     """
     Generates n random tests with fitness != 0
     """
-    tests = []
+    test_dict = {}
+
+    test_cases = []
     fitness_values = []
     generator = RoadGen(
         config.MODEL["map_size"],
@@ -39,10 +41,18 @@ def generate_random_tests(n=1):
             fitness = ind.fitness * (-1)
             points = ind.road_points
 
-        tests.append(points)
+        test_cases.append(points)
         fitness_values.append(fitness)
 
-    return tests, fitness_values
+    for i, (tc, fit) in enumerate(zip(test_cases, fitness_values)):
+        test_dict.update({
+            'tc_' + str(i): {
+                'points': tc,
+                'fitness': -fit
+            }
+        })
+
+    return test_dict
 
 
 def generate_high_fitness_tests():
@@ -125,72 +135,18 @@ def test_list_fitness_to_dict(test_cases, fitness_values):
     return test_dict
 
 
-def new_points(road_points, length):
+def sample_points(road_points, length):
     new_points = []
 
-    step = len(road_points) / length
-    if step == 1:
-        return road_points
+    step = int(len(road_points) / length)
 
-    for i in range(length):
-        new_points.append(road_points[i + step])
+    i = 0
+    while len(new_points) < length:
+        new_points.append(road_points[i])
+        i = min(i + step, len(road_points) - 1)
 
     return new_points
 
-
-def main():
-    with open('../dict.json', 'r') as in_file:
-        test_cases = json.load(in_file)
-
-    # Truncates all test cases to 200 points and deletes the shorter ones
-    parsed_cases = []
-    average_length = 1
-
-    for i in range(len(test_cases)):
-        tc = test_cases['tc_' + str(i)]
-        points = tc['points']
-        average_length += len(points)
-    average_length = average_length / len(test_cases)
-    print('Average test case length: {}'.format(average_length))
-
-    print('Test cases before truncation: ', len(test_cases))
-
-    # Keeps the first and last points and
-    # Deletes tests shorter than the threshold
-    for i in range(len(test_cases)):
-        parsed_case = []
-        tc = test_cases['tc_' + str(i)]
-        points = tc['points']
-        fitness = tc['fitness']
-
-        if len(points) >= average_length:
-            for tup in points[: max_threshold]:
-                x = tup[0]
-                y = tup[1]
-                parsed_case += [x, y]
-
-
-    """
-    max_threshold = 5
-    for i in range(len(test_cases)):
-        parsed_case = []
-        tc = test_cases['tc_' + str(i)]
-        points = tc['points']
-        fitness = tc['fitness']
-        if len(points) >= max_threshold:
-            for tup in points[: max_threshold]:
-                x = tup[0]
-                y = tup[1]
-                parsed_case += [x, y]
-
-            parsed_cases.append(parsed_case)
-            parsed_case.append(fitness)
-
-    print('{} test cases were shorter than the {} length threshold and were truncated.'
-          .format(len(test_cases) - len(parsed_cases), max_threshold))
-
-    list_to_csv(parsed_cases)
-    """
 
 def list_to_csv(items: list):
     """
@@ -218,5 +174,53 @@ def list_to_csv(items: list):
             writer.writerow(test_dict)
 
 
+def main():
+    with open('../dict.json', 'r') as in_file:
+        test_cases = json.load(in_file)
+
+    # Truncates all test cases to 200 points and deletes the shorter ones
+    parsed_cases = []
+    average_length = 0
+    n_truncated = 0
+
+    print('Test cases before truncation: ', len(test_cases))
+
+    for i in range(len(test_cases)):
+        tc = test_cases['tc_' + str(i)]
+        points = tc['points']
+        # double since the list is made up of pairs
+        average_length += len(points)
+
+    average_length = int(average_length / len(test_cases))
+    print('Average test case length: {}'.format(average_length))
+
+    average_length = 50
+    for i in range(len(test_cases)):
+        parsed_case = []
+        tc = test_cases['tc_' + str(i)]
+        points = tc['points']
+        fitness = tc['fitness']
+        if len(points) >= average_length:
+            if(len(points)) > average_length:
+                n_truncated += 1
+
+            points = sample_points(points, average_length)
+            for tup in points:
+                x = tup[0]
+                y = tup[1]
+                parsed_case += [x, y]
+            # Double to account for pairs
+            parsed_cases.append(parsed_case)
+            parsed_case.append(fitness)
+
+    print('Test cases after truncation: ', len(parsed_cases))
+    print('{} test cases were shorter than the {} average length threshold and were eliminated.'
+          .format(len(test_cases) - len(parsed_cases), average_length))
+    print('{} test cases were longer than the {} average length threshold and were truncated.'
+          .format(n_truncated, average_length))
+
+    list_to_csv(parsed_cases)
+
+
 if __name__ == '__main__':
-     main()
+    main()
