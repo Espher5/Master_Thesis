@@ -1,9 +1,6 @@
-
 from algorithm.vehicle import Car
 import algorithm.config as cf
 from algorithm.car_road import Map
-from code_pipeline.beamng_executor import BeamngExecutor
-from code_pipeline.tests_generation import RoadTestFactory
 
 
 class Individual:
@@ -49,6 +46,10 @@ class Individual:
     def road_points(self):
         return self._road_points
 
+    @road_points.setter
+    def road_points(self, road_points):
+        self._road_points = road_points
+
     @property
     def intp_points(self):
         return self._intp_points
@@ -65,7 +66,6 @@ class Individual:
         else:
             self._intp_points = self._car.interpolate_road(road)
             self._fitness, self._car_path = self._car.execute_road(self._intp_points)
-
         return
 
     def get_points(self):

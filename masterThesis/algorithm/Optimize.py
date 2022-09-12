@@ -47,11 +47,13 @@ def optimize():
     test_cases = {}
 
     i = 0
+    individuals = []
 
     while i < len(res.F):
         result = res.history[gen].pop.get("X")[i]
+        individuals.append(result[0])
         road_points = result[0].intp_points
         test_cases["tc" + str(i)] = road_points
         i += 1
-    return test_cases, res.F
+    return individuals, test_cases, res.F
 

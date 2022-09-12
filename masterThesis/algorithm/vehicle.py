@@ -31,7 +31,7 @@ class Car:
         # self._road_x = []
         # self._road_y = []
         # self._final_dist = []
-        
+
         self._tot_x = []
         self._tot_y = []
         self._tot_dist = []

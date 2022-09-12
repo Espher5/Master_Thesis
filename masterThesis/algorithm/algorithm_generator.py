@@ -16,72 +16,6 @@ class AlgorithmTestGenerator:
         self.time_budget = time_budget
         self.executor = executor
 
-    """
-    def generate_test_dataset(self):
-        test_dict = {}
-        with Manager() as manager:
-            test_cases = manager.list()
-            processes = []
-            for i in range(20):
-                process = Process(target=self._task, args=(test_cases,))
-                process.start()
-                processes.append(process)
-
-            for p in processes:
-                p.join()
-
-            print('Generated {} high fitness test cases'.format(len(test_cases)))
-
-            for i in range(len(test_cases)):
-                test_dict.update({
-                    'tc_' + str(i): {
-                        'points': test_cases[i],
-                        'score': 'hard'
-                    }
-                })
-
-            # Generates as many low-fitness test cases
-            low_fitness_cases = []
-            low_fitness_threshold = 4
-            generator = RoadGen(
-                cf.MODEL["map_size"],
-                cf.MODEL["min_len"],
-                cf.MODEL["max_len"],
-                cf.MODEL["min_angle"],
-                cf.MODEL["max_angle"],
-            )
-
-            for i in range(100):
-                states = generator.test_case_generate()
-                ind = Individual()
-                ind.states = states
-                ind.get_points()
-                ind.remove_invalid_cases()
-                ind.eval_fitness()
-
-                fitness = ind.fitness * (-1)
-                if fitness < low_fitness_threshold:
-                    points = ind.road_points
-                    low_fitness_cases.append(points)
-
-                    test_dict.update({
-                        'tc_' + str(i + len(test_cases)): {
-                            'points': low_fitness_cases[i],
-                            'score': fitness
-                        }
-                    })
-            print('Generated {} low fitness test cases'.format(len(low_fitness_cases)))
-
-            with open('../dict.json', 'w') as f:
-                json.dump(test_dict, f, indent=4)
-    """
-
-    @staticmethod
-    def main():
-        test_dict = utils.generate_high_fitness_tests()
-        with open('../dict.json', 'w') as f:
-            json.dump(test_dict, f, indent=4)
-
     def run_ambiegen(self):
         """
         AmbieGen start method
@@ -149,7 +83,6 @@ class AlgorithmTestGenerator:
             line_count = 0
             for row in csv_reader:
                 if line_count == 0:
-                    print(f'Column names are {", ".join(row)}')
                     line_count += 1
                 else:
                     unparsed_cases.append(row[1:])
@@ -165,7 +98,7 @@ class AlgorithmTestGenerator:
                 j += 2
             test_cases.update({'tc' + str(i): road_points})
 
-        print('Starting testing on GAN tests')
+        print('Start testing on GAN tests')
         for case in test_cases:
             # Some debugging
             logging.info(
@@ -186,7 +119,3 @@ class AlgorithmTestGenerator:
             if self.executor.road_visualizer:
                 time.sleep(1)
 
-
-if __name__ == '__main__':
-    ag = AlgorithmTestGenerator()
-    ag.main()

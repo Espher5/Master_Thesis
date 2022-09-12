@@ -25,7 +25,7 @@ with open('../tests.csv') as csv_file:
 df = pd.read_csv('../tests.csv')
 print(df)
 # Split into training and test sets
-x = df.loc[:, 'x0': 'y49']
+x = df.loc[:, 'x0': 'y205']
 y = df.loc[:, 'fitness']
 print(x.head())
 print(y.head())
