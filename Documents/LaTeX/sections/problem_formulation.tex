@@ -44,3 +44,27 @@ and the coverage targets.
     \item Mathematical models: 
 
 \end{itemize}
+
+
+\newpage
+\section{Adversarial attacks}
+
+Most vision-based recognition software on ADS is based on CNNS; often, CNN-based deep learning models are vulnerable to the so called adversarial, 
+
+There can be small, pixel-level changes to an image that will cause the AI model to incorrectly interpret it or, on the other hand, a completely new image can be used to trick to model into thinking it is something else. The first kind is particularly dangerous, since such changes can be invisible to the human eye, and thus harder to detect.
+
+There are mainly two categories of methods to achieve adversarial attacks, namely, optimization-based methods and fast gradient step method (FGSM)-based approach.
+
+
+study on street signs: K. Eykholt, I. Evtimov, E. Fernandes, B. Li, A. Rahmati, C. Xiao,
+A. Prakash, T. Kohno, and D. Song, “Robust Physical-World Attacks on
+Deep Learning Visual Classification,” in 2018 IEEE/CVF Conference on
+Computer Vision and Pattern Recognition. IEEE, 2018, pp. 1625–1634.
+
+
+In general, adversarial attacks are organized in three categories: evasion, poisoning, and extraction attacks:
+\begin{itemize}
+    \item Evasion attacks modify the input to a classifier such that it is misclassified, while keeping the modification as small as possible. Evasion attacks can be black-box or white-box: in the white-box case, the attacker has full access to the architecture and parameters of the classifier. For a black-box attack, clearly this is not the case.
+    \item In poisoning attacks, attackers have the opportunity of manipulating the training data to significantly decrease the overall performance, cause targeted misclassification or bad behavior, and insert backdoors and neural trojans
+    \item Extraction attacks aim to develop a new model, starting from a proprietary black-box model, that emulate the behavior of the original model.
+\end{itemize}
