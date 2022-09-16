@@ -1,4 +1,0 @@
-WOGAN approach but instead of starting with a random search, make the output of AmbieGen the initial dataset to evolve
-
-
-Analyze the road generation approach in ambiegen
