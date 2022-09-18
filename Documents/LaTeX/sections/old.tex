@@ -1,3 +1,35 @@
+\newpage
+\section{An overview on search problems}
+As humans, everyday we perform search: from looking for our car keys in the house to searching for a new book to purchase, this action is engraved in our daily life.
+In the same way, search is one of the most fundamental operations on which computer science has focused since its early days: performing efficient search is the core operation of many classes of algorithms, such as the ones responsible for route planning, computer vision, robotics, automated software testing, puzzle solving, and many others.
+
+
+Any search problem is typically defined by: 
+\begin{itemize}
+    \item A search space: the set of elements in which we search for our solution. Examples include paths in a graph, the numbers to insert in a sorted list, or the web pages accesses by a web index.
+    \item A condition that defines the characteristics of candidate solutions.
+\end{itemize}
+
+\textbf{formal problem definition with graphs, distance functions, ...}
+
+A search algorithm will therefore examine the search space according to some criteria and attempt to find a suitable solution. Finding any candidate solution is just one of the objective of search problems however, often times we are interested in finding the best possible solution, the optimum; such problems are referred to as optimization problems.
+
+The exploration of the search space can happen in many different ways. The most basic approach consists of exploring the elements one by one, till a solution/the optimum is found, in a brute-force manner. Applying this simple solution for problems whose search space is somewhat limited can be done without too many repercussions on execution time, however, given the exponential size of the search spaces of most practical problems, a brute-force approach is infeasible. 
+
+For problems in which we have no choice but to employ brute-force search, there may be some room for improvement by using heuristics. Heuristics are estimates of the distance function to reach a goal state from the current node \cite{HeuristicSearch}.
+
+
+Therefore, what it is preferred to obtain a solution that may not be the optimum, but rather it is "good enough" for our objective. This approach is called local search.
+
+ 
+\textbf{Hill climbing, simulated annealing, GAs...}
+Genetic Algorithms (GAs) are an example of an
+evolutionary search approach for test case generation; starting from an initial, often randomly generated, population of 
+test cases, the algorithm keeps evolving the individuals according to simulated natural evolution theory principles.
+In this context, a typical fitness function of a GA would measure the distance between the execution trace of the generated test cases
+and the coverage targets.
+
+
 Either one or two objectives for testing:
 \begin{itemize}
     \item Fault revealing power
