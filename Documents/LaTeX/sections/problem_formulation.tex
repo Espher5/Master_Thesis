@@ -11,19 +11,47 @@ A self-driving vehicle cannot rely on LiDAR alone, however. While this technolog
 
 For this reason, a third sensor is usually employed, the RADAR, which scans the surrounding area based on radio waves\dots
 
+\section{2D Object detection}
+IoU: intersection of union
+
+
+
+
 
 \section{3D Object detection}
+The goal of 3D object detection is to predict a three-dimensional bounding box around each object of interest.
+
+Similarly to what happens with 2D detection, IoU can be used to evaluate the performance of a model.
+
+
+\textbf{Formal definition}
+\dots
+In the case of self-driving vehicles specifically, we can assume a value of zero for roll and pitch since the car is "glued" to the road.
+Frustum...
+
+
+
 The most suited category of neural networks for image processing are Convolutional Neural Networks, CNNs\dots
 CNNs can capture different patterns 
 
-
-
 Region Based Convolutional Neural Networks, R-CNN, is a more scalable alternative to traditional CNNS. This approach, originally proposed by R. Girshick et al. \cite{DBLP:conf/cvpr/GirshickDDM14} in 2014\dots
-
 
 CNNs have been successfully employed on point cloud data as well; PointRCNN
 
 
+Different input modalities
+\begin{itemize}
+    \item Images only
+    \item LiDAR data only
+    \item Images + LiDAR data. With this approach, 
+\end{itemize}
+
+
+Only image: Monocular 3D Object Detection for Autonomous Driving and Geometru-based Distance Decompositon for Monocular 3D Object Detection or Pseudo-LiDAR
+
+Only LiDAR: 
+
+Both:
 
 
 
