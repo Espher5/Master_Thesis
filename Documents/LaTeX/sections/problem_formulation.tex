@@ -2,7 +2,7 @@
 \section{Autonomous Driving Vehicles}
 \subsection{Introduction}
 
-\cite{DBLP:journals/ftcgv/JanaiGBG20}
+
 
 
 \subsection{History of autonomous vehicles}
@@ -23,11 +23,32 @@ For this reason, a third sensor is usually employed, the RADAR, which scans the 
 
 
 
-\section{2D Object detection}
+\section{Object detection}
+Reliable object detection is a crucial requirement in realizing autonomous driving \cite{DBLP:journals/ftcgv/JanaiGBG20}; being aware of its surrounding environment is necessary to make an autonomous vehicle avoid accidents that may be life-threatening.
+
 IoU: intersection of union
 
+The complexity of the object detection problem varies according to different input modalities:
+\begin{itemize}
+    \item Video cameras are the cheapest solution
+    \item LiDAR data 
+    \item Camera images + LiDAR data. 
+\end{itemize}
+
+To approach the problem, a detection pipeline must be established. Typically, the following steps are required:
+\begin{itemize}
+    \item Preprocessing.
+    \item Region of Interest (ROT) extraction.
+    \item Object classification.
+    \item Verification.
+\end{itemize}
+
+Today's state of the art approaches for object detection employ Convolutional Neural Networks, CNNs \cite{DBLP:conf/eccv/CaiFFV16} \cite{DBLP:journals/pami/ChenKZMFU18}.
+A problem with Deep CNNs with large receptive fields is that local information is extracted in the early layers, while higher-level represented in deeper layers \cite{DBLP:journals/ftcgv/JanaiGBG20}, making the precise localization of the object more difficult
 
 
+
+CNNs can capture different patterns 
 
 
 \newpage
@@ -44,20 +65,14 @@ Frustum...
 
 
 
-The most suited category of neural networks for image processing are Convolutional Neural Networks, CNNs\dots
-CNNs can capture different patterns 
+
 
 Region Based Convolutional Neural Networks, R-CNN, is a more scalable alternative to traditional CNNS. This approach, originally proposed by R. Girshick et al. \cite{DBLP:conf/cvpr/GirshickDDM14} in 2014\dots
 
 CNNs have been successfully employed on point cloud data as well; PointRCNN
 
 
-Different input modalities
-\begin{itemize}
-    \item Images only
-    \item LiDAR data only
-    \item Images + LiDAR data. With this approach, 
-\end{itemize}
+
 
 
 Only image: Monocular 3D Object Detection for Autonomous Driving and Geometru-based Distance Decompositon for Monocular 3D Object Detection or Pseudo-LiDAR
