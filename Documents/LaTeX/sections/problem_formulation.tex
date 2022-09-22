@@ -44,7 +44,9 @@ To approach the problem, a detection pipeline must be established. Typically, th
 \end{itemize}
 
 Today's state of the art approaches for object detection employ Convolutional Neural Networks, CNNs \cite{DBLP:conf/eccv/CaiFFV16} \cite{DBLP:journals/pami/ChenKZMFU18}.
-A problem with Deep CNNs with large receptive fields is that local information is extracted in the early layers, while higher-level represented in deeper layers \cite{DBLP:journals/ftcgv/JanaiGBG20}, making the precise localization of the object more difficult
+A problem with Deep CNNs with large receptive fields is that local information is extracted in the early layers, while higher-level represented in deeper layers \cite{DBLP:journals/ftcgv/JanaiGBG20}, making the precise localization of the object more difficult.
+A solution to this problem was proposed by Girshick et al. \cite{DBLP:conf/cvpr/GirshickDDM14} with Region Based Convolutional Neural Networks, R-CNNs. This scalable approach solves the localization problem by generating many region proposals using selective search \cite{DBLP:journals/ijcv/UijlingsSGS13} to extract a fixed-length feature vector for each proposed region using a CNN and classifying each region with a linear SVM.
+
 
 
 
@@ -53,9 +55,21 @@ CNNs can capture different patterns
 
 \newpage
 \section{3D Object detection}
+
+\subsection{3D object detection from 2D images}
+
+\subsection{3D object detection from 3D point clouds}
 The goal of 3D object detection is to predict a three-dimensional bounding box around each object of interest.
 
 Similarly to what happens with 2D detection, IoU can be used to evaluate the performance of a model.
+
+
+\section*{Dataset}
+\begin{itemize}
+    \item Street signs: German Traffic Sign Recognition Benchmark
+    \item Pedestrians, vehicles and 
+\end{itemize}
+
 
 
 \textbf{Formal definition}
@@ -67,7 +81,7 @@ Frustum...
 
 
 
-Region Based Convolutional Neural Networks, R-CNN, is a more scalable alternative to traditional CNNS. This approach, originally proposed by R. Girshick et al. \cite{DBLP:conf/cvpr/GirshickDDM14} in 2014\dots
+, is a more scalable alternative to traditional CNNS. This approach, originally proposed by R. Girshick et al.  in 2014\dots
 
 CNNs have been successfully employed on point cloud data as well; PointRCNN
 
