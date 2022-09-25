@@ -43,6 +43,7 @@ To approach the problem, a detection pipeline must be established. Typically, th
     \item Verification.
 \end{itemize}
 
+
 Today's state of the art approaches for object detection employ Convolutional Neural Networks, CNNs \cite{DBLP:conf/eccv/CaiFFV16} \cite{DBLP:journals/pami/ChenKZMFU18}.
 A problem with Deep CNNs with large receptive fields is that local information is extracted in the early layers, while higher-level represented in deeper layers \cite{DBLP:journals/ftcgv/JanaiGBG20}, making the precise localization of the object more difficult.
 A solution to this problem was proposed by Girshick et al. \cite{DBLP:conf/cvpr/GirshickDDM14} with Region Based Convolutional Neural Networks, R-CNNs. This scalable approach solves the localization problem by generating many region proposals using selective search \cite{DBLP:journals/ijcv/UijlingsSGS13} to extract a fixed-length feature vector for each proposed region using a CNN and classifying each region with a linear SVM.
