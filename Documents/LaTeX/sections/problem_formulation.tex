@@ -12,6 +12,10 @@ While the general principles on which it was based worked well, the limited comp
 
 
 \subsection{Sensors and hardware}
+Autonomous vehicles employ both RGB cameras and LiDAR sensors to generate a representation of the surrounding environment, in the form of 2D RGB images and sparse 3D point clouds.
+
+
+
 LiDAR stands for Light Detection And Ranging. It's a method to measure distance of object by firing a focused laser beam and measuring the time it takes for it to bounce back at the source after being reflected by something.
 Compared to traditional camera images, LiDAR data can provide additional information about the surrounding scene...
 
@@ -32,8 +36,16 @@ The complexity of the object detection problem varies according to different inp
 \begin{itemize}
     \item Video cameras are the cheapest solution
     \item LiDAR data 
-    \item Camera images + LiDAR data. Most modern autonomous driving solutions employ both LiDAR and RGB camera sensors for perception. These multi-modal perception systems can be classified into two broad categories: cascaded models which use each modality independently, and fusion models which learn from different modalities simultaneously \cite{DBLP:conf/iros/AbdelfattahY0W21}.
+    \item Camera images + LiDAR data. Most modern autonomous driving solutions employ both LiDAR and RGB camera sensors for perception. 
 \end{itemize}
+
+The multi-modal perception systems can be classified into two broad categories: cascaded models which use each modality independently, and fusion models which learn from different modalities simultaneously \cite{DBLP:conf/iros/AbdelfattahY0W21}.
+
+In cascaded models, the images are used by a 2D detection DNN to generate proposals of search spaces where a car may reside; then, the LiDAR points corresponding to these regions are extracted for 3D point-based detection.
+
+Fusion models, on the other hand, use DNNs to extract and fuse image and point cloud features in parallel. Then, a combined
+representation is sent through another DNN for 3D detection.
+
 
 To approach the problem, a detection pipeline must be established. Typically, the following steps are required:
 \begin{itemize}
@@ -76,17 +88,9 @@ Similarly to what happens with 2D detection, IoU can be used to evaluate the per
 \textbf{Formal definition}
 \dots
 In the case of self-driving vehicles specifically, we can assume a value of zero for roll and pitch since the car is "glued" to the road.
-Frustum...
-
-
-
-
-
-, is a more scalable alternative to traditional CNNS. This approach, originally proposed by R. Girshick et al.  in 2014\dots
-
-CNNs have been successfully employed on point cloud data as well; PointRCNN
-
-
+Frustum... [C. R. Qi, W. Liu, C. Wu, H. Su, and L. J. Guibas, “Frustum pointnets
+for 3d object detection from rgb-d data,” in Proc. of the IEEE
+Conference on Computer Vision and Pattern Recognition, 2018]
 
 
 
@@ -102,14 +106,17 @@ Both:
 
 \newpage
 \section{Adversarial attacks on neural networks}
-Most vision-based recognition software on ADS is based on CNNS; often, CNN-based deep learning models are vulnerable to the so called adversarial, 
+As we've seen, most vision-based recognition software for ADS is based on DNNs; often, these models, especially CNN-based ones, are vulnerable to the adversarial attacks that aim at significantly alter the prediction capabilities of a model by slightly altering its input \cite{DBLP:journals/corr/GoodfellowSS14}.
+These can be small, pixel-level changes to an image that will cause the AI model to incorrectly interpret it or, on the other hand, a completely new image can be used to trick to model into thinking it is something else. The first kind is particularly dangerous, since such changes can be invisible to the human eye, and thus harder to detect.
 
-There can be small, pixel-level changes to an image that will cause the AI model to incorrectly interpret it or, on the other hand, a completely new image can be used to trick to model into thinking it is something else. The first kind is particularly dangerous, since such changes can be invisible to the human eye, and thus harder to detect.
+
+
+
 
 There are mainly two categories of methods to achieve adversarial attacks, namely, optimization-based methods and fast gradient step method (FGSM)-based approach.
 
 
-In \cite{DBLP:journals/iotj/ZhangLWWLJ22}, Zhang et al. propose and end-to-end evaluation framework for assessing the safety of a self driving deep learning model.
+In \cite{DBLP:journals/iotj/ZhangLWWLJ22}, Zhang et al. propose and end-to-end evaluation framework for assessing the safety of a self-driving deep learning models based on stereo images.
 
 
 
