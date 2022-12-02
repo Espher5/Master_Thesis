@@ -1,0 +1,2 @@
+class GameHasAlreadyBeenWonError(Exception):
+    pass

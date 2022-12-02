@@ -1,0 +1,2 @@
+class DuplicatedPlayerError(Exception):
+    pass

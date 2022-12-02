@@ -1,0 +1,2 @@
+class InvalidMeasurementError(Exception):
+    pass
