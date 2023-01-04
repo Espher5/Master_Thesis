@@ -1,4 +1,4 @@
-\section{Testing Embedded Systems}
+\section{Embedded Systems Overview}
 Embedded Systems (ES) can be defined as a combination of hardware components and software systems that seamlessly work together to achieve a specific purpose. Such systems can be dynamically programmed or have a fixed functionality set, and are often engineered to achieve a domain-specific, often critical, goal.
 In recent years, such system have seen a surge in popularity, and have driven innovation forward in their respective areas of deployment: everywhere, spanning from the agricultural field, to the medical and energy ones, ES of various size and complexity are employed. \\
 Due to their high specialization, ES often deal with time and resource constraints, both in hardware and in software; often these systems are battery-powered and therefore the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains. \\
@@ -18,7 +18,7 @@ These dependability attributes cannot be considered individually, as there are s
 
 
 
-\section{Test Driven Development for Embedded Systems}
+\section{Testing Embedded Systems}
 Testing ES poses a series of challenges compared to traditional testing: first of all, in the case of ES that are highly integrated with a physical environment (such as with CPSs), replicating the exact conditions in which the hardware will be deployed may be challenging. Secondly, field-testing of these systems can be unfeasible to dangerous or impractical environmental conditions (i.e., a nuclear power plant, a deep-ocean station, or the human body). Furthermore, given the absence of a user interface in most cases, testing such systems can be particularly challenging, given the lack of immediate feedback. Finally, the testing of time-critical systems has to validate the correct timing behavior which means that testing the functional behavior alone is not sufficient; similarly, system with tight hardware constraints, such as memory, limited processor power, or power consumption are fifficult to design and test.
 
 Going through multiple hardware revisions in order to meet the requirements can be extremely expensive.
@@ -29,8 +29,9 @@ For these reasons and more, the general testing process of ES follows the X-in-t
     \item With \textbf{Model-in-the-Loop (MIL)} or \textbf{Model-Based Testing} an initial model of the hardware system is built in a simulated environment; this coarse model captures the most important features of the hardware system \cite{XLoop}. As the next step, the controller module is created, and it is verified that the controller can manage the model, as per the requirements. Commonly, after the testers establish the correct behavior of the controller, its inputs and outputs are recorder, in order to be sued in the later stages of verification.
     \item With \textbf{Software-in-the-Loop (SIL)}, the algorithms that define the controller behavior are implemented in detail, and used to replace the previous controller model; the simulation is then executed with this new implementation. This step will determine whether the control logic, i.e., the Controller model can be actually converted to code and, more importantly, if it is hardware implementable. Here, the inputs and outputs should be logged and matched with those obtained in the previous phase; in case of any substantial differences, it may be necessary to backtrack to the MIL phase and make the necessary changes, before repeating the SIL step. On the other hand, if the performance is acceptable and falls into the acceptance threshold, we can move to the next phase.
     \item The next step is \textbf{Processor-in-the-Loop (PIL)}; here, an embedded processor will be simulated in detail and used to run the controller code in a closed-loop simulation. This help can help determine if the chosen processor is suitable for the controller and can handle the code with its memory and computing constraints. At this point, 
-    \item Finally, \textbf{Hardware-in-the-loop} is the last step performed before deploying the ES to the actual hardware. Here, 
+    \item Finally, \textbf{Hardware-in-the-loop} is the last step performed before deploying the ES to the actual hardware. Here, we can run the simulated system on a real-time environment, such as SpeedGoat \cite{SpeedGoat}. The real-time system performs deterministic simulations and has physical connections to the embedded processor, i.e., analog inputs and outpus, and communication interfaces, such as CAN and UDP. This can help identify issues related to the communication channels and I/O interface. HIL can be very expensive to perform and in practice it is used mostly for safety-critical applications, and it is required by automotive and aerospace validation standards. 
 \end{itemize}
 
+After these steps, the system can finally be deployed on real hardware.
 
 A common, open source, environment for simulations is Simulink ...
