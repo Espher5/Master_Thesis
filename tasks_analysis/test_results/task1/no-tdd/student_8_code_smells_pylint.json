@@ -1,0 +1,15 @@
+[
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 67,
+        "column": 38,
+        "endLine": null,
+        "endColumn": null,
+        "path": "..\\task1_results\\no-tdd\\student_8_intelligent_office\\IntelligentOffice.py",
+        "symbol": "syntax-error",
+        "message": "Parsing failed: 'unmatched ')' (<unknown>, line 67)'",
+        "message-id": "E0001"
+    }
+]

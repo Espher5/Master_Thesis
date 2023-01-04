@@ -1,7 +1,17 @@
-\section{Introduction}
-Testing can be defined as the process of finding differences between the expected behavior specified by system's requirements and models, and the observed behavior of the implemented software.
+\section{Overview on software testing}
+Software testing is an essential part of the development process of a system, as it helps to ensure that a piece of software is reliable and performs as intended; it can be defined as the process of finding differences between the expected behavior specified by system's requirements and models, and the observed behavior of the implemented software. Unfortunately, it is impossible to completely test a nontrivial system. First, testing is not decidable. Second, testing must be performed under time and budget constraints \cite{OOSE}, therefore developers often compromise on testing activities by identifying only a critical subset of features to be tested.
 
-Unfortunately, it is impossible to completely test a nontrivial system. First, testing is not decidable. Second, testing must be performed under time and budget constraints \cite{OOSE}, therefore developers often compromise on testing activities by identifying only a critical subset of features to be tested.
+There are many approaches to software testing, including unit testing, integration testing, system testing, as well as performance, penetration and acceptance testing. Each of these approaches has its own specific goals and methods, and they are often used in combination to ensure that a software product is thoroughly tested and conform to its specification.
+\begin{itemize}
+    \item \textbf{Unit Testing} is a method of testing individual units or components of a software product in isolation; its goal is to verify that each unit of code is working correctly and meets the specified requirements. Unit tests are typically written by the developers who wrote the code, and they are run automatically as part of the build process. Techniques also exist to generate input configuration for unit test automatically, by searching amongst the input space for the tests.
+    \item \textbf{Integration Testing} is a method of testing how different units or components of a software product work together. The goal of integration testing is to ensure that the different parts of the system are integrated correctly and that they function as expected when combined. Integration tests are typically more complex than unit tests, as they involve multiple units of code working together.
+    \item \textbf{System Testing} is a method of testing a complete software product in a simulated or real-world environment. The goal of system testing is to ensure that the software meets the specified requirements and performs as expected when running in a real-world environment. System tests may involve testing the software on different hardware or operating systems, or with different data inputs and configurations.
+    \item \textbf{Acceptance Testing} is a method of testing a software product to ensure that it meets the needs and expectations of the end user. The goal of acceptance testing is to verify that the software is fit for its intended purpose and that it meets the requirements of the user. Acceptance tests are often written by the end user or a representative of the end user, and they may involve testing the software in a real-world environment
+\end{itemize}
+
+
+\subsection{Software Development Lifecycle}
+Before discussing how testing activities are performed in more detail, it is essential to introduced how testing is integrated in the development process. The term Software Development Lifecycle, SDLC, refers to the entire process of developing and maintaining software systems. It includes the following phases:
 
 \begin{figure}[h]
     \centering
@@ -24,6 +34,8 @@ Modern software development strays away from non-incremental models, as today's 
 
 
 \section{Test Driven Development}
+
+\subsection{Overview}
 The concept of Test Driven Development (TDD) was firstly introduced in 2003 by Kent Back in the book "Test Driven Development By Example" \cite{TDDByExample}. While there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
 Compared to traditional SDL processes, TDD is an extremely short, incremental, and repetitive process, and is related to \textbf{test-first programming} concepts in extreme programming; this advocates for frequent updates/releases for the software, in short cycles, while encouraging code reviews, unit testing and incremental addition of features.
 
@@ -50,7 +62,7 @@ User stories can vary in granularity: when using a fine-grained structure when d
 
 The general mantra of TDD revolves around the "Make it green, then make it clean" motto
 
-
+\subsection{TDD advantages}
 The employment of TDD can result in a series of benefits during the development process, sych as:
 \begin{itemize}
     \item \textbf{Regression testing}: by incrementally building a test suite as the different iterations of TDD are performed, we ensure that the system  

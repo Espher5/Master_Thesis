@@ -23,7 +23,7 @@ Testing ES poses a series of challenges compared to traditional testing: first o
 
 Going through multiple hardware revisions in order to meet the requirements can be extremely expensive.
 
-
+\subsection{X-in-the-loop}
 For these reasons and more, the general testing process of ES follows the X-in-the-loop paradigm \cite{DBLP:journals/software/GarousiFKY18} where the system goes through a series of step that simulate its behavior with an increased level of detail before being actually deployed; subcategories in this area include Model-in-the-Loop, Software-in-the-Loop, Processor-in-the-Loop, Hardware-in-the-Loop, and System-in-the-Loop:
 \begin{itemize}
     \item With \textbf{Model-in-the-Loop (MIL)} or \textbf{Model-Based Testing} an initial model of the hardware system is built in a simulated environment; this coarse model captures the most important features of the hardware system \cite{XLoop}. As the next step, the controller module is created, and it is verified that the controller can manage the model, as per the requirements. Commonly, after the testers establish the correct behavior of the controller, its inputs and outputs are recorder, in order to be sued in the later stages of verification.

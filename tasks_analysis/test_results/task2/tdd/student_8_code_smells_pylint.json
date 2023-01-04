@@ -1,0 +1,15 @@
+[
+    {
+        "type": "error",
+        "module": "CleaningRobot",
+        "obj": "",
+        "line": 66,
+        "column": 47,
+        "endLine": null,
+        "endColumn": null,
+        "path": "..\\task2_results\\tdd\\student_8_cleaning_robot\\CleaningRobot.py",
+        "symbol": "syntax-error",
+        "message": "Parsing failed: 'invalid syntax (<unknown>, line 66)'",
+        "message-id": "E0001"
+    }
+]
