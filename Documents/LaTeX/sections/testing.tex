@@ -1,10 +1,14 @@
-\section{Unit Testing}
+\section{Introduction}
+Testing can be defined as the process of finding differences between the expected behavior specified by system's requirements and models, and the observed behavior of the implemented software.
+
+Unfortunately, it is impossible to completely test a nontrivial system. First, testing is not decidable. Second, testing must be performed under time and budget constraints \cite{OOSE}, therefore developers often compromise on testing activities by identifying only a critical subset of features to be tested.
+
+
 
 
 
 \section{Test Driven Development}
 The concept of Test Driven Development (TDD) was firstly introduced in 2003 by Kent Back in the book "Test Driven Development By Example" \cite{TDDByExample}. While there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
-
 Compared to traditional SDL processes, TDD is an extremely short, incremental, and repetitive process, and is related to \textbf{test-first programming} concepts in extreme programming; this advocates for frequent updates/releases for the software, in short cycles, while encouraging code reviews, unit testing and incremental addition of features.
 
 
@@ -26,7 +30,7 @@ The figure below provides a representation of the TDD cycle:
 
 As previously stated, each TDD iteration should be extremely short, usually spanning from 10 to 15 minutes at most; this is possible thanks to a meticulous decomposition of the system's requirements into a set of \textbf{User Stories}, each detailing a small chunk of a functionality specified in the requirements. These stories can then be prioritized and implemented iteratively.
 
-User stories can vary in granularity
+User stories can vary in granularity: when using a fine-grained structure when describing the task, this can be broken up into a set of sub-tasks, each corresponding to a small feature; on the other hand, with coarser-grained tasks, this division is less pronounced \cite{DBLP:journals/tse/KaracTJ21}. Even when the same task is considered, the outcome of the TDD process will change depending on the level of granularity employed when describing it; there is no overall right or wrong approach, rather it is something that comes from the experience of the developer to break tasks into small work items \cite{DBLP:journals/tse/KaracTJ21}.
 
 The general mantra of TDD revolves around the "Make it green, then make it clean" motto
 
@@ -37,22 +41,7 @@ The employment of TDD can result in a series of benefits during the development 
     \item \textbf{Very high code coverage}: coverage is a metric used to determine how much of the code is being tested; it can be expressed according to different criteria such as statement coverage, i.e., how many statements in the code are reached by the test cases, branch coverage, i.e., how many conditional branches are executed during testing, or function coverage, i.e., how many functions are executed when running the test suite. While different coverage criteria result in different benefits, by employing TDD we ensure that any segment of code written has at least one associated test case.
     \item \textbf{Improved code quality}: as we are specifically writing code to pass the tests in place, and refactoring it after the "Green" phase, we ensure that the code is cleaner and overall more optimized, without any extra pieces of functionalities that may not be needed. 
     \item \textbf{Improved code readability and documentation}: test act as documentation...
-    \item \item \textbf{Simplified debugging and early fault detection}: Whenever a test fails it becomes obvious which component has caused the fault: by adopting this incremental approach and performing regression testing, if a test fail we will be certain that the newly written code will be responsible. For this reason, faults are detected extremely early during the testing process, rather than potentially remaining hidden until the whole test suite has been built and executed.
+    \item \textbf{Simplified debugging and early fault detection}: Whenever a test fails it becomes obvious which component has caused the fault: by adopting this incremental approach and performing regression testing, if a test fail we will be certain that the newly written code will be responsible. For this reason, faults are detected extremely early during the testing process, rather than potentially remaining hidden until the whole test suite has been built and executed.
 \end{itemize}
 
 
-\section{Testing Embedded Systems}
-Embedded Systems (ES) can be defined as a combination of hardware components and software systems that seamlessly work together to achieve a specific purpose. Such systems can be dynamically programmed or have a fixed functionality set, and are often engineered to achieve a domain-specific, often critical, goal.
-In recent years, such system have seen a surge in popularity, and have driven innovation forward in their respective areas of deployment: everywhere, spanning from the agricultural field, to the medical and energy ones, ES of various size and complexity are employed. \\
-Due to their high specialization, ES often deal with time and resource constraints, both in hardware and in software; often these systems are battery-powered and therefore the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains. \\
-Failures in ES should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; ES can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
-
-
-
-
-Furthermore, given the absence of a user interface in most cases, testing such systems can be particularly challenging, given the lack of immediate feedback.
-
-
-\section{Test Driven Development for Embedded Systems}
-Generally, the testing process of ES follows the X-in-the-loop paradigm \cite{DBLP:journals/software/GarousiFKY18}; subcategories in this area include model-in-the-loop, software-in-the-loop, processor-in-the-loop, hardware-in-the-loop, and system-in-the-loop.
-Reference the old survey papers (i.e. X in the loop) that provide a summary of the main techniques

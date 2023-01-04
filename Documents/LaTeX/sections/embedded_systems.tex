@@ -1,0 +1,27 @@
+\section{Testing Embedded Systems}
+Embedded Systems (ES) can be defined as a combination of hardware components and software systems that seamlessly work together to achieve a specific purpose. Such systems can be dynamically programmed or have a fixed functionality set, and are often engineered to achieve a domain-specific, often critical, goal.
+In recent years, such system have seen a surge in popularity, and have driven innovation forward in their respective areas of deployment: everywhere, spanning from the agricultural field, to the medical and energy ones, ES of various size and complexity are employed. \\
+Due to their high specialization, ES often deal with time and resource constraints, both in hardware and in software; often these systems are battery-powered and therefore the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains. \\
+Failures in ES should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; ES can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
+
+The dependability of a system can be expressed in terms of:
+\begin{itemize}
+    \item \textbf{System maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests.
+    \item \textbf{System reliability}: the extent to which a system is reliable with respect to the expected behavior.
+    \item \textbf{System availability}: the extent to which a system remains available for its users.
+    \item \textbf{System security}: the extent to which a system can keep data of its users safe and ensures the safety of their users.
+\end{itemize}
+
+These dependability attributes cannot be considered individually, as there are strongly interconnected; for instance, safe system operations depend on the system being available and operating reliably in its lifespan. Furthermore, an ES can be unreliable due to its data being corrupted by an external attack or due to poor implementation. As a result of particular care should be applied in the design of these systems. 
+
+
+
+
+
+\section{Test Driven Development for Embedded Systems}
+Testing ES poses a series of challenges compared to traditional testing: first of all, in the case of ES that are highly integrated with a physical environment (such as with CPSs), replicating the exact conditions in which the hardware will be deployed may be challenging. Secondly, field-testing of these systems can be unfeasible to dangerous or impractical environmental conditions (i.e., a nuclear power plant, a deep-ocean station, or the human body). Furthermore, given the absence of a user interface in most cases, testing such systems can be particularly challenging, given the lack of immediate feedback. Finally, the testing of time-critical systems has to validate the correct timing behavior which means that testing the functional behavior alone is not sufficient.
+
+
+For these reasons and more, the general testing process of ES follows the X-in-the-loop paradigm \cite{DBLP:journals/software/GarousiFKY18} where the system goes through a series of step that simulate its behavior with an increased level of detail before being actually deployed; subcategories in this area include model-in-the-loop, software-in-the-loop, processor-in-the-loop, hardware-in-the-loop, and system-in-the-loop:
+
+
