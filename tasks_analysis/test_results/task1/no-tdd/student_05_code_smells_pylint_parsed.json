@@ -1,0 +1,67 @@
+[
+    {
+        "type": "warning",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_blinds_based_on_time",
+        "line": 66,
+        "column": 8,
+        "endLine": 66,
+        "endColumn": 12,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_05_intelligent_office\\IntelligentOffice.py",
+        "symbol": "redefined-outer-name",
+        "message": "Redefining name 'time' from outer scope (line 1)",
+        "message-id": "W0621"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.monitor_air_quality",
+        "line": 115,
+        "column": 8,
+        "endLine": 115,
+        "endColumn": 38,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_05_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "convention",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 5,
+        "column": 0,
+        "endLine": 5,
+        "endColumn": 24,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_05_intelligent_office\\IntelligentOffice.py",
+        "symbol": "ungrouped-imports",
+        "message": "Imports from package mock are not grouped",
+        "message-id": "C0412"
+    },
+    {
+        "type": "warning",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 3,
+        "column": 0,
+        "endLine": 3,
+        "endColumn": 15,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_05_intelligent_office\\IntelligentOffice.py",
+        "symbol": "unused-import",
+        "message": "Unused import mock.RTC",
+        "message-id": "W0611"
+    },
+    {
+        "type": "warning",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 4,
+        "column": 0,
+        "endLine": 4,
+        "endColumn": 57,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_05_intelligent_office\\IntelligentOffice.py",
+        "symbol": "unused-import",
+        "message": "Unused IntelligentOfficeError imported from IntelligentOfficeError",
+        "message-id": "W0611"
+    }
+]

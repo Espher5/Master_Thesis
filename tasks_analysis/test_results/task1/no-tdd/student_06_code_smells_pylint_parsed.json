@@ -1,0 +1,54 @@
+[
+    {
+        "type": "convention",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 142,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_06_intelligent_office\\IntelligentOffice.py",
+        "symbol": "missing-final-newline",
+        "message": "Final newline missing",
+        "message-id": "C0304"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 54,
+        "column": 8,
+        "endLine": 54,
+        "endColumn": 44,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_06_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 59,
+        "column": 8,
+        "endLine": 64,
+        "endColumn": 23,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_06_intelligent_office\\IntelligentOffice.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_light_level",
+        "line": 104,
+        "column": 8,
+        "endLine": 114,
+        "endColumn": 37,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_06_intelligent_office\\IntelligentOffice.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    }
+]

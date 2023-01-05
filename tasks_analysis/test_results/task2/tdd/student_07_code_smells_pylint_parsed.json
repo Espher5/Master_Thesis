@@ -1,0 +1,54 @@
+[
+    {
+        "type": "refactor",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot",
+        "line": 5,
+        "column": 0,
+        "endLine": 5,
+        "endColumn": 19,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_07_cleaning_robot\\CleaningRobot.py",
+        "symbol": "too-many-instance-attributes",
+        "message": "Too many instance attributes (8/7)",
+        "message-id": "R0902"
+    },
+    {
+        "type": "convention",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.robot_status",
+        "line": 74,
+        "column": 16,
+        "endLine": 74,
+        "endColumn": 28,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_07_cleaning_robot\\CleaningRobot.py",
+        "symbol": "consider-using-f-string",
+        "message": "Formatting a regular string which could be a f-string",
+        "message-id": "C0209"
+    },
+    {
+        "type": "convention",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.robot_status",
+        "line": 85,
+        "column": 21,
+        "endLine": 85,
+        "endColumn": 30,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_07_cleaning_robot\\CleaningRobot.py",
+        "symbol": "consider-using-f-string",
+        "message": "Formatting a regular string which could be a f-string",
+        "message-id": "C0209"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.execute_command",
+        "line": 105,
+        "column": 8,
+        "endLine": 105,
+        "endColumn": 11,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_07_cleaning_robot\\CleaningRobot.py",
+        "symbol": "redefined-builtin",
+        "message": "Redefining built-in 'dir'",
+        "message-id": "W0622"
+    }
+]

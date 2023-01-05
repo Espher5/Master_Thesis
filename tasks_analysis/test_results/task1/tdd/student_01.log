@@ -1,0 +1,94 @@
+test_quadrant_1_occupancy_false (T1_US01.US01) ... ok
+test_quadrant_1_occupancy_true (T1_US01.US01) ... ok
+test_quadrant_2_occupancy_false (T1_US01.US01) ... ok
+test_quadrant_2_occupancy_true (T1_US01.US01) ... ok
+test_quadrant_3_occupancy_false (T1_US01.US01) ... ok
+test_quadrant_3_occupancy_true (T1_US01.US01) ... ok
+test_quadrant_4_occupancy_false (T1_US01.US01) ... ok
+test_quadrant_4_occupancy_true (T1_US01.US01) ... ok
+test_quadrant_occupancy_invalid_pin (T1_US01.US01) ... ok
+test_blinds_closed_4pm_saturday (T1_US02.US02) ... FAIL
+test_blinds_closed_9pm_tuesday (T1_US02.US02) ... FAIL
+test_blinds_open_5pm_friday (T1_US02.US02) ... ok
+test_blinds_open_8am_monday (T1_US02.US02) ... ok
+test_blinds_open_8pm_monday (T1_US02.US02) ... ok
+test_light_off (T1_US03.US03) ... ok
+test_light_on (T1_US03.US03) ... ok
+test_light_on_off (T1_US03.US03) ... ok
+test_light_on_on (T1_US03.US03) ... ok
+test_light_off_no_workers (T1_US04.US04) ... ok
+test_light_off_one_worker (T1_US04.US04) ... ERROR
+test_light_on_one_worker1 (T1_US04.US04) ... ERROR
+test_light_on_one_worker2 (T1_US04.US04) ... ok
+test_vent_off (T1_US05.US05) ... ok
+test_vent_on (T1_US05.US05) ... ok
+test_vent_on_off (T1_US05.US05) ... ok
+
+======================================================================
+ERROR: test_light_off_one_worker (T1_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T1_US04.py", line 37, in test_light_off_one_worker
+    self.io.manage_light_level()
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 150, in manage_light_level
+    if self.get_occupied_quadrants() == 0:
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 133, in get_occupied_quadrants
+    if self.check_quadrant_occupancy(pin):
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 65, in check_quadrant_occupancy
+    if GPIO.input(pin) > 0:
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1104, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1108, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1165, in _execute_mock_call
+    result = next(effect)
+StopIteration
+
+======================================================================
+ERROR: test_light_on_one_worker1 (T1_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T1_US04.py", line 23, in test_light_on_one_worker1
+    self.io.manage_light_level()
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 150, in manage_light_level
+    if self.get_occupied_quadrants() == 0:
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 133, in get_occupied_quadrants
+    if self.check_quadrant_occupancy(pin):
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\IntelligentOffice.py", line 65, in check_quadrant_occupancy
+    if GPIO.input(pin) > 0:
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1104, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1108, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1165, in _execute_mock_call
+    result = next(effect)
+StopIteration
+
+======================================================================
+FAIL: test_blinds_closed_4pm_saturday (T1_US02.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T1_US02.py", line 56, in test_blinds_closed_4pm_saturday
+    self.assertFalse(blinds_status)
+AssertionError: 'CLOSED' is not false
+
+======================================================================
+FAIL: test_blinds_closed_9pm_tuesday (T1_US02.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T1_US02.py", line 47, in test_blinds_closed_9pm_tuesday
+    self.assertFalse(blinds_status)
+AssertionError: 'CLOSED' is not false
+
+----------------------------------------------------------------------
+Ran 25 tests in 11.061s
+
+FAILED (failures=2, errors=2)

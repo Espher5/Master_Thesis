@@ -1,0 +1,93 @@
+[
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 55,
+        "column": 11,
+        "endLine": 55,
+        "endColumn": 97,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "consider-using-in",
+        "message": "Consider merging these comparisons with 'in' by using 'pin in (self.INFRARED_PIN_1, self.INFRARED_PIN_2, self.INFRARED_PIN_3)'. Use a set instead if elements are hashable.",
+        "message-id": "R1714"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 56,
+        "column": 12,
+        "endLine": 56,
+        "endColumn": 35,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 57,
+        "column": 12,
+        "endLine": 60,
+        "endColumn": 28,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "simplifiable-if-statement",
+        "message": "The if statement can be replaced with 'return bool(test)'",
+        "message-id": "R1703"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 57,
+        "column": 12,
+        "endLine": 60,
+        "endColumn": 28,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_blinds_based_on_time",
+        "line": 76,
+        "column": 11,
+        "endLine": 76,
+        "endColumn": 63,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "consider-using-in",
+        "message": "Consider merging these comparisons with 'in' by using 'current_day in ('SATURDAY', 'SUNDAY')'. Use a set instead if elements are hashable.",
+        "message-id": "R1714"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_light_level",
+        "line": 98,
+        "column": 8,
+        "endLine": 98,
+        "endColumn": 40,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.monitor_air_quality",
+        "line": 116,
+        "column": 8,
+        "endLine": 116,
+        "endColumn": 40,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_04_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    }
+]

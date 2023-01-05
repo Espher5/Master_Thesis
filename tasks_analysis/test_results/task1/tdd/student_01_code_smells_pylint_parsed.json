@@ -1,0 +1,15 @@
+[
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_blinds_based_on_time",
+        "line": 100,
+        "column": 11,
+        "endLine": 100,
+        "endColumn": 112,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_01_intelligent_office\\IntelligentOffice.py",
+        "symbol": "chained-comparison",
+        "message": "Simplify chained comparison between the operands",
+        "message-id": "R1716"
+    }
+]

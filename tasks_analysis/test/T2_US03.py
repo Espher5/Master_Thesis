@@ -4,7 +4,7 @@ import mock.GPIO as GPIO
 from CleaningRobot import CleaningRobot
 
 
-class US02(unittest.TestCase):
+class US03(unittest.TestCase):
     def setUp(self) -> None:
         self.robot = CleaningRobot(10, 10)
         self.robot.initialize_robot()

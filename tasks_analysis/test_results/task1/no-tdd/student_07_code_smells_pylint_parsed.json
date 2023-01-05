@@ -1,0 +1,54 @@
+[
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.check_quadrant_occupancy",
+        "line": 57,
+        "column": 8,
+        "endLine": 60,
+        "endColumn": 40,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_07_intelligent_office\\IntelligentOffice.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    },
+    {
+        "type": "refactor",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_blinds_based_on_time",
+        "line": 70,
+        "column": 11,
+        "endLine": 70,
+        "endColumn": 48,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_07_intelligent_office\\IntelligentOffice.py",
+        "symbol": "consider-using-in",
+        "message": "Consider merging these comparisons with 'in' by using 'day not in ('SATURDAY', 'SUNDAY')'. Use a set instead if elements are hashable.",
+        "message-id": "R1714"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_light_level",
+        "line": 91,
+        "column": 12,
+        "endLine": 91,
+        "endColumn": 52,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_07_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.monitor_air_quality",
+        "line": 108,
+        "column": 8,
+        "endLine": 108,
+        "endColumn": 38,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\no-tdd\\student_07_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    }
+]

@@ -1,0 +1,93 @@
+[
+    {
+        "type": "convention",
+        "module": "CleaningRobot",
+        "obj": "",
+        "line": 153,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "missing-final-newline",
+        "message": "Final newline missing",
+        "message-id": "C0304"
+    },
+    {
+        "type": "refactor",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot",
+        "line": 5,
+        "column": 0,
+        "endLine": 5,
+        "endColumn": 19,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "too-many-instance-attributes",
+        "message": "Too many instance attributes (8/7)",
+        "message-id": "R0902"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.initialize_robot",
+        "line": 65,
+        "column": 8,
+        "endLine": 65,
+        "endColumn": 12,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "unnecessary-pass",
+        "message": "Unnecessary pass statement",
+        "message-id": "W0107"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.robot_status",
+        "line": 72,
+        "column": 8,
+        "endLine": 72,
+        "endColumn": 12,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "unnecessary-pass",
+        "message": "Unnecessary pass statement",
+        "message-id": "W0107"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.execute_command",
+        "line": 91,
+        "column": 8,
+        "endLine": 91,
+        "endColumn": 12,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "unnecessary-pass",
+        "message": "Unnecessary pass statement",
+        "message-id": "W0107"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.manage_battery",
+        "line": 106,
+        "column": 8,
+        "endLine": 106,
+        "endColumn": 12,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "unnecessary-pass",
+        "message": "Unnecessary pass statement",
+        "message-id": "W0107"
+    },
+    {
+        "type": "warning",
+        "module": "CleaningRobot",
+        "obj": "",
+        "line": 2,
+        "column": 0,
+        "endLine": 2,
+        "endColumn": 49,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_06_cleaning_robot\\CleaningRobot.py",
+        "symbol": "unused-import",
+        "message": "Unused CleaningRobotError imported from CleaningRobotError",
+        "message-id": "W0611"
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.manage_light_level",
+        "line": 121,
+        "column": 8,
+        "endLine": 121,
+        "endColumn": 40,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_03_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    },
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "IntelligentOffice.monitor_air_quality",
+        "line": 141,
+        "column": 8,
+        "endLine": 141,
+        "endColumn": 42,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task1_results\\tdd\\student_03_intelligent_office\\IntelligentOffice.py",
+        "symbol": "assignment-from-no-return",
+        "message": "Assigning result of a function call, where the function has no return",
+        "message-id": "E1111"
+    }
+]

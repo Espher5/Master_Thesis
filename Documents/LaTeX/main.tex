@@ -4,6 +4,7 @@
 \usepackage[printonlyused, withpage]{acronym}
 \usepackage[ruled, lined, linesnumbered, noend ]{algorithm2e}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage[toc,page]{appendix}
 \usepackage{caption}
 \usepackage{color}
 \usepackage[english]{babel} 
@@ -14,6 +15,7 @@
 \usepackage{listings}
 \usepackage{microtype}
 \usepackage{moreverb}
+\usepackage{pdfpages}
 \usepackage{subfigure}
 \usepackage{todonotes}
 \usepackage{url}
@@ -156,5 +158,9 @@
 
     \nocite{*}
     \printbibliography[title={Bibliography}] 
+
+    \begin{appendices}
+        \includepdf[pages=-,scale=.8,pagecommand={},linktodoc=true]{appendix/intelligent_office_tdd.pdf}
+    \end{appendices}
 
 \end{document}

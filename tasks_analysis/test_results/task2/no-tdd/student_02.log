@@ -1,0 +1,140 @@
+test_robot_initialization (T2_US01.US01) ... ok
+test_cleaning_system_off (T2_US02.US02) ... ok
+test_cleaning_system_on (T2_US02.US02) ... ok
+test_recharge_led_off (T2_US02.US02) ... ok
+test_recharge_led_on (T2_US02.US02) ... ok
+test_left_rotation_from_00E (T2_US03.US02) ... ok
+test_left_rotation_from_00N (T2_US03.US02) ... ok
+test_left_rotation_from_00S (T2_US03.US02) ... ok
+test_left_rotation_from_00W (T2_US03.US02) ... ok
+test_move_forward_facing_E (T2_US03.US02) ... FAIL
+test_move_forward_facing_N (T2_US03.US02) ... ok
+test_move_forward_facing_S (T2_US03.US02) ... ok
+test_move_forward_facing_W (T2_US03.US02) ... FAIL
+test_right_rotation_from_00E (T2_US03.US02) ... ok
+test_right_rotation_from_00N (T2_US03.US02) ... ok
+test_right_rotation_from_00S (T2_US03.US02) ... ok
+test_right_rotation_from_00W (T2_US03.US02) ... ok
+test_command_string_length3_distinct_with_obstacle (T2_US04.US04) ... FAIL
+test_command_string_length6_distinct_with_obstacle (T2_US04.US04) ... FAIL
+test_move_forward_facing_N_with_obstacle (T2_US04.US04) ... FAIL
+test_move_forward_facing_S_with_obstacle (T2_US04.US04) ... FAIL
+test_move_forward_facing_W_with_obstacle (T2_US04.US04) ... FAIL
+test_low_battery_no_movement (T2_US05.US05) ... FAIL
+
+======================================================================
+FAIL: test_move_forward_facing_E (T2_US03.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 58, in test_move_forward_facing_E
+    self.assertEqual('(1,0,E)', self.robot.execute_command('f'))
+AssertionError: '(1,0,E)' != '(0,0,E)'
+- (1,0,E)
+?  ^
++ (0,0,E)
+?  ^
+
+
+======================================================================
+FAIL: test_move_forward_facing_W (T2_US03.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 74, in test_move_forward_facing_W
+    self.assertEqual('(0,1,W)', self.robot.execute_command('f'))
+AssertionError: '(0,1,W)' != '(1,1,W)'
+- (0,1,W)
+?  ^
++ (1,1,W)
+?  ^
+
+
+======================================================================
+FAIL: test_command_string_length3_distinct_with_obstacle (T2_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 41, in test_command_string_length3_distinct_with_obstacle
+    self.assertEqual('(0,1,E)(1,1)', self.robot.execute_command('f'))
+AssertionError: '(0,1,E)(1,1)' != '(0,1,E)'
+- (0,1,E)(1,1)
+?        -----
++ (0,1,E)
+
+
+======================================================================
+FAIL: test_command_string_length6_distinct_with_obstacle (T2_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 51, in test_command_string_length6_distinct_with_obstacle
+    self.assertEqual('(1,1,N)(1,2)', self.robot.execute_command('f'))
+AssertionError: '(1,1,N)(1,2)' != '(0,3,N)'
+- (1,1,N)(1,2)
++ (0,3,N)
+
+
+======================================================================
+FAIL: test_move_forward_facing_N_with_obstacle (T2_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 17, in test_move_forward_facing_N_with_obstacle
+    self.assertEqual('(0,0,N)(0,1)', self.robot.execute_command('f'))
+AssertionError: '(0,0,N)(0,1)' != '(0,1,N)'
+- (0,0,N)(0,1)
++ (0,1,N)
+
+
+======================================================================
+FAIL: test_move_forward_facing_S_with_obstacle (T2_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 25, in test_move_forward_facing_S_with_obstacle
+    self.assertEqual('(1,1,S)(1,0)', self.robot.execute_command('f'))
+AssertionError: '(1,1,S)(1,0)' != '(1,0,S)'
+- (1,1,S)(1,0)
++ (1,0,S)
+
+
+======================================================================
+FAIL: test_move_forward_facing_W_with_obstacle (T2_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 33, in test_move_forward_facing_W_with_obstacle
+    self.assertEqual('(1,1,W)(0,1)', self.robot.execute_command('f'))
+AssertionError: '(1,1,W)(0,1)' != '(1,1,W)'
+- (1,1,W)(0,1)
+?        -----
++ (1,1,W)
+
+
+======================================================================
+FAIL: test_low_battery_no_movement (T2_US05.US05)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US05.py", line 17, in test_low_battery_no_movement
+    self.assertEqual('(0,0,N)', status)
+AssertionError: '(0,0,N)' != '(0,1,N)'
+- (0,0,N)
+?    ^
++ (0,1,N)
+?    ^
+
+
+----------------------------------------------------------------------
+Ran 23 tests in 23.227s
+
+FAILED (failures=8)

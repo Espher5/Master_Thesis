@@ -1,0 +1,15 @@
+[
+    {
+        "type": "error",
+        "module": "IntelligentOffice",
+        "obj": "",
+        "line": 81,
+        "column": 12,
+        "endLine": null,
+        "endColumn": null,
+        "path": "..\\task1_results\\no-tdd\\student_08_intelligent_office\\IntelligentOffice.py",
+        "symbol": "syntax-error",
+        "message": "Parsing failed: 'unexpected indent (<unknown>, line 81)'",
+        "message-id": "E0001"
+    }
+]
