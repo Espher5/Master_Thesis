@@ -6,11 +6,21 @@ Often enough, ES must operate in a stand-alone manner: many of these systems are
 In recent years, such system have seen a steep surge in popularity, and have driven innovation forward in their respective areas of deployment: everywhere, spanning from the agricultural field, to the medical and energy ones, ES of various size and complexity are employed, especially in areas where human intervention is impractical or straight up impossible.
 As the demand for more advanced and sophisticated devices continues to increase, the role of ES will only become more prominent.
 
-\subsection {Challenges}
-An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
+There are many different types of embedded systems, including microcontrollers, digital signal processors (DSPs), and field-programmable gate arrays (FPGAs). Each of these types of systems has its own unique characteristics and is suited to different types of applications.
 
+General purpose hardware, Arduino, Raspberry, etc...
+
+
+\subsection {Challenges}
+An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited quantity resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
 
 Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
+
+In addition to the technical challenges, there are also many non-technical factors that must be considered when developing embedded systems. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
+
+
+\subsection{Enabling technologies}
+Bluetooth,...
 
 \subsection{Design}
 From a design and development point of view, working with ES can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all of the requirements.
@@ -19,7 +29,7 @@ Failures in ES should always be evident and identifiable quickly (a heart monito
 
 The dependability of a system can be expressed in terms of:
 \begin{itemize}
-    \item \textbf{System maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests.
+    \item \textbf{System maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests. As ES become more complex and feature-rich, it is becoming increasingly important to design them with maintainability in mind. This includes designing systems that are easy to update and repair, as well as ensuring that they can be easily replaced if necessary.
     \item \textbf{System reliability}: the extent to which a system is reliable with respect to the expected behavior.
     \item \textbf{System availability}: the extent to which a system remains available for its users.
     \item \textbf{System security}: the extent to which a system can keep data of its users safe and ensures the safety of their users.
@@ -29,11 +39,6 @@ These dependability attributes cannot be considered individually, as there are s
 
 
 In conclusion, ES are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of ES has grown significantly and they are now found in a wide variety of applications.
-
-\section{Types of Embedded Systems}
-There are many different types of embedded systems, including microcontrollers, digital signal processors (DSPs), and field-programmable gate arrays (FPGAs). Each of these types of systems has its own unique characteristics and is suited to different types of applications.
-
-General purpose hardware, Arduino, Raspberry, etc...
 
 
 \section{Testing Embedded Systems}
