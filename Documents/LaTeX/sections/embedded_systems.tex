@@ -1,4 +1,4 @@
-\section{Overview onEmbedded Systems}
+\section{Overview on Embedded Systems}
 Embedded Systems (ES) can be defined as a combination of hardware components and software systems that seamlessly work together to achieve a specific purpose; such systems can be dynamically programmed or have a fixed functionality set, and are often engineered to achieve their goal within a larger system. They are often found in devices that we use on a daily basis, such as cell phones, traffic lights, and appliances. Here, these systems are responsible for controlling the functions of the device, and they are often required to work continuously without the need for human intervention.
 
 Often enough, ES must operate in a stand-alone manner: many of these systems are used in environments where there is no access to a network or the internet, so the ability to function independently is essential; this requires the use of embedded software, which is specifically designed to run on the limited hardware of the system.
@@ -10,11 +10,9 @@ As the demand for more advanced and sophisticated devices continues to increase,
 An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
 
 
+Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
 
-Another notable challenge is their ability to perform real-time processing tasks. This means that they are able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
-
-
-
+\subsection{Design}
 From a design and development point of view, working with ES can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all of the requirements.
 
 Failures in ES should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; ES can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
