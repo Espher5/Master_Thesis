@@ -219,5 +219,18 @@
         "symbol": "redefined-builtin",
         "message": "Redefining built-in 'dir'",
         "message-id": "W0622"
+    },
+    {
+        "type": "refactor",
+        "module": "CleaningRobot",
+        "obj": "CleaningRobot.execute_command",
+        "line": 88,
+        "column": 4,
+        "endLine": 88,
+        "endColumn": 23,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\tdd\\student_07_cleaning_robot\\CleaningRobot.py",
+        "symbol": "too-many-branches",
+        "message": "Too many branches (15/12)",
+        "message-id": "R0912"
     }
 ]

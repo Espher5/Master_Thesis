@@ -39,19 +39,6 @@
         "message-id": "W0105"
     },
     {
-        "type": "warning",
-        "module": "CleaningRobot",
-        "obj": "CleaningRobot.execute_command",
-        "line": 143,
-        "column": 8,
-        "endLine": 143,
-        "endColumn": 12,
-        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task2_results\\no-tdd\\student_01_cleaning_robot\\CleaningRobot.py",
-        "symbol": "unnecessary-pass",
-        "message": "Unnecessary pass statement",
-        "message-id": "W0107"
-    },
-    {
         "type": "refactor",
         "module": "CleaningRobot",
         "obj": "CleaningRobot.execute_command",

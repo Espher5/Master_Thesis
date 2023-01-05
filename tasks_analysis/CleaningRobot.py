@@ -58,22 +58,21 @@ class CleaningRobot:
         self.battery_led_on = False
         self.cleaning_system_on = False
 
-        self.status = None
-
     def initialize_robot(self) -> None:
         """
         Initializes the robot in the starting position (0,0,N)
         """
-        self.pos_x = "0"
-        self.pos_y = "0"
-        self.status = "(" + self.pos_x + "," + self.pos_y + "," + CleaningRobot.N + ")"
+        self.pos_x = 0
+        self.pos_y = 0
+        self.facing = "N"
 
     def robot_status(self) -> str:
         """
         Returns the current status of the robot, as well as any obstacle encountered
         :return: the status of the robot as a string
         """
-        return self.status
+        #current_state = str(self.pos_x) + str(self.pos_y) + self.facing
+        #return current_state
 
     def execute_command(self, command: str) -> str:
         """
@@ -92,34 +91,13 @@ class CleaningRobot:
             x and y define the new position of the rover while dir represents its direction (i.e., N, S, W, or E).
             Finally, o_x and o_y are the coordinates of the encountered obstacle.
         """
-
-        if not self.obstacle_found():
-            if command == CleaningRobot.FORWARD:
-                self.activate_wheel_motor()
-                self.pos_y = str(int(self.pos_y)+ 1)
-                self.update_robot_status("(" + self.pos_x + "," + self.pos_y + "," + CleaningRobot.N + ")")
-            elif command == CleaningRobot.RIGHT:
-                self.activate_rotation_motor("r")
-                self.update_robot_status("(" + self.pos_x + "," + self.pos_y + "," + CleaningRobot.E + ")")
-            elif command == CleaningRobot.LEFT:
-                self.activate_rotation_motor("l")
-                self.update_robot_status("(" + self.pos_x + "," + self.pos_y + "," + CleaningRobot.W + ")")
-
-        else:
-            self.obstacle = "(o_" + self.pos_x + ",o_" + self.pos_y + ")"
-            return self.status + self.obstacle
-
-        return self.status
+        pass
 
     def obstacle_found(self) -> bool:
         """
         Checks whether the infrared distance sensor has detected an obstacle in front of it.
         :return: True if the infrared sensor detects something, False otherwise.
         """
-        value = GPIO.input(CleaningRobot.INFRARED_PIN)
-        if value > 0:
-            return True
-        return False
 
     def manage_battery(self) -> None:
         """
@@ -128,17 +106,17 @@ class CleaningRobot:
         the robot turns on the recharging led and shuts off the cleaning system.
         Otherwise, the robot turns on the cleaning system and turns off the recharge LED.
         """
-        capacity = GPIO.input(CleaningRobot.BATTERY_PIN)
-        if capacity <= 0.10:
-            self.battery_led_on = True
-            self.cleaning_system_on = False
-            GPIO.output(CleaningRobot.RECHARGE_LED_PIN, GPIO.HIGH)
-            GPIO.output(CleaningRobot.CLEANING_SYSTEM_PIN, GPIO.LOW)
+        if GPIO.input(self.BATTERY_PIN) <= 10:
+            GPIO.output(self.RECHARGE_LED_PIN, GPIO.HIGH)
+            GPIO.output(self.CLEANING_SYSTEM_PIN, GPIO.LOW)
+            self.battery_led_on = 1
+            self.cleaning_system_on = 0
+
         else:
-            self.cleaning_system_on = True
-            self.battery_led_on = False
-            GPIO.output(CleaningRobot.CLEANING_SYSTEM_PIN, GPIO.HIGH)
-            GPIO.output(CleaningRobot.RECHARGE_LED_PIN, GPIO.LOW)
+            GPIO.output(self.RECHARGE_LED_PIN, GPIO.LOW)
+            GPIO.output(self.CLEANING_SYSTEM_PIN, GPIO.HIGH)
+            self.battery_led_on = 0
+            self.cleaning_system_on = 1
 
     def activate_wheel_motor(self) -> None:
         """
@@ -186,12 +164,3 @@ class CleaningRobot:
         GPIO.output(self.BIN2, GPIO.LOW)
         GPIO.output(self.PWMB, GPIO.LOW)
         GPIO.output(self.STBY, GPIO.LOW)
-
-    def battery_led(self):
-        return self.battery_led_on
-
-    def cleaning_system(self):
-        return self.cleaning_system_on
-
-    def update_robot_status(self, new_status):
-        self.status = new_status

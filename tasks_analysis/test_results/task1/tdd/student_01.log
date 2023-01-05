@@ -89,6 +89,6 @@ Traceback (most recent call last):
 AssertionError: 'CLOSED' is not false
 
 ----------------------------------------------------------------------
-Ran 25 tests in 11.061s
+Ran 25 tests in 11.111s
 
 FAILED (failures=2, errors=2)

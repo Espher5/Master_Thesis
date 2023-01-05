@@ -102,6 +102,10 @@ class CleaningRobot:
             x and y define the new position of the rover while dir represents its direction (i.e., N, S, W, or E).
             Finally, o_x and o_y are the coordinates of the encountered obstacle.
         """
+        self.manage_battery()
+        if self.battery_led_on:
+            return self.robot_status()
+
         if self.motor_on:
             if command not in ["f", "r", "l"]:
                 raise CleaningRobotError("Unknown command")

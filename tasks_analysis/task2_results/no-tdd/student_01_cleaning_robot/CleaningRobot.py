@@ -140,7 +140,7 @@ class CleaningRobot:
             x and y define the new position of the rover while dir represents its direction (i.e., N, S, W, or E).
             Finally, o_x and o_y are the coordinates of the encountered obstacle.
         """
-        pass
+        return self.robot_status()
 
     def obstacle_found(self) -> bool:
         """
