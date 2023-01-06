@@ -31,7 +31,18 @@ Overall, the choice of microcontroller for an ES will depend on the specific req
 
 Software-wise, more complex system can be equipped with their own \textbf{Embedded Operating System}, or more specifically, their \textbf{Real-Time Operating System} (RTOS); these are specialized operating systems that are designed to provide a predictable response time to events, even when there are many tasks running concurrently. RTOS are essential for embedded systems that require fast and reliable performance, such as in aircraft control systems or medical devices.
 
+Often, multiple devices are deployed as part of the same larger system and must be able to efficiently communicate between one another to achieve their purpose; therefore, it is essential for ES to ... a robust suite of protocols.
+As always, determine which protocol to employ depends on the constraints the system is dealing with, such as being limited to a low power consumption or being required to maintain a low-latency communication.
 
+Zigbee is a wireless communication protocol that is designed for low-power, low-data-rate applications \cite{Zigbee}; it is often used in sensors and other devices that need to communicate over short distances, such as in home automation systems or industrial control systems. One of its key advantages is the low power consumption, which makes it well-suited for use in devices that need to operate for long periods of time without access to a power source.
+
+Bluetooth is another wireless protocol that is commonly used in embedded systems which was designed for medium-range communication and is most commonly used to connect devices such as phones, tablets, and laptops to other devices, such as speakers, keyboards, or headphones. Bluetooth is a widely supported standard and is often used in applications where compatibility with a range of different devices is important; furthermore, with its low-energy variant, Bluetooth can help further optimize power consumption in devices that require it.
+
+Sigfox on the other hand, is a low-power, wide-area (LPWA) communication protocol that is designed for Internet of Things (IoT) applications; it is used to transmit small amounts of data over long distances, making it well-suited for use in remote monitoring systems or other applications where conventional communication methods are not practical.
+
+For network communications, IP, and it's low energy version 6LoWPAN, are widely used protocols. It is used to transmit data between devices and is a key component of the internet. IP is often used in embedded systems that need to communicate with other devices or with the internet, such as in smart home systems or industrial control systems.
+
+Overall, each of these protocols has its own strengths and is well-suited for different types of applications. Zigbee is ideal for low-power, low-data-rate applications, while Bluetooth is well-suited for medium-range communication. Sigfox is ideal for long-range communication in IoT applications, and IP is widely used for communication over networks.
 
 
 
