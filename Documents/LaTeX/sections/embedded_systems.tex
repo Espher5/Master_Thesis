@@ -20,10 +20,21 @@ In addition to the technical challenges, there are also many non-technical facto
 
 
 \subsection{Enabling technologies}
-Bluetooth,...
+One of the key enabling technologies for ES is their microcontroller, which is a small, single-chip computer that is used to manage the functions of the larger system. Microcontrollers are often used in embedded systems because they are cheap, low-power. While some applications require their own custom-made microcontroller and hardware, there are a variety of  general purpose boards that are far easier to program and can also be customized for a variety of applications, which makes them highly versatile.
+
+One type of general-purpose microcontroller that is commonly used for ES development, as well as many other IoT applications, is the Arduino; it is an open-source platform that is based on the Atmel AVR microcontroller. It is widely used in hobbyist and educational projects because of its simplicity and low cost. Another popular general-purpose microcontroller platform is the Raspberry Pi, which is a small single-board computer that is based on the ARM architecture, which is also what many mobile processors are based on.
+
+In addition to these general-purpose microcontrollers, there are also many proprietary microcontrollers that are designed for specific applications: these microcontrollers are often customized for a particular task and may not be easily programmable by the user. Some examples of proprietary microcontrollers include the Microchip PIC and the Texas Instruments MSP430. These chips are often used in industrial and commercial applications where a high level of performance and reliability is required. They may also be used in applications where security is a concern, as the design of these microcontrollers may be kept confidential to protect against tampering or reverse engineering.
+
+
+Software-wise, more complex system can be equipped with their own \textbf{Embedded Operating System}, or more specifically, their \textbf{Real-Time Operating System} (RTOS); these are specialized operating systems that are designed to provide a predictable response time to events, even when there are many tasks running concurrently. RTOS are essential for embedded systems that require fast and reliable performance, such as in aircraft control systems or medical devices.
+
+
+
+
 
 \subsection{Design}
-From a design and development point of view, working with ES can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all of the requirements.
+From a design and development point of view, working with ES can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all the requirements.
 
 Failures in ES should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; ES can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
 
