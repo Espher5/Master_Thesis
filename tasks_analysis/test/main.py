@@ -139,13 +139,16 @@ def extract_results() -> None:
             total_passes = 0
             total_failures = 0
             total_errors = 0
+
             for i, file in enumerate(log_files):
                 student_name = file[: file.find('.')].replace('_', ' ')
+                stories_passes = [(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]
 
                 with open(os.path.join(path_to_logs, file), 'r') as log_file:
                     passes = 0
                     failures = 0
                     errors = 0
+                    tackled_tasks = 0
                     dnf = False
 
                     log_summary.writelines(student_name + ':\n')
@@ -158,22 +161,46 @@ def extract_results() -> None:
                         if not line.strip():
                             break
 
+                        story_num = int(line[: line.find('...')][-3: -2]) - 1
                         line = line[line.find('...') + 4:].strip()
+
+                        t = (0, 0, 0)
                         match line:
                             case 'ok':
                                 passes += 1
                                 total_passes += 1
+                                t = (1, 0, 0)
                             case 'FAIL':
                                 failures += 1
                                 total_failures += 1
+                                t = (0, 1, 0)
                             case 'ERROR':
                                 errors += 1
                                 total_errors += 1
+                                t = (0, 0, 1)
+                        stories_passes[story_num] = tuple([sum(tup) for tup in zip(stories_passes[story_num], t)])
+
                     if dnf is False:
                         log_summary.writelines('PASSES: ' + str(passes) + '\n')
                         log_summary.writelines('FAILURES: ' + str(failures) + '\n')
                         log_summary.writelines('ERRORS: ' + str(errors) + '\n')
+
+                        for j, story in enumerate(stories_passes):
+                            story_passes = story[0]
+                            story_failures = story[1]
+                            story_errors = story[2]
+                            story_total = story_passes + story_failures + story_errors
+                            if story_passes > 0:
+                                tackled_tasks += 1
+
+                            log_summary.writelines('\nUS0 ' + str(j + 1) + ':\n')
+                            log_summary.writelines('PASSES: ' + str(story_passes) + '\n')
+                            log_summary.writelines('FAILURES: ' + str(story_failures) + '\n')
+                            log_summary.writelines('ERRORS: ' + str(story_errors) + '\n')
+                            log_summary.writelines('TOTAL: ' + str(story_total) + '\n')
+                            log_summary.writelines('QLTY' + str(j + 1) + ': ' + str(story_passes / story_total) + '\n')
                     log_summary.writelines('\n')
+                    log_summary.writelines('#TUS: ' + str(tackled_tasks) + '\n\n\n')
 
             log_summary.writelines('TOTAL PASSES: ' + str(total_passes) + '\n')
             log_summary.writelines('TOTAL FAILURES: ' + str(total_failures) + '\n')
@@ -184,6 +211,4 @@ def extract_results() -> None:
 
 
 if __name__ == '__main__':
-    run_tests()
     extract_results()
-    parse_code_smells_pylint()

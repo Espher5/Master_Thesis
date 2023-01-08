@@ -12,10 +12,9 @@ class IntelligentOfficeTest(unittest.TestCase):
     """
     Define your test cases here
     """
-    pass
 
     #######################
-    #Task 1
+    # Task 1
     #######################
     @patch("mock.GPIO.input")
     def test_office_worker_detection_true(self, mock_input):
@@ -30,6 +29,7 @@ class IntelligentOfficeTest(unittest.TestCase):
         for i in [11, 12, 13, 15]:
             presence = self.office.check_quadrant_occupancy(i)
             self.assertFalse(presence)
+
     def test_office_worker_detection_throws_on_invalid_pin(self):
         self.assertRaises(IntelligentOfficeError, self.office.check_quadrant_occupancy, 1)
 
@@ -79,29 +79,28 @@ class IntelligentOfficeTest(unittest.TestCase):
     # Task 3
     #######################
 
-    #Default off
-
+    # Default off
     @patch("mock.GPIO.input")
     @patch("IntelligentOffice.IntelligentOffice.human_present")
     def test_office_light_management_bright_ambient(self, human_present, mock_input):
-        human_present.return_value = True #Should be sufficent to keep test working for Task 4
-        #KeepZone: 500 <= val <= 550
-        mock_input.side_effect = [550, 500, #KeepZone, default off - is off
-            449, #Too dark, light should be lit
+        human_present.return_value = True # Should be sufficent to keep test working for Task 4
+        # KeepZone: 500 <= val <= 550
+        mock_input.side_effect = [550, 500, # KeepZone, default off - is off
+            449, # Too dark, light should be lit
             550,
             500,
-            551, #Too bright, turn off light
+            551, # Too bright, turn off light
         ]
 
-        #KeepZone, Default light is off
+        # KeepZone, Default light is off
         self.office.manage_light_level()
         self.assertFalse(self.office.light_on)
 
-        #KeepZone
+        # KeepZone
         self.office.manage_light_level()
         self.assertFalse(self.office.light_on)
 
-        #If lux < 449 turn on light, dark ambient
+        # If lux < 449 turn on light, dark ambient
         self.office.manage_light_level()
         self.assertTrue(self.office.light_on)  # Because its dark
 
@@ -112,7 +111,7 @@ class IntelligentOfficeTest(unittest.TestCase):
         self.assertTrue(self.office.light_on)
 
 
-        #Bright ambient
+        # Bright ambient
         self.office.manage_light_level()
         self.assertFalse(self.office.light_on)
 
@@ -128,9 +127,7 @@ class IntelligentOfficeTest(unittest.TestCase):
         human_present.return_value = False  # Should be sufficent to keep test working for Task 4
         # KeepZone: 500 <= val <= 550
         mock_input.side_effect = [1, 1000,  # KeepZone, default off - is off
-                                  1, 1000
-                                 ]
-
+                                  1, 1000 ]
         #No Human, no light
         self.office.manage_light_level()
         self.assertFalse(self.office.light_on)

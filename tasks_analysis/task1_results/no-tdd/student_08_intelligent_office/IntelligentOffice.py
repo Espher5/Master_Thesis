@@ -64,11 +64,11 @@ class IntelligentOffice:
         each day except for Saturday and Sunday.
         """
 
-        time.now = self.rtc.get_current_time_string()
+        time_now = self.rtc.get_current_time_string()
         day = self.rtc.get_current_day()
 
-        hour_now = int(time.now[0] + time.now[1])
-        min_now = int(time.now[3] + time.now[4])
+        hour_now = int(time_now[0] + time_now[1])
+        min_now = int(time_now[3] + time_now[4])
 
         duty_cycle_fully_open = (180 / 18 )+ 2
         duty_cycle_fully_closed = (0 / 18) + 2

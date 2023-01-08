@@ -1,26 +1,34 @@
-test_robot_initialization (T2_US01.US01) ... ok
+test_robot_initialization (T2_US01.US01) ... FAIL
 test_cleaning_system_off (T2_US02.US02) ... ok
 test_cleaning_system_on (T2_US02.US02) ... FAIL
 test_recharge_led_off (T2_US02.US02) ... ok
 test_recharge_led_on (T2_US02.US02) ... FAIL
-test_left_rotation_from_00E (T2_US03.US03) ... ok
-test_left_rotation_from_00N (T2_US03.US03) ... ok
-test_left_rotation_from_00S (T2_US03.US03) ... ok
-test_left_rotation_from_00W (T2_US03.US03) ... ok
+test_left_rotation_from_00E (T2_US03.US03) ... FAIL
+test_left_rotation_from_00N (T2_US03.US03) ... FAIL
+test_left_rotation_from_00S (T2_US03.US03) ... FAIL
+test_left_rotation_from_00W (T2_US03.US03) ... FAIL
 test_move_forward_facing_E (T2_US03.US03) ... FAIL
 test_move_forward_facing_N (T2_US03.US03) ... FAIL
 test_move_forward_facing_S (T2_US03.US03) ... FAIL
 test_move_forward_facing_W (T2_US03.US03) ... FAIL
-test_right_rotation_from_00E (T2_US03.US03) ... ok
-test_right_rotation_from_00N (T2_US03.US03) ... ok
-test_right_rotation_from_00S (T2_US03.US03) ... ok
-test_right_rotation_from_00W (T2_US03.US03) ... ok
+test_right_rotation_from_00E (T2_US03.US03) ... FAIL
+test_right_rotation_from_00N (T2_US03.US03) ... FAIL
+test_right_rotation_from_00S (T2_US03.US03) ... FAIL
+test_right_rotation_from_00W (T2_US03.US03) ... FAIL
 test_command_string_length3_distinct_with_obstacle (T2_US04.US04) ... FAIL
 test_command_string_length6_distinct_with_obstacle (T2_US04.US04) ... FAIL
 test_move_forward_facing_N_with_obstacle (T2_US04.US04) ... FAIL
 test_move_forward_facing_S_with_obstacle (T2_US04.US04) ... FAIL
 test_move_forward_facing_W_with_obstacle (T2_US04.US04) ... FAIL
 test_low_battery_no_movement (T2_US05.US05) ... FAIL
+
+======================================================================
+FAIL: test_robot_initialization (T2_US01.US01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US01.py", line 9, in test_robot_initialization
+    self.assertEqual('(0,0,N)', robot.robot_status())
+AssertionError: '(0,0,N)' != None
 
 ======================================================================
 FAIL: test_cleaning_system_on (T2_US02.US02)
@@ -43,6 +51,46 @@ Traceback (most recent call last):
 AssertionError: False is not true
 
 ======================================================================
+FAIL: test_left_rotation_from_00E (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 25, in test_left_rotation_from_00E
+    self.assertEqual('(0,0,N)', self.robot.execute_command('l'))
+AssertionError: '(0,0,N)' != None
+
+======================================================================
+FAIL: test_left_rotation_from_00N (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 19, in test_left_rotation_from_00N
+    self.assertEqual('(0,0,W)', self.robot.execute_command('l'))
+AssertionError: '(0,0,W)' != None
+
+======================================================================
+FAIL: test_left_rotation_from_00S (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 31, in test_left_rotation_from_00S
+    self.assertEqual('(0,0,E)', self.robot.execute_command('l'))
+AssertionError: '(0,0,E)' != None
+
+======================================================================
+FAIL: test_left_rotation_from_00W (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 37, in test_left_rotation_from_00W
+    self.assertEqual('(0,0,S)', self.robot.execute_command('l'))
+AssertionError: '(0,0,S)' != None
+
+======================================================================
 FAIL: test_move_forward_facing_E (T2_US03.US03)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
@@ -50,12 +98,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 74, in test_move_forward_facing_E
     self.assertEqual('(1,0,E)', self.robot.execute_command('f'))
-AssertionError: '(1,0,E)' != '(0,0,S)'
-- (1,0,E)
-?  ^   ^
-+ (0,0,S)
-?  ^   ^
-
+AssertionError: '(1,0,E)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_N (T2_US03.US03)
@@ -65,12 +108,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 68, in test_move_forward_facing_N
     self.assertEqual('(0,1,N)', self.robot.execute_command('f'))
-AssertionError: '(0,1,N)' != '(0,0,E)'
-- (0,1,N)
-?    ^ ^
-+ (0,0,E)
-?    ^ ^
-
+AssertionError: '(0,1,N)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_S (T2_US03.US03)
@@ -80,12 +118,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 82, in test_move_forward_facing_S
     self.assertEqual('(1,0,S)', self.robot.execute_command('f'))
-AssertionError: '(1,0,S)' != '(1,1,W)'
-- (1,0,S)
-?    ^ ^
-+ (1,1,W)
-?    ^ ^
-
+AssertionError: '(1,0,S)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_W (T2_US03.US03)
@@ -95,12 +128,47 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 90, in test_move_forward_facing_W
     self.assertEqual('(0,1,W)', self.robot.execute_command('f'))
-AssertionError: '(0,1,W)' != '(1,1,N)'
-- (0,1,W)
-?  ^   ^
-+ (1,1,N)
-?  ^   ^
+AssertionError: '(0,1,W)' != None
 
+======================================================================
+FAIL: test_right_rotation_from_00E (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 49, in test_right_rotation_from_00E
+    self.assertEqual('(0,0,S)', self.robot.execute_command('r'))
+AssertionError: '(0,0,S)' != None
+
+======================================================================
+FAIL: test_right_rotation_from_00N (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 43, in test_right_rotation_from_00N
+    self.assertEqual('(0,0,E)', self.robot.execute_command('r'))
+AssertionError: '(0,0,E)' != None
+
+======================================================================
+FAIL: test_right_rotation_from_00S (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 55, in test_right_rotation_from_00S
+    self.assertEqual('(0,0,W)', self.robot.execute_command('r'))
+AssertionError: '(0,0,W)' != None
+
+======================================================================
+FAIL: test_right_rotation_from_00W (T2_US03.US03)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US03.py", line 61, in test_right_rotation_from_00W
+    self.assertEqual('(0,0,N)', self.robot.execute_command('r'))
+AssertionError: '(0,0,N)' != None
 
 ======================================================================
 FAIL: test_command_string_length3_distinct_with_obstacle (T2_US04.US04)
@@ -110,10 +178,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 41, in test_command_string_length3_distinct_with_obstacle
     self.assertEqual('(0,1,E)(1,1)', self.robot.execute_command('f'))
-AssertionError: '(0,1,E)(1,1)' != '(0,0,W)'
-- (0,1,E)(1,1)
-+ (0,0,W)
-
+AssertionError: '(0,1,E)(1,1)' != None
 
 ======================================================================
 FAIL: test_command_string_length6_distinct_with_obstacle (T2_US04.US04)
@@ -123,10 +188,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 51, in test_command_string_length6_distinct_with_obstacle
     self.assertEqual('(1,1,N)(1,2)', self.robot.execute_command('f'))
-AssertionError: '(1,1,N)(1,2)' != '(0,0,N)'
-- (1,1,N)(1,2)
-+ (0,0,N)
-
+AssertionError: '(1,1,N)(1,2)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_N_with_obstacle (T2_US04.US04)
@@ -136,10 +198,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 17, in test_move_forward_facing_N_with_obstacle
     self.assertEqual('(0,0,N)(0,1)', self.robot.execute_command('f'))
-AssertionError: '(0,0,N)(0,1)' != '(0,0,E)'
-- (0,0,N)(0,1)
-+ (0,0,E)
-
+AssertionError: '(0,0,N)(0,1)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_S_with_obstacle (T2_US04.US04)
@@ -149,10 +208,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 25, in test_move_forward_facing_S_with_obstacle
     self.assertEqual('(1,1,S)(1,0)', self.robot.execute_command('f'))
-AssertionError: '(1,1,S)(1,0)' != '(1,1,W)'
-- (1,1,S)(1,0)
-+ (1,1,W)
-
+AssertionError: '(1,1,S)(1,0)' != None
 
 ======================================================================
 FAIL: test_move_forward_facing_W_with_obstacle (T2_US04.US04)
@@ -162,10 +218,7 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US04.py", line 33, in test_move_forward_facing_W_with_obstacle
     self.assertEqual('(1,1,W)(0,1)', self.robot.execute_command('f'))
-AssertionError: '(1,1,W)(0,1)' != '(1,1,N)'
-- (1,1,W)(0,1)
-+ (1,1,N)
-
+AssertionError: '(1,1,W)(0,1)' != None
 
 ======================================================================
 FAIL: test_low_battery_no_movement (T2_US05.US05)
@@ -175,14 +228,9 @@ Traceback (most recent call last):
     return func(*newargs, **newkeywargs)
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US05.py", line 17, in test_low_battery_no_movement
     self.assertEqual('(0,0,N)', status)
-AssertionError: '(0,0,N)' != '(0,0,E)'
-- (0,0,N)
-?      ^
-+ (0,0,E)
-?      ^
-
+AssertionError: '(0,0,N)' != None
 
 ----------------------------------------------------------------------
-Ran 23 tests in 23.156s
+Ran 23 tests in 23.180s
 
-FAILED (failures=12)
+FAILED (failures=21)

@@ -1,9 +1,0 @@
-
-.python:S1700>"Rename field "channel"(∂œ«£
-spython:S117N"\Rename this local variable "setModeDone" to match the regular expression ^[_a-z][a-z0-9_]*$.(≠é÷Ç
-Gpython:S1481N"/Remove the unused local variable "setModeDone".(≠é÷Ç
-Gpython:S1481R"/Remove the unused local variable "setModeDone".(≠é÷Ç
-Gpython:S1481T"/Remove the unused local variable "setModeDone".(ªÙ©‚
-6python:S125K"Remove this commented out code.(ÀÌ»
-kpython:S100 "SRename method "ChangeFrequency" to match the regular expression ^[a-z_][a-z0-9_]*$.(ˆ¨Ã≤
-jpython:S100”"SRename method "ChangeDutyCycle" to match the regular expression ^[a-z_][a-z0-9_]*$.(ÇÀè
