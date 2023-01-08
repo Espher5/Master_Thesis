@@ -1,0 +1,6 @@
+projectKey=CodeSmells
+serverUrl=http://localhost:9000
+serverVersion=9.8.0.63668
+dashboardUrl=http://localhost:9000/dashboard?id=CodeSmells
+ceTaskId=AYWSIls8CTusMMoV3KID
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYWSIls8CTusMMoV3KID
