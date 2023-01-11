@@ -56,14 +56,14 @@ The figure below provides a representation of the TDD cycle:
     \label{fig}
 \end{figure}
 
-As previously stated, each TDD iteration should be extremely short, usually spanning from 10 to 15 minutes at most; this is possible thanks to a meticulous decomposition of the system's requirements into a set of \textbf{User Stories}, each detailing a small chunk of a functionality specified in the requirements. These stories can then be prioritized and implemented iteratively.
+As previously stated, each TDD iteration should be extremely short, usually spanning from 10 to 15 minutes at most \cite{}; this is possible thanks to a meticulous decomposition of the system's requirements into a set of \textbf{User Stories}, each detailing a small chunk of a functionality specified in the requirements. These stories can then be prioritized and implemented iteratively.
 
 User stories can vary in granularity: when using a fine-grained structure when describing the task, this can be broken up into a set of sub-tasks, each corresponding to a small feature; on the other hand, with coarser-grained tasks, this division is less pronounced \cite{DBLP:journals/tse/KaracTJ21}. Even when the same task is considered, the outcome of the TDD process will change depending on the level of granularity employed when describing it; there is no overall right or wrong approach, rather it is something that comes from the experience of the developer to break tasks into small work items \cite{DBLP:journals/tse/KaracTJ21}.
 
 The general mantra of TDD revolves around the "Make it green, then make it clean" motto
 
 \subsection{TDD advantages}
-The employment of TDD can result in a series of benefits during the development process, sych as:
+The employment of TDD can result in a series of benefits during the development process, such as:
 \begin{itemize}
     \item \textbf{Regression testing}: by incrementally building a test suite as the different iterations of TDD are performed, we ensure that the system  
     \item \textbf{Very high code coverage}: coverage is a metric used to determine how much of the code is being tested; it can be expressed according to different criteria such as statement coverage, i.e., how many statements in the code are reached by the test cases, branch coverage, i.e., how many conditional branches are executed during testing, or function coverage, i.e., how many functions are executed when running the test suite. While different coverage criteria result in different benefits, by employing TDD we ensure that any segment of code written has at least one associated test case.
