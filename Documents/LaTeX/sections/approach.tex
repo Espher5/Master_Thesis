@@ -10,13 +10,13 @@ The study we performed aimed at answering the following Research Questions (RQ):
 \begin{itemize}
     \item \textbf{RQ1}:
     \item \textbf{RQ2}: Are there differences between TDD and NO-TDD in the external quality of the implemented solutions, developers’ productivity, and number of tests written?
-    \item \textbf{RQ3}: Are there differences between TDD and NO-TDD in (cylcomatic, cognitive and code smells)
+    \item \textbf{RQ3}: Are there differences between TDD and NO-TDD in (cyclomatic, cognitive and code smells)
 \end{itemize}
 
 
 
 
-\section{Experimental tasks}
+\section{Experimental Units}
 The participants for this study were students at the University of Salerno, in Italy, they were a mix of second-year master's degree students at the University of Salerno and students visiting with the Erasmus program; this last group was further made up of master's degree student and third-year bachelor's degree students. Both groups were enrolled in the Embedded Systems course at the University of Salerno.
 
 he course covered the following topics, software
@@ -35,6 +35,21 @@ Participating in this study was voluntary; the students were informed that any g
 The participants for the tasks were asked to carry out their assignment by either using TDD or no-TDD (i.e., any approach they preferred, except for TDD) depending on the group they were partitioned in. and on the period the task took place.
 
 
+
+\section{Experimental Materials}
+The experimental objects were three code katas, programming exercises aimed at practicing a technique or a programming language:
+\begin{itemize}
+    \item \textbf{IntelligentOffice}:
+    \item \textbf{CleaningRobot}:
+    \item \textbf{SmartHome}:
+\end{itemize}
+
+
+
+\section{Tasks}
+
+
+
 \section{Variables}
 Independent variables:
 \begin{itemize}
@@ -46,7 +61,22 @@ Independent variables:
 
 Dependent variables:
 \begin{itemize}
-    \item \textbf{Quality (QLTY)}: quantifies the external quality of the solution a participant implemented. This variable is defined as follows: ...
+    \item \textbf{Quality (QLTY)}: quantifies the external quality of the solution a participant implemented. This variable is defined as follows: 
+        \[
+            QLTY = \frac{\sum_{i=1}^{\#TUS} QLTY_i}{\#TUS} * 100 
+        \]
+    where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i$ is the external quality of the $i-th$ user story; to determine whether a user story was tackled or not, we checked the asserts in the test suite corresponding to the story. Namely, if at least one assert in the test suite for the story passes, than the story was considered as tackled. $\#TUS$ is formally defined as follows:
+        \[
+            \#TUS = \sum_{i=1}^{n} 
+                \begin{cases}
+                    1 & \text{$\#ASSERT_i(PASS) > 0$}\\
+                    0 & \text{otherwise}
+                \end{cases}
+        \]
+    On the other hand, the quality of the $i-th$ user story (i.e., $QLTY_i$) is defined as the ratio of asserts passed for the acceptance suite of the $i-th$ user story over the total number of asserts in the acceptance suite for the same story. More formally:
+        \[
+            QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
+        \]
     \item \textbf{Productivity (PROD)}: estimates the productivity of a participant. It is computed as follows: ...
     \item \textbf{Number of tests (TEST)}: quantifies the number of unit tests a participant wrote.
 \end{itemize}
@@ -58,7 +88,6 @@ Furthermore, we considered three additional dependent variables regarding the co
     \item \textbf{Cyclomatic Complexity (CYC)}
     \item \textbf{Cognitive Complexity (COG)}
 \end{itemize}
-
 
 
 
