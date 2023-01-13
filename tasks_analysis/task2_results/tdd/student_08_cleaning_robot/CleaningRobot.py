@@ -62,14 +62,17 @@ class CleaningRobot:
         """
         Initializes the robot in the starting position (0,0,N)
         """
-        pass
+        self.pos_x = 0
+        self.pos_y = 0
+        self.facing = 'N'
 
     def robot_status(self) -> str:
         """
         Returns the current status of the robot, as well as any obstacle encountered
         :return: the status of the robot as a string
         """
-        pass
+        status_string = '(' + str(self.pos_x) + ',' + str(self.pos_y) + ',' + self.facing + ')'
+        return status_string
 
     def execute_command(self, command: str) -> str:
         """
@@ -98,12 +101,25 @@ class CleaningRobot:
 
     def manage_battery(self) -> None:
         """
-        It  checks how much battery is left by querying the IBS.
-        If the capacity returned by the IBS is equal to or less than 10%,
-        the robot turns on the recharging led and shuts off the cleaning system.
-        Otherwise, the robot turns on the cleaning system and turns off the recharge LED.
+        User story 2: When the robot is turned on, it first checks how much battery is left by querying the IBS.
+        If the capacity returned by the IBS is equal to or less than 10%, the robot turns on the recharging led.
+        Otherwise, the robot turns on the cleaning system and sends its status to the RMS.
+        User story 5: When the robot enters a cell, it checks how much battery is left by querying the IBS.
+        When the capacity returned by the IBS is equal to or less than 10%, the robot shuts down the cleaning system,
+        turns on the recharging led, and stands still.
         """
-        pass
+        battery = GPIO.input(self.BATTERY_PIN)
+
+        if battery <= 10:
+            GPIO.output(self.RECHARGE_LED_PIN, GPIO.HIGH)
+            self.battery_led_on = True
+            GPIO.output(self.CLEANING_SYSTEM_PIN, GPIO.HIGH)
+            self.cleaning_system_on = False
+        else:
+            GPIO.output(self.RECHARGE_LED_PIN, GPIO.LOW)
+            self.battery_led_on = False
+            GPIO.output(self.CLEANING_SYSTEM_PIN, GPIO.HIGH)
+            self.cleaning_system_on = True
 
     def activate_wheel_motor(self) -> None:
         """

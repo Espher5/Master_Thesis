@@ -1,0 +1,15 @@
+[
+    {
+        "type": "warning",
+        "module": "SmartHome",
+        "obj": "",
+        "line": 7,
+        "column": 0,
+        "endLine": 10,
+        "endColumn": 32,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\tdd\\student_07_smart_home\\SmartHome.py",
+        "symbol": "bare-except",
+        "message": "No exception type(s) specified",
+        "message-id": "W0702"
+    }
+]

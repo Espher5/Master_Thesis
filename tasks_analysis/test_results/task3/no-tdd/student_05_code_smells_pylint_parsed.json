@@ -1,0 +1,54 @@
+[
+    {
+        "type": "convention",
+        "module": "SmartHome",
+        "obj": "",
+        "line": 158,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\no-tdd\\student_05_smart_home\\SmartHome.py",
+        "symbol": "trailing-newlines",
+        "message": "Trailing newlines",
+        "message-id": "C0305"
+    },
+    {
+        "type": "warning",
+        "module": "SmartHome",
+        "obj": "",
+        "line": 7,
+        "column": 0,
+        "endLine": 10,
+        "endColumn": 32,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\no-tdd\\student_05_smart_home\\SmartHome.py",
+        "symbol": "bare-except",
+        "message": "No exception type(s) specified",
+        "message-id": "W0702"
+    },
+    {
+        "type": "refactor",
+        "module": "SmartHome",
+        "obj": "SmartHome.check_room_occupancy",
+        "line": 60,
+        "column": 8,
+        "endLine": 63,
+        "endColumn": 23,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\no-tdd\\student_05_smart_home\\SmartHome.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    },
+    {
+        "type": "convention",
+        "module": "SmartHome",
+        "obj": "SmartHome.manage_light_level",
+        "line": 82,
+        "column": 11,
+        "endLine": 82,
+        "endColumn": 32,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\no-tdd\\student_05_smart_home\\SmartHome.py",
+        "symbol": "singleton-comparison",
+        "message": "Comparison 'room_occupied == True' should be 'room_occupied is True' if checking for the singleton value True, or 'bool(room_occupied)' if testing for truthiness",
+        "message-id": "C0121"
+    }
+]

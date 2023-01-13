@@ -28,7 +28,10 @@ FAIL: test_robot_initialization (T2_US01.US01)
 Traceback (most recent call last):
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US01.py", line 9, in test_robot_initialization
     self.assertEqual('(0,0,N)', robot.robot_status())
-AssertionError: '(0,0,N)' != None
+AssertionError: '(0,0,N)' != '00N'
+- (0,0,N)
++ 00N
+
 
 ======================================================================
 FAIL: test_left_rotation_from_00E (T2_US03.US03)
@@ -211,6 +214,6 @@ Traceback (most recent call last):
 AssertionError: '(0,0,N)' != None
 
 ----------------------------------------------------------------------
-Ran 23 tests in 23.172s
+Ran 23 tests in 23.243s
 
 FAILED (failures=19)

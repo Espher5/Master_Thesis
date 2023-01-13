@@ -77,8 +77,12 @@ Dependent variables:
         \[
             QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
         \]
-    \item \textbf{Productivity (PROD)}: estimates the productivity of a participant. It is computed as follows: ...
-    \item \textbf{Number of tests (TEST)}: quantifies the number of unit tests a participant wrote.
+    \item \textbf{Productivity (PROD)}: estimates the productivity of a participant. It is computed as follows:
+        \[
+            PROD = \frac{\#ASSERT(PASS)}{\#ASSERT(ALL)} * 100
+        \]
+    where $ASSERT(PASS)$ is the total number of asserts that have passed, by considering all acceptance test suites, while $ASSERT(ALL)$ refers to the total number of asserts in the acceptance suites. The $PROD$ variable can assume values between 0 and 100: a value close to 0 indicates low productivity in the implemented solution, while a value close to 1 refers to high productivity.
+    \item \textbf{Number of tests (TEST)}: quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 \end{itemize}
 
 
@@ -101,6 +105,14 @@ Before our study took place, we collected some demographic information on the pa
 The Embedded Systems course, during which the study was conducted, started in September 2022. The first task, P1, took place on Tuesday, December 6th 2022, while the second, P2, took place on Tuesday, December 13th 2022.
 
 Between the start of the course and P1, the participants had never dealt with TDD, while they were somewhat familiar with unit testing and iterative test-last development. In the weeks before P1, TDD was introduced to the participants via some lectures; also had taken part in ... training sessions on TDD and completed some homework by using this development practice.
+
+
+
+\section {Analysis Procedure}
+The gathered experimental data were analyzed according to the following procedure:
+\begin{enumerate}
+    \item \textbf{Descriptive Statistics}: in order to provide an overview of the distributions of the dependent variables, we calculated a set of summary statistics, including the mean, median, and standard deviation (SD). Additionally, we employed box plots to graphically summarize these distributions.
+\end{enumerate}
 
 
 \section{Results}

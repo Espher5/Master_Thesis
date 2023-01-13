@@ -20,6 +20,9 @@ class IntelligentOffice:
     LUX_MIN = 500
     LUX_MAX = 550
 
+    OPEN_DUTY = (180 / 18) + 2
+    CLOSED_DUTY = (0 / 18) + 2
+
     def __init__(self):
         """
         Constructor
@@ -51,11 +54,9 @@ class IntelligentOffice:
         :return: True if the infrared sensor detects something, False otherwise.
         """
         if GPIO.input(pin) > 0:
-
             return True
 
         return False
-
 
     def manage_blinds_based_on_time(self) -> None:
         """
@@ -64,37 +65,20 @@ class IntelligentOffice:
         each day except for Saturday and Sunday.
         """
 
-        time_now = self.rtc.get_current_time_string()
+        time_now = time.strptime(self.rtc.get_current_time_string(), '%H:%M:%S')
+        hour = time_now.tm_hour
         day = self.rtc.get_current_day()
 
-        hour_now = int(time_now[0] + time_now[1])
-        min_now = int(time_now[3] + time_now[4])
+        if day in ['SATURDAY', 'SUNDAY']:
+            return
 
-        duty_cycle_fully_open = (180 / 18 )+ 2
-        duty_cycle_fully_closed = (0 / 18) + 2
-
-        if day in ["Saturday", "Sunday"]:
-            return False
-
-        if hour_now == "08" and min_now == "00":  """ dont know how to compare the exact time in python"""
-
-            self.change_servo_angle(self, duty_cycle_fully_open)
-            blinds_open = True
-
-
-
-
-        if hour_now == "20" and min_now == "00":
-
-            self.change_servo_angle(self, duty_cycle_fully_closed)
-            blinds_open = False
-
-        """dont know the syntax"""
-
-
-
-
-        return blinds_open
+        if 8 <= hour <= 20:
+            if self.blinds_open is False:
+                self.change_servo_angle(self.OPEN_DUTY)
+                self.blinds_open = True
+        else:
+            self.blinds_open = False
+            self.change_servo_angle(self.CLOSED_DUTY)
 
     def manage_light_level(self) -> None:
         """
@@ -107,29 +91,29 @@ class IntelligentOffice:
         stops regulating the light level in the office and then turns off the smart light bulb. 
         When the first worker goes back into the office, the system resumes regulating the light level
         """
-        while GPIO.input(22) <= 500:
-
-            GPIO.output(29, True)
-
-        while GPIO.input(22) >= 500:
-            GPIO.output(29, False)
-
-
-
-        if GPIO.input(22) <= 500:
-            GPIO.output(29, True)
-
-        if GPIO.input(22) >= 550:
-            GPIO.ouput(29, False)
-
-
-        office_is_empty = self.check_quadrant_occupancy()
-
-        if office_is_empty:
-            GPIO.ouput(29, False)
+        if self.empty_office():
+            GPIO.output(self.LED_PIN, GPIO.HIGH)
+            GPIO.output(self.LED_PIN, GPIO.LOW)
             self.light_on = False
 
+        light_level = GPIO.input(self.PHOTO_PIN)
+        if self.LUX_MIN <= light_level <= self.LUX_MAX:
+            return
 
+        if light_level < self.LUX_MIN:
+            GPIO.output(self.LED_PIN, GPIO.HIGH)
+            self.light_on = True
+        else:
+            GPIO.output(self.LED_PIN, GPIO.HIGH)
+            self.light_on = True
+
+    def empty_office(self):
+        for pin in [1, 2, 3, 4]:
+            o = self.check_quadrant_occupancy(pin)
+            if o:
+                return False
+
+        return True
 
     def monitor_air_quality(self) -> None:
         """
@@ -141,7 +125,7 @@ class IntelligentOffice:
             GPIO.output(32, False)
 
         if GPIO.input(31) < 500:
-            GPIO.ouput(32, True)
+            GPIO.output(32, True)
 
     def change_servo_angle(self, duty_cycle: float) -> None:
         """

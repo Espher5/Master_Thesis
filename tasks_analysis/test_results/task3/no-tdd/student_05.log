@@ -1,0 +1,81 @@
+test_user_detection_false (T3_US01.US01) ... ok
+test_user_detection_true (T3_US01.US01) ... ok
+test_turn_light_off_occupancy (T3_US02.US02) ... ok
+test_turn_light_on_occupancy (T3_US02.US02) ... ok
+test_light_off_no_user (T3_US03.US03) ... ok
+test_light_off_user (T3_US03.US03) ... ok
+test_temperature_reading (T3_US04.US04) ... ok
+test_window_closed_temperature_in_range (T3_US04.US04) ... ERROR
+test_window_closed_temperature_out_of_range (T3_US04.US04) ... ok
+test_window_open_temperature_in_range (T3_US04.US04) ... ERROR
+test_buzzer_off_gas_detected (T3_US05.US05) ... FAIL
+test_buzzer_on_gas_detected (T3_US05.US05) ... FAIL
+
+======================================================================
+ERROR: test_window_closed_temperature_in_range (T3_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T3_US04.py", line 29, in test_window_closed_temperature_in_range
+    self.sh.manage_window()
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\SmartHome.py", line 125, in manage_window
+    self.servo.ChangeDutyCycle(2)  # fully closed = 2
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\SmartHome.py", line 108, in manage_window
+    try:
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 2910, in __get__
+    return self()
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1104, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1108, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1165, in _execute_mock_call
+    result = next(effect)
+StopIteration
+
+======================================================================
+ERROR: test_window_open_temperature_in_range (T3_US04.US04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T3_US04.py", line 36, in test_window_open_temperature_in_range
+    self.sh.manage_window()
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\SmartHome.py", line 125, in manage_window
+    self.servo.ChangeDutyCycle(2)  # fully closed = 2
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\SmartHome.py", line 108, in manage_window
+    try:
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 2910, in __get__
+    return self()
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1104, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1108, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1165, in _execute_mock_call
+    result = next(effect)
+StopIteration
+
+======================================================================
+FAIL: test_buzzer_off_gas_detected (T3_US05.US05)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T3_US05.py", line 23, in test_buzzer_off_gas_detected
+    self.assertFalse(buzzer_on)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_buzzer_on_gas_detected (T3_US05.US05)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T3_US05.py", line 16, in test_buzzer_on_gas_detected
+    self.assertTrue(buzzer_on)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 12 tests in 36.188s
+
+FAILED (failures=2, errors=2)

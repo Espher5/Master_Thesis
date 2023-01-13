@@ -71,8 +71,8 @@ class CleaningRobot:
         Returns the current status of the robot, as well as any obstacle encountered
         :return: the status of the robot as a string
         """
-        #current_state = str(self.pos_x) + str(self.pos_y) + self.facing
-        #return current_state
+        current_state = str(self.pos_x) + str(self.pos_y) + self.facing
+        return current_state
 
     def execute_command(self, command: str) -> str:
         """

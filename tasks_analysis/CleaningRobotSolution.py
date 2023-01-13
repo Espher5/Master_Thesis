@@ -210,7 +210,7 @@ class CleaningRobot:
     def turn_off_recharge_led(self):
         if self.battery_led_on is True:
             GPIO.output(self.RECHARGE_LED_PIN, GPIO.LOW)
-            self.battery_led_on = True
+            self.battery_led_on = False
 
     def turn_on_cleaning_system(self):
         if self.cleaning_system_on is False:

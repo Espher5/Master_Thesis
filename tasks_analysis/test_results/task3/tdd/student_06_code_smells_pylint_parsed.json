@@ -1,0 +1,54 @@
+[
+    {
+        "type": "convention",
+        "module": "SmartHome",
+        "obj": "",
+        "line": 166,
+        "column": 0,
+        "endLine": null,
+        "endColumn": null,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\tdd\\student_06_smart_home\\SmartHome.py",
+        "symbol": "missing-final-newline",
+        "message": "Final newline missing",
+        "message-id": "C0304"
+    },
+    {
+        "type": "warning",
+        "module": "SmartHome",
+        "obj": "",
+        "line": 7,
+        "column": 0,
+        "endLine": 10,
+        "endColumn": 32,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\tdd\\student_06_smart_home\\SmartHome.py",
+        "symbol": "bare-except",
+        "message": "No exception type(s) specified",
+        "message-id": "W0702"
+    },
+    {
+        "type": "refactor",
+        "module": "SmartHome",
+        "obj": "SmartHome.check_room_occupancy",
+        "line": 64,
+        "column": 8,
+        "endLine": 67,
+        "endColumn": 24,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\tdd\\student_06_smart_home\\SmartHome.py",
+        "symbol": "simplifiable-if-statement",
+        "message": "The if statement can be replaced with 'return bool(test)'",
+        "message-id": "R1703"
+    },
+    {
+        "type": "refactor",
+        "module": "SmartHome",
+        "obj": "SmartHome.check_room_occupancy",
+        "line": 64,
+        "column": 8,
+        "endLine": 67,
+        "endColumn": 24,
+        "path": "C:\\Users\\Michelangelo\\CS\\Python\\tasks_analysis\\task3_results\\tdd\\student_06_smart_home\\SmartHome.py",
+        "symbol": "no-else-return",
+        "message": "Unnecessary \"else\" after \"return\", remove the \"else\" and de-indent the code inside it",
+        "message-id": "R1705"
+    }
+]

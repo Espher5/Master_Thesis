@@ -16,31 +16,29 @@ EXCLUDED_SMELLS = [
 def create_test_suite(task) -> unittest.TestSuite:
     # It's necessary to refresh the modules and import them every time,
     # otherwise they would only use the first project file
+    test_modules = []
+
     if task == 'task1':
         if 'T1_US01' in sys.modules:
-            del sys.modules['T1_US01']
-            del sys.modules['T1_US02']
-            del sys.modules['T1_US03']
-            del sys.modules['T1_US04']
-            del sys.modules['T1_US05']
-
-        import T1_US01 as US01, T1_US02 as US02, \
-            T1_US03 as US03, T1_US04 as US04, T1_US05 as US05
+            test_modules = ['T1_US01', 'T1_US02', 'T1_US03', 'T1_US04', 'T1_US05']
+        import T1_US01 as US01, T1_US02 as US02, T1_US03 as US03, T1_US04 as US04, T1_US05 as US05
         if 'IntelligentOffice' in sys.modules:
             del sys.modules['IntelligentOffice']
-    else:
+    elif task == 'task2':
         if 'T2_US01' in sys.modules:
-            del sys.modules['T2_US01']
-            del sys.modules['T2_US02']
-            del sys.modules['T2_US03']
-            del sys.modules['T2_US04']
-            del sys.modules['T2_US05']
-
-        import T2_US01 as US01, T2_US02 as US02, \
-            T2_US03 as US03, T2_US04 as US04, T2_US05 as US05
+            test_modules = ['T2_US01', 'T2_US02', 'T2_US03', 'T2_US04', 'T2_US05']
+        import T2_US01 as US01, T2_US02 as US02, T2_US03 as US03, T2_US04 as US04, T2_US05 as US05
         if 'CleaningRobot' in sys.modules:
             del sys.modules['CleaningRobot']
+    else:
+        if 'T3_US01' in sys.modules:
+            test_modules = ['T3_US01', 'T3_US02', 'T3_US03', 'T3_US04', 'T3_US05']
+        import T3_US01 as US01, T3_US02 as US02, T3_US03 as US03, T3_US04 as US04, T3_US05 as US05
+        if 'SmartHome' in sys.modules:
+            del sys.modules['SmartHome']
 
+    for module in test_modules:
+        del sys.modules[module]
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
 
@@ -54,7 +52,7 @@ def create_test_suite(task) -> unittest.TestSuite:
 
 
 def run_tests() -> None:
-    for job in itertools.product(*[['task1', 'task2'], ['tdd', 'no-tdd']]):
+    for job in itertools.product(*[['task1', 'task2', 'task3'], ['tdd', 'no-tdd']]):
         task = job[0]
         category = job[1]
         print('Generating test results for {} in the {} category...'.format(task, category))
@@ -62,8 +60,10 @@ def run_tests() -> None:
         # Paths to the main project directories
         path_to_projects = os.path.join('..', task + '_results', category)
         projects = os.listdir(path_to_projects)
-        file_name = 'IntelligentOffice.py' if task == 'task1' else 'CleaningRobot.py'
-        project_name = 'intelligent_office' if task == 'task1' else 'cleaning_robot'
+        file_name = 'IntelligentOffice.py' if task == 'task1' else \
+            'CleaningRobot.py' if task == 'task2' else 'SmartHome.py'
+        project_name = 'intelligent_office' if task == 'task1' else \
+            'cleaning_robot' if task == 'task2' else 'smart_home'
 
         # Full paths of the main source files for the projects
         source_paths = [os.path.join(path_to_projects, p, file_name) for p in projects]
@@ -83,19 +83,19 @@ def run_tests() -> None:
                     test_log.write('Project contained syntactical errors')
 
             # Evaluates code smells for the source file
-            check_code_smells_pylint(
+            extract_code_smells(
                 source_file,
                 os.path.join('..\\test_results', task, category, student_name) + '_code_smells_pylint.json'
             )
 
 
-def check_code_smells_pylint(source, destination) -> None:
+def extract_code_smells(source, destination) -> None:
     with open(destination, 'w') as smells_file:
         subprocess.run(['pylint', '--output-format', 'json', source], stdout=smells_file)
 
 
-def parse_code_smells_pylint() -> None:
-    for job in itertools.product(*[['task1', 'task2'], ['tdd', 'no-tdd']]):
+def parse_code_smells() -> None:
+    for job in itertools.product(*[['task1', 'task2', 'task3'], ['tdd', 'no-tdd']]):
         # Paths to the main project directories
         path_to_logs = os.path.join('..', 'test_results', job[0], job[1])
         log_files = [f for f in os.listdir(path_to_logs) if f.endswith('.json') and
@@ -124,10 +124,16 @@ def extract_results() -> None:
     print('Generating test summary...')
 
     with open('..\\test_results\\summary.log', 'w') as log_summary:
-        for job in itertools.product(*[['task1', 'task2'], ['tdd', 'no-tdd']]):
+        for job in itertools.product(*[['task1', 'task2', 'task3'], ['tdd', 'no-tdd']]):
             task = job[0]
             category = job[1]
-            task_ = 'Task 1' if task == 'task1' else 'Task 2'
+            match task:
+                case 'task1':
+                    task_ = 'Task 1'
+                case 'task2':
+                    task_ = 'Task 2'
+                case 'task3':
+                    task_ = 'Task 3'
             category = 'TDD' if category == 'tdd' else 'No-TDD'
             path_to_logs = os.path.join('..', 'test_results', task, category)
 
