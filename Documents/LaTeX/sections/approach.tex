@@ -9,7 +9,7 @@ The study was conducted with the participation of 9 undergraduate master's degre
 The study we performed aimed at answering the following Research Questions (RQ):
 \begin{itemize}
     \item \textbf{RQ1}:
-    \item \textbf{RQ2}: Are there differences between TDD and NO-TDD in the external quality of the implemented solutions, developers’ productivity, and number of tests written?
+    \item \textbf{RQ2}: Are there differences between TDD and NO-TDD in the external quality of the implemented solutions, developers' productivity, and number of tests written?
     \item \textbf{RQ3}: Are there differences between TDD and NO-TDD in (cyclomatic, cognitive and code smells)
 \end{itemize}
 
@@ -19,9 +19,7 @@ The study we performed aimed at answering the following Research Questions (RQ):
 \section{Experimental Units}
 The participants for this study were students at the University of Salerno, in Italy, they were a mix of second-year master's degree students at the University of Salerno and students visiting with the Erasmus program; this last group was further made up of master's degree student and third-year bachelor's degree students. Both groups were enrolled in the Embedded Systems course at the University of Salerno.
 
-he course covered the following topics, software
-quality, unit testing, integration testing, SOLID principles, refactor-
-ing, iterative test-last development, big-bang testing, and TDD. The
+The course covered the following topics: \dots
 course included frontal lectures, laboratory sessions, and home-
 work. During the laboratory sessions, the students improved their
 knowledge about how to develop unit tests in Java by using the
@@ -87,12 +85,14 @@ Dependent variables:
 
 
 Furthermore, we considered four additional dependent variables regarding the general code quality in the submitted projects were collected:
-\begin{itemize}
-    \item \textbf{Number of smells (SMELL)}:
-    \item \textbf{Cyclomatic Complexity (CYC)}:
-    \item \textbf{Cognitive Complexity (COG)}:
-    \item \textbf{Lines of code (LOC)}: the number of lines of code written by the participant in both the production code and the test code.
-\end{itemize}
+first of all, the number of code smells present in the code is considered \dots
+Cyclomatic Complexity (\textbf{$CYC$}) is a measurement used to determine the stability and level of confidence in a program; it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify. Can be used as an estimate on how difficult the code will be to cover/test.
+Cognitive Complexity (\textbf{$COG$}) is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
+\begin{enumerate}
+    \item Code is not considered more complex when it uses shorthand that the language provides for collapsing multiple statements into one
+\end{enumerate}
+
+Finally, $LOC$, the number of lines of code written by the participant in both the production code and the test code.
 
 
 
