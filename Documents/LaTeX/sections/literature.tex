@@ -6,7 +6,13 @@ However, the empirical evidence so far has been mixed regarding the effects of T
 
 
 \section{TDD for Embedded Systems}
-Often, quality in embedded software is generally tied to platform-specific testing tools geared towards debugging \cite{TDDEmbeddedSoftware}
+Often, quality in embedded software is generally tied to platform-specific testing tools geared towards debugging \cite{TDDEmbeddedSoftware}.
+\dots
+
+Applying TDD practices to ESs could potentially result in a series of benefits:
+\begin{itemize}
+    \item 
+\end{itemize}
 
 
 
@@ -26,6 +32,7 @@ There are challenges that embedded developers face, and we’ll explore
 how to use TDD to your advantage. The embedded developer can expect
 the same benefits described in the previous section that nonembedded
 developers enjoy, plus a few bonus benefits specific to embedded:
+
 \begin{itemize}
     \item Reduce risk by verifying production code, independent of hardware, before hardware is ready or when hardware is expensive and scarce.
     \item Reduce the number of long target compile, link, and upload cycles that are executed by removing bugs on the development system.
@@ -42,7 +49,7 @@ developers enjoy, plus a few bonus benefits specific to embedded:
     \item \textbf{Compiler Compatibility Check}: periodically compile for the target environment, using the cross-compiler expected to be used for production compilations; this stage can be seen as an early warning system for any compiler incompatibilities, since it warns the developer of any porting issue, such as unavailable header files, incompatible language support, and missing language features. As a result, the written code only uses facilities available in both development environments.
     A potential issue at this stage is that in early ES development, the tool chain may not yet be decided, and this compatibility check cannot be performed: in this case, developers should take their best guess on the tool chain and compile against that compiler.
     Finally, this stage should not run with every code change; instead, a target cross-compile should take place whenever a new language feature is used, a new header file is included or a new library call is performed.
-    \item \textbf{Run unit tests in an evaluation board}: there is a risk that the compiled code will run differently in the host development system and the target embedded processor. In order to mitigate this risk, developers can run the unit tests on an evaluation board; with this, any behavior differences between environments would emerge, ad since runtime libraries are usually prone to bugs \cite{TDDEC}, the risk is real. If it's late in the development cycle, and a reliable target hardware is available, this stage may appear unnecessary.
-    \item \textbf{Run unit tests in the target hardware}: the objective here is the same as stage 3 while exercising the real hardware. One additional aspect to this stage is that developers could also run target hardware-specific tests. These tests allow developers to characterize or learn how the target hardware behaves. An additional challenge in this stage is limited memory in the target. The entire unit test suite may not fit into the target. In that case, the tests can be reorganized into separate test suites, where each suite fits in memory. This, however, does result in more complicated build automation process.
+    \item \textbf{Run unit tests in an evaluation board}: compiled code could potentially run differently in the host development system and the target embedded processor. In order to mitigate this risk, developers can run the unit tests on an evaluation board; with this, any behavior differences between environments would emerge, ad since runtime libraries are usually prone to bugs \cite{TDDEC}, the risk is real. If it's late in the development cycle, and a reliable target hardware is available, this stage may appear unnecessary.
+    \item \textbf{Run unit tests in the target hardware}: the objective here is again to run the test suite, however this time doing so while exercising the real hardware. One additional aspect to this stage is that developers could also run target hardware-specific tests. These tests allow developers to characterize or learn how the target hardware behaves. An additional challenge in this stage is limited memory in the target. The entire unit test suite may not fit into the target. In that case, the tests can be reorganized into separate test suites, where each suite fits in memory. This, however, does result in more complicated build automation process.
     \item \textbf{Run acceptance tests in the target hardware}: Finally, in order to make sure that the product features work, automated and manual acceptance tests are run in the target environment. Here developers have to make sure that any of the hardware-dependent code that can't be fully tested automatically is tested manually.
 \end{enumerate}

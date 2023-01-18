@@ -1,17 +1,21 @@
 \section{Overview on software testing}
-Software testing is an essential part of the development process of a system, as it helps to ensure that a piece of software is reliable and performs as intended; it can be defined as the process of finding differences between the expected behavior specified by system's requirements and models, and the observed behavior of the implemented software. Unfortunately, it is impossible to completely test a nontrivial system. First, testing is not decidable. Second, testing must be performed under time and budget constraints \cite{OOSE}, therefore developers often compromise on testing activities by identifying only a critical subset of features to be tested.
+Software testing is an essential part of the development process of a system, as it helps to ensure that a piece of software is reliable and performs as intended; it can be defined as the process of finding differences between the expected behavior specified by system's requirements and models, and the observed behavior of the implemented software; unfortunately, it is impossible to completely test a non-trivial system. First, testing is not decidable; second, testing must be performed under time and budget constraints \cite{OOSE}, therefore developers often compromise on testing activities by identifying only a critical subset of features to be tested.
 
-There are many approaches to software testing, including unit testing, integration testing, system testing, as well as performance, penetration and acceptance testing. Each of these approaches has its own specific goals and methods, and they are often used in combination to ensure that a software product is thoroughly tested and conform to its specification.
+There are many approaches to software testing, including unit testing, integration testing, system testing, as well as performance, penetration and acceptance testing. Each of these approaches has its own specific goals and methods, as well as an infrastructure built on top of them to ensure that the testing process is always consistent, and its execution is easily automated; furthermore, they are often used in combination with each other to ensure that a software product is thoroughly tested and conform to its specification.
 \begin{itemize}
-    \item \textbf{Unit Testing} is a method of testing individual units or components of a software product in isolation; its goal is to verify that each unit of code is working correctly and meets the specified requirements. Unit tests are typically written by the developers who wrote the code, and they are run automatically as part of the build process. Techniques also exist to generate input configuration for unit test automatically, by searching amongst the input space for the tests.
+    \item \textbf{Unit Testing} is a method of testing individual units or components of a software product in isolation; its goal is to verify that each unit of code is working correctly and meets the specified requirements. These kinds of tests are usually written by the developers who also wrote the corresponding production code, and they are run automatically as part of the build process. Techniques also exist to generate input configuration for unit test automatically, by searching amongst the input space for the tests.
     \item \textbf{Integration Testing} is a method of testing how different units or components of a software product work together. The goal of integration testing is to ensure that the different parts of the system are integrated correctly and that they function as expected when combined. Integration tests are typically more complex than unit tests, as they involve multiple units of code working together.
     \item \textbf{System Testing} is a method of testing a complete software product in a simulated or real-world environment. The goal of system testing is to ensure that the software meets the specified requirements and performs as expected when running in a real-world environment. System tests may involve testing the software on different hardware or operating systems, or with different data inputs and configurations.
     \item \textbf{Acceptance Testing} is a method of testing a software product to ensure that it meets the needs and expectations of the end user. The goal of acceptance testing is to verify that the software is fit for its intended purpose and that it meets the requirements of the user. Acceptance tests are often written by the end user or a representative of the end user, and they may involve testing the software in a real-world environment
+    \item \textbf{Performance Testing} is the process of evaluating a system's performance in terms of responsiveness and stability under a particular workload; it is usually done to determine how a system behaves in terms of various inputs and how it responds to different levels of traffic. \dots Used to test availability, reliability \dots
+    \item \textbf{Penetration Testing} is the practice of testing a system, network, or application  with the objective of identifying vulnerabilities that an attacker could exploit. This security evaluation of the system happens by simulating an attack and identifying any weaknesses that could be exploited by a malicious party. Penetration testing can be conducted by both internal and external security teams and is often used as a means to identify and remediate any potential security risks.
 \end{itemize}
 
 
 \subsection{Software Development Lifecycle}
-Before discussing how testing activities are performed in more detail, it is essential to introduced how testing is integrated in the development process. The term Software Development Lifecycle, SDLC, refers to the entire process of developing and maintaining software systems. It includes the following phases:
+Before discussing how testing activities are performed in more detail, it is essential to introduced how testing is integrated in the development process. The term Software Development Lifecycle, SDLC, refers to the entire process of developing and maintaining software systems, from the initial concept, to its end-of-life period.
+
+\dots waterfall \dots
 
 
 \begin{figure}[H]
@@ -21,11 +25,11 @@ Before discussing how testing activities are performed in more detail, it is ess
     \label{waterfall_model}
 \end{figure}
 
-The Waterfall model is a linear, sequential approach to software development in which development is divided into distinct phases, such as requirements gathering, design, implementation, testing, and maintenance.
-The main weakness of this model is that it does not allow for much iteration or flexibility: once a phase is completed, it is difficult to go back and make changes to earlier phases. This can lead to a very long feedback cycle between requirements specification and system testing, resulting in wasted time and resources if a design flaw is not discovered until later in the development process; additionally, the Waterfall model assumes that all requirements can be fully gathered and understood at the beginning of the project, which is often not the case in modern software development. Finally, the model does not account for the fact that testing and deployment are ongoing processes, not a single event at the end of the project.
+The Waterfall model is a linear, sequential approach to software development in which there is a marked division between the different phases, such as requirements gathering, design, implementation, testing, and maintenance.
+The main weakness of this model is that it does not allow for much iteration or flexibility: once a phase is completed, it is difficult to go back and make changes to earlier phases; this can lead to a very long feedback cycle between requirements specification and system testing, resulting in wasted time and resources if a design flaw is not discovered until later in the development process. Additionally, the Waterfall model assumes that all requirements can be fully gathered and understood at the beginning of the project, which is often not the case in modern software development. Finally, the model does not account for the fact that testing and deployment are ongoing processes, not a single event at the end of the project.
 
 
-Modern software development strays away from non-incremental models, as today's applications are continuously evolving and adapting; instead, iterative approaches are preferred \dots
+Modern software development strays away from non-incremental models, as today's applications are continuously evolving and adapting; instead, iterative approaches are preferred, where \dots
 
 A key example is the Agile development process, which values flexibility and collaboration, and prioritizes customer satisfaction and working software over strict plans and documentation. One of the main principles of Agile development is the use of small, cross-functional teams that work together to deliver working software in short sprints or iterations: this allows for frequent feedback and adjustments to be made throughout the development process between the clients and the development teams, rather than waiting until the end of a project to make changes.
 
@@ -33,14 +37,14 @@ Figure \ref{agile_model} highlights the phases of the Agile process:
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, scale=0.2]{figures/agile_model.jpg}
+    \includegraphics[width=8cm, scale=0.2]{figures/agile_model.jpg}
     \caption{The Agile model}
     \label{agile_model}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Design}: in this phase, the team designs the architecture, user interface and overall functionality of the software; the design process is iterative and collaborative, with the team working closely with customers and stakeholders to ensure that the software meets their needs.
-    \item \textbf{Code \& Test}: in this phase, the team writes the code for the software and performs testing to ensure that it is functioning correctly; agile development places a strong emphasis on automated testing, which allows for rapid feedback on the quality of the code.
+    \item \textbf{Design}: in this phase, the team designs the architecture, user interface and overall functionality of the software; the design process is iterative and collaborative, with the team working closely with customers, as well as with the stakeholders, with the objective to ensure that the software meets the agreed-upon needs.
+    \item \textbf{Code \& Test}: in this phase, the team writes the code for the software and performs testing to ensure that it is functioning correctly; agile development places a strong emphasis on automated testing, which allows for quick feedback on the quality of the delivered code modules.
     \item \textbf{Release}: the team releases the software to customers and stakeholders for feedback; this allows the team to gather feedback on the software and make any necessary adjustments before the final release.
     \item \textbf{Feedback}: the team reviews the feedback received from customers and stakeholders and makes any necessary changes to the software. Feedback is incorporated into the development process in an iterative manner, allowing the software to continuously improve over time.
     \item \textbf{Meet \& Plan}: the team meets to plan the next iteration of development, reviews the progress made in the previous iteration, sets goals for the next iteration, and assigns tasks to team members. The team also reviews and adjusts the development plan as needed to ensure that the software is on track to meet the customers' needs.
@@ -48,9 +52,8 @@ Figure \ref{agile_model} highlights the phases of the Agile process:
 
 
 \section{Test Driven Development}
-
 \subsection{Overview}
-The concept of Test Driven Development (TDD) was firstly introduced in 2003 by Kent Back in the book "Test Driven Development By Example" \cite{TDDByExample}. While there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
+The concept of TDD was firstly introduced in 2003 by Kent Back in the book "Test-Driven Development By Example" \cite{TDDByExample}: while there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
 Compared to traditional SDL processes, TDD is an extremely short, incremental, and repetitive process, and is related to \textbf{test-first programming} concepts in agile development and extreme programming; this advocates for frequent updates/releases for the software, in short cycles, while encouraging code reviews, unit testing and incremental addition of features.
 
 
@@ -65,7 +68,7 @@ Each new unit of code requires a repetition of this cycle \cite{GuidelinesTDD}.
 The figure below provides a representation of the TDD cycle:
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures/tdd_cycle.jpg}
+    \includegraphics[width=8cm, scale=0.2]{figures/tdd_cycle.jpg}
     \caption{The Test Driven Development cycle}
     \label{tdd-cycle}
 \end{figure}

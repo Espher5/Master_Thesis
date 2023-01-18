@@ -89,7 +89,9 @@ first of all, the number of code smells present in the code is considered \dots
 Cyclomatic Complexity (\textbf{$CYC$}) is a measurement used to determine the stability and level of confidence in a program; it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify. Can be used as an estimate on how difficult the code will be to cover/test.
 Cognitive Complexity (\textbf{$COG$}) is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
-    \item Code is not considered more complex when it uses shorthand that the language provides for collapsing multiple statements into one
+    \item Code is not considered more complex when it uses shorthand syntax that the language provides for collapsing multiple statements into one.
+    \item Code is considered more complex for each "break in the linear flow of the code".
+    \item Code is considered more complex when "flow breaking structures are nested"
 \end{enumerate}
 
 Finally, $LOC$, the number of lines of code written by the participant in both the production code and the test code.
@@ -141,8 +143,8 @@ Some observations that can be made include:
     \item The box plot is comparatively short (see box plot  (2)). This suggests that overall the student have a high level of agreement and therefore the values are very similar between each other.
     \item The box plot is comparatively tall (see box plots (1) and (3)). This, on the other hand, suggests students hold quite different opinions about this aspect or sub-aspect.
     \item Obvious differences between box plots (see box plots (1) and (2), (1) and (3), or (2) and (4)). Any obvious difference between box plots for comparative groups is worthy of further investigation.
-    \item The 4 sections of the box plot are uneven in size (see box plot (1)). This shows that many students have similar views at certain parts of the scale, but in other parts of the scale students are more variable in their views. The long upper whisker in the example means that students views are varied among the most positive quartile group, and very similar for the least positive quartile group. 
-    \item Same median, different distribution (see box plots (1), (2), and (3)). The medians (which generally will be close to the average) are all at the same level. However, the box plots in these examples show very different distributions of views. It's always important to consider the pattern of the whole distribution of responses in a box plot.
+    \item The 4 sections of the box plot are uneven in size (see box plot (1)). This reveals that many students share a similar view at certain parts of the scale, but in other parts of the scale students are more variable in their views. A long upper whisker in the means that students views are varied among the most positive quartile group, and very similar for the least positive quartile group. 
+    \item Same median, different distribution (see box plots (1), (2), and (3)). The medians, which generally tend to be close to the average, are at the same level. However, the box plots in these examples show very different distributions of views. It's always important to consider the pattern of the whole distribution of responses in a box plot.
 \end{itemize}
 
 \noindent\textbf{Task 1}: The following table display the values for the variables measured for the first experimental task, IntelligentOffice, for the two groups, in each of the two conditions.
