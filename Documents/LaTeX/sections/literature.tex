@@ -4,4 +4,39 @@ The Empirical Software Engineering community has taken interest into the investi
 
 
 \section{TDD for Embedded Systems}
-AAAAA
+TDD benefits for ES:
+Embedded software has all the challenges of “regular” software, such as
+poor quality and unreliable schedules, but adds challenges of its own.
+But this doesn’t mean that TDD can’t work for embedded.
+Report erratum
+this copy is (P1.0 printing, April, 2011)
+B ENEFITS FOR E MBEDDED 34
+The problem most cited by embedded developers is that embedded
+code depends on the hardware. Dependencies are a huge problem for
+nonembedded code too. Thankfully, there are solutions for managing
+dependencies. In principle, there is no difference between a dependency
+on a hardware device and one on a database.
+There are challenges that embedded developers face, and we’ll explore
+how to use TDD to your advantage. The embedded developer can expect
+the same benefits described in the previous section that nonembedded
+developers enjoy, plus a few bonus benefits specific to embedded:
+\begin{itemize}
+    \item Reduce risk by verifying production code, independent of hardware, before hardware is ready or when hardware is expensive and scarce.
+    \item Reduce the number of long target compile, link, and upload cycles that are executed by removing bugs on the development system.
+    \item Reduce debug time on the target hardware where problems are more difficult to find and fix.
+    \item Isolate hardware/software interaction issues by modeling hardware interactions in the tests.
+    \item Improve software design through the decoupling of modules from each other and the hardware. Testable code is by necessity, modular.
+\end{itemize}
+
+
+\noindent In \cite{TDDEC}, the author proposes the "Embedded TDD Cycle", as a pipeline made of the following steps:
+\begin{enumerate}
+    \item \textbf{TDD micro-cycle}: this first stage is the one run most frequently, usually every few minutes. During this stage, a bulk of code is written in TDD fashion, and compiled to run on the host development system: doing so gives the developer fast feedback, not encumbered by the constraints of hardware reliability and/or availability, since there are no target compilers or lengthy upload processes. Furthermore, the development system should be a proven and stable execution environment, and usually has a richer debugging environment compared to the target platform. 
+    Running the code on the development system, when it is eventually going to run in a foreign environment can be risky, so it's best to confront that risk regularly.
+    \item \textbf{Compiler Compatibility Check}: periodically compile for the target environment, using the cross-compiler expected to be used for production compilations; this stage can be seen as an early warning system for any compiler incompatibilities, since it warns the developer of any porting issue, such as unavailable header files, incompatible language support, and missing language features. As a result, the written code only uses facilities available in both development environments.
+    A potential issue at this stage is that in early ES development, the tool chain may not yet be decided, and this compatibility check cannot be performed: in this case, developers should take their best guess on the tool chain and compile against that compiler.
+    Finally, this stage should not run with every code change; instead, a target cross-compile should take place whenever a new language feature is used, a new header file is included or a new library call is performed.
+    \item \textbf{Run unit tests in an evaluation board}: there is a risk that the compiled code will run differently in the 
+    \item \textbf{Run unit tests in the target hardware}:
+    \item \textbf{Run acceptance tests in the target hardware:}
+\end{enumerate}
