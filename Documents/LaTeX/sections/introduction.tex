@@ -1,7 +1,21 @@
-This work of thesis is made up of five chapters:
+Test-Driven Development (TDD) is an incremental approach to software development in which a developer repeats a short development cycle made up of three phases: red, green, and refactor \cite{TDDByExample}. In the red phase, the developer writes a unit test for a small chunk of a functionality not yet implemented and watches the test fail. In the green phase, the developer implements the chunk of functionalities as quickly as possible and watches all the unit tests pass. During the refactoring phase, the developer changes the internal structure of the code while paying attention to keep the functionality intact—accordingly, all unit tests should pass. TDD has been conceived to develop “regular” software, and it is claimed to improve software quality as well as developers' productivity \cite{DBLP:reference/se/ErdogmusMJ10}. Embedded Systems (ESs)—a combination of computer hardware and software designed for a specific function— has all the challenges of non-embedded systems (NoESs), such as poor quality, but adds challenges of its own [6]. 
+For example, one of the most cited differences between embedded and NoESs is that embedded code depends on the hardware. In principle, there is no difference between a dependency on a hardware device and one on NoESs \cite{TDDEC}. A huge amount of empirical investigations has been conducted to study the claimed effects of TDD on the development of NoESs (e.g., \cite{DBLP:journals/software/KaracT18}). So far no investigations have been conducted to assess possible benefits concerned the application of TDD on the development of ESs although some authors, like Greening \cite{TDDEC}, believes that embedded developers can benefit from the application of TDD in the development of ESs.
 
+In this paper, we present the results of a controlled (baseline) experiment and its replication to study the application of TDD on the development of ESs.
+
+The participants were final year Master Students in Computer Science enrolled to an ES course at the University of Salerno. The goal of these experiments is to increase our body of knowledge on the benefit (if any) related to the application of TDD in the context of the development of ESs. To that end, we compare TDD with respect to a development approach in which a developer first write production code and then test it. We refer to this approach from here onwards as YW (Your-Way). Independently of the development approach (TDD and YW), the participants in the investigation used a mock to model and confirm the interactions between a device driver and the hardware. The mock intercepts the commands to and from the device simulating a given usage scenario. Results suggest \dots
+
+
+This work of thesis is made up of five chapters:
+The first two chapters act as the knowledge foundation 
 Chapter one contains an overview on the software testing process, analyzing the main approaches, with a focus of Test-Driven Development.
 
 Chapter two will provide information on the general embedded systems concepts, before discussing the techniques for testing such systems.
 
 In chapter three, we conduct a 
+
+Paper Structure. In Section 2, we report related work. The design of the
+overall empirical investigation and of the individual studies is summarized in
+Section 3. The results are presented and discussed in Section 4 and Section 5,
+respectively. We highlight the threats to validity of our investigation in Section 6.
+Final remarks conclude the paper in Section 7
