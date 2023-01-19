@@ -53,11 +53,11 @@ Figure \ref{agile_model} highlights the phases of the Agile process:
 
 \section{Test Driven Development}
 \subsection{Overview}
-The concept of TDD was firstly introduced in 2003 by Kent Back in the book "Test-Driven Development By Example" \cite{TDDByExample}: while there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
-Compared to traditional SDL processes, TDD is an extremely short, incremental, and repetitive process, and is related to \textbf{test-first programming} concepts in agile development and extreme programming; this advocates for frequent updates/releases for the software, in short cycles, while encouraging code reviews, unit testing and incremental addition of features.
+The concept of \tdd was firstly introduced in 2003 by Kent Back in the book "Test-Driven Development By Example" \cite{TDDByExample}: while there is no formal definition of the process, as the author states, the goal is to "write clean code that works".
+Compared to traditional SDL processes, \tdd is an extremely short, incremental, and repetitive process, and is related to \textbf{test-first programming} concepts in agile development and extreme programming; this advocates for frequent updates/releases for the software, in short cycles, while encouraging code reviews, unit testing and incremental addition of features.
 
 
-At its core, TDD is made up of three iterative phases: "Red", "Green" and "Blue" (or "Refactor"):
+At its core, \tdd is made up of three iterative phases: "Red", "Green" and "Blue" (or "Refactor"):
 \begin{itemize}
     \item In the "\textbf{Red}" phase, a test case is written for the chunk of functionality to be implemented; since the corresponding logic does not exist yet, the test will obviously fail, often not even compiling.
     \item In the "\textbf{Green}" phase, only the code that is strictly required to make the test pass is written.
@@ -65,7 +65,7 @@ At its core, TDD is made up of three iterative phases: "Red", "Green" and "Blue"
 \end{itemize}
 Each new unit of code requires a repetition of this cycle \cite{GuidelinesTDD}.
 
-The figure below provides a representation of the TDD cycle:
+The figure below provides a representation of the \tdd cycle:
 \begin{figure}[h]
     \centering
     \includegraphics[width=8cm, scale=0.2]{figures/tdd_cycle.jpg}
@@ -73,17 +73,17 @@ The figure below provides a representation of the TDD cycle:
     \label{tdd-cycle}
 \end{figure}
 
-As previously stated, each TDD iteration should be extremely short, usually spanning from 10 to 15 minutes at most; this is possible thanks to a meticulous decomposition of the system's requirements into a set of \textbf{User Stories}, each detailing a small chunk of a functionality specified in the requirements. These stories can then be prioritized and implemented iteratively.
+As previously stated, each \tdd iteration should be extremely short, usually spanning from 10 to 15 minutes at most; this is possible thanks to a meticulous decomposition of the system's requirements into a set of \textbf{User Stories}, each detailing a small chunk of a functionality specified in the requirements. These stories can then be prioritized and implemented iteratively.
 
-User stories can vary in granularity: when using a fine-grained structure when describing the task, this can be broken up into a set of sub-tasks, each corresponding to a small feature; on the other hand, with coarser-grained tasks, this division is less pronounced \cite{DBLP:journals/tse/KaracTJ21}. Even when the same task is considered, the outcome of the TDD process will change depending on the level of granularity employed when describing it; there is no overall right or wrong approach, rather it is something that comes from the experience of the developer to break tasks into small work items \cite{DBLP:journals/tse/KaracTJ21}.
+User stories can vary in granularity: when using a fine-grained structure when describing the task, this can be broken up into a set of sub-tasks, each corresponding to a small feature; on the other hand, with coarser-grained tasks, this division is less pronounced \cite{DBLP:journals/tse/KaracTJ21}. Even when the same task is considered, the outcome of the \tdd process will change depending on the level of granularity employed when describing it; there is no overall right or wrong approach, rather it is something that comes from the experience of the developer to break tasks into small work items \cite{DBLP:journals/tse/KaracTJ21}.
 
-The general mantra of TDD revolves around the "Make it green, then make it clean" motto
+The general mantra of \tdd revolves around the "Make it green, then make it clean" motto
 
-\subsection{TDD advantages}
-The employment of TDD can result in a series of benefits during the development process, such as:
+\subsection{\tdd advantages}
+The employment of \tdd can result in a series of benefits during the development process, such as:
 \begin{itemize}
-    \item \textbf{Regression testing}: by incrementally building a test suite as the different iterations of TDD are performed, we ensure that the system  
-    \item \textbf{Very high code coverage}: coverage is a metric used to determine how much of the code is being tested; it can be expressed according to different criteria such as statement coverage, i.e., how many statements in the code are reached by the test cases, branch coverage, i.e., how many conditional branches are executed during testing, or function coverage, i.e., how many functions are executed when running the test suite. While different coverage criteria result in different benefits, by employing TDD we ensure that any segment of code written has at least one associated test case.
+    \item \textbf{Regression testing}: by incrementally building a test suite as the different iterations of \tdd are performed, we ensure that the system  
+    \item \textbf{Very high code coverage}: coverage is a metric used to determine how much of the code is being tested; it can be expressed according to different criteria such as statement coverage, i.e., how many statements in the code are reached by the test cases, branch coverage, i.e., how many conditional branches are executed during testing, or function coverage, i.e., how many functions are executed when running the test suite. While different coverage criteria result in different benefits, by employing \tdd we ensure that any segment of code written has at least one associated test case.
     \item \textbf{Improved code quality}: as we are specifically writing code to pass the tests in place, and refactoring it after the "Green" phase, we ensure that the code is cleaner and overall more optimized, without any extra pieces of functionalities that may not be needed. 
     \item \textbf{Improved code readability and documentation}: test act as documentation...
     \item \textbf{Simplified debugging and early fault detection}: Whenever a test fails it becomes obvious which component has caused the fault: by adopting this incremental approach and performing regression testing, if a test fail we will be certain that the newly written code will be responsible. For this reason, faults are detected extremely early during the testing process, rather than potentially remaining hidden until the whole test suite has been built and executed.
