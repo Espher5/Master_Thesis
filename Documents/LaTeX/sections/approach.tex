@@ -1,100 +1,93 @@
-In this chapter we will present in detail the planning and approach we followed to establish our study.
+\section{Overview}
+In this chapter we will present in detail the planning and approach we followed to establish the studies and analyze their results. Two studies, a controlled one, followed by a non-controlled one were conducted with the participation of 9 undergraduate master's degree and third-year bachelor's degree students enrolled in the "Embedded Systems" course at the University of Salerno in Italy. Participation in the studies was agreed upon by the students and was voluntary.
 
-the two experimental tasks on which this study is based on, as well as the analysis of the gathered results.
+Before taking part in the first study, a set of lectures and training sessions was held with the objective of training the participants on the topics tackled by the studies, namely unit testing, test scaffolding and TDD.
 
-The study was conducted with the participation of 9 undergraduate master's degree students enrolled in the "Embedded Systems" course at the University of Salerno in Italy. The participation voluntarily accepted to take part in this study.
 
 
 \section{Research Questions}
-The study we performed aimed at answering the following Research Questions (RQ):
+The study we performed aimed at answering the following Research Questions (RQs):
 \begin{itemize}
-    \item \textbf{RQ1}:
-    \item \textbf{RQ2}: Are there differences between TDD and NO-TDD in the external quality of the implemented solutions, developers' productivity, and number of tests written?
-    \item \textbf{RQ3}: Are there differences between TDD and NO-TDD in (cyclomatic, cognitive and code smells)
+    \item \textbf{RQ1}: Are there differences between the application TDD and NO-TDD in the external quality of the implemented solutions, developers' productivity, and number of test cases written?
+    \item \textbf{RQ2}: (può essere unita alla precedente?) Are there differences between TDD and NO-TDD in (cyclomatic and cognitive complexities, lines of code and numbers code smells)
 \end{itemize}
 
+RQ1 was defined to \dots
 
 
 
 \section{Experimental Units}
-The participants for this study were students at the University of Salerno, in Italy, they were a mix of second-year master's degree students at the University of Salerno and students visiting with the Erasmus program; this last group was further made up of master's degree student and third-year bachelor's degree students. Both groups were enrolled in the Embedded Systems course at the University of Salerno.
+The participants for these studies were students at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of master's degree students and third-year bachelor's degree students. Both groups were enrolled in the Embedded Systems course at the University of Salerno.
 
-The course covered the following topics: \dots
-course included frontal lectures, laboratory sessions, and home-
-work. During the laboratory sessions, the students improved their
-knowledge about how to develop unit tests in Java by using the
-Eclipse IDE and JUnit, and the refactoring functionality available in
-Eclipse. During laboratory sessions and by developing homework,
-the students practiced unit testing, iterative test-last development,
-big-bang testing, and TDD
+The course covered the following topics: \dots but no TDD, which was in turn covered by the lectures and training sessions preceding the studies.
 
-Participating in this study was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only. Furthermore, participation would not directly affect their final mark for the Embedded System course; however, in order to encourage student participation, those who took part in the study were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated in this study.
+Participating in the studies was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only; furthermore, participation would not directly affect their final mark for the Embedded System course; however, in order to encourage student participation, those who took part in the studies were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated.
 
 The participants for the tasks were asked to carry out their assignment by either using TDD or no-TDD (i.e., any approach they preferred, except for TDD) depending on the group they were partitioned in. and on the period the task took place.
 
 
 
 \section{Experimental Materials}
-The experimental objects were three code katas, programming exercises aimed at practicing a technique or a programming language:
+The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language:
 \begin{itemize}
     \item \textbf{IntelligentOffice}:
     \item \textbf{CleaningRobot}:
     \item \textbf{SmartHome}:
 \end{itemize}
 
-
-
-\section{Tasks}
+Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
 
 
 
 \section{Variables}
 Independent variables:
 \begin{itemize}
-    \item \textbf{Technique}: a nominal variable assuming two values, TDD and no-TDD.
-    \item \textbf{Period}: since the study is longitudinal - i.e., the data was collected over time - we took into account the period during which each treatment (TDD or no-TDD) was applied.
-    \item \textbf{Group}:  variable representing the two groups. It can assume the values G1 and G2.
+    \item \textbf{Condition}: a nominal variable assuming two values, TDD and no-TDD.
+    \item \textbf{Period}: the data was collected over two periods for the controlled study, and over an additional period for the non-controlled study. During the three periods both treatments (TDD or no-TDD) were applied.
+    \item \textbf{Group}: variable representing the two groups. It can assume the values G1 and G2.
 \end{itemize}
 
 
-Dependent variables:
-\begin{itemize}
-    \item \textbf{Quality (QLTY)}: quantifies the external quality of the solution a participant implemented. This variable is defined as follows: 
-        \[
-            QLTY = \frac{\sum_{i=1}^{\#TUS} QLTY_i}{\#TUS} * 100 
-        \]
-    where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i$ is the external quality of the $i-th$ user story; to determine whether a user story was tackled or not, we checked the asserts in the test suite corresponding to the story. Namely, if at least one assert in the test suite for the story passes, than the story was considered as tackled. $\#TUS$ is formally defined as follows:
-        \[
-            \#TUS = \sum_{i=1}^{n} 
-                \begin{cases}
-                    1 & \text{$\#ASSERT_i(PASS) > 0$}\\
-                    0 & \text{otherwise}
-                \end{cases}
-        \]
-    On the other hand, the quality of the $i-th$ user story (i.e., $QLTY_i$) is defined as the ratio of asserts passed for the acceptance suite of the $i-th$ user story over the total number of asserts in the acceptance suite for the same story. More formally:
-        \[
-            QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
-        \]
-    \item \textbf{Productivity (PROD)}: estimates the productivity of a participant. It is computed as follows:
-        \[
-            PROD = \frac{\#ASSERT(PASS)}{\#ASSERT(ALL)} * 100
-        \]
-    where $ASSERT(PASS)$ is the total number of asserts that have passed, by considering all acceptance test suites, while $ASSERT(ALL)$ refers to the total number of asserts in the acceptance suites. The $PROD$ variable can assume values between 0 and 100: a value close to 0 indicates low productivity in the implemented solution, while a value close to 1 refers to high productivity.
-    \item \textbf{Number of tests (TEST)}: quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
-\end{itemize}
+As for the dependent variables considered in the studies, these are: \textbf{QLTY}, \textbf{PROD}, \textbf{TEST}, \textbf{CYC}, \textbf{COG}, \textbf{LOC}.
+The variables QLTY, PROD and TEST have been used in previous empirical studies \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others, \dots
+
+QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
+\[
+    QLTY = \frac{\sum_{i=1}^{\#TUS} QLTY_i}{\#TUS} * 100 
+\]
+where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i$ is the external quality of the $i-th$ user story; to determine whether a user story was tackled or not, the asserts in the test suite corresponding to the story were checked: if at least one assert in the test suite for the story passed, than the story was considered as tackled. $\#TUS$ is formally defined as follows:
+\[
+    \#TUS = \sum_{i=1}^{n} 
+        \begin{cases}
+            1 & \text{$\#ASSERT_i(PASS) > 0$}\\
+                0 & \text{otherwise}
+        \end{cases}
+\]
+Finally, the quality of the $i-th$ user story (i.e., $QLTY_i$) is defined as the ratio of asserts passed for the acceptance suite of the $i-th$ user story over the total number of asserts in the acceptance suite for the same story. More formally:
+\[
+    QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
+\]
+
+PROD estimates the productivity of a participant. It is computed as follows:
+\[
+    PROD = \frac{\#ASSERT(PASS)}{\#ASSERT(ALL)} * 100
+\]
+where $ASSERT(PASS)$ is the total number of asserts that have passed, by considering all acceptance test suites, while $ASSERT(ALL)$ refers to the total number of asserts in the acceptance suites. The $PROD$ variable can assume values between 0 and 100, where a value close to 0 indicates low productivity in the implemented solution, while a value close to 1 refers to high productivity.
+
+The TEST variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
 
-Furthermore, we considered four additional dependent variables regarding the general code quality in the submitted projects were collected:
-first of all, the number of code smells present in the code is considered \dots
-Cyclomatic Complexity (\textbf{$CYC$}) is a measurement used to determine the stability and level of confidence in a program; it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify. Can be used as an estimate on how difficult the code will be to cover/test.
-Cognitive Complexity (\textbf{$COG$}) is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
+As for the additional three dependent variables regarding the general code quality in the submitted projects, these are defined as follows:
+(\textbf{$CYC$}) refers to the Cyclomatic Complexity of the implemented solution; it is a value used to determine the stability and level of confidence in a program and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
+
+(\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
     \item Code is not considered more complex when it uses shorthand syntax that the language provides for collapsing multiple statements into one.
     \item Code is considered more complex for each "break in the linear flow of the code".
     \item Code is considered more complex when "flow breaking structures are nested"
 \end{enumerate}
 
-Finally, $LOC$, the number of lines of code written by the participant in both the production code and the test code.
+Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the lines of code in both the production code and the test code.
 
 
 
@@ -111,11 +104,6 @@ Between the start of the course and P1, the participants had never dealt with TD
 
 
 
-\section {Analysis Procedure}
-The gathered experimental data were analyzed according to the following procedure:
-\begin{enumerate}
-    \item \textbf{Descriptive Statistics}: in order to provide an overview of the distributions of the dependent variables, we calculated a set of summary statistics, including the mean, median, and standard deviation (SD). Additionally, we employed box plots to graphically summarize these distributions.
-\end{enumerate}
 
 
 \section{Results}
@@ -137,6 +125,7 @@ Box plot definitions:
 
 \noindent To provide an example of the kind of information that a box plot chart can provide, please consider the following figure displaying four student groups' opinions on a subject:
 
+\dots
 
 Some observations that can be made include:
 \begin{itemize}
@@ -147,7 +136,10 @@ Some observations that can be made include:
     \item Same median, different distribution (see box plots (1), (2), and (3)). The medians, which generally tend to be close to the average, are at the same level. However, the box plots in these examples show very different distributions of views. It's always important to consider the pattern of the whole distribution of responses in a box plot.
 \end{itemize}
 
-\noindent\textbf{Task 1}: The following table display the values for the variables measured for the first experimental task, IntelligentOffice, for the two groups, in each of the two conditions.
+
+\textbf{Boxplot da inserire appena smetto di litigare con le immagini in Latex. Per il momento sono in una cartella separata}
+
+\noindent\textbf{Task 1}: The following tables display the values for the variables measured for the first experimental task, IntelligentOffice, for the two groups, by applying each of the two conditions.
 \\ \  \\
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}| }
@@ -165,7 +157,6 @@ Some observations that can be made include:
     \hline
 \end{tabular}
 \\ \  \\
-
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
     \hline
@@ -183,31 +174,7 @@ Some observations that can be made include:
 \end{tabular}
 \\ \  \\
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm, scale=0.5]{figures/box plots/task1/p1_condition_qlty_bp.png}
-    \caption{Box plot for $QLTY$ in task 1}
-    \label{fig: Box plot for QLTY in task 1}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm, scale=0.5]{figures/box plots/task1/p1_condition_prod_bp.png}
-    \caption{Box plot for $PROD$ in task 1}
-    \label{fig: Box plot for PROD in task 1}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/box plots/task1/p1_condition_test_bp.png}
-    \caption{Box plot for $TEST$ in task 1}
-    \label{fig: Box plot for TEST in task 1}
-\end{figure}
-
-
-
-\noindent \textbf{Task 2}: The following table display the values for the variables measured for the second experimental task, CleaningRobot, for the two groups, in each of the two conditions.
+\noindent \textbf{Task 2}: The following tables display the values for the variables measured for the second experimental task, CleaningRobot, for the two groups, by applying each of the two conditions.
 \\ \  \\
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
@@ -225,7 +192,6 @@ Some observations that can be made include:
     \hline
 \end{tabular}
 
-
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
     \hline
@@ -241,9 +207,10 @@ Some observations that can be made include:
         LOC & 178 & 260 & 207.5 & 196 & 37.11 \\
     \hline
 \end{tabular}
+\\ \  \\
 
-\textbf{Tasks 1 \& 2}:
-
+\textbf{Tasks 1 \& 2}: the following tables display the values for the variables measured for the first two experimental tasks, i.e., the controlled study, for the two groups, by applying each of the two conditions.
+\\ \  \\
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
     \hline
@@ -259,7 +226,7 @@ Some observations that can be made include:
         LOC & 80 & 203 & 145.33 & 154 & 39.97 \\
     \hline
 \end{tabular}
-
+\\ \  \\
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
     \hline
@@ -275,7 +242,68 @@ Some observations that can be made include:
         LOC & 74 & 260 & 154.22 & 157 & 60.32 \\
     \hline
 \end{tabular}
+\\ \  \\
+
+
+\textbf{Tasks 3}: finally, these last tables display the values for the variables measured for the third experimental task (non-controlled study), SmartHome, for the two groups, by applying each of the two conditions.
+\\ \  \\
+\noindent
+\begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
+    \hline
+        \multicolumn{6}{|c|}{Task 3 - TDD} \\
+    \hline
+        Metric & Min & Max & Mean & Median & Std\\
+    \hline
+        QLTY & 85 & 100 & 95 & 100 & 7.07 \\
+        PROD & 83.33 & 100 & 93.33 & 100 & 9.13 \\
+        TEST & 7 & 18 & 11.6 & 12 & 4.15 \\
+        CYC & 15 & 30 & 22.6 & 20 & 6.58 \\
+        COG & 18 & 34 & 25.8 & 25 & 7.08 \\
+        LOC & 150 & 232 & 187 & 175 & 36.15 \\
+    \hline
+\end{tabular}
+\\ \  \\
+\noindent
+\begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
+    \hline
+        \multicolumn{6}{|c|}{Task 3 - NO-TDD} \\
+    \hline
+        Metric & Min & Max & Mean & Median & Std\\
+    \hline
+        QLTY & 80 & 100 & 86.25 & 82.5 & 9.46 \\
+        PROD & 75 & 100 & 83.33 & 79.16 & 11.78 \\
+        TEST & 0 & 11 & 4.5 & 3.5 & 5.44 \\
+        CYC & 16 & 23 & 19.5 & 19.5 & 2.88 \\
+        COG & 19 & 25 & 21 & 20 & 2.70 \\
+        LOC & 93 & 164 & 125.5 & 122.5 & 36.82 \\
+    \hline
+\end{tabular}
+\\ \  \\
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.4\linewidth]{figures/box plots/task1/p1_condition_qlty_bp.png}
+        \caption{A subfigure}
+        \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.4\linewidth]{figures/box plots/task1/p1_condition_qlty_bp.png}
+        \caption{A subfigure}
+        \label{fig:sub2}
+    \end{subfigure}
+    \caption{A figure with two subfigures}
+    \label{fig:test}
+\end{figure}
 
 
 \section{Discussion}
+\subsection{Answers to Research Questions}
+
+
+\subsection{Implications}
+
+
 \subsection{Threats to Validity}
