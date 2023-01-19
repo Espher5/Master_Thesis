@@ -6,13 +6,28 @@ Before taking part in the first study, a set of lectures and training sessions w
 
 
 \section{Research Questions}
-The study we performed aimed at answering the following Research Questions (RQs):
-\begin{itemize}
-    \item \textbf{RQ1}: Are there differences between the application TDD and NO-TDD in the external quality of the implemented solutions, developers' productivity, and number of test cases written?
-    \item \textbf{RQ2}: (può essere unita alla precedente?) Are there differences between TDD and NO-TDD in (cyclomatic and cognitive complexities, lines of code and numbers code smells)
-\end{itemize}
+The study we performed aimed at answering the following Research Questions (\rqs)
+As for the baseline experiment, and following the main research question introduced in the introduction section of this thesis, we defined the main goal of this study by applying the Goal Question Metrics template [1].
 
-RQ1 was defined to \dots
+
+
+The main goal for the baseline experiment is therefore defined as follows:
+\noindent
+\textbf{Analyze} the use of \tdd 
+\textbf{for the purpose of} evaluating its effects in the development of \ess
+\textbf{with respect to} the quality of produced source code and its complexity and the developers' productivity 
+\textbf{from the point of} view of the researcher and lecturer 
+\textbf{in the context of} an \es course involving second year Master students in Computer Science.
+
+According to this objective, three research questions were defined:
+\begin{itemize}
+    \item \textbf{RQ1.} Does the use of \tdd affect the quality of the solution to a programming task? 
+    \textit{Aim}: We defined this \rq to understand if (and possibly to what extent) the use of \tdd with respect to \yw makes a difference with respect to quality of the written source code. An answer to RQ1 would have practical implications within the Agile community. For example, in case the use of \tdd positively affects source code quality, lecturers can teach \tdd in \es courses so spreading Agile in the academic context and then facilitating the adoption of this approach in the industrial context. In other words, if the newcomers of the working market are familiar with \tdd, and it is shown that it produces better quality source code for \ess, the software industry could be encouraged to migrate their development from \yw to \tdd.
+    \item \textbf{RQ2.} Does the use of \tdd affect the complexity of the solution to a programming task?
+    \textit{Aim}: With this RQ, we intend to understand if (and possibly to what extent) the complexity of the source code—how difficult to understand it is from the developer's perspective—of an \es is affected by the development approach (\tdd vs. \yw). The answer to this question helps us to better understand \tdd applied to the development of \ess from a different perspective. For example, the researcher could be interested to study the extent with which the quality of the source code of an \es affects software maintenance and evolution. A positive answer to RQ2 could justify this research direction.
+    \item \textbf{RQ3.} Does the use of \tdd increase developers' productivity?
+    Aim: We defined this RQ to understand if (and possibly to what extent) there is an effect of \tdd on the developers’ productivity. The answer to RQ3 helps us to better understand \tdd in the development of \ess companies operating in the context of the development of \ess could be encouraged to use TDD in case: (\textit{i}) there is an evidence that this approach improves productivity and (\textit{ii}) developers are familiar with this approach before being hired (e.g., \tdd has been learned at university).
+\end{itemize}
 
 
 
@@ -28,10 +43,14 @@ The participants for the tasks were asked to carry out their assignment by eithe
 
 
 \section{Experimental Objects}
-The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language:
+The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language. As for the baseline studies, the two experimental objects implemented by the participants are the following:
 \begin{itemize}
     \item \textbf{IntelligentOffice}: the goal is to develop a system which allows the user to manage the light, window blinds, and air quality level inside an office.
     \item \textbf{CleaningRobot}: the goal is to develop a system to control a cleaning robot which moves in a room and cleans the dust on the floor along the way. 
+\end{itemize}
+
+As for the replication experiment, the implemented task is:
+\begin{itemize}
     \item \textbf{SmartHome}: the goal is to develop an intelligent system to manage various aspects of room inside a house.
 \end{itemize}
 
@@ -40,7 +59,7 @@ Further details on the experimental objects, including user stories, hardware us
 
 
 \section{Variables}
-The participants were asked to carry out each task by using either TDD or the approach they preferred (i.e., NO-TDD), therefore one of the independent variables considered is \textbf{Condition}, a nominal variable assuming two values, TDD and NI-TDD. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{Period}, assuming the values $P1, P2, and P3$. During the three periods both treatments (TDD or NO-TDD) were applied. Finally, since the participants were split into two groups, the last independet variable is \textbf{Group}, which can assume the values G1 and G2.
+The participants were asked to carry out each task by using either \tdd or the approach they preferred (i.e., NO-TDD), therefore one of the independent variables considered is \textbf{Condition}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{Period}, assuming the values $P1, P2, and P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independemt variable is \textbf{Group}, which can assume the values G1 and G2.
 
 
 As for the dependent variables considered in the studies, these are: \textbf{QLTY}, \textbf{PROD}, \textbf{TEST}, \textbf{CYC}, \textbf{COG}, \textbf{LOC}.
@@ -62,6 +81,7 @@ Finally, the quality of the $i-th$ user story (i.e., $QLTY_i$) is defined as the
 \[
     QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
 \]
+As a result, the $QLTY$ measure deliberately excludes unattempted tasks and tasks with zero success; therefore, it represents a local measure of external quality calculated over the subset of user stories that the subject attempted. $QLTY$ is a ratio measure in the range $[0, 100]$.
 
 PROD estimates the productivity of a participant. It is computed as follows:
 \[
@@ -82,26 +102,42 @@ As for the additional three dependent variables regarding the general code quali
     \item Code is considered more complex when "flow breaking structures are nested"
 \end{enumerate}
 
-Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the lines of code in both the production code and the test code.
+Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
 
 
 
 \section{Study design}
-The participants were randomly split into two groups, G1 and G2, having 4 and 5 participants respectively. For the first period P1, the group G1 was assigned the TDD task, while the group G2 was assigned the NO-TDD task; on the other hand, during period P2, the group G1 was assigned the NO-TDD task, while the group G2 was assigned the TDD task.
-Therefore, the design of our study can be classified as a repeated-measures, within-subjects design. In each period, the participants in G1 and G2 dealt with different experimental objects. For instance, in P1, the participants in G1 dealt with BSK, while those in G2 with MRA. At the end of the study, every participant had tackled each experimental object only once.
+For the controlled baseline experiment, the participants were randomly split into two groups, G1 and G2, having 4 and 5 members respectively. For the first period P1, the group G1 was assigned the \tdd version of the first task, \textit{IntelligentOffice}, while the group G2 was assigned the \notdd version; on the other hand, during period P2, the group G1 was assigned the \notdd version of the second task, \textit{CleaningRobot}, while the group G2 was assigned the \tdd version.
+Therefore, the design of our study can be classified as a repeated-measures, within-subjects design. In each period, the participants in G1 and G2 dealt with different experimental objects, therefore, at the end of the study, every participant had tackled each experimental object only once.
+
+As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}.
+
 
 \section{Procedure}
 Before our study took place, we collected some demographic information on the participants. To this end, the participants were asked to fill out an on-line pre-questionnaire (created by means of Google Forms).
 
-The Embedded Systems course, during which the study was conducted, started in September 2022. The first task, P1, took place on Tuesday, December 6th 2022, while the second, P2, took place on Tuesday, December 13th 2022.
+The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022. The first task, P1, took place on Tuesday, December 6th 2022, while the second, P2, took place on Tuesday, December 13th 2022.
 
-Between the start of the course and P1, the participants had never dealt with TDD, while they were somewhat familiar with unit testing and iterative test-last development. In the weeks before P1, TDD was introduced to the participants via some lectures; also had taken part in ... training sessions on TDD and completed some homework by using this development practice.
+Between the start of the course and P1, most participants had never dealt with \tdd, while they were somewhat familiar with unit testing and iterative test-last development. 
+In the weeks prior to P1, \tdd was introduced to the participants via some frontal lectures and training/homework sessions.
 
+The schedule for the training was as follows:
+\dots
+
+After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd.  
+
+
+\section{Analysis Methods}
+\begin{enumerate}
+    \item \textbf{Descriptive statistics}
+    \item \textbf{Aggregate analysis}
+\end{enumerate}
 
 
 
 
 \section{Results}
+\subsection{.}
 In this section we will report the values observed for each dependent variable.
 Besides the tables, box plot charts will be used to visualize the values assumed by the dependent variables.
 A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
@@ -274,6 +310,11 @@ Some observations that can be made include:
     \hline
 \end{tabular}
 \\ \  \\
+
+
+\subsection{Post-questionnaire Analysis}
+
+
 
 
 
