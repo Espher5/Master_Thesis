@@ -23,16 +23,16 @@ The course covered the following topics: \dots but no TDD, which was in turn cov
 
 Participating in the studies was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only; furthermore, participation would not directly affect their final mark for the Embedded System course; however, in order to encourage student participation, those who took part in the studies were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated.
 
-The participants for the tasks were asked to carry out their assignment by either using TDD or no-TDD (i.e., any approach they preferred, except for TDD) depending on the group they were partitioned in. and on the period the task took place.
+The participants for the tasks were asked to carry out their assignment by either using TDD or NO-TDD (i.e., any approach they preferred, except for TDD) depending on the group they were partitioned in. and on the period the task took place.
 
 
 
-\section{Experimental Materials}
+\section{Experimental Objects}
 The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language:
 \begin{itemize}
-    \item \textbf{IntelligentOffice}:
-    \item \textbf{CleaningRobot}:
-    \item \textbf{SmartHome}:
+    \item \textbf{IntelligentOffice}: the goal is to develop a system which allows the user to manage the light, window blinds, and air quality level inside an office.
+    \item \textbf{CleaningRobot}: the goal is to develop a system to control a cleaning robot which moves in a room and cleans the dust on the floor along the way. 
+    \item \textbf{SmartHome}: the goal is to develop an intelligent system to manage various aspects of room inside a house.
 \end{itemize}
 
 Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
@@ -40,12 +40,7 @@ Further details on the experimental objects, including user stories, hardware us
 
 
 \section{Variables}
-Independent variables:
-\begin{itemize}
-    \item \textbf{Condition}: a nominal variable assuming two values, TDD and no-TDD.
-    \item \textbf{Period}: the data was collected over two periods for the controlled study, and over an additional period for the non-controlled study. During the three periods both treatments (TDD or no-TDD) were applied.
-    \item \textbf{Group}: variable representing the two groups. It can assume the values G1 and G2.
-\end{itemize}
+The participants were asked to carry out each task by using either TDD or the approach they preferred (i.e., NO-TDD), therefore one of the independent variables considered is \textbf{Condition}, a nominal variable assuming two values, TDD and NI-TDD. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{Period}, assuming the values $P1, P2, and P3$. During the three periods both treatments (TDD or NO-TDD) were applied. Finally, since the participants were split into two groups, the last independet variable is \textbf{Group}, which can assume the values G1 and G2.
 
 
 As for the dependent variables considered in the studies, these are: \textbf{QLTY}, \textbf{PROD}, \textbf{TEST}, \textbf{CYC}, \textbf{COG}, \textbf{LOC}.
@@ -78,7 +73,7 @@ The TEST variable quantifies the number of unit tests a participant wrote. It is
 
 
 As for the additional three dependent variables regarding the general code quality in the submitted projects, these are defined as follows:
-(\textbf{$CYC$}) refers to the Cyclomatic Complexity of the implemented solution; it is a value used to determine the stability and level of confidence in a program and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
+(\textbf{$CYC$}) refers to the Cyclomatic Complexity of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
 
 (\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
@@ -92,7 +87,7 @@ Finally, $LOC$ is the total number of lines of code written by the participant; 
 
 
 \section{Study design}
-The participants were randomly split into two groups, G1 and G2, having 4 and 5 participants respectively. For the first period P1, the group G1 was assigned the TDD task, while the group G2 was assigned the no-TDD task; on the other hand, during period P2, the group G1 was assigned the no-TDD task, while the group G2 was assigned the TDD task.
+The participants were randomly split into two groups, G1 and G2, having 4 and 5 participants respectively. For the first period P1, the group G1 was assigned the TDD task, while the group G2 was assigned the NO-TDD task; on the other hand, during period P2, the group G1 was assigned the NO-TDD task, while the group G2 was assigned the TDD task.
 Therefore, the design of our study can be classified as a repeated-measures, within-subjects design. In each period, the participants in G1 and G2 dealt with different experimental objects. For instance, in P1, the participants in G1 dealt with BSK, while those in G2 with MRA. At the end of the study, every participant had tackled each experimental object only once.
 
 \section{Procedure}
@@ -280,23 +275,6 @@ Some observations that can be made include:
 \end{tabular}
 \\ \  \\
 
-\begin{figure}
-    \centering
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \includegraphics[width=.4\linewidth]{figures/box plots/task1/p1_condition_qlty_bp.png}
-        \caption{A subfigure}
-        \label{fig:sub1}
-    \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \includegraphics[width=.4\linewidth]{figures/box plots/task1/p1_condition_qlty_bp.png}
-        \caption{A subfigure}
-        \label{fig:sub2}
-    \end{subfigure}
-    \caption{A figure with two subfigures}
-    \label{fig:test}
-\end{figure}
 
 
 \section{Discussion}

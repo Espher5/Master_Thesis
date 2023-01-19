@@ -11,15 +11,8 @@ There are many different types of embedded systems, including microcontrollers, 
 General purpose hardware, Arduino, Raspberry, etc...
 
 
-\subsection {Challenges}
-An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited quantity resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
 
-Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
-
-In addition to the technical challenges, there are also many non-technical factors that must be considered when developing embedded systems. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
-
-
-\subsection{Enabling technologies}
+\section{Enabling technologies}
 One of the key enabling technologies for ES is their microcontroller, which is a small, single-chip computer that is used to manage the functions of the larger system. Microcontrollers are often used in embedded systems because they are cheap, low-power. While some applications require their own custom-made microcontroller and hardware, there are a variety of  general purpose boards that are far easier to program and can also be customized for a variety of applications, which makes them highly versatile.
 
 One type of general-purpose microcontroller that is commonly used for ES development, as well as many other IoT applications, is the Arduino; it is an open-source platform that is based on the Atmel AVR microcontroller. It is widely used in hobbyist and educational projects because of its simplicity and low cost. Another popular general-purpose microcontroller platform is the Raspberry Pi, which is a small single-board computer that is based on the ARM architecture, which is also what many mobile processors are based on.
@@ -46,7 +39,7 @@ Overall, each of these protocols has its own strengths and is well-suited for di
 
 
 
-\subsection{Design}
+\section{Design}
 From a design and development point of view, working with ES can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all the requirements.
 
 Failures in ES should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; ES can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
@@ -63,6 +56,16 @@ These dependability attributes cannot be considered individually, as there are s
 
 
 In conclusion, ES are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of ES has grown significantly, and they are now found in a wide variety of applications.
+
+
+
+\section {Challenges}
+An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited quantity resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
+
+Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
+
+In addition to the technical challenges, there are also many non-technical factors that must be considered when developing embedded systems. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
+
 
 
 \section{Testing Embedded Systems}
