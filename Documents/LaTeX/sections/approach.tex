@@ -124,7 +124,42 @@ In the weeks prior to P1, \tdd was introduced to the participants via some front
 The schedule for the training was as follows:
 \dots
 
-After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd.  
+After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. 
+The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd. 
+
+More specifically, the interval scale questions were:
+\begin{itemize}
+    \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
+    \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
+    \item \textbf{Q3.} Applying (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
+\end{itemize}
+
+\noindent As for the open-ended questions:
+\begin{itemize}
+    \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
+    \item Provide your feelings (both positive and negative) about (\ie \tdd or \notdd).
+    \item Provide your feelings (both positive and negative) about the development task.
+    \item (\textbf{Task 2 only}) After applying (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two approaches and your preference for using one over the other?
+\end{itemize}
+
+\noindent No formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies:
+\begin{enumerate}
+    \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
+    \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
+        \begin{itemize}
+            \item \tdd: did you perform any refactoring? 
+            \item \notdd: did you test the code at all? If so, which approach did you use?
+        \end{itemize}
+    \item Provide your feelings about the overall training experience (seminars, exercises, and homework on \tdd and \notdd, experiments, and final task):
+        \begin{itemize}
+            \item Positive and negative points and challenges encountered when applying TDD
+            \item What can be done to improve the application of TDD in the development of \ess
+            \item Please provide a discussion on \tdd vs. \notdd in the development of \ess
+        \end{itemize}
+\end{enumerate}
+ 
+
+
 
 
 \section{Analysis Methods}
@@ -313,9 +348,14 @@ Some observations that can be made include:
 
 
 \subsection{Post-questionnaire Analysis}
+Fig \dots summarizes the answers provided by the participants in the post-experiment questionnaires, comparing the responses by the employed condition (\tdd or \notdd).
 
 
+Regarding user story comprehensibility, in the first experimental task, \textit{IntelligentOffice}, the majority of participants have a similar agreement on the matter, with percentages of agreement of 88\% (\tdd) and 80\% (\notdd). As for the second task, \textit{CleaningRobot}, there is a more substantial difference, with only 40\% of the \tdd group having a positive perception of the user stories' comprehensibility, compared to the 87\% of the \notdd group.
 
+A similar trend can be noted for the second question, regarding the general task feasibility; here, in the first experimental task, the participants somewhat agree, with 50\% of the \tdd group and 40\% of the \notdd group feeling neutral about the difficulty of the task. In the second task, the answers are quite mixed, with 40\% of the participants in the \tdd finding the task at hand very difficult to understand, and the other 60\% equally split between finding the task hard, feeling neutral about it or considering it very easy.  On the other hand, all of the participants in the \notdd group agreed on feeling neutral about their ease in developing it.
+
+Finally, question three was focused on the difficulty of the participants in applying their reference condition (\ie \tdd or \notdd): for task 1, the \tdd group did not have a strong opinion on applying this technique, with 76\% feeling neutral about it, and the other 24\% finding the application of \tdd easy but not too easy; The \notdd group had also the majority of opinions feeling neutral about their approach (60\%), however this time 20\% of the participants felt very good about applying \notdd; this is probably due to their seniority with the approach.
 
 
 \section{Discussion}
@@ -326,3 +366,13 @@ Some observations that can be made include:
 
 
 \subsection{Threats to Validity}
+As a reference to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
+Completely avoiding/mitigating threats is often unfeasible, given the dependency between some threats: avoiding/mitigating a kind of threat (\ie  internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}.
+
+Generally, the kinds of threats to validity that can occur in a study can be classified in the following categories:
+\begin{itemize}
+    \item \textbf{Threats to internal validity}
+    \item \textbf{Threats to external validity}
+    \item \textbf{Threats to construct validity}
+    \item \textbf{Threats to conclusion validity}
+\end{itemize}
