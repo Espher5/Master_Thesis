@@ -32,9 +32,9 @@ According to this objective, three research questions were defined:
 
 
 \section{Experimental Units}
-The participants for these studies were students at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of master's degree students and third-year bachelor's degree students. Both groups were enrolled in the Embedded Systems course at the University of Salerno.
+The participants for these studies were students at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of master's degree students and third-year bachelor's degree students. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno. As for the master's students, not all of them had a computer science background (bachelor's degree).
 
-The course covered the following topics: \dots but no TDD, which was in turn covered by the lectures and training sessions preceding the studies.
+The \textit{Embedded Systems} course covered the following topics: \dots but no TDD, which was in turn covered by the lectures and training sessions preceding the studies.
 
 Participating in the studies was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only; furthermore, participation would not directly affect their final mark for the Embedded System course; however, in order to encourage student participation, those who took part in the studies were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated.
 
@@ -55,6 +55,14 @@ As for the replication experiment, the implemented task is:
 \end{itemize}
 
 Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
+
+
+\subsection{IntelligentOffice}
+
+\subsection{CleaningRobot}
+
+\subsection{SmartHome}
+
 
 
 
@@ -164,7 +172,7 @@ More specifically, the interval scale questions were:
 
 \section{Analysis Methods}
 \begin{enumerate}
-    \item \textbf{Descriptive statistics}
+    \item \textbf{Individual analysis}
     \item \textbf{Aggregate analysis}
 \end{enumerate}
 
@@ -366,13 +374,59 @@ Finally, question three was focused on the difficulty of the participants in app
 
 
 \subsection{Threats to Validity}
-As a reference to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
+In order to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
+
+
+
+
 Completely avoiding/mitigating threats is often unfeasible, given the dependency between some threats: avoiding/mitigating a kind of threat (\ie  internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}.
 
 Generally, the kinds of threats to validity that can occur in a study can be classified in the following categories:
-\begin{itemize}
-    \item \textbf{Threats to internal validity}
-    \item \textbf{Threats to external validity}
+\begin{enumerate}
+    \item \textbf{Threats to internal validity}. Internal validity the extent to which we can be confident that a cause-and-effect relationship established in a study cannot be explained by other factors; it makes the conclusions of a causal relationship credible and trustworthy. Without high internal validity, an experiment cannot demonstrate a causal link between two variables.
+    There are three necessary conditions for internal validity and all three must occur to experimentally establish causality between an independent variable A (treatment variable) and dependent variable B (response variable):
+    \begin{itemize}
+        \item The treatment and response variables change together.
+        \item The treatment precedes changes in the response variables
+        \item No confounding or extraneous factors can explain the results of the study.
+    \end{itemize}
+    Threats to internal validity include: 
+    \begin{itemize}
+        \item \textbf{Selection bias}: groups are not comparable at the beginning of the study. For example, low-scorers were placed in Group A, while high-scorers were placed in Group B; Because there are already systematic differences between the groups at the baseline, any improvements in group scores may be due to reasons other than the treatment.
+        \item \textbf{Regression to the mean}: there is a statistical tendency for people who score extremely low or high on a test to score closer to the middle the next time. Because participants are placed into groups based on their initial scores, it's hard to say whether the outcomes would be due to the treatment or statistical norms.
+        \item \textbf{Social interaction and social desirability}: participants from different groups may compare notes and either figure out the aim of the study or feel resentful of others or pressured to act/react a certain way. For example, Groups B and C may resent Group A for some reason and, as such, they could be demoralized and perform poorly.
+        \item \textbf{Attrition bias}: dropout from participants. For example, if 20\% of participants provided unusable data, and almost all of them were from Group C, it will be hard to compare the two treatment groups to a control group.
+    \end{itemize}
+    
+    \item \textbf{Threats to external validity}: the extent to which we can generalize the findings of a study to other measures, settings or groups. In other words, can we apply the findings of your study to a broader context?
+    Threats to external validity include: 
+    \begin{itemize}
+        \item \textbf{Sampling bias}: the sampling considered for the study is not representative of the average population. If the sample includes only people that participated in the study voluntarily, they could have characteristics that may make them very different from other populations, like people randomly chosen.
+        \item \textbf{History}: an unrelated event influences the outcomes.
+        \item \textbf{Observer bias}: the characteristics or behaviors of the experimenter(s) unintentionally influence the outcomes, leading to bias and other demand characteristics. For example, a trainer of the experimental sessions unintentionally reveals that the outcome of the study will influence their final mark. As a result, participants will work extra hard from that point on to ensure their result are the best possible.
+        \item \textbf{Hawthorne effect}: the tendency for participants to change their behaviors simply because they know they are being studied. As an example, let's consider a set of participants that actively alters their behavior for the period of the study because they are conscious of their participation in the research.
+        \item \textbf{Testing effect}: the administration of a pre- or post-test, or the repetition of similar tasks affects the outcomes.
+        \item \textbf{Aptitude-treatment}: interactions between characteristics of the group and individual variables together influence the dependent variable.
+        \item \textbf{Situation effect}: factors like the setting, time of day, location, researchers' characteristics, etc. limit generalizability of the findings
+    \end{itemize}
     \item \textbf{Threats to construct validity}
     \item \textbf{Threats to conclusion validity}
-\end{itemize}
+\end{enumerate}
+
+As mentioned above, there are inherent trade-offs between validities: with internal and external validities for example, the more we control extraneous factors in your study, the less we can generalize our findings to a broader context.
+
+
+As for our controlled and replication studies, let's consider the different threats individually:
+
+\noindent\textbf{Threats to internal validity}.
+The main threat is perhaps related to the monitoring of the participants during the replication study; since they accomplished the implementation of the task at home, before deploying it on hardware under our supervision, we cannot be sure of the means by the participants to accomplish the task; we can however assume that, given the fact that the final score of the \textit{Embedded Systems} course was not influenced in any way by the outcome of the task, the participants would have no reason to \dots
+Besides this, a \textit{selection} threat might have affected the overall results of the experiments, given that volunteers are generally more motivated and engaged compared to the average population \cite{DBLP:books/sp/WohlinRHOR00}. Finally, another potential threat is \textit{resentful demoralization}, which arises in participants when they receive a less desirable treatment; this causes them to not behave as they normally would. This last threat holds in all three experimental tasks, since it is related to the nature of the adopted experimental design.
+
+\noindent\textbf{Threats to external validity}.
+The main external validity threat could be the one of \textit{interaction of selection and treatment}: since both Bachelor's and Master's student were involved in the study, some of the latter with no prior testing experience or even without a strong Computer Science background, the results could potentially not be applicable to professional developers. 
+
+\noindent\textbf{Threats to construct validity}.
+Although we did not disclose the purpose of our study to the participants during the experimental tasks, they might have tried to guess it, and adapted their behavior accordingly, arising a threat of \textit{hypotheses guessing}. Besides this, the threat of \textbf{evaluation apprehension} should have been fairly mitigated, since the participants knew that they would be awarded the bonus score for the course regardless of their performance in the study.
+
+\noindent\textbf{Threats to conclusion validity}
+In order to mitigate any potential threat of \textit{random heterogeneity of participants}, before staring the experimental tasks, we trained the participants with a series of frontal lectures and exercise, in order to uniform their knowledge on the techniques and technologies that they would have later used and make the two groups as homogeneous as possible. A threat of \textit{reliability of treatment implementation} might have occurred in tasks 1 and 2. For example, some participants might have followed \tdd more strictly than others; however, this should equally affect both experimental groups.
