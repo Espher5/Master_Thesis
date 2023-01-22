@@ -127,9 +127,17 @@ Before our study took place, we collected some demographic information on the pa
 The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022. The first task, P1, took place on Tuesday, December 6th 2022, while the second, P2, took place on Tuesday, December 13th 2022.
 
 Between the start of the course and P1, most participants had never dealt with \tdd, while they were somewhat familiar with unit testing and iterative test-last development. 
-In the weeks prior to P1, \tdd was introduced to the participants via some frontal lectures and training/homework sessions.
+In the weeks prior to the beginning of the experiment, all the participants attended a series of frontal lectures and training/homework sessions during which they were trained on the main topics they would encounter during the future experimental tasks.
 
-The schedule for the training was as follows:
+The schedule for the experiments went as follows:
+\begin{itemize}
+    \item Day 1 - Frontal lecture - Introduction on unit testing and its guidelines. Followed by a
+    \item Day 2 - Frontal lecture - Test scaffolding and Raspberry Pi GPIO library- 
+    \item Day 3 - Frontal lecture - Test-Driven Development -
+    \item Day 4 - Training task - \tdd exercise - 
+    \item Day 6 - First experimental task - \textit{IntelligentOffice}
+    \item Day 7 - Second experimental task - \textit{CleaningRobot}
+\end{itemize}
 \dots
 
 After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. 
@@ -522,31 +530,16 @@ Some observations that can be made include:
 
 
 \subsection{Meta-analysis}
-\begin{table}[H]
-    \begin{minipage}[b]{0.56\linewidth}
-        \centering
-        \begin{tabular}{ | l | r | r | r |}
-            \hline
-            Student & Hours/week & Grade \\ \hline \hline
-            Ada Lovelace & 2 & A \\ \hline
-            Linus Thorvalds & 8 & A \\ \hline
-            Bruce Willis & 12 & F \\ \hline
-            Richard Stallman & 10 & B \\ \hline
-            Grace Hopper & 12 & A \\ \hline
-            Alan Turing & 8 & C \\ \hline
-            Bill Gates & 6 & D \\ \hline
-            Steve Jobs & 4 & E \\ \hline
-        \end{tabular}
-        \caption{Student Database}
-        \label{table:student}
-    \end{minipage}\hfill
-    \begin{minipage}[b]{0.4\linewidth}
-        \centering
-        \includegraphics[width=40mm]{figures/agile_model.jpg}
-        \captionof{figure}{2-D scatterplot of the Student Database}
-        \label{fig:image}
-    \end{minipage}
-\end{table}
+The following figures display the results of the aggregate analysis on the variables of the baseline and replication studies through means of forest plot charts. The Standard Mean Difference (SMD) was chosen as the effect measure, as suggested 
+
+
+Forest plots are \dots
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+    \caption{Forest plot chart for the QLTY dependent variable}
+    \label{forest_plot}
+\end{figure}
 
 
 
@@ -579,17 +572,17 @@ Finally, question three was focused on the difficulty of the participants in app
 
 
 \section{Discussion}
+In this section we will discuss the obtained results and the implications of this study, as well as provide an answer to the RQs and analyze potential threats to its validity.
+
 \subsection{Answers to Research Questions}
 
 
 \subsection{Implications}
 
 
+
 \subsection{Threats to Validity}
 In order to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
-
-
-
 
 Completely avoiding/mitigating threats is often unfeasible, given the dependency between some threats: avoiding/mitigating a kind of threat (\ie  internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}.
 
@@ -642,3 +635,4 @@ Although we did not disclose the purpose of our study to the participants during
 
 \noindent\textbf{Threats to conclusion validity}
 In order to mitigate any potential threat of \textit{random heterogeneity of participants}, before staring the experimental tasks, we trained the participants with a series of frontal lectures and exercise, in order to uniform their knowledge on the techniques and technologies that they would have later used and make the two groups as homogeneous as possible. A threat of \textit{reliability of treatment implementation} might have occurred in tasks 1 and 2. For example, some participants might have followed \tdd more strictly than others; however, this should equally affect both experimental groups.
+
