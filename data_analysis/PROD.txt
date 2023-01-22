@@ -1,0 +1,12 @@
+Study ID   Experiment Group               Control Group                  
+           m1         sd1        n1         m2         sd2        n2         
+Baseline   58.33      35.76      9.0        69.11       13.22      9.0        
+Replication 93.33      9.13       5.0        83.33       11.78      4.0        
+Fixed IV MDStudy ID   n       ES[95% CI]         Weight(%)
+Baseline   18      -10.78[-35.69 14.13]    24.13
+Replication 9       10.00[-4.05 24.05]    75.87
+MD         27      4.99[-7.25 17.22]      100
+2 studies included (N=27)
+Heterogeneity: Q(Chisquare)=2.03(p=0.164); I²=50.7%
+Overall effect test: z=0.80, p=0.426
+(-3.749796416023667, nan, array(nan), nan, array([nan, nan]))
