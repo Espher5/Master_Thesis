@@ -28,9 +28,9 @@ The main goal for the baseline experiment is therefore defined as follows:
 According to this objective, three research questions were defined:
 \begin{itemize}
     \item \textbf{RQ1.} Does the use of \tdd affect the quality of the solution to a programming task? 
-    \textit{Aim}: We defined this \rq to understand if (and possibly to what extent) the use of \tdd with respect to \yw makes a difference with respect to quality of the written source code. An answer to RQ1 would have practical implications within the Agile community. For example, in case the use of \tdd positively affects source code quality, lecturers can teach \tdd in \es courses so spreading Agile in the academic context and then facilitating the adoption of this approach in the industrial context. In other words, if the newcomers of the working market are familiar with \tdd, and it is shown that it produces better quality source code for \ess, the software industry could be encouraged to migrate their development from \yw to \tdd.
+    \textit{Aim}: We defined this \rq to understand if (and possibly to what extent) the use of \tdd with respect to \yw makes a difference with respect to quality of the written source code. An answer to RQ1 would have practical implications within the Agile community. For example, in case the use of \tdd positively affects source code quality, lecturers can teach \tdd in \es courses so spreading Agile in the academic context and then facilitating the adoption of this approach in the industrial context. In other words, if the newcomers of the working market are familiar with \tdd, and it is shown that it produces better quality source code for \ess, the software industry could be encouraged to migrate their development from \notdd to \tdd.
     \item \textbf{RQ2.} Does the use of \tdd affect the complexity of the solution to a programming task?
-    \textit{Aim}: With this RQ, we intend to understand if (and possibly to what extent) the complexity of the source code—how difficult to understand it is from the developer's perspective—of an \es is affected by the development approach (\tdd vs. \yw). The answer to this question helps us to better understand \tdd applied to the development of \ess from a different perspective. For example, the researcher could be interested to study the extent with which the quality of the source code of an \es affects software maintenance and evolution. A positive answer to RQ2 could justify this research direction.
+    \textit{Aim}: With this RQ, we intend to understand if (and possibly to what extent) the complexity of the source code—how difficult to understand it is from the developer's perspective—of an \es is affected by the development approach (\tdd vs. \notdd). The answer to this question helps us to better understand \tdd applied to the development of \ess from a different perspective. For example, the researcher could be interested to study the extent with which the quality of the source code of an \es affects software maintenance and evolution. A positive answer to RQ2 could justify this research direction.
     \item \textbf{RQ3.} Does the use of \tdd increase developers' productivity?
     Aim: We defined this RQ to understand if (and possibly to what extent) there is an effect of \tdd on the developers’ productivity. The answer to RQ3 helps us to better understand \tdd in the development of \ess companies operating in the context of the development of \ess could be encouraged to use TDD in case: (\textit{i}) there is an evidence that this approach improves productivity and (\textit{ii}) developers are familiar with this approach before being hired (e.g., \tdd has been learned at university).
 \end{itemize}
@@ -38,41 +38,38 @@ According to this objective, three research questions were defined:
 
 
 \section{Experimental Units}
-The participants for these studies were students at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of master's degree students and third-year bachelor's degree students. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno. As for the master's students, not all of them had a computer science background (bachelor's degree).
+The participants for the two experimental studies were students at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno. As for the Master's students, not all of them had a computer science background (Bachelor's degree).
 
-The \textit{Embedded Systems} course covered the following topics: \dots but no TDD, which was in turn covered by the lectures and training sessions preceding the studies.
+The \textit{Embedded Systems} course covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \es testing.
+No \tdd concepts were taught directly in the course; the topic was in turn covered  by the lectures and training sessions preceding the studies.
 
-Participating in the studies was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only; furthermore, participation would not directly affect their final mark for the Embedded System course; however, in order to encourage student participation, those who took part in the studies were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated.
+Participating in the studies was voluntary; the students were informed that any gathered data would be treated anonymously and shared for research purposes only; furthermore, participation would not directly affect their final mark for the \textit{Embedded Systems} course; however, in order to encourage student participation, those who took part in the studies were rewarded with a bonus in their final mark. Among the students taking the course, 9 participated.
 
-The participants for the tasks were asked to carry out their assignment by either using TDD or NO-TDD (i.e., any approach they preferred, except for TDD) depending on the group they were partitioned in. and on the period the task took place.
+The participants for the tasks were later asked to carry out their task by either using \tdd or \notdd (i.e., any approach they preferred, except for \tdd) depending on the group they were partitioned in. and on the period the task took place.
 
 
 
-\section{Experimental Objects}
-The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language. As for the baseline studies, the two experimental objects implemented by the participants are the following:
-\begin{itemize}
-    \item \textbf{IntelligentOffice}: the goal is to develop a system which allows the user to manage the light, window blinds, and air quality level inside an office.
-    \item \textbf{CleaningRobot}: the goal is to develop a system to control a cleaning robot which moves in a room and cleans the dust on the floor along the way. 
-\end{itemize}
+\section{Experimental tasks design}
+The experimental objects for the studies were three code katas, programming exercises aimed at practicing a technique or a programming language. All three were designed according to the target platform in mind, a Raspberry Pi model 4, even in the two tasks of the baseline study have not been effectively deployed on the real hardware; this was done in order to make the mocked implementation of the participants resemble as close as possible the embedded implementation. The main mocked component utilized was a facade for the Raspberry Pi's General Purpose Input/Output library, available as open source software \cite{GPIOMock}.
+For the replication study, another factor that influenced the design of the kata was the availability of the hardware, including sensors and actuators, as well as how hard these would have been to test in real time.
 
-As for the replication experiment, the implemented task is:
-\begin{itemize}
-    \item \textbf{SmartHome}: the goal is to develop an intelligent system to manage various aspects of room inside a house.
-\end{itemize}
+
+\subsection{IntelligentOffice}
+The first task for the baseline study; the goal is to develop a system which allows the user to manage the light, window blinds, and air quality level inside an office.
+
+\subsection{CleaningRobot}
+The second task for the baseline study; the goal is to develop a system to control a cleaning robot which moves in a room and cleans the dust on the floor along the way.
+
+\subsection{SmartHome}
+This last task was 
+The goal of this task is to develop an intelligent system to manage various aspects of room inside a house.
+
+
 
 Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
 
 
-\subsection{IntelligentOffice}
-
-\subsection{CleaningRobot}
-
-\subsection{SmartHome}
-
-
-
-
-\section{Variables}
+\section{Variables and hypotheses}
 The participants were asked to carry out each task by using either \tdd or the approach they preferred (i.e., NO-TDD), therefore one of the independent variables considered is \textbf{Condition}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{Period}, assuming the values $P1, P2, and P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independemt variable is \textbf{Group}, which can assume the values G1 and G2.
 
 
