@@ -20,20 +20,38 @@ def create_test_suite(task) -> unittest.TestSuite:
 
     if task == 'task1':
         if 'T1_US01' in sys.modules:
-            test_modules = ['T1_US01', 'T1_US02', 'T1_US03', 'T1_US04', 'T1_US05']
-        import T1_US01 as US01, T1_US02 as US02, T1_US03 as US03, T1_US04 as US04, T1_US05 as US05
+            del sys.modules['T1_US01']
+            del sys.modules['T1_US02']
+            del sys.modules['T1_US03']
+            del sys.modules['T1_US04']
+            del sys.modules['T1_US05']
+
+        import T1_US01 as US01, T1_US02 as US02, \
+            T1_US03 as US03, T1_US04 as US04, T1_US05 as US05
         if 'IntelligentOffice' in sys.modules:
             del sys.modules['IntelligentOffice']
     elif task == 'task2':
         if 'T2_US01' in sys.modules:
-            test_modules = ['T2_US01', 'T2_US02', 'T2_US03', 'T2_US04', 'T2_US05']
-        import T2_US01 as US01, T2_US02 as US02, T2_US03 as US03, T2_US04 as US04, T2_US05 as US05
+            del sys.modules['T2_US01']
+            del sys.modules['T2_US02']
+            del sys.modules['T2_US03']
+            del sys.modules['T2_US04']
+            del sys.modules['T2_US05']
+
+        import T2_US01 as US01, T2_US02 as US02, \
+            T2_US03 as US03, T2_US04 as US04, T2_US05 as US05
         if 'CleaningRobot' in sys.modules:
             del sys.modules['CleaningRobot']
     else:
         if 'T3_US01' in sys.modules:
-            test_modules = ['T3_US01', 'T3_US02', 'T3_US03', 'T3_US04', 'T3_US05']
-        import T3_US01 as US01, T3_US02 as US02, T3_US03 as US03, T3_US04 as US04, T3_US05 as US05
+            del sys.modules['T3_US01']
+            del sys.modules['T3_US02']
+            del sys.modules['T3_US03']
+            del sys.modules['T3_US04']
+            del sys.modules['T3_US05']
+
+        import T3_US01 as US01, T3_US02 as US02, \
+            T3_US03 as US03, T3_US04 as US04, T3_US05 as US05
         if 'SmartHome' in sys.modules:
             del sys.modules['SmartHome']
 
@@ -217,4 +235,6 @@ def extract_results() -> None:
 
 
 if __name__ == '__main__':
+    run_tests()
     extract_results()
+    parse_code_smells()

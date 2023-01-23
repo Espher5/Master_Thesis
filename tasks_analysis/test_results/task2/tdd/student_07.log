@@ -23,6 +23,6 @@ test_move_forward_facing_W_with_obstacle (T2_US04.US04) ... ok
 test_low_battery_no_movement (T2_US05.US05) ... ok
 
 ----------------------------------------------------------------------
-Ran 23 tests in 23.233s
+Ran 23 tests in 23.220s
 
 OK

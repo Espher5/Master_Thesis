@@ -68,7 +68,7 @@ class CleaningRobot:
         self.facing = "N"
 
     def robot_status(self) -> str:
-        if self.obstacle_found():
+        if self.obstacle:
             obj_pos_x = self.pos_x
             obj_pos_y = self.pos_y
             match self.facing:

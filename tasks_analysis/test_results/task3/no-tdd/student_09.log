@@ -54,6 +54,6 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'int' and 'DHT11'
 
 ----------------------------------------------------------------------
-Ran 12 tests in 36.206s
+Ran 12 tests in 36.227s
 
 FAILED (errors=3)

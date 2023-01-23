@@ -1,8 +1,8 @@
 test_robot_initialization (T2_US01.US01) ... FAIL
 test_cleaning_system_off (T2_US02.US02) ... ok
-test_cleaning_system_on (T2_US02.US02) ... ok
+test_cleaning_system_on (T2_US02.US02) ... FAIL
 test_recharge_led_off (T2_US02.US02) ... ok
-test_recharge_led_on (T2_US02.US02) ... ok
+test_recharge_led_on (T2_US02.US02) ... FAIL
 test_left_rotation_from_00E (T2_US03.US03) ... FAIL
 test_left_rotation_from_00N (T2_US03.US03) ... FAIL
 test_left_rotation_from_00S (T2_US03.US03) ... FAIL
@@ -28,10 +28,27 @@ FAIL: test_robot_initialization (T2_US01.US01)
 Traceback (most recent call last):
   File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US01.py", line 9, in test_robot_initialization
     self.assertEqual('(0,0,N)', robot.robot_status())
-AssertionError: '(0,0,N)' != '00N'
-- (0,0,N)
-+ 00N
+AssertionError: '(0,0,N)' != None
 
+======================================================================
+FAIL: test_cleaning_system_on (T2_US02.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US02.py", line 30, in test_cleaning_system_on
+    self.assertTrue(self.robot.cleaning_system_on)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_recharge_led_on (T2_US02.US02)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Michelangelo\AppData\Local\Programs\Python\Python310\lib\unittest\mock.py", line 1369, in patched
+    return func(*newargs, **newkeywargs)
+  File "C:\Users\Michelangelo\CS\Python\tasks_analysis\test\T2_US02.py", line 16, in test_recharge_led_on
+    self.assertTrue(self.robot.battery_led_on)
+AssertionError: False is not true
 
 ======================================================================
 FAIL: test_left_rotation_from_00E (T2_US03.US03)
@@ -214,6 +231,6 @@ Traceback (most recent call last):
 AssertionError: '(0,0,N)' != None
 
 ----------------------------------------------------------------------
-Ran 23 tests in 23.218s
+Ran 23 tests in 23.236s
 
-FAILED (failures=19)
+FAILED (failures=21)

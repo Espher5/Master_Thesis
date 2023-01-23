@@ -98,6 +98,7 @@ class CleaningRobot:
         Checks whether the infrared distance sensor has detected an obstacle in front of it.
         :return: True if the infrared sensor detects something, False otherwise.
         """
+        pass
 
     def manage_battery(self) -> None:
         """
