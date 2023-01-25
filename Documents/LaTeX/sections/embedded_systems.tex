@@ -10,7 +10,7 @@ As the demand for more advanced and sophisticated devices continues to increase,
 
 This requires the use of embedded software, which is specifically designed to run on the limited hardware of the system.
 
-There are many different types of \ess, including microcontrollers, digital signal processors (DSPs), and field-programmable gate arrays (FPGAs). Each of these types of systems has its own unique characteristics and is suited to different types of applications.
+There are many types of \ess, including microcontrollers, digital signal processors (DSPs), and field-programmable gate arrays (FPGAs). Each of these types of systems has its own unique characteristics and is suited to different types of applications.
 
 
 \section{Enabling technologies}
@@ -32,8 +32,7 @@ Software-wise, more complex \ess can be equipped with their own \textbf{Embedded
 Furthermore, the real-time requirements of some \ess calls for their own \textbf{Real-Time Operating System} (RTOS); these are specialized OSs that are designed to provide a predictable response time to events, even when there are many tasks running concurrently. RTOS are essential for \es that require fast and reliable performance, such as in aircraft control systems or medical devices. A notable and open-source example is FreeRTOS. 
 
 
-At the lower level 
-The three main protocols used for low level communications are UART, I2C, and SPI:
+At the lower level, communication between different components is crucial for the proper functioning of the system; there are various communication protocols that allow transmission and exchange of data, with the most notable ones being UART, I2C, and SPI:
 \begin{itemize}
     \item \textbf{Universal Asynchronous Receiver/Transmitter (UART)}: one of the simplest protocols used for serial communication between devices; it is full-duplex, which means that data can be transmitted and received at the same time. UART is widely supported by many microcontrollers and microprocessor devices, however, it is typically slower than other communication protocols and can be less reliable over longer distances.
     \item \textbf{Inter-Integrated Circuit (I2C)}: a two-wire communication protocol that is used for communication between devices on the same circuit board; it is a half-duplex protocol, so data can only be transmitted or received at a time. I2C is commonly used to connect devices such as sensors, displays, and memory to a microcontroller. It is relatively fast and can support multiple devices on the same bus; however, it still has a limited data rate.
@@ -41,9 +40,7 @@ The three main protocols used for low level communications are UART, I2C, and SP
 \end{itemize} 
 
 
-
-Often, multiple devices are deployed as part of the same larger system and must be able to efficiently communicate between one another to achieve their purpose; therefore, it is essential for \ess to be equipped with a robust suite of protocols, libraries and frameworks.
-As always, determining which protocol to employ depends on the constraints the system is dealing with, such as being limited to a low power consumption or being required to maintain a low-latency communication.
+Besides communication between different components sharing the same circuit, multiple devices are often deployed as part of a larger system and must be able to efficiently communicate between each other to achieve their purpose; therefore, it is essential for \ess to be equipped with a robust suite of wireless communication protocols. As always, determining which protocol to employ depends on the constraints the system is dealing with, such as being limited to a low power consumption or being required to maintain a low-latency communication.
 
 Zigbee is a wireless communication protocol specifically designed and built for low-power, low-data-rate applications \cite{Zigbee}; it is often used in sensors and other devices that need to communicate over short distances, such as in home automation systems or industrial control systems. One of its key advantages is its very low power consumption, which makes it so ZigBee is one of the most well-suited protocols for use in devices that need to operate for long periods of time without access to a power source (i.e., a quite substantial subset of \ess).
 
