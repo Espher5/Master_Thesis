@@ -17,6 +17,7 @@
 \usepackage{microtype}
 \usepackage{moreverb}
 \usepackage{multirow}
+\usepackage{nomencl}
 \usepackage{pdfpages}
 \usepackage{subcaption}
 \usepackage{todonotes}
@@ -65,7 +66,7 @@
   morecomment=[s]{/}{/},
   identifierstyle=\color{black},
   keywordstyle=\color{javapurple},
-  morekeywords={func,var,while, if, then, else,for, in, println, fly ,on,thenall,as,then,require,native}% list your attributes here
+  morekeywords={func,var,while, if, then, else, for, in, println, fly, on, the all, as, then, require, native}% list your attributes here
 }
 
 \lstset {
@@ -85,6 +86,7 @@
 }
 
 \input{sections/macro.tex}
+\input{sections/list_of_abbreviations.tex}
 
 \begin{document}
     \begin{titlepage}
@@ -122,9 +124,7 @@
     \pagestyle{plain}
 
     \input{sections/list_of_figures.tex}
-
-    \chapter*{List of Acronyms and Abbreviations}
-    \input{sections/acronyms.tex}
+    \input{sections/list_of_tables.tex}
 
     \chapter{Introduction}
     \setcounter{page}{1} 	% must only follow the first chapter
@@ -134,7 +134,7 @@
     \chapter{Test Driven Development}
     \input{sections/testing.tex}
 
-    \chapter{Testing Embedded Systems}
+    \chapter{Embedded Systems}
     \input{sections/embedded_systems.tex}
 
     \chapter{Literature Review}

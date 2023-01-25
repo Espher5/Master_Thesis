@@ -42,49 +42,40 @@ At the lower level, communication between different components is crucial for th
 
 Besides communication between different components sharing the same circuit, multiple devices are often deployed as part of a larger system and must be able to efficiently communicate between each other to achieve their purpose; therefore, it is essential for \ess to be equipped with a robust suite of wireless communication protocols. As always, determining which protocol to employ depends on the constraints the system is dealing with, such as being limited to a low power consumption or being required to maintain a low-latency communication.
 
-Zigbee is a wireless communication protocol specifically designed and built for low-power, low-data-rate applications \cite{Zigbee}; it is often used in sensors and other devices that need to communicate over short distances, such as in home automation systems or industrial control systems. One of its key advantages is its very low power consumption, which makes it so ZigBee is one of the most well-suited protocols for use in devices that need to operate for long periods of time without access to a power source (i.e., a quite substantial subset of \ess).
+Zigbee is a wireless communication protocol specifically designed and built for low-power, low-data-rate applications \cite{Zigbee}; it is often used in sensors and other devices that need to communicate over short distances, such as in home automation systems or industrial control systems. Its very low power consumption makes it so ZigBee is one of the most well-suited protocols for use in devices that need to operate for long periods of time without access to a power source (\ie a quite substantial subset of \ess).
+Bluetooth is another wireless protocol that is commonly used in \es which was designed for medium-range communication and is most commonly used to connect devices such as phones, tablets, and laptops to other devices, such as speakers, keyboards, or headphones. Bluetooth is a widely supported standard and is often used in applications where compatibility with a range of different devices is important; furthermore, with its low-energy variant, Bluetooth can help further optimize power consumption in devices that require it.
+LoraWAN and SigFox on the other hand, are two Low-Power, Wide-Area (LPWA) communication protocol designed for IoT and machine-to-machine (M2M) applications; a typical use case is the transmission of small amounts of data over long distances, making them well-suited for use in remote monitoring systems or other applications where conventional communication methods are not practical.
+For network communications, IP, and it's low energy version 6LoWPAN, are widely used protocols; they are exercised for transmitting data between devices at the network level and are a key component of the Internet.
+Finally, at the application level, lightweight messaging protocols such as the Message Queue Telemetry Protocol (MQTT) are a common choice.
 
-Bluetooth is another wireless protocol that is commonly used in embedded systems which was designed for medium-range communication and is most commonly used to connect devices such as phones, tablets, and laptops to other devices, such as speakers, keyboards, or headphones. Bluetooth is a widely supported standard and is often used in applications where compatibility with a range of different devices is important; furthermore, with its low-energy variant, Bluetooth can help further optimize power consumption in devices that require it.
+\section{Design and challenges}
+From a design and development standpoint, working with \ess can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all of its requirements, functional and especially non-functional.
 
-SigFox on the other hand, is a low-power, wide-area (LPWA) communication protocol that is designed for Internet of Things (IoT) applications; it is used to transmit small amounts of data over long distances, making it well-suited for use in remote monitoring systems or other applications where conventional communication methods are not practical.
+Failures in \ess should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, satellite managements systems, devices inside the human body, and so on), where maintenance operations cannot be performed regularly, and high availability is expected. 
 
-For network communications, IP, and it's low energy version 6LoWPAN, are widely used protocols. It is used to transmit data between devices and is a key component of the internet. IP is often used in embedded systems that need to communicate with other devices or with the internet, such as in smart home systems or industrial control systems.
-
-Overall, each of these protocols has its own strengths and is well-suited for different types of applications. Zigbee is ideal for low-power, low-data-rate applications, while Bluetooth is well-suited for medium-range communication. Sigfox is ideal for long-range communication in IoT applications, and IP is widely used for communication over networks.
-
-
-
-\section{Design}
-From a design and development point of view, working with \ess can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all the requirements.
-
-Failures in \ess should always be evident and identifiable quickly (a heart monitor should not fail quietly \cite{MakingEmbeddedSystems}). Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (i.e., weather monitoring in extreme locations of the planet, devices inside the human body, or \dots), where maintenance operations cannot be performed regularly,  and high availability is expected. 
-
-The dependability of a system can be expressed in terms of:
+The dependability of an \es can be expressed in terms of:
 \begin{itemize}
-    \item \textbf{System maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests. As \ess becomes more complex and feature-rich, it is becoming increasingly important to design them with maintainability in mind. This includes designing systems that are easy to update and repair, as well as ensuring that they can be easily replaced if necessary.
-    \item \textbf{System reliability}: the extent to which a system is reliable with respect to the expected behavior.
-    \item \textbf{System availability}: the extent to which a system remains available for its users.
-    \item \textbf{System security}: the extent to which a system can keep data of its users safe and ensures the safety of their users.
+    \item \textbf{Maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests. As \ess becomes more complex and feature-rich, it is becoming increasingly important to design them with maintainability in mind. This includes designing systems that are easy to update and repair, as well as ensuring that they can be easily replaced if necessary.
+    \item \textbf{Reliability}: the extent to which a system is reliable with respect to the expected behavior.
+    \item \textbf{Availability}: the extent to which a system remains available for its users.
+    \item \textbf{Security}: the extent to which a system can keep data of its users safe and ensures the safety of their users.
 \end{itemize}
 
 These dependability attributes cannot be considered individually, as there are strongly interconnected; for instance, safe system operations depend on the system being available and operating reliably in its lifespan. Furthermore, an \es can be unreliable due to its data being corrupted by an external attack or due to poor implementation. As a result of particular care should be applied in the design of these systems, especially \dots 
 
 
-In conclusion, \ess are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of \ess has grown significantly, and they are now found in a wide variety of applications.
 
-
-
-\section {Challenges}
 An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited quantity resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as real-time operating systems and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Furthermore, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
 
 Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an embedded system in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
 
 In addition to the technical challenges, there are also many non-technical factors that must be considered when developing embedded systems. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
 
+In conclusion, \ess are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of \ess has grown significantly, and they are now found in a wide variety of applications.
 
 
 \section{Testing Embedded Systems}
-Testing \ess poses a series of challenges compared to traditional testing: first of all, in the case of ES that are highly integrated with a physical environment (such as with CPSs), replicating the exact conditions in which the hardware will be deployed may be challenging. Secondly, field-testing of these systems can be unfeasible to dangerous or impractical environmental conditions (i.e., a nuclear power plant, a deep-ocean station, or the human body). Furthermore, given the absence of a user interface in most cases, testing such systems can be particularly challenging, given the lack of immediate feedback. Finally, the testing of time-critical systems has to validate the correct timing behavior which means that testing the functional behavior alone is not sufficient; similarly, system with tight hardware constraints, such as memory, limited processor power, or power consumption are difficult to design and test.
+Testing \ess poses a series of challenges compared to traditional testing: first, in the case of ES that are highly integrated with a physical environment (such as with CPSs), replicating the exact conditions in which the hardware will be deployed may be challenging. Secondly, field-testing of these systems can be unfeasible to dangerous or impractical environmental conditions (i.e., a nuclear power plant, a deep-ocean station, or the human body). Furthermore, given the absence of a user interface in most cases, testing such systems can be particularly challenging, given the lack of immediate feedback. Finally, the testing of time-critical systems has to validate the correct timing behavior which means that testing the functional behavior alone is not sufficient; similarly, system with tight hardware constraints, such as memory, limited processor power, or power consumption are difficult to design and test.
 
 Going through multiple hardware revisions in order to meet the requirements can be extremely expensive.
 
