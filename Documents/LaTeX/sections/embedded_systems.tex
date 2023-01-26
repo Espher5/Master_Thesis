@@ -13,6 +13,9 @@ This requires the use of embedded software, which is specifically designed to ru
 There are many types of \ess, including microcontrollers, digital signal processors (DSPs), and field-programmable gate arrays (FPGAs). Each of these types of systems has its own unique characteristics and is suited to different types of applications.
 
 
+
+
+
 \section{Enabling technologies}
 \subsection{Microcontrollers}
 One of the key enabling technologies for \ess is their microcontroller, which is a small single-chip computer that is used to manage the functions of the larger system, in a power-efficient way and ideally at a low cost. While some applications require their own custom-made microcontroller and other custom hardware components built ad-hoc for them, there is a wide variety of general-purpose microcontroller boards, sensors, and actuators that are far easier to program and can also be customized for a high range of applications, which makes them highly versatile.
@@ -48,12 +51,19 @@ LoraWAN and SigFox on the other hand, are two Low-Power, Wide-Area (LPWA) commun
 For network communications, IP, and it's low energy version 6LoWPAN, are widely used protocols; they are exercised for transmitting data between devices at the network level and are a key component of the Internet.
 Finally, at the application level, lightweight messaging protocols such as the Message Queue Telemetry Protocol (MQTT) are a common choice.
 
-\section{Design and challenges}
-From a design and development standpoint, working with \ess can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, including hardware and software designers, to ensure that the system meets all of its requirements, functional and especially non-functional. 
 
-Going through multiple hardware revisions in order to meet the requirements can be extremely expensive.
 
-Failures in \ess should always be evident and identifiable quickly (a heart monitor should not fail quietly) \cite{MakingEmbeddedSystems}. Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (\ie weather monitoring in extreme locations of the planet, satellite managements systems, devices inside the human body, and so on), where maintenance operations cannot be performed regularly, and high availability is expected. 
+
+
+\section{Design challenges}
+From a design and development standpoint, working with \ess can be complex, as it involves a wide range of skills and disciplines, including computer science, electrical engineering, and mechanical engineering. It is often necessary to work closely with other team members, for both the hardware and the software, to ensure that the system meets all of its requirements, functional and especially non-functional. 
+In view of this, the main challenge resides in balancing the trade-offs between performance, power consumption, and cost.
+For example, increasing the performance of an \es in order to accommodate a certain functionality's needs may require more power-hungry components, thus increasing the cost of the system and potentially conflicting with another requirement, according to which the device must be able to operate on a battery for long periods of time. Similarly, reducing power consumption to reach a power target may come at the expense of performance. 
+
+Going through multiple hardware revisions in order to meet the requirements and fine-tune power and computational behavior can be extremely expensive. For this reason, as we discussed, general-purpose microprocessors should be considered in initial design phase; in most real systems however, there is the need for custom-made hardware, tailored according to the system's requirements, for security and reliability reasons.
+Regardless of the microcontroller, optimization steps can be performed in most cases and involve using specialized programming languages and techniques, such as RTOSs and low-level hardware access, implementing power-saving modes and using low-power components to minimize power consumption.
+
+Handling failures in \ess is another critical aspect to consider during their design phase: any failure should always be evident and identifiable quickly (a heart monitor should not fail quietly) \cite{MakingEmbeddedSystems}. Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (\ie weather monitoring in extreme locations of the planet, satellite managements systems, devices inside the human body, and so on), where maintenance operations cannot be performed regularly, and high availability is expected. 
 
 The dependability of an \es can be expressed in terms of:
 \begin{itemize}
@@ -67,13 +77,14 @@ These dependability attributes cannot be considered individually, as there are s
 
 
 
-An important, and often critical, aspect of ES, which defines the greatest challenges when engineering them, is the limited quantity resources available: these systems often have very small amounts of memory and processing power, so it is important to carefully design the software to make the most efficient use of them. This can involve using specialized programming languages and techniques, such as RTOSs and low-level hardware access. Furthermore, many such systems may be powered by using a battery, and thus the hardware they are equipped with, often purpose built, must be highly efficient in its operations. Finally, from the software point-of-view, it is essential that the system operates deterministically and with real-time constrains.
-
 Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an \es in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
 
 In addition to the technical challenges, there are also many non-technical factors that must be considered when developing \ess. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
 
 In conclusion, \ess are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of \ess has grown significantly, and they are now found in a wide variety of applications.
+
+
+
 
 
 \section{Testing Embedded Systems}
