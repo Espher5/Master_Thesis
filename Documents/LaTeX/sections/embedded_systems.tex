@@ -80,8 +80,6 @@ In conclusion, \ess are specialized computer systems that are designed to perfor
 Testing \ess poses a series of additional challenges compared to traditional systems: first, in the case of \ess that are highly integrated with a physical environment (such as with Cyber Physical Systems, CPSs), replicating the exact conditions in which the hardware will be deployed may be difficult; additionally field-testing of these systems can be unfeasible to dangerous or impractical environmental conditions (\eg a nuclear power plant, a deep-ocean station, or the human body). Secondly, given the absence of a user interface in many cases, the lack of immediate feedback makes the outcomes of the tests less observable. Moreover, resource constraints may not allow developers to fully deploy the testing infrastructure on the target hardware and thus slowing down further the process by impeding or delaying automation and regression testing. The hardware and software heterogeneity proper of \ess can also make it difficult to test them in a consistent and repeatable way. Finally, the testing of time-critical systems has to validate the correct timing behavior which means that testing the functional behavior alone is not sufficient.
 
 
-
-
 \subsection{X-in-the-loop}
 To mitigate some of these issues and approach \es testing in an incremental manner which allows engineers to only focus on one aspect at a time, the general testing process of \ess follows the X-in-the-loop paradigm \cite{DBLP:journals/software/GarousiFKY18}, according to which the system goes through a series of steps that simulate its behavior with an increased level of detail, before being effectively deployed on the bare hardware; subcategories in this area include Model-in-the-Loop, Software-in-the-Loop, Processor-in-the-Loop, and Hardware-in-the-Loop:
 \begin{itemize}
@@ -104,6 +102,11 @@ Figure \ref{simulink_model} ...
 
 
 \subsection{A TDD pipeline for Embedded Systems}
+Given the potential benefits of \tdd for \noess, it comes natural to ask whether this technique could be applied for the development of \ess. By applying \tdd for \ess, developers would write automated tests that would be used to verify the functionality and performance of the \es. As a reminder, these tests would be written before any code is written, and they would be used to define the requirements for the system. 
+Given the higher costs of fixing issues in \ess, applying \tdd could allow developers to identify and fix problems earlier in the development process, before they become more difficult and costly to fix. It could also help to ensure that the system meets some of the requirements proper of \ess and that it is reliable, available and secure.
+
+For the same reasons we discussed above, \tdd can be a challenging approach when applied to \ess. However, with the right tools, techniques, and experience, it is possible to apply it to \ess and to achieve the benefits of this approach.
+
 Often, quality in embedded software is generally tied to platform-specific testing tools geared towards debugging \cite{TDDEmbeddedSoftware}.
 \dots
 
