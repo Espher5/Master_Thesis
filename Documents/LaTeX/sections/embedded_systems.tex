@@ -60,28 +60,19 @@ From a design and development standpoint, working with \ess can be complex, as i
 In view of this, the main challenge resides in balancing the trade-offs between performance, power consumption, and cost.
 For example, increasing the performance of an \es in order to accommodate a certain functionality's needs may require more power-hungry components, thus increasing the cost of the system and potentially conflicting with another requirement, according to which the device must be able to operate on a battery for long periods of time. Similarly, reducing power consumption to reach a power target may come at the expense of performance. 
 
-Going through multiple hardware revisions in order to meet the requirements and fine-tune power and computational behavior can be extremely expensive. For this reason, as we discussed, general-purpose microprocessors should be considered in initial design phase; in most real systems however, there is the need for custom-made hardware, tailored according to the system's requirements, for security and reliability reasons.
+Going through multiple hardware revisions in order to meet the requirements and fine-tune power and computational behavior iteratively can be extremely expensive. For this reason, as we discussed, general-purpose microprocessors should be considered in initial design phase; in most real systems however, there is the need for custom-made hardware, tailored according to the system's requirements, for security and reliability reasons.
 Regardless of the microcontroller, optimization steps can be performed in most cases and involve using specialized programming languages and techniques, such as RTOSs and low-level hardware access, implementing power-saving modes and using low-power components to minimize power consumption.
 
-Handling failures in \ess is another critical aspect to consider during their design phase: any failure should always be evident and identifiable quickly (a heart monitor should not fail quietly) \cite{MakingEmbeddedSystems}. Given the high criticality of such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (\ie weather monitoring in extreme locations of the planet, satellite managements systems, devices inside the human body, and so on), where maintenance operations cannot be performed regularly, and high availability is expected. 
-
+Handling failures in \ess is another critical aspect to consider during their design phase: any failure should always be evident and identifiable quickly (a heart monitor should not fail quietly) \cite{MakingEmbeddedSystems}. Given the high criticality of many such systems, ensuring their dependability over the course of their lifespan is essential; \ess can be deployed in extreme conditions (\ie weather monitoring in extreme locations of the planet, satellite managements systems, devices inside the human body, and so on), where maintenance operations cannot be performed regularly, and high availability is expected. 
 The dependability of an \es can be expressed in terms of:
 \begin{itemize}
     \item \textbf{Maintainability}: the extent to which a system can be adapted/modified to accommodate new change requests. As \ess becomes more complex and feature-rich, it is becoming increasingly important to design them with maintainability in mind. This includes designing systems that are easy to update and repair, as well as ensuring that they can be easily replaced if necessary.
-    \item \textbf{Reliability}: the extent to which a system is reliable with respect to the expected behavior.
-    \item \textbf{Availability}: the extent to which a system remains available for its users.
-    \item \textbf{Security}: the extent to which a system can keep data of its users safe and ensures the safety of their users.
+    \item \textbf{Reliability}: the extent to which a system is reliable with respect to the expected behavior. To improve reliability, \es should be designed with robust error-detection and correction mechanisms.
+    \item \textbf{Availability} is the degree to which an \es is operational and accessible to its users; important for systems that are used in critical applications, such as transportation or medical equipment. To improve availability, \ess should be designed with multiple levels of redundancy and with robust fault-tolerance mechanisms. Additionally, it is important to ensure that the system is able to handle the challenges of limited bandwidth, high latency, and unreliable connectivity.
+    \item \textbf{Security} refers to the ability of a system to protect against unauthorized access, modification, or destruction of data; important for systems that handle sensitive information, such as financial transactions or personal data. In order to improve security, \ess should be designed with robust encryption, security protocols, and authentication mechanisms, and should be thoroughly tested for vulnerabilities.
 \end{itemize}
 
-These dependability attributes cannot be considered individually, as there are strongly interconnected; for instance, safe system operations depend on the system being available and operating reliably in its lifespan. Furthermore, an \es can be unreliable due to its data being corrupted by an external attack or due to poor implementation. As a result of particular care should be applied in the design of these systems, especially \dots 
-
-
-
-Another notable challenge is the requirement of some systems to perform real-time processing tasks. This means that they must be able to process data and provide a response within a specific time frame. For example, an \es in a car might be responsible for controlling the engine and transmission; it must be able to process data from sensors and make decisions about how to control the engine and transmission in real-time, as the car is being driven.
-
-In addition to the technical challenges, there are also many non-technical factors that must be considered when developing \ess. For example, the system must be able to operate within the physical constraints of the device it is being used in, and it must be able to withstand the environmental conditions in which it will be used.
-
-In conclusion, \ess are specialized computer systems that are designed to perform a specific task within a larger system; they are able to perform real-time processing and operate in a stand-alone manner, but they also face the challenge of limited resources and power. Despite this, the use of \ess has grown significantly, and they are now found in a wide variety of applications.
+These dependability attributes cannot be considered individually, as there are strongly interconnected; for instance, safe system operations depend on the system being available and operating reliably in its lifespan. Furthermore, an \es can be unreliable due to its data being corrupted by an external attack or due to poor implementation. As usual, ensuring the validity of these dependability attributes in a real system, with respect to \es constraints requires trade-offs and compromises.
 
 
 
@@ -102,7 +93,7 @@ To mitigate some of these issues and approach \es testing in an incremental mann
 
 After all these steps, the system can finally be deployed on the real hardware. A common environment for performing the simulation steps discussed above is Simulink \cite{Simulink}; it is a graphical modeling and simulation environment for dynamic systems based on blocks to represent different parts of a system: a block can represent a physical component, a function, or even a small system. Some notable features include: scopes and data visualizations for viewing simulation results, legacy code tool to import C and C++ code into templates and building block libraries for modeling continuous and discrete-time systems.
 
-Figure \ref{simulink_model} ...
+Figure \ref{simulink_model} ...aaa
 
 \begin{figure}[H]
     \centering
@@ -113,21 +104,10 @@ Figure \ref{simulink_model} ...
 
 
 \subsection{A TDD pipeline for Embedded Systems}
-Given the potential benefits of \tdd for \noess, it comes natural to ask whether this technique could be applied for the development of \ess. By applying \tdd for \ess, developers would write automated tests that would be used to verify the functionality and performance of the \es. As a reminder, these tests would be written before any code is written, and they would be used to define the requirements for the system. 
+Given the potential benefits of \tdd for \noess, it comes natural to ask whether this technique could be applied to the development of \ess. By applying \tdd for \ess, developers would write automated tests that would be used to verify the functionality and performance of the \es. As a reminder, these tests would be written before any code is written, and they would be used to define the requirements for the system. 
 Given the higher costs of fixing issues in \ess, applying \tdd could allow developers to identify and fix problems earlier in the development process, before they become more difficult and costly to fix. It could also help to ensure that the system meets some of the requirements proper of \ess and that it is reliable, available and secure.
-
-For the same reasons we discussed above, \tdd can be a challenging approach when applied to \ess. However, with the right tools, techniques, and experience, it is possible to apply it to \ess and to achieve the benefits of this approach.
-
-Often, quality in embedded software is generally tied to platform-specific testing tools geared towards debugging \cite{TDDEmbeddedSoftware}.
-\dots
-
-
-Applying TDD practices to \ess could potentially result in a series of benefits:
-\begin{itemize}
-    \item \dots
-\end{itemize}
-
-
+For the same reasons we discussed above, \tdd can be a challenging approach when applied to \ess. However, with the right tools, techniques, and experience, it is possible to apply it to \ess and to achieve the benefits of this approach. Often in fact, quality in embedded software is tied to platform-specific testing tools geared towards debugging and testing \cite{TDDEmbeddedSoftware}.
+Applying TDD practices to \ess could, in theory, result in a series of benefits:
 \begin{itemize}
     \item Reduce risk by verifying production code, independent of hardware, before hardware is ready or when hardware is expensive and scarce.
     \item Reduce the number of long target compile, link, and upload cycles that are executed by removing bugs on the development system.
