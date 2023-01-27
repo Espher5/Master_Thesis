@@ -39,32 +39,33 @@ According to the GQM template, for an organization to measure purposefully it mu
 
 
 \section{Participants}
-The participants for the two experimental studies were students in computer science at the University of Salerno, in Italy; they were a mix of second-year master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the Master's degree course of \textit{Embedded Systems} at the University of Salerno. As for the Master's students, not all of them had a computer science background (Bachelor's degree). Among the students taking the course, 9 participated.
+The participants for the two experimental studies were computer science students at the University of Salerno, in Italy; they were a mix of second-year Master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the Master's degree course of \textit{Embedded Systems} at the University of Salerno. As for the Master's students, not all of them had a computer science background (Bachelor's degree). Among the students taking the course, 9 participated. 
 
-The \textit{Embedded Systems} course covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \es testing.
-No \tdd concepts were taught directly in the course; the topic was in turn covered  by the lectures and training sessions preceding the studies.
+The study had both research and educational goals: on one hand, we conceived the study to answer our RQs; on the other hand, the study allowed the students to gain practical experience with \tdd applied to \ess. As for the educational goal, \tdd is a development approach widely used in several contexts \cite{DBLP:conf/esem/RomanoZBPS22}, and it seems to be promising in the development of \ess too \cite{TDDEC}.
 
-Participating in the studies was voluntary; the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so; \textit{(iii)} they could achieve the highest mark in the course even if they didn't participate.
+Participating in the studies was voluntary; the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so, and \textit{(iii)} they could achieve the highest mark in the course even if they didn't participate. Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark for the course, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}.
 
-Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}
+Before the studies took place, we collected some information on the participants' knowledge and experience programming and testing, in order to get a general idea of their personal preparation before the studies. To this end, the participants were asked to fill out a form in which they had to rate their experience using a Likert scale (where 1 means “very inexperienced” and 5 means “very experienced”). All the participants had programming experience and most of them rated such an experience as 3 out of 5 on the scale. 
+As for testing, the participants were mostly not experienced with unit testing, since most of them chose 1 or 2 on their scale to represent their unit-testing experience; finally, three students had heard about \tdd, but none had had a practical experience with this technique before the study.
 
-The participants for the experiments were later asked to carry out their task by either using \tdd or \notdd (\ie any approach they preferred, except for \tdd) depending on the group they were partitioned in. and on the period the task took place in.
+The participants for the experiments were later asked to carry out their task by either using \tdd or \notdd (\ie any approach they preferred, except for \tdd) depending on the group they were partitioned in, and on the period the task took place in. 
 
 
 
 
 
 \section{Experimental tasks design}
-The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language; in this case the design of a small \es. All three tasks were designed according to the target platform in mind, a \textit{Raspberry Pi Model 4}, and around the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \es or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion focusing on a higher level language like \textit{Python} (which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant) allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
-If we also take into account that some participants had a limited knowledge of \ess, we think that introducing these concepts with \textit{Python} made it easier to get an idea of the whole picture.
+The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language; in this case the design of a small \es. All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and around the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \es or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion focusing on a higher level language such as \textit{Python} (which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant) allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
+Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier to get a grasp of the whole picture.
 
-The target platform was considered even for the two tasks of the baseline study, which in the end did not have to be effectively deployed on the real hardware; this was done in order to make the mocked implementation of the participants resemble as close as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software \cite{GPIOMock}.
+The target platform was considered even for the two tasks of the baseline study, which in the end did not have to be effectively deployed on the real hardware; this was done in order to make the mocked implementation of the participants resemble as close as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software \cite{GPIOMock}. Other mocked components include third party libraries for some individual sensors and actuators.
 For the replication study, another factor that influenced the design of the kata was the availability of the hardware, including sensors and actuators, as well as how hard these would have been to test in real time; for example, testing .... would be dangerous.
 For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
 
 
 The replication project was tested inside a laboratory \dots
 
+Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
 
 \subsection{IntelligentOffice}
 This task required developing an intelligent office system, which allowed for handling light and CO2 levels inside an office. To handle the light, the system relied on the information gathered from different sensors---\ie Infra-Red (IR) distance sensors, a real-time clock, and a photoresistor---and then controlled a servo motor (to open/close the blinds) and a light bulb. A carbon dioxide sensor was used to monitor the CO2 levels inside the office and then control the switch of an exhaust fan.
@@ -77,7 +78,72 @@ This task required developing a smart room system, which allowed for handling li
 
 
 
-Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
+
+
+\section{Study design}
+The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022 and covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \es testing techniques.
+
+As the pre-questionnaire for the study highlighted, few students had unit testing experience, and almost no participants ha dealt with \tdd up to that point. For this reason, these topics were covered through a series of frontal lectures and exercise/homework sessions in the weeks preceding the studies.
+
+All the participants attended these lectures and training sessions during which they were trained on the main topics they would encounter during the future experimental tasks. The overall schedule for training sessions and experiments was as follows:
+\begin{itemize}
+    \item Day 1 - Frontal lecture - Introduction on unit testing and its guidelines. Interactive exercise on unit testing.
+    \item Day 2 - Frontal lecture - Test scaffolding and \textit{Raspberry Pi}'s GPIO library. Interactive exercise on test scaffolding.
+    \item Day 3 - Frontal lecture - Introduction to Test-Driven Development. Interactive exercise on \tdd.
+    \item Day 4 - Training task - \tdd exercise and homework.
+    \item Day 6 - First experimental task for the baseline study - \textit{IntelligentOffice}.
+    \item Day 7 - Second experimental task for the baseline study - \textit{CleaningRobot}.
+\end{itemize}
+\dots
+
+
+
+
+The first task, \textit{IO} took place on Tuesday, December 6th 2022, while the second, \textit{CR} took place on Tuesday, December 13th 2022. 
+For the controlled baseline experiment, the participants were randomly split into two groups, \textit{G1} and \textit{G2}, having 4 and 5 members respectively. 
+
+For the first period P1, the group G1 was assigned the \tdd version of the first task, \textit{IntelligentOffice}, while the group G2 was assigned the \notdd version; on the other hand, during period P2, the group G1 was assigned the \notdd version of the second task, \textit{CleaningRobot}, while the group G2 was assigned the \tdd version.
+Therefore, the design of our study can be classified as a repeated-measures, within-subjects design. In each period, the participants in G1 and G2 dealt with different experimental objects, therefore, at the end of the study, every participant had tackled each experimental object only once.
+
+As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}.
+
+
+After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. 
+The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd. 
+
+More specifically, the interval scale questions were:
+\begin{itemize}
+    \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
+    \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
+    \item \textbf{Q3.} Applying (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
+\end{itemize}
+
+\noindent As for the open-ended questions:
+\begin{itemize}
+    \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
+    \item Provide your feelings (both positive and negative) about (\ie \tdd or \notdd).
+    \item Provide your feelings (both positive and negative) about the development task.
+    \item (\textbf{Task 2 only}) After applying (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two approaches and your preference for using one over the other?
+\end{itemize}
+
+\noindent No formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies:
+\begin{enumerate}
+    \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
+    \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
+        \begin{itemize}
+            \item \tdd: did you perform any refactoring? 
+            \item \notdd: did you test the code at all? If so, which approach did you use?
+        \end{itemize}
+    \item Provide your feelings about the overall training experience (seminars, exercises, and homework on \tdd and \notdd, experiments, and final task):
+        \begin{itemize}
+            \item Positive and negative points and challenges encountered when applying TDD
+            \item What can be done to improve the application of TDD in the development of \ess
+            \item Please provide a discussion on \tdd vs. \notdd in the development of \ess
+        \end{itemize}
+\end{enumerate}
+
+
+
 
 
 \section{Independent and dependent variables}
@@ -125,71 +191,6 @@ As for the additional three dependent variables regarding the general code quali
 \end{enumerate}
 
 Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
-
-
-
-\section{Study design}
-For the controlled baseline experiment, the participants were randomly split into two groups, G1 and G2, having 4 and 5 members respectively. For the first period P1, the group G1 was assigned the \tdd version of the first task, \textit{IntelligentOffice}, while the group G2 was assigned the \notdd version; on the other hand, during period P2, the group G1 was assigned the \notdd version of the second task, \textit{CleaningRobot}, while the group G2 was assigned the \tdd version.
-Therefore, the design of our study can be classified as a repeated-measures, within-subjects design. In each period, the participants in G1 and G2 dealt with different experimental objects, therefore, at the end of the study, every participant had tackled each experimental object only once.
-
-As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}.
-
-
-\section{Procedure}
-Before our study took place, we collected some demographic information on the participants. To this end, the participants were asked to fill out an on-line pre-questionnaire (created by means of Google Forms).
-
-The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022. The first task, P1, took place on Tuesday, December 6th 2022, while the second, P2, took place on Tuesday, December 13th 2022.
-
-Between the start of the course and P1, most participants had never dealt with \tdd, while they were somewhat familiar with unit testing and iterative test-last development. 
-In the weeks prior to the beginning of the experiment, all the participants attended a series of frontal lectures and training/homework sessions during which they were trained on the main topics they would encounter during the future experimental tasks.
-
-The schedule for the experiments went as follows:
-\begin{itemize}
-    \item Day 1 - Frontal lecture - Introduction on unit testing and its guidelines. Followed by a
-    \item Day 2 - Frontal lecture - Test scaffolding and Raspberry Pi GPIO library- 
-    \item Day 3 - Frontal lecture - Test-Driven Development -
-    \item Day 4 - Training task - \tdd exercise - 
-    \item Day 6 - First experimental task - \textit{IntelligentOffice}
-    \item Day 7 - Second experimental task - \textit{CleaningRobot}
-\end{itemize}
-\dots
-
-After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. 
-The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd. 
-
-More specifically, the interval scale questions were:
-\begin{itemize}
-    \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
-    \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
-    \item \textbf{Q3.} Applying (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
-\end{itemize}
-
-\noindent As for the open-ended questions:
-\begin{itemize}
-    \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
-    \item Provide your feelings (both positive and negative) about (\ie \tdd or \notdd).
-    \item Provide your feelings (both positive and negative) about the development task.
-    \item (\textbf{Task 2 only}) After applying (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two approaches and your preference for using one over the other?
-\end{itemize}
-
-\noindent No formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies:
-\begin{enumerate}
-    \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
-    \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
-        \begin{itemize}
-            \item \tdd: did you perform any refactoring? 
-            \item \notdd: did you test the code at all? If so, which approach did you use?
-        \end{itemize}
-    \item Provide your feelings about the overall training experience (seminars, exercises, and homework on \tdd and \notdd, experiments, and final task):
-        \begin{itemize}
-            \item Positive and negative points and challenges encountered when applying TDD
-            \item What can be done to improve the application of TDD in the development of \ess
-            \item Please provide a discussion on \tdd vs. \notdd in the development of \ess
-        \end{itemize}
-\end{enumerate}
- 
-
-
 
 
 \section{Analysis Methods}
