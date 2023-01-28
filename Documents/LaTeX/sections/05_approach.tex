@@ -14,14 +14,14 @@ Although the preliminary nature of our investigation, it has the merit to study 
 \section{Research Questions}
 As for the baseline experiment, and following the main research question presented in the introduction section of this thesis, we defined the main goal of this study by applying the Goal/Question/Metrics (GQM) template \cite{GQM}.
 According to the GQM template, for an organization to measure purposefully it must first specify the goals for itself and its projects, then it must trace those goals to the data that are intended to define those goals operationally, and finally provide a framework for interpreting the data with respect to the stated goals.
-\\ \ \\
+\begin{framed}
 \noindent
 \textbf{Analyze} the use of \tdd 
 \textbf{for the purpose of} evaluating its effects in the development of \ess
-\textbf{with respect to} the external quality of the developed \ess and the developers' productivity 
+\textbf{with respect to} the internal and external quality of the developed \ess, the developers' productivity, and the number of written test cases
 \textbf{from the point of} view of the researcher and lecturer 
 \textbf{in the context of} an \es course involving second year Master's degree students in Computer Science.
-\\ \ \\
+\end{framed}
 
 \noindent According to this objective, the following research questions were defined:
 \begin{itemize}
@@ -29,15 +29,18 @@ According to the GQM template, for an organization to measure purposefully it mu
 
     \noindent\textit{Aim}: The answer to this RQ has practical implications, especially within the Agile community. For example, in case the use of \tdd positively affects the external quality of \ess developed within implementation tasks, it would mean that it is the case to teach this development approach in academic contexts, with the ultimate goal of facilitating the adoption of this Agile development approach in the industry. That is, if the newcomers of the working market are familiar with TDD (because they learned and experienced it in the academic context), and it is shown that it produces better quality \ess, then the software industry could be encouraged to migrate their development from \notdd to \tdd.
 
-    \item \textbf{RQ2.} Does the use of \tdd increase developers' productivity when developing \ess? And if so, to what extent?
+    \item \textbf{RQ2.} Does the use of \tdd impact the internal quality attributes (\ie size and structural complexity) of the developed \ess? And if so, to what extent?
+
+    \noindent\textit{Aim}: 
+
+    \item \textbf{RQ3.} Does the use of \tdd increase developers' productivity when developing \ess? And if so, to what extent?
 
     \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
     improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
 
-    \item \textbf{RQ3.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
+    \item \textbf{RQ4.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
 
-    \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
-    improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
+    \noindent\textit{Aim}: 
 \end{itemize}
 
 
@@ -184,7 +187,7 @@ where $ASSERT(PASS)$ is the total number of asserts that have passed, by conside
 The $TEST$ variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
 
-As for the additional three dependent variables, these were computed using SonarQube and provide insight regarding the internal quality in the implemented software solution, in terms of how hard the production code is to comprehend and maintain. They can be defined as follows:
+As for the additional three dependent variables, these were computed using SonarQube and provide additional insight regarding the quality in the implemented software solution, in terms of how hard the production code is to comprehend and therefore maintain. They can be defined as follows:
 (\textbf{$CYC$}) refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
 
 (\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
