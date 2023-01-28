@@ -68,7 +68,7 @@ For the replication study, another factor that influenced the design of the kata
 For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
 
 
-The replication project was tested inside a laboratory \dots
+The replication project was tested inside a laboratory at the University of Salerno. Each participant had their project uploaded on the \textit{Raspberry Pi} board and \dots
 
 Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
 
@@ -184,7 +184,7 @@ where $ASSERT(PASS)$ is the total number of asserts that have passed, by conside
 The $TEST$ variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
 
-As for the additional three dependent variables, these were computed using SonarQube and provide insight regarding the internal quality in the implemented \es. They can be defined as follows:
+As for the additional three dependent variables, these were computed using SonarQube and provide insight regarding the internal quality in the implemented software solution, in terms of how hard the production code is to comprehend and maintain. They can be defined as follows:
 (\textbf{$CYC$}) refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
 
 (\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
@@ -196,12 +196,14 @@ As for the additional three dependent variables, these were computed using Sonar
 
 Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
 
+For both $CYC$ and $COG$ we only considered the production code, since there was no noticeable difference, besides one outlier, between the same metrics in the test files of the participants.
+
 Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is; software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easy maintenance and extendability.
 
 
 \section{Analysis Methods}
 \subsection{Individual analysis}
-As a first way to summarize the distribution of the dependent variables, 
+As a first way to examine the distribution of the dependent variables, we compute the descriptive statistics, for each of them (\ie $QLTY$, $PROD$, $TEST$, $CYC$, $COG$, and $LOC$). We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
 
 The information that can be extracted form a box plot chart includes:
 \begin{itemize}
@@ -241,20 +243,20 @@ To read a forest plot chart, you need to understand the following elements:
     \item Confidence interval: This is the range of values within which the true effect is likely to lie, typically shown as a horizontal line.
 \end{itemize}
 
-In our study, we used meta-analysis for \dots
+In our case, we considered the baseline and replication as the two studies for the meta-analysis.
     
 
 \subsection{Thematic analysis}
-Thematic analysis is widely used in qualitative psychology research
+Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. The researcher then organizes the coded data into themes and sub-themes, which are then used to construct a narrative or report of the findings.
 
 Template Analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In Template Analysis, it is permissible (though not obligatory) to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis. These are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand.
 
-In our study, we used template analysis for \dots
+In our study, we used thematic analysis to analyze the open-ended questions of the post-questionnaires for the two experimental tasks of the baseline experiment, as well as the individual participant interviews of the replication study.
 
 
 
 \section{Results}
-\subsection{Individual analysis}
+\subsection{Dependent variables analysis}
 In this section we will report the values observed for each dependent variable during their individual analysis. For each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of each dependent variable, for the two separate conditions (\ie \tdd and \notdd), before considering the values of the variable for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches.
 
 Besides the tables, box plot charts will be used to visualize the values assumed by the dependent variables.
