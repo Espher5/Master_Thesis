@@ -33,6 +33,11 @@ According to the GQM template, for an organization to measure purposefully it mu
 
     \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
     improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
+
+    \item \textbf{RQ3.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
+
+    \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
+    improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
 \end{itemize}
 
 
@@ -56,7 +61,7 @@ The participants for the experiments were later asked to carry out their task by
 
 \section{Experimental tasks design}
 The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language; in this case the design of a small \es. All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and around the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \es or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion focusing on a higher level language such as \textit{Python} (which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant) allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
-Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier to get a grasp of the whole picture.
+Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier to get a grasp of the whole picture. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks.
 
 The target platform was considered even for the two tasks of the baseline study, which in the end did not have to be effectively deployed on the real hardware; this was done in order to make the mocked implementation of the participants resemble as close as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software \cite{GPIOMock}. Other mocked components include third party libraries for some individual sensors and actuators.
 For the replication study, another factor that influenced the design of the kata was the availability of the hardware, including sensors and actuators, as well as how hard these would have been to test in real time; for example, testing .... would be dangerous.
@@ -105,21 +110,19 @@ different experimental task.
 
 For the first period \textit{P1}, the group \textit{G1} was assigned the \tdd version of the first task, \textit{IntelligentOffice}, while the group \textit{G2} was assigned the \notdd version; on the other hand, during period \textit{P2}, the group \textit{G1} was assigned the \notdd version of the second task, \textit{CleaningRobot}, while the group \textit{G2} was assigned the \tdd version.
 Therefore, at the end of the baseline study, every participant had tackled each experimental object only once.
+As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for done randomly.
 
-As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}.
+After each period of the controlled baseline study, participants were asked to fill out an online questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their perceived complexity and testing approach. 
+The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd group, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period \textit{P2} contained an additional open-ended question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd, and compare them based on the two encountered tasks. 
 
-
-After each period of the controlled baseline study, participants were asked to fill out another on-line questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their testing approach. 
-The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period P2 contained an additional open question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd. 
-
-More specifically, the interval scale questions were:
+\noindent More specifically, the interval scale questions were:
 \begin{itemize}
     \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
     \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
     \item \textbf{Q3.} Applying (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
 \end{itemize}
 
-\noindent As for the open-ended questions:
+\noindent As for the open-ended questions, these were:
 \begin{itemize}
     \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
     \item Provide your feelings (both positive and negative) about (\ie \tdd or \notdd).
@@ -127,7 +130,7 @@ More specifically, the interval scale questions were:
     \item (\textbf{Task 2 only}) After applying (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two approaches and your preference for using one over the other?
 \end{itemize}
 
-\noindent No formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies:
+\noindent Finally, no formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies; the structure of the final interview was:
 \begin{enumerate}
     \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
     \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
@@ -148,11 +151,11 @@ More specifically, the interval scale questions were:
 
 
 \section{Independent and dependent variables}
-The participants were asked to carry out each task by using either \tdd or the approach they preferred (i.e., NO-TDD), therefore one of the independent variables considered is \textbf{Condition}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{Period}, assuming the values $P1, P2, and P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independemt variable is \textbf{Group}, which can assume the values G1 and G2.
+The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Condition}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1, P2, and P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{Group}, which can assume the values \textit{G1} and \textit{G2}.
 
 
-As for the dependent variables considered in the studies, these are: \textbf{QLTY}, \textbf{PROD}, \textbf{TEST}, \textbf{CYC}, \textbf{COG}, \textbf{LOC}.
-The variables QLTY, PROD and TEST have been used in previous empirical studies \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others, \dots
+As for the dependent variables considered in the studies, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
+The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others variables
 
 QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
 \[
@@ -178,11 +181,11 @@ PROD estimates the productivity of a participant. It is computed as follows:
 \]
 where $ASSERT(PASS)$ is the total number of asserts that have passed, by considering all acceptance test suites, while $ASSERT(ALL)$ refers to the total number of asserts in the acceptance suites. The $PROD$ variable can assume values between 0 and 100, where a value close to 0 indicates low productivity in the implemented solution, while a value close to 1 refers to high productivity.
 
-The TEST variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
+The $TEST$ variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
 
-As for the additional three dependent variables regarding the general code quality in the submitted projects, these are defined as follows:
-(\textbf{$CYC$}) refers to the Cyclomatic Complexity of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
+As for the additional three dependent variables, these were computed using SonarQube and provide insight regarding the internal quality in the implemented \es. They can be defined as follows:
+(\textbf{$CYC$}) refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
 
 (\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
@@ -192,6 +195,8 @@ As for the additional three dependent variables regarding the general code quali
 \end{enumerate}
 
 Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
+
+Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is; software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easy maintenance and extendability.
 
 
 \section{Analysis Methods}
@@ -606,70 +611,3 @@ Finally, question three was focused on the difficulty of the participants in app
 
 
 Template analysis of the interview for the replication study
-
-
-\section{Discussion}
-In this section we will discuss the obtained results and the implications of this study, as well as provide an answer to the RQs and analyze potential threats to its validity.
-
-\subsection{Answers to Research Questions}
-
-
-\subsection{Implications}
-
-
-
-\subsection{Threats to Validity}
-In order to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
-
-Completely avoiding/mitigating threats is often unfeasible, given the dependency between some threats: avoiding/mitigating a kind of threat (\ie  internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}.
-
-Generally, the kinds of threats to validity that can occur in a study can be classified in the following categories:
-\begin{enumerate}
-    \item \textbf{Threats to internal validity}. Internal validity the extent to which we can be confident that a cause-and-effect relationship established in a study cannot be explained by other factors; it makes the conclusions of a causal relationship credible and trustworthy. Without high internal validity, an experiment cannot demonstrate a causal link between two variables.
-    There are three necessary conditions for internal validity and all three must occur to experimentally establish causality between an independent variable A (treatment variable) and dependent variable B (response variable):
-    \begin{itemize}
-        \item The treatment and response variables change together.
-        \item The treatment precedes changes in the response variables
-        \item No confounding or extraneous factors can explain the results of the study.
-    \end{itemize}
-    Threats to internal validity include: 
-    \begin{itemize}
-        \item \textbf{Selection bias}: groups are not comparable at the beginning of the study. For example, low-scorers were placed in Group A, while high-scorers were placed in Group B; Because there are already systematic differences between the groups at the baseline, any improvements in group scores may be due to reasons other than the treatment.
-        \item \textbf{Regression to the mean}: there is a statistical tendency for people who score extremely low or high on a test to score closer to the middle the next time. Because participants are placed into groups based on their initial scores, it's hard to say whether the outcomes would be due to the treatment or statistical norms.
-        \item \textbf{Social interaction and social desirability}: participants from different groups may compare notes and either figure out the aim of the study or feel resentful of others or pressured to act/react a certain way. For example, Groups B and C may resent Group A for some reason and, as such, they could be demoralized and perform poorly.
-        \item \textbf{Attrition bias}: dropout from participants. For example, if 20\% of participants provided unusable data, and almost all of them were from Group C, it will be hard to compare the two treatment groups to a control group.
-    \end{itemize}
-    
-    \item \textbf{Threats to external validity}: the extent to which we can generalize the findings of a study to other measures, settings or groups. In other words, can we apply the findings of your study to a broader context?
-    Threats to external validity include: 
-    \begin{itemize}
-        \item \textbf{Sampling bias}: the sampling considered for the study is not representative of the average population. If the sample includes only people that participated in the study voluntarily, they could have characteristics that may make them very different from other populations, like people randomly chosen.
-        \item \textbf{History}: an unrelated event influences the outcomes.
-        \item \textbf{Observer bias}: the characteristics or behaviors of the experimenter(s) unintentionally influence the outcomes, leading to bias and other demand characteristics. For example, a trainer of the experimental sessions unintentionally reveals that the outcome of the study will influence their final mark. As a result, participants will work extra hard from that point on to ensure their result are the best possible.
-        \item \textbf{Hawthorne effect}: the tendency for participants to change their behaviors simply because they know they are being studied. As an example, let's consider a set of participants that actively alters their behavior for the period of the study because they are conscious of their participation in the research.
-        \item \textbf{Testing effect}: the administration of a pre- or post-test, or the repetition of similar tasks affects the outcomes.
-        \item \textbf{Aptitude-treatment}: interactions between characteristics of the group and individual variables together influence the dependent variable.
-        \item \textbf{Situation effect}: factors like the setting, time of day, location, researchers' characteristics, etc. limit generalizability of the findings
-    \end{itemize}
-    \item \textbf{Threats to construct validity}
-    \item \textbf{Threats to conclusion validity}
-\end{enumerate}
-
-As mentioned above, there are inherent trade-offs between validities: with internal and external validities for example, the more we control extraneous factors in your study, the less we can generalize our findings to a broader context.
-
-
-As for our controlled and replication studies, let's consider the different threats individually:
-
-\noindent\textbf{Threats to internal validity}.
-The main threat is perhaps related to the monitoring of the participants during the replication study; since they accomplished the implementation of the task at home, before deploying it on hardware under our supervision, we cannot be sure of the means by the participants to accomplish the task; we can however assume that, given the fact that the final score of the \textit{Embedded Systems} course was not influenced in any way by the outcome of the task, the participants would have no reason to \dots
-Besides this, a \textit{selection} threat might have affected the overall results of the experiments, given that volunteers are generally more motivated and engaged compared to the average population \cite{DBLP:books/sp/WohlinRHOR00}. Finally, another potential threat is \textit{resentful demoralization}, which arises in participants when they receive a less desirable treatment; this causes them to not behave as they normally would. This last threat holds in all three experimental tasks, since it is related to the nature of the adopted experimental design.
-
-\noindent\textbf{Threats to external validity}.
-The main external validity threat could be the one of \textit{interaction of selection and treatment}: since both Bachelor's and Master's student were involved in the study, some of the latter with no prior testing experience or even without a strong Computer Science background, the results could potentially not be applicable to professional developers. 
-
-\noindent\textbf{Threats to construct validity}.
-Although we did not disclose the purpose of our study to the participants during the experimental tasks, they might have tried to guess it, and adapted their behavior accordingly, arising a threat of \textit{hypotheses guessing}. Besides this, the threat of \textbf{evaluation apprehension} should have been fairly mitigated, since the participants knew that they would be awarded the bonus score for the course regardless of their performance in the study.
-
-\noindent\textbf{Threats to conclusion validity}
-In order to mitigate any potential threat of \textit{random heterogeneity of participants}, before staring the experimental tasks, we trained the participants with a series of frontal lectures and exercise, in order to uniform their knowledge on the techniques and technologies that they would have later used and make the two groups as homogeneous as possible. A threat of \textit{reliability of treatment implementation} might have occurred in tasks 1 and 2. For example, some participants might have followed \tdd more strictly than others; however, this should equally affect both experimental groups.
-

@@ -1,0 +1,74 @@
+In this section we will discuss the obtained results and the implications of this study, as well as provide an answer to the RQs and analyze potential threats to its validity.
+
+\section{Answers to Research Questions}
+
+
+\section{Implications}
+
+
+
+\section{Threats to Validity}
+According to Campbell and Stanley \cite{ResearchOfTeaching}, threats to validity are either internal or external. Internal validity concerns "controlling" the aspects of the experiment's setting to ensure that the outcomes are caused only by the introduced techniques \cite{DBLP:conf/icse/SiegmundSA15}. External validity refers to showing a real-world effect, but without knowing which factors actually caused the observed difference \cite{DBLP:conf/icse/SiegmundSA15}.
+Cook and Campbell extended the list of validity categories to: conclusion, internal, construct, and external validity \cite{QuasiExp}. The latter classification has been adopted in software engineering \cite{DBLP:books/sp/WohlinRHOR00}. 
+
+
+In order to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal 's guidelines \cite{DBLP:books/sp/WohlinRHOR00}:
+\begin{enumerate}
+    \item \textbf{Internal validity} refers to the extent to which we can be confident that a cause-and-effect relationship established in a study cannot be explained by other factors; it makes the conclusions of a causal relationship credible and trustworthy. Without high internal validity, an experiment cannot demonstrate a causal link between two variables.
+    There are three necessary conditions for internal validity and all three must occur to experimentally establish causality between an independent variable A (treatment variable) and dependent variable B (response variable): \textit{(i)}: the treatment and response variables change together; \textit{(ii)}: the treatment precedes changes in the response variables, and \textit{(iii)}: no confounding or extraneous factors can explain the results of the study.
+    Threats to internal validity include: 
+    \begin{itemize}
+        \item \textbf{Deficiency of treatment setup}: the treatment setup is sometimes not appropriate, which may impact the results. For example, noise and tool performance could impact the results of a study, when they are not related to the treatment of the study.
+        \item \textbf{Ignoring relevant factors}: factors not considered in the experiment setup sometimes impact the study results, such as the usability of the tools used in the experiment and their performance.
+        \item \textbf{History}: A study composed of a set of treatments applied at different occasions may be impacted by the history threat. Treatments may be given to the same object at several occasions, each of which is associated with specific circumstances, such as time and location. The change in circumstances may impact the results.
+        \item \textbf{Maturation:} the subjects may react differently as time passes while they perform the treatment: some may become bored and others may become motivated.
+        \item \textbf{Testing}: the subjects may behave differently towards the treatment if they do it several times: they may learn the results and adapt their responses accordingly.
+        \item \textbf{Treatment design}: the artifacts used in the treatment, such as the data collection form and the documents used as information source, could affect the results if not well-designed and tested.
+        \item \textbf{Subject selection}: subjects for studies are selected to represent a population. The selection method affects the results and their interpretation. The group of subjects that participate in a study is always heterogeneous. The difference between individuals should not be the dominant factor for the study results: the treatment should be the dominant factor.
+        \item \textbf{Sample selection}: data is usually collected from data sources that represent the context of the study, such as NVD database, or open-source logs and artifacts. The data sample should be representative of the studied type of data.
+        \item \textbf{Incompleteness of data}: researchers often use heuristics or keyword searches to select records from data sources that represent the data required for the given study. These techniques may fail to identify all the expected records from the data sources.
+        \item \textbf{Mortality}: some subjects selected for a given treatment may drop out of the treatment. This should be considered when evaluating the impact of the given treatment on the subjects. Drop-out subjects should be removed from the treatment.
+        \item \textbf{Imitation of treatment}: this applies to studies that require different subjects/groups to apply different methods/techniques and use the responses to compare the methods and techniques. The subjects/groups may provide responses influenced by their experience and knowledge about the evaluated methods if they learn that these methods/techniques are being applied by other subjects/groups.
+        \item \textbf{Motivation}: a subject may be motivated or resistant to use a new approach/method/technique. This may affect their response/performance in applying either the old or the new approach/method/technique
+    \end{itemize}
+
+    \item \textbf{External validity} represents the extent to which we can generalize the findings of a study to other measures, settings or groups. In other words, can we apply the findings of your study to a broader context?
+    Threats to external validity include: 
+    \begin{itemize}
+        \item \textbf{Representation of the population}: the selected subjects/groups should represent the population that the study applies to.
+        \item \textbf{Representation of the setting}: the setting of the study should be representative of the study goal. For example, tools used in the study should represent a real setting, not old ones.
+        \item \textbf{Context of the study}: The time and location of the study impacts the ability to generalize its results.
+    \end{itemize}
+
+
+    \item \textbf{Construct validity} refers to the extent to which a study's measures are related to the theoretical construct being studied. Threats to construct validity include:
+    
+    
+    \item \textbf{Conclusion validity} refers to the extent to which the conclusions drawn from a study are supported by the data. 
+    Threats to conclusion validity include:
+\end{enumerate}
+
+
+
+
+Completely avoiding/mitigating threats is often unfeasible, given the dependency between some threats: avoiding/mitigating a kind of threat (\ie  internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}.
+
+
+As mentioned above, there are inherent trade-offs between validities: with internal and external validities for example, the more we control extraneous factors in your study, the less we can generalize our findings to a broader context.
+
+
+As for our controlled and replication studies, let's consider the different threats individually:
+
+\noindent\textbf{Threats to internal validity}.
+The main threat is perhaps related to the monitoring of the participants during the replication study; since they accomplished the implementation of the task at home, before deploying it on hardware under our supervision, we cannot be sure of the means by the participants to accomplish the task; we can however assume that, given the fact that the final score of the \textit{Embedded Systems} course was not influenced in any way by the outcome of the task, the participants would have no reason to \dots
+Besides this, a \textit{selection} threat might have affected the overall results of the experiments, given that volunteers are generally more motivated and engaged compared to the average population \cite{DBLP:books/sp/WohlinRHOR00}. Finally, another potential threat is \textit{resentful demoralization}, which arises in participants when they receive a less desirable treatment; this causes them to not behave as they normally would. This last threat holds in all three experimental tasks, since it is related to the nature of the adopted experimental design.
+
+\noindent\textbf{Threats to external validity}.
+The main external validity threat could be the one of \textit{interaction of selection and treatment}: since both Bachelor's and Master's student were involved in the study, some of the latter with no prior testing experience or even without a strong Computer Science background, the results could potentially not be applicable to professional developers. 
+
+\noindent\textbf{Threats to construct validity}.
+Although we did not disclose the purpose of our study to the participants during the experimental tasks, they might have tried to guess it, and adapted their behavior accordingly, arising a threat of \textit{hypotheses guessing}. Besides this, the threat of \textbf{evaluation apprehension} should have been fairly mitigated, since the participants knew that they would be awarded the bonus score for the course regardless of their performance in the study.
+
+\noindent\textbf{Threats to conclusion validity}
+In order to mitigate any potential threat of \textit{random heterogeneity of participants}, before staring the experimental tasks, we trained the participants with a series of frontal lectures and exercise, in order to uniform their knowledge on the techniques and technologies that they would have later used and make the two groups as homogeneous as possible. A threat of \textit{reliability of treatment implementation} might have occurred in tasks 1 and 2. For example, some participants might have followed \tdd more strictly than others; however, this should equally affect both experimental groups.
+
