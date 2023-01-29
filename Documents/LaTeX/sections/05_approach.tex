@@ -266,7 +266,38 @@ Besides the tables, box plot charts will be used to visualize the values assumed
 A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
 
 
-\noindent\textbf{Task 1}: The following tables display the values for the variables measured for the first experimental task, IntelligentOffice, for the two groups, by applying each of the two conditions.
+As we discussed in the dependent variables' definition section, in the end we did not take into account the cyclomatic and cognitive complexities of the test code written by the participants during the experimental tasks. 
+Figure \ref{bp_task1_2_cyc_test_cog_test} shows the box plot chart for these metrics, relative to the experimental tasks for the baseline study:
+
+\begin{figure}[htbp]
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{figures/box_plots/CYC_TEST.png}
+        \caption{Cyclomatic complexity}
+    \end{subfigure}
+    
+    \bigskip
+    
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\textwidth]{figures/box_plots/COG_TEST.png}
+        \caption{Cognitive complexity}
+    \end{subfigure}
+    
+    \caption{Box plots for the cyclomatic and cognitive complexities of test code for the first two tasks}
+    \label{bp_task1_2_cyc_test_cog_test}
+\end{figure}
+
+Furthermore, we originally intended to also analyze the number of code smells in both the production and test code, however, as figure \ref{bp_task1_2_smells} highlights, there was no significant difference between the two conditions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures/box_plots/SMELLS.png}
+    \caption{Number of code smells for the first two tasks}
+    \label{bp_task1_2_smells}
+\end{figure}
+
+
+
+\noindent Starting for the first experimental task, \textit{Intelligent Office}, the following tables display the values for the dependent variables measured for the two groups, by applying each of the two conditions.
 \\ \  \\
 \noindent
 \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}| }
@@ -300,7 +331,11 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
 \end{tabular}
 \\ \  \\
-\begin{figure}[H]
+
+
+
+
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/QLTY.png}
@@ -352,7 +387,7 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
         Metric & Min & Max & Mean & Median & Std\\
     \hline
-        QLTY & 0 & 100 & 74.44 & 100 & 43.31 \\
+        QLTY & 50 & 100 & 84.44 & 100 & 22.70 \\
         PROD & 8 & 100 & 38.6 & 21 & 37.35 \\
         TEST & 0 & 13 & 5.4 & 3 & 5.12 \\
         CYC & 9 & 19 & 12 & 10 & 4.06 \\
@@ -377,7 +412,7 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
 \end{tabular}
 \\ \  \\
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/QLTY.png}
@@ -429,7 +464,7 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
         Metric & Min & Max & Mean & Median & Std\\
     \hline
-        QLTY & 0 & 100 & 77.41 & 82 & 31.52 \\
+        QLTY & 50 & 100 & 82.97 & 82 & 17.43 \\
         PROD & 8 & 100 & 58.33 & 72 & 35.76 \\
         TEST & 0 & 13 & 7.22 & 8 & 4.26 \\
         CYC & 9 & 28 & 17.66 & 19 & 7.51 \\
@@ -454,7 +489,7 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
 \end{tabular}
 \\ \  \\
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/QLTY.png}
@@ -530,7 +565,7 @@ A box plot chart is a type of chart often used in explanatory data analysis; it 
     \hline
 \end{tabular}
 \\ \  \\
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/QLTY.png}
@@ -615,4 +650,6 @@ Finally, question three was focused on the difficulty of the participants in app
 \end{figure}
 
 
-Template analysis of the interview for the replication study
+Something very interesting that came up during the thematic analysis of the final interview, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step.
+Five out of the nine students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators on a real hardware platform. Keep in mind that there was no reference to this aspect in the scheduled interview, so each of the participants that showed interest in the topic, did so out of their initiative.
+This suggests that future courses relating to \ess (even not considering \tdd) should consider limiting the ... of mocked systems, in favor of more hardware deployment into their \dots
