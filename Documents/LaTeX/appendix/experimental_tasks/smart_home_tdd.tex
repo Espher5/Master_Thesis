@@ -1,0 +1,65 @@
+\chapter{Experimental task 3 - Smart Home - \tdd group}
+\section{Constraints}
+Your project must be free of syntactic errors. Please make sure that your code actually runs in PyCharm.
+
+\section{Task goal}
+The goal of this task is to develop an intelligent system to manage a smart room in a house. First of all, an infrared distance sensor is placed on the ceiling of the room and is used to determine whether the user is inside the room or not.
+Based on the occupancy of the room and on the light measurements obtained by a photoresistor, the smart home system turns on/off a smart light bulb. 
+Furthermore, the room has a window on one side, equipped with a servo motor to open/close it based on the delta between the temperatures measured by two temperature sensors, one indoor and one outdoor (i.e., inside and outside the room).
+Finally, the smart home system also monitors the gas level in the air inside the room through an air quality sensor and then triggers an active buzzer when too many gas particles are detected.
+To recap, the following sensors and actuators are present:
+
+\begin{itemize}
+    \item An infrared distance sensor located on the ceiling to the room.
+    \item A smart light bulb
+    \item A photoresistor sensor to measure the light level inside the room.
+    \item A servo motor to open/close the window.
+    \item Two temperature sensors, one indoor and one outdoor, used in combination with the servo motor to open/close the window.
+    \item An air quality sensor, used to measure the gas level inside the room.
+    \item An active buzzer that is triggered when a certain level of gas particles in the air is detected.
+\end{itemize}
+
+The communication between the main board and the other components happens with GPIO pins; GPIO communication is configured in BCM mode. For further details on how to use the GPIO library refer to the \texttt{mock.GPIO} file in the source code.
+Handle any error situation that you may encounter by throwing the \texttt{SmartHomeError} exception.
+For now, you don't need to know more; further details will be provided in the user stories below.
+
+
+\section{Instructions}
+Depending on your preference, either clone the repository at \url{https://github.com/Espher5/smart_home} or download the source files as a ZIP archive; afterwards, import the project into PyCharm. 
+Take a look at the provided project, which contains the following classes: 
+\begin{itemize}
+    \item \textbf{\texttt{SmartHome}}: you will implement your methods here.
+    \item \textbf{\texttt{SmartHomeError}}: exception that you will raise to handle errors.
+    \item \textbf{\texttt{SmartHomeTest}}: you will write your tests here.
+    \item \textbf{\texttt{mock.GPIO}}: contains the mocked methods for GPIO functionalities.
+    \item \textbf{\texttt{mock.adafruit\_dht}}: mocked library to control the temperature sensors.
+\end{itemize}
+
+Remember, you are not alloed to modify the provided API in any way (\ie class names, method names, parameter types, return types). You can however add fields, methods, or even classes (including other test classes), as long as you comply with the provided API.
+Use \tdd to implement this software system.
+The requirements of the software system to be implemented are divided into a set of user stories, which serve as a to-do list; you should be able to incrementally develop the software system, without an upfront comprehension of all the requirements. Do not read ahead and handle the requirements (\ie specified in the user stories) one at a time in the order provided.
+When a story is implemented, move on to the next one. A story is
+implemented when you are confident that your software system correctly implements all the functionality stipulated by the story's requirement. This implies that all your TESTS for that story and all the tests for the previous stories PASS. You may need to review your software system as you progress towards more advanced requirements.
+
+
+\section{How to deliver your project}
+\begin{enumerate}
+    \item Reserve a slot for the final project discussion in the following calendar: \url{https://doodle.com/meeting/participate/id/aQn47p0b/vote}.
+    Each student must reserve a single slot among those still available. In other words, please reserve a single slot among those still available, and make sure to not select a slot already reserved by someone else.
+    \item Deliver your project by sending an email containing a link to your project (either to a GitHub repository or to a sharing site).
+    Keep in mind that the last possible date to deliver your project is January 8th at 23:59. 
+    \item Please wait for a confirmation email after we receive your project.
+\end{enumerate}
+
+\section{User Stories}
+\subsection{User detection}
+An infrared distance sensor, placed on the ceiling of the room is used to determine whether or not a user is inside the room. 
+This sensor has a data pin connected to the board and used by the system in order to receive the measurements; more specifically, the data pin is connected to pin GPIO25 (BCM mode).
+The communication with the sensors happens via the GPIO \textbf{input} function. The pins have already been set up in the constructor of the \textbf{SmartHome} class. 
+The output of the infrared sensor is an analog signal which increases intensity according to the distance between the sensor and the object (i.e., 0V when an object is very close to the sensor and >3V when the object is out of the max range of the sensor). 
+Please note that this behavior of this sensor is the opposite of the one seen in the previous exercises.
+For this exercise, let's assume the input can be classified into these two categories:
+\begin{itemize}
+    \item \textbf{Non-zero value}: nothing is detected in front of the sensor.
+    \item \textbf{Zero value}: it indicates that an object is present in front of the sensor (i.e., a person).
+\end{itemize}

@@ -1,0 +1,164 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{array}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage[ruled, lined, linesnumbered, noend ]{algorithm2e}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{color}
+\usepackage[english]{babel} 
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{float}
+\usepackage{framed}
+\usepackage[acronym, nomain]{glossaries}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{moreverb}
+\usepackage{multirow}
+\usepackage{nomencl}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{todonotes}
+\usepackage{url}
+
+% Table float box with bottom caption, box width adjusted to content
+
+\usepackage[utf8]{inputenc}
+\usepackage[final, bookmarks, breaklinks, colorlinks, allcolors=black]{hyperref}
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\addbibresource{sections/bibliography.bib} % The filename of the bibliography
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                     % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\lstdefinelanguage{FLY} {
+  morestring=[b]",
+  morecomment=[l]{//},
+  morecomment=[s]{/}{/},
+  identifierstyle=\color{black},
+  keywordstyle=\color{javapurple},
+  morekeywords={func,var,while, if, then, else, for, in, println, fly, on, the all, as, then, require, native}% list your attributes here
+}
+
+\lstset {
+    language=FLY,
+    basicstyle=\ttfamily\scriptsize,    
+    keywordstyle=\color{javapurple}\bfseries,
+    stringstyle=\color{javared},
+    commentstyle=\color{javagreen},
+    morecomment=[s][\color{javadocblue}]{/*}{/},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    stepnumber=1,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\input{sections/macro.tex}
+\input{sections/list_of_abbreviations.tex}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \epsfig{file=figures/logo_standard.jpg,width=2.5truecm}\\[0.2truecm]
+            {\Large Universit\`a degli Studi di Salerno}\\[0.2truecm]
+            {\large Dipartimento di Informatica}\\
+            \hrulefill
+            \vfill
+            {\large Tesi di Laurea di II livello in }\\[0.2truecm]
+            {\Large Informatica}\\
+            \vfill\vfill
+            {\Huge An Empirical Assessment on the Effectiveness of Test-Driven Development Techniques for Embedded Systems}
+            \vfill\vfill
+            
+            
+            {\bf Supervisors} \hfill {\bf Candidate}\ \ \\
+            Giuseppe Scanniello \hfill Michelangelo Esposito\\
+            Simone Romano \hfill \ \ \\
+            
+            \vfill
+            \hrulefill 
+            
+            Academic Year 2021-2022
+        
+        \end{center}
+    \end{titlepage}
+
+
+    \pagenumbering{roman}
+    \chapter*{Abstract}
+    \input{sections/00_abstract.tex}
+    
+    \tableofcontents
+    \pagestyle{plain}
+
+    \input{sections/list_of_figures.tex}
+    \input{sections/list_of_tables.tex}
+
+    \chapter{Introduction}
+    \setcounter{page}{1} 	% must only follow the first chapter
+    \pagenumbering{arabic}	% must only follow the first chapter
+    \input{sections/01_introduction.tex}
+
+    \chapter{Test Driven Development}
+    \input{sections/02_testing.tex}
+
+    \chapter{Embedded Systems}
+    \input{sections/03_embedded_systems.tex}
+
+    \chapter{Literature Review}
+    \input{sections/04_literature.tex}
+
+    \chapter{Experimental Approach}
+    \input{sections/05_approach.tex}
+
+    \chapter{Discussion}
+    \input{sections/06_discussion.tex}
+
+    \chapter{Conclusions}
+    \input{sections/07_conclusions.tex}
+
+    \nocite{*}
+    \printbibliography[title={Bibliography}] 
+
+    \begin{appendices}
+        \includepdf[pages=-, pagecommand={}, linktodoc=true]{appendix/experimental_tasks/intelligent_office_tdd.pdf}
+        \includepdf[pages=-, pagecommand={}, linktodoc=true]{appendix/experimental_tasks/cleaning_robot_no_tdd.pdf}
+        \includepdf[pages=-, pagecommand={}, linktodoc=true]{appendix/experimental_tasks/smart_home_tdd.pdf}
+        \includepdf[pages=-, pagecommand={}, linktodoc=true]{appendix/thematic_analysis/thematic_analysis_baseline.pdf}
+        \includepdf[pages=-, pagecommand={}, linktodoc=true]{appendix/thematic_analysis/thematic_analysis_replication.pdf}
+    \end{appendices}
+
+\end{document}

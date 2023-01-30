@@ -204,6 +204,9 @@ For both $CYC$ and $COG$ we only considered the production code, since there was
 Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is; software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easy maintenance and extendability.
 
 
+
+
+
 \section{Analysis Methods}
 \subsection{Individual analysis}
 As a first way to examine the distribution of the dependent variables, we compute the descriptive statistics, for each of them (\ie $QLTY$, $PROD$, $TEST$, $CYC$, $COG$, and $LOC$). We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
@@ -220,18 +223,6 @@ The information that can be extracted form a box plot chart includes:
     \item \textbf{Outliers}: observations that are numerically distant from the rest of the data. They are defined as data points that are located outside the whiskers of the box plot, and are represented by a dot.
 \end{itemize}
 
-\noindent To provide an example of the kind of information that a box plot chart can provide, please consider the following figure displaying four student groups' opinions on a subject:
-
-\dots
-
-Some observations that can be made include:
-\begin{itemize}
-    \item The box plot is comparatively short (see box plot  (2)). This suggests that overall the student have a high level of agreement and therefore the values are very similar between each other.
-    \item The box plot is comparatively tall (see box plots (1) and (3)). This, on the other hand, suggests students hold quite different opinions about this aspect or sub-aspect.
-    \item Obvious differences between box plots (see box plots (1) and (2), (1) and (3), or (2) and (4)). Any obvious difference between box plots for comparative groups is worthy of further investigation.
-    \item The 4 sections of the box plot are uneven in size (see box plot (1)). This reveals that many students share a similar view at certain parts of the scale, but in other parts of the scale students are more variable in their views. A long upper whisker in the means that students views are varied among the most positive quartile group, and very similar for the least positive quartile group. 
-    \item Same median, different distribution (see box plots (1), (2), and (3)). The medians, which generally tend to be close to the average, are at the same level. However, the box plots in these examples show very different distributions of views. It's always important to consider the pattern of the whole distribution of responses in a box plot.
-\end{itemize}
 
 \subsection{Aggregate analysis}
 Meta-analysis is a statistical method used to combine the results of multiple studies in order to obtain a more precise estimate of the effect of the treatment/intervention. Its goal is to increase the power of the analysis and to provide a more robust estimate of the treatment effect.
@@ -247,7 +238,6 @@ To read a forest plot chart, you need to understand the following elements:
 \end{itemize}
 
 In our case, we considered the baseline and replication as the two studies for the meta-analysis.
-    
 
 \subsection{Thematic analysis}
 Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. The researcher then organizes the coded data into themes and sub-themes, which are then used to construct a narrative or report of the findings.
@@ -299,7 +289,7 @@ Furthermore, we originally intended to also analyze the number of code smells in
 
 
 
-\noindent Starting for the first experimental task, \textit{Intelligent Office}, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd} display the values for the dependent variables measured for the two groups, by applying each of the two conditions.
+\noindent Starting for the first experimental task, \textit{Intelligent Office}, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd} display the values for the statistics we computed for each dependent variable, for each of the two approached (\ie \tdd or \notdd).
 
 \begin{table}[!h]
     \begin{center} 
@@ -346,40 +336,36 @@ Furthermore, we originally intended to also analyze the number of code smells in
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/QLTY.png}
         \caption{QLTY}
-        \label{bp_task1_qlty}
+        \label{bp_task1_prod}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+        \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/PROD.png}
         \caption{PROD}
         \label{bp_task1_prod}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/TEST.png}
         \caption{TEST}
         \label{bp_task1_test}
-    \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/box_plots/task1/CYC.png}
-        \caption{CYC}
-        \label{bp_task1_cyc}
     \end{subfigure}
 
     \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/CYC.png}
+        \caption{CYC}
+        \label{bp_task1_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/COG.png}
         \caption{COG}
         \label{bp_task1_cog}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/LOC.png}
         \caption{LOC}
         \label{bp_task1_loc}
@@ -436,40 +422,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/QLTY.png}
         \caption{QLTY}
-        \label{bp_task2_qlty}
+        \label{bp_task2_prod}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+        \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/PROD.png}
         \caption{PROD}
         \label{bp_task2_prod}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/TEST.png}
         \caption{TEST}
         \label{bp_task2_test}
-    \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/box_plots/task2/CYC.png}
-        \caption{CYC}
-        \label{bp_task2_cyc}
     \end{subfigure}
 
     \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/CYC.png}
+        \caption{CYC}
+        \label{bp_task2_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/COG.png}
         \caption{COG}
         \label{bp_task2_cog}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/LOC.png}
         \caption{LOC}
         \label{bp_task2_loc}
@@ -528,47 +510,44 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/QLTY.png}
         \caption{QLTY}
-        \label{bp_task1_2_qlty}
+        \label{bp_task1_2_prod}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+        \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/PROD.png}
         \caption{PROD}
         \label{bp_task1_2_prod}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/TEST.png}
         \caption{TEST}
         \label{bp_task1_2_test}
-    \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/box_plots/task1_2/CYC.png}
-        \caption{CYC}
-        \label{bp_task1_2_cyc}
     \end{subfigure}
 
     \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1_2/CYC.png}
+        \caption{CYC}
+        \label{bp_task1_2_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/COG.png}
         \caption{COG}
         \label{bp_task1_2_cog}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/LOC.png}
         \caption{LOC}
         \label{bp_task1_2_loc}
     \end{subfigure}
     \caption{Aggregated box plots for tasks 1 and 2}
-    \label{box_plots_task1_2}
+    \label{fig:box_plots_task1_2}
 \end{figure}
+
 
 
 
@@ -618,40 +597,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/QLTY.png}
         \caption{QLTY}
-        \label{bp_task3_qlty}
+        \label{bp_task3_prod}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+        \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/PROD.png}
         \caption{PROD}
         \label{bp_task3_prod}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/TEST.png}
         \caption{TEST}
         \label{bp_task3_test}
-    \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/box_plots/task3/CYC.png}
-        \caption{CYC}
-        \label{bp_task3_cyc}
     \end{subfigure}
 
     \medskip
-
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/CYC.png}
+        \caption{CYC}
+        \label{bp_task3_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/COG.png}
         \caption{COG}
         \label{bp_task3_cog}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/LOC.png}
         \caption{LOC}
         \label{bp_task3_loc}
@@ -669,6 +644,48 @@ The following figures display the results of the aggregate analysis on the varia
 
 
 Forest plots are \dots
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{QLTY}
+        \label{bp_task1_qlty}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{PROD}
+        \label{bp_task1_prod}
+    \end{subfigure}
+
+    \medskip
+
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{TEST}
+        \label{bp_task1_test}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{CYC}
+        \label{bp_task1_cyc}
+    \end{subfigure}
+
+    \medskip
+
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{COG}
+        \label{bp_task1_cog}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+        \caption{LOC}
+        \label{bp_task1_loc}
+    \end{subfigure}
+    \caption{Box plots for task 1, \textit{IntelligentOffice}}
+    \label{box_plots_task1}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
