@@ -55,11 +55,67 @@ implemented when you are confident that your software system correctly implement
 \subsection{User detection}
 An infrared distance sensor, placed on the ceiling of the room is used to determine whether or not a user is inside the room. 
 This sensor has a data pin connected to the board and used by the system in order to receive the measurements; more specifically, the data pin is connected to pin GPIO25 (BCM mode).
-The communication with the sensors happens via the GPIO \textbf{input} function. The pins have already been set up in the constructor of the \textbf{SmartHome} class. 
+The communication with the sensors happens via the GPIO \texttt{input} function. The pins have already been set up in the constructor of the \texttt{SmartHome} class. 
 The output of the infrared sensor is an analog signal which increases intensity according to the distance between the sensor and the object (i.e., 0V when an object is very close to the sensor and >3V when the object is out of the max range of the sensor). 
 Please note that this behavior of this sensor is the opposite of the one seen in the previous exercises.
 For this exercise, let's assume the input can be classified into these two categories:
 \begin{itemize}
     \item \textbf{Non-zero value}: nothing is detected in front of the sensor.
     \item \textbf{Zero value}: it indicates that an object is present in front of the sensor (i.e., a person).
+\end{itemize}
+
+\noindent\textbf{Requirement}:
+\begin{itemize}
+    \item Implement \texttt{SmartHome.check\_room\_occupancy() $\,\to\,$ bool} to verify whether the room has someone inside it by using the infrared distance sensor.
+\end{itemize}
+
+
+\subsection{Manage smart light bulb based on occupancy}
+When the user is inside the room, the smart home system turns on the smart light bulb. On the other hand, the smart home system turns off the light bulb when the user leaves the room. The infrared distance sensor is used to determine whether someone is inside the room (see the previous user story).
+The smart light bulb is represented by a LED, connected to the main board via pin GPIO26 (BCM mode). Communication with the LED happens via the GPIO \texttt{output} function. The pin has already been set up in the constructor of  the \texttt{SmartHome} class.
+Finally, since at the first stage of development there is no way to determine the state of the physical light bulb, use the boolean instance variable \texttt{self.light\_on}, defined in the constructor of the \texttt{SmartHome} class, to keep track of the state of the light bulb.
+
+\noindent\textbf{Requirement}:
+\begin{itemize}
+    \item Implement \texttt{SmartHome.manage\_light\_level() $\,\to\,$ None} to control the behavior of the smart light bulb.
+\end{itemize}
+
+
+\subsection{Manage smart light bulb based on light level}
+Before turning on the smart light bulb, the system checks how much light is inside the room (by querying the photoresistor). 
+If the measured light level inside the room is above or equal to the threshold of 500 lux, the smart home system does not turn on the smart light bulb even if the user is in the room (or turns the light off if it was already on); on the other hand, if the light level is below the threshold of 500 lux and the user is in the room, the system turns on the smart light bulb as usual.
+The behavior when the user is not inside the room does not change (i.e., the light stays off).
+The light level is measured by the photoresistor connected on pin GPIO27 (BCM mode). The communication with the sensor happens via the GPIO \texttt{input} function. For this sensor, the value returned by the GPIO \texttt{input} function is assumed to be in lux.
+
+\noindent\textbf{Requirement}:
+\begin{itemize}
+    \item Implement \texttt{SmartHome.measure\_lux() $\,\to\,$ float} to query the photoresistor and measure the amount of lux in the room.
+    \item Update the implementation of \texttt{SmartHome.manage\_light\_level() $\,\to\,$ None} to handle the additional constraint of the photoresistor measurements.
+\end{itemize}
+
+
+\subsection{Open/close window based on temperature}
+Two temperature sensors, one indoor and one outdoor are used to manage the window. 
+Whenever the indoor temperature is lower than the outdoor temperature minus two degrees, the system opens the window by using the servo motor; on the other hand, when the indoor temperature is greater than the outdoor temperature plus two degrees, the system closes the window.
+The above behavior is only triggered when both of the sensors measure temperature in the range of 18 to 30 degrees celsius. Otherwise, the window stays closed.
+The two temperature sensors are DHT11 sensors, and are connected to pins GPIO23 and GPIO24 respectively (BCM mode); they can be controlled with the \texttt{mock.adafruit\_dht} library.
+Both of the sensors have been initialized in the constructor of the \texttt{SmartHome} class and can be accessed by using the \texttt{self.dht\_indoor} and \texttt{self.dht\_outdoor} objects.
+In order to retrieve the temperature use the  \texttt{mock.adafruit\_dht.DHT11.temperature property} (\ie by calling  \texttt{self.dht\_indoor.temperature}) on the appropriate sensor object. This property returns a float value.
+To open/close the window, the system commands a servo motor, which is a type of DC (Direct Current) motor that, upon receiving a signal, can rotate itself to any angle from 0 to 180 degrees. We can control it by sending a PWM (Pulse-Width Modulation) signal to its signal pin; this means sending a HIGH signal for a certain period of time (called duty cycle), followed by a LOW signal period. The duty cycle determines the angle the servo motor will rotate to.
+The servo motor is an SG90 model, is connected on pin GPIO6 (BCM mode), and operates at 50Hz frequency. Furthermore, let's assume the window can be in the following states:
+\begin{itemize}
+    \item \textbf{Fully closed}, corresponding to a 0 degrees rotation of the servo motor.
+    \item \textbf{Fully open}, corresponding to a 180 degrees rotation of the servo motor.
+\end{itemize}
+
+In order to calculate the duty cycle corresponding to a certain angle, refer to the following formula:
+\[
+    duty cycle = (angle / 18) + 2
+\]
+The servo motor has already been configured and can be controlled by calling the \texttt{ChangeDutyCycle(duty\_cycle: float) $\,\to\,$ None} method on the \texttt{self.servo} object and passing it the appropriate duty cycle.
+Finally, since at the first stage of development there is no way to determine the state of the physical servo motor, use the \texttt{self.window\_open} instance variable to keep track of its state.
+
+\noindent\textbf{Requirement}:
+\begin{itemize}
+    \item 
 \end{itemize}
