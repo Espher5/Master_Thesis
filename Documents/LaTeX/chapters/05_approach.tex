@@ -289,16 +289,21 @@ Furthermore, we originally intended to also analyze the number of code smells in
 
 
 Starting with the first experimental task, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd}, as well as figure \ref{box_plots_task1} show the tables containing the extracted statistical measures and the box plot charts for the dependent variables, respectively.
-$QLTY$ and $PROD$ paint a similar picture, with both having a similar median and values distribution among the two groups, with the group employing \tdd reporting slightly higher average values.
-As for the number of written tests, every participant in \textit{G1} (\tdd), except for an outlier, wrote a similar number of tests (\ie 9 or 10), compared to \textit{G2}, where the number of written test cases fluctuates a lot more; still, however, the median for \textit{G2} is 0, since a few participants did not write any tests at all.
+$QLTY$ and $PROD$ paint a similar picture, with both having a similar median and values distribution among the two groups (standard deviations of 10 and 10.73, respectively), with the group employing \tdd reporting slightly higher average values.
+As for the number of written tests, every participant in \textit{G1} (\tdd), except for an outlier, wrote a similar number of tests (\ie 9 or 10), with a standard deviation of only 1, compared to \textit{G2}, where the number of written test cases fluctuates a lot more; still, however, the median for \textit{G2} is 0, since a few participants did not write any tests at all.
 The other code quality metrics, $CYC$, $COG$, and $LOC$ are on average higher for the \tdd implementations.
 
 In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the \dots
-While the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled the task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100 median, and 84 mean), and a lower value for $PROD$ (21 median and 38.6 mean). 
-For the same reason, the . 
-The max, however, is still higher for \textit{G2}, resulting from a participant correctly and fully applying \tdd to the task.
+(see \ref{tab_dv_t2_tdd} and \ref{tab_dv_t2_notdd}, and figure \ref{box_plots_task2}).
+While the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled the task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a lower value for $PROD$ (21\% median and 38.6\% mean). 
+For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, resulting from a participant correctly and fully applying \tdd to the task.
 
-If we considered both tasks 1 and 2 simultaneously (see tables \ref{tab_dv_t1_2_tdd} and \ref{tab_dv_t1_2_notdd}, and figure \ref{box_plots_task1_2})
+If we considered both tasks 1 and 2 simultaneously (see tables \ref{tab_dv_t1_2_tdd} and \ref{tab_dv_t1_2_notdd}, and figure \ref{box_plots_task1_2}).
+$PROD$ has a much wider range of values for the \tdd group, given the result of task 2 and further highlighted by a standard deviation of 35, while for the \notdd group it is much more contained, ranging from 52\% to 84\%.
+
+Finally, the task in the replication study (see tables \ref{tab_dv_t3_tdd} and \ref{tab_dv_t3_notdd}, and figure \ref{box_plots_task3}), produced results in favor of \tdd.
+For the number of tests, we see a result in line with the first task, with the \tdd group producing on average more tests, and with the minimum values still well above the median of 3.5 for the \notdd group.
+Regarding the code complexity metrics, ... . A higher value for $LOC$ is expected for the \tdd group since this metric contains both the lines of code written in the source files of the production code and the ones contained in the test code, so its value is directly related to the $TEST$ variable.
 
 \input{chapters/05_approach_tables_and_box_plots.tex}
 
