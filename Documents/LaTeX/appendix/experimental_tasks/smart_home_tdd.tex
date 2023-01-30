@@ -117,5 +117,28 @@ Finally, since at the first stage of development there is no way to determine th
 
 \noindent\textbf{Requirement}:
 \begin{itemize}
-    \item 
+    \item Implement \texttt{SmartHome.manage\_window() $\,\to\,$ None} to control the behavior of the window based on the temperature values. In particular, please write your code inside the try block provided inside the method.
+\end{itemize}
+
+\noindent\textbf{Hint}:
+\begin{itemize}
+    \item Mocking the \texttt{mock.adafruit\_dht.DHT11.temperature} property is a bit more unusual compared to mocking a method. In particular you have to add the argument \texttt{new\_callable=PropertyMock} to the patch decorator before your test method when you mock a property, like so:
+    \[
+        \texttt{@patch('mock.adafruit\_dht.DHT11.temperature', new\_callable=PropertyMock)}
+    \]
+    \item For the return values you can use return\_value and side\_effect (for multiple return values) on the mock object as usual.
+\end{itemize}
+
+
+\subsection{Gas leak detection}
+An air quality sensor is used to check for any gas leaks inside the room; the sensor is configured in a way such that if the amount of gas particles detected is below 500 PPM, the sensor returns a constant reading of 1. As soon as the gas measurement goes to 500 PPM or above, the sensor switches state and starts returning readings of 0.
+To notify the user of any gas leak an active buzzer is employed; if the amount of detected gas is greater than or equal to 500 PPM, the system turns on the buzzer; otherwise, when the gas level goes below the threshold of 500 PPM, the buzzer is turned off.
+The air quality sensor is connected on pin GPIO5 (BCM mode). The communication with the sensor happens via the GPIO \texttt{input} function. 
+The active buzzer is connected on pin GPIO6 (BCM mode). The communication with the buzzer happens via the GPIO \texttt{output} function.
+Both the pin for the air quality sensor and the one for the buzzer  have already been set up in the constructor of the \texttt{SmartHome} class. 
+Finally, since at the first stage of development there is no way to determine the state of the physical active buzzer, use the boolean instance variable \texttt{self.buzzer\_on}, defined in the constructor of the \texttt{SmartHome} class, to keep track of the state of the buzzer.
+
+\noindent\textbf{Requirement}:
+\begin{itemize}
+    \item Implement \texttt{SmartHome.monitor\_air\_quality() $\,\to\,$ None} to control the behavior of the air quality sensor and the buzzer.
 \end{itemize}

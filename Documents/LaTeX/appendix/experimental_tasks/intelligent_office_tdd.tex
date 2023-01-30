@@ -23,7 +23,14 @@ To recap, the following sensors and actuators are present:
 
 The communication between the main board and the other components happens with GPIO pins; GPIO communication is configured in BOARD mode. For further details on how to use the GPIO library refer to the \texttt{mock.GPIO} file in the source code.
 Handle any error situation that you may encounter by throwing the \texttt{IntelligentOfficeError} exception.
-The image below recaps the layout of the sensors and actuators in the office.
+Figure \ref{office_layout} recaps the layout of the sensors and actuators in the office.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/appendix/intelligent_office.png}
+    \caption{Office layout}
+    \label{office_layout}
+\end{figure}
 
 For now, you don't need to know more; further details will be provided in the user stories below.
 

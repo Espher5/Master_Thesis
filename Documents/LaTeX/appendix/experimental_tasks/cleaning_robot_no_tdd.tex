@@ -21,7 +21,7 @@ To recap, the following sensors, actuators, and systems are present:
 
 The communication between the main board and the other components happens with GPIO pins; GPIO communication is configured in BOARD mode. For further details on how to use the GPIO library refer to the \texttt{mock.GPIO} file in the source code.
 Handle any error situation that you may encounter by throwing the \texttt{CleaningRobotError} exception.
-For now, you don’t need to know more; further details will be provided in the user stories below.
+For now, you don't need to know more; further details will be provided in the user stories below.
 
 \section{Instructions}
 Depending on your preference, either clone the repository at \url{https://github.com/Espher5/cleaning_robot} or download the source files as a ZIP archive; afterwards, import the project into PyCharm. 
@@ -43,9 +43,15 @@ At the end of the task, fill out the post-questionnaire where, among other thing
 
 \section{User Stories}
 \subsection{Robot deployment}
-The robot has a status, namely a string (without white spaces) formatted as follows: $(x,y,h)$. The pair $(x,y)$ represents the position of the robot in the room (in terms of $x$ and $y$ coordinates) while $h$ is the heading - \ie the direction the robot is pointing towards; the direction can be: $N (North)$, $S (South)$, $E (East)$, or $W (West)$. The robot assumes the $North$ is parallel to the y-axis. The robot starts its duty from the origin position - \ie, the position with coordinates $(0,0)$, facing $North$ (see the figures below).
+The robot has a status, namely a string (without white spaces) formatted as follows: $(x,y,h)$. The pair $(x,y)$ represents the position of the robot in the room (in terms of $x$ and $y$ coordinates) while $h$ is the heading - \ie the direction the robot is pointing towards; the direction can be: $N (North)$, $S (South)$, $E (East)$, or $W (West)$. The robot assumes the $North$ is parallel to the y-axis. The robot starts its duty from the origin position - \ie, the position with coordinates $(0,0)$, facing $North$ (see the figure \ref{room_and_compass} below).
 
- 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/appendix/cleaning_robot_1.png}
+    \caption{Room layout and robot compass}
+    \label{room_and_compass}
+\end{figure}
+
 \noindent\textbf{Requirement}:
 \begin{itemize}
     \item Implement \texttt{CleaningRobot.initialize\_robot $\,\to\,$ None} to set the status of the robot to "$(0,0,N)$".
@@ -120,8 +126,15 @@ Finally, the output of the infrared sensor is an analog signal which changes int
 
 \noindent\textbf{Example}:
 \begin{itemize}
-    \item Let us suppose that there is an obstacle in the room at coordinates $(0,1)$ (see figure below). The robot with initial status "$(0,0,N)$", after executing the command string "$f$", returns the following status: "$(0,0,N)(0,1)$".
+    \item Let us suppose that there is an obstacle in the room at coordinates $(0,1)$ (see figure \ref{room_obstacle} below). The robot with initial status "$(0,0,N)$", after executing the command string "$f$", returns the following status: "$(0,0,N)(0,1)$".
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/appendix/cleaning_robot_2.png}
+    \caption{Room layout with an obstacle}
+    \label{room_obstacle}
+\end{figure}
 
 \noindent\textbf{Hint}:
 \begin{itemize}

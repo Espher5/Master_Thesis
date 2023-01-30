@@ -1,3 +1,4 @@
+\chapter{Experimental Approach}
 \section{Overview}
 Software engineering is an ever-growing field that has seen significant advances in recent years. As software systems have become increasingly complex and critical to the functioning of modern society, the need for effective and efficient methods for designing, building, and maintaining software has become more pressing than ever. One of the key ways in which researchers in the field of empirical software engineering work to improve the state of the art is through experimental studies.
 
@@ -249,31 +250,27 @@ In our study, we used thematic analysis to analyze the open-ended questions of t
 
 
 \section{Results}
-\subsection{Dependent variables analysis}
+\subsection{Dependent variable analysis}
 In this section we will report the values observed for each dependent variable during their individual analysis. For each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of each dependent variable, for the two separate conditions (\ie \tdd and \notdd), before considering the values of the variable for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches.
 
 Besides the tables, box plot charts will be used to visualize the values assumed by the dependent variables.
 A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
 
-
 As we discussed in the dependent variables' definition section, in the end we did not take into account the cyclomatic and cognitive complexities of the test code written by the participants during the experimental tasks. 
 Figure \ref{bp_task1_2_cyc_test_cog_test} shows the box plot chart for these metrics, relative to the experimental tasks for the baseline study:
-
 \begin{figure}[htbp]
-    \begin{subfigure}{\textwidth}
-        \includegraphics[width=\textwidth]{figures/box_plots/CYC_TEST.png}
-        \caption{Cyclomatic complexity}
-    \end{subfigure}
-    
-    \bigskip
-    
-    \begin{subfigure}{\textwidth}
-        \includegraphics[width=\textwidth]{figures/box_plots/COG_TEST.png}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/CYC_TEST.png}
+        \caption{Cyclomatic complexity }
+        \label{bp_task1_2_cyc_test}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/COG_TEST.png}
         \caption{Cognitive complexity}
+        \label{bp_task1_2_cog_test}
     \end{subfigure}
-    
     \caption{Box plots for the cyclomatic and cognitive complexities of test code for the first two tasks}
-    \label{bp_task1_2_cyc_test_cog_test}
+    \label{bp_task1_2_cyc_cog_test}
 \end{figure}
 
 Furthermore, we originally intended to also analyze the number of code smells in both the production and test code, however, as figure \ref{bp_task1_2_smells} highlights, there was no significant difference between the two conditions.
@@ -284,8 +281,6 @@ Furthermore, we originally intended to also analyze the number of code smells in
     \caption{Number of code smells for the first two tasks}
     \label{bp_task1_2_smells}
 \end{figure}
-
-
 
 
 
@@ -331,12 +326,9 @@ Furthermore, we originally intended to also analyze the number of code smells in
     \end{center}
 \end{table}
 
+AAA
 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1/QLTY.png}
@@ -419,10 +411,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     \end{center}
 \end{table}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+AAA
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task2/QLTY.png}
@@ -507,10 +498,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     \end{center}
 \end{table}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+AAA
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task1_2/QLTY.png}
@@ -594,10 +584,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     \end{center}
 \end{table}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+AAA
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.33\textwidth}
         \includegraphics[width=\linewidth]{figures/box_plots/task3/QLTY.png}
