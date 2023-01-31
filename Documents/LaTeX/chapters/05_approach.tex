@@ -35,20 +35,16 @@ According to the GQM template, for an organization to measure purposefully it mu
 
 \noindent According to this objective, the following research questions were defined:
 \begin{itemize}
-    \item \textbf{RQ1.} Does the use of \tdd impact the external quality of the developed \ess? And if so, to what extent?
+    \item \textbf{RQ1.} Does the use of \tdd impact the external quality of the developed \es? And if so, to what extent?
 
     \noindent\textit{Aim}: The answer to this RQ has practical implications, especially within the Agile community. For example, in case the use of \tdd positively affects the external quality of \ess developed within implementation tasks, it would mean that it is the case to teach this development approach in academic contexts, with the ultimate goal of facilitating the adoption of this Agile development approach in the industry. That is, if the newcomers of the working market are familiar with TDD (because they learned and experienced it in the academic context), and it is shown that it produces better quality \ess, then the software industry could be encouraged to migrate their development from \notdd to \tdd.
 
-    \item \textbf{RQ2.} Does the use of \tdd impact the internal quality attributes (\ie size and structural complexity) of the developed \ess? And if so, to what extent?
-
-    \noindent\textit{Aim}: 
-
-    \item \textbf{RQ3.} Does the use of \tdd increase developers' productivity when developing \ess? And if so, to what extent?
+    \item \textbf{RQ2.} Does the use of \tdd increase developers' productivity when developing \ess? And if so, to what extent?
 
     \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
     improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
 
-    \item \textbf{RQ4.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
+    \item \textbf{RQ3.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
 
     \noindent\textit{Aim}: 
 \end{itemize}
@@ -57,13 +53,13 @@ According to the GQM template, for an organization to measure purposefully it mu
 
 
 \section{Participants}
-The participants for the two experimental studies were computer science students at the University of Salerno, in Italy; they were a mix of second-year Master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the Master's degree course of \textit{Embedded Systems} at the University of Salerno. As for the Master's students, not all of them had a computer science background (Bachelor's degree). Among the students taking the course, 9 participated. 
+The participants for the two experimental studies were computer science students at the University of Salerno, in Italy; they were a mix of second-year Master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno. As for the Master's students, not all of them had a computer science background (Bachelor's degree). Among the students taking the course, 9 participated. 
 
 The study had both research and educational goals: on one hand, we conceived the study to answer our RQs; on the other hand, the study allowed the students to gain practical experience with \tdd applied to \ess. As for the educational goal, \tdd is a development approach widely used in several contexts \cite{DBLP:conf/esem/RomanoZBPS22}, and it seems to be promising in the development of \ess too \cite{TDDEC}.
 
-Participating in the studies was voluntary; the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so, and \textit{(iii)} they could achieve the highest mark in the course even if they didn't participate. Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark for the course, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}.
+Participating in the studies was voluntary: the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so, and \textit{(iii)} they could achieve the highest mark in the course even if they didn't participate. Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark for the course, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}.
 
-Before the studies took place, we collected some information on the participants' knowledge and experience programming and testing, in order to get a general idea of their personal preparation before the studies. To this end, the participants were asked to fill out a form in which they had to rate their experience using a Likert scale (where 1 means “very inexperienced” and 5 means “very experienced”). All the participants had programming experience and most of them rated such an experience as 3 out of 5 on the scale. 
+Before the studies took place, we collected some information on the participants' knowledge and experience with programming and testing, in order to get a general idea of their personal preparation before the studies. To this end, the participants were asked to fill out a form in which they had to rate their experience using a Likert scale (where 1 means “very inexperienced” and 5 means “very experienced”). All the participants had programming experience and most of them rated such an experience as 3 out of 5 on the scale. 
 As for testing, the participants were mostly not experienced with unit testing, since most of them chose 1 or 2 on their scale to represent their unit-testing experience; finally, three students had heard about \tdd, but none had had a practical experience with this technique before the study.
 
 The participants for the experiments were later asked to carry out their task by either using \tdd or \notdd (\ie any approach they preferred, except for \tdd) depending on the group they were partitioned in, and on the period the task took place in. 
@@ -73,28 +69,28 @@ The participants for the experiments were later asked to carry out their task by
 
 
 \section{Experimental tasks design}
-The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language; in this case the design of a small \es. All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and around the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \es or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion focusing on a higher level language such as \textit{Python} (which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant) allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
-Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier to get a grasp of the whole picture. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks.
+The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language: in this case the design of a small \es. All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \es or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion focusing on a higher level language such as \textit{Python} - which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
+Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier for them to get a grasp on the main implementation concepts for \ess. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks.
 
-The target platform was considered even for the two tasks of the baseline study, which in the end did not have to be effectively deployed on the real hardware; this was done in order to make the mocked implementation of the participants resemble as close as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software \cite{GPIOMock}. Other mocked components include third party libraries for some individual sensors and actuators.
-For the replication study, another factor that influenced the design of the kata was the availability of the hardware, including sensors and actuators, as well as how hard these would have been to test in real time; for example, testing .... would be dangerous.
-For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
+The target platform was considered even for the two tasks of the baseline study, which in the end did not have to be effectively deployed on hardware; this was done in order to make the mocked implementation of the participants resemble as closely as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software on GitHub \cite{GPIOMock}. Other mocked components include third party libraries for some individual sensors and actuators, like for the \textit{DHT1} temperature and humidity sensor.
+For the replication study, another factor that influenced the design of the code kata was the availability of the hardware, including sensors and actuators, as well as how hard these would have been to test in real time; for example, testing a gas sensor by actually releasing gas close to it  for extended period of times could be dangerous. For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
 
+The replication project was deployed and tested inside a laboratory at the University of Salerno. Each participant had their project uploaded on the \textit{Raspberry Pi} board and \dots
 
-The replication project was tested inside a laboratory at the University of Salerno. Each participant had their project uploaded on the \textit{Raspberry Pi} board and \dots
+For \textit{Exp1}, the experimental tasks were:
+\begin{itemize}
+    \item \textbf{\textit{IntelligentOffice}} (\textbf{IO}): 
+    The sensors and actuators employed for this task are:
 
+    \item \textbf{\textit{CleaningRobot}} (\textbf{CR}): as the name suggests, this task required participants to implement an \es to manage a small cleaning robot. This system received command strings from an external management unit, and had to move/rotate the robot inside the room accordingly, using two DC motors, one for the wheels, and one for the robot itself. Besides this, the robot had to be able to detect an obstacle in front of it by using an IR sensor, and had to communicate its position to the remote management system. Finally, an Intelligent Battery Sensor (IBS) was used to check the charge left of the internal battery of the robot, and a LED was turned on to signal the need for a recharge.
+    while looking for obstacles and cleaning the dust along the way. 
+\end{itemize}
+
+As for \textit{Exp2}, the replication study, the task was the following:
+\begin{itemize}
+    \item \textbf{\textit{SmartHome}} (\textbf{SH}): 
+\end{itemize}
 Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
-
-\subsection{IntelligentOffice}
-This task required developing an intelligent office system, which allowed for handling light and CO2 levels inside an office. To handle the light, the system relied on the information gathered from different sensors---\ie Infra-Red (IR) distance sensors, a real-time clock, and a photoresistor---and then controlled a servo motor (to open/close the blinds) and a light bulb. A carbon dioxide sensor was used to monitor the CO2 levels inside the office and then control the switch of an exhaust fan.
-
-\subsection{CleaningRobot}
-The second task for the baseline experiment required participants to develop a cleaning robot that, while moving in a room based on the commands received from an external system, cleaned the dust on the floor along the way. To clean the dust, the robot controlled a cleaning system. The robot also detected potential obstacles through an IR distance sensor. An intelligent battery sensor was used to check the charge left of the internal battery of the robot, and a LED was turned on to signal the need for a recharge.
-
-\subsection{SmartHome}
-This task required developing a smart room system, which allowed for handling light, temperature, and gas levels inside a room. To handle the light, the system relied on the information gathered from an IR distance sensor and a photoresistor, and then turned on/off a light bulb. The information from a pair of temperature sensors was used to control a servo motor of a window. The system was also equipped with an air quality sensor to measure the gas levels inside the room and, if necessary, trigger an alarm through a buzzer. 
-
-
 
 
 
