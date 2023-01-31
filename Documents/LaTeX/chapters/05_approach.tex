@@ -35,18 +35,17 @@ According to the GQM template, for an organization to measure purposefully it mu
 
 \noindent According to this objective, the following research questions were defined:
 \begin{itemize}
-    \item \textbf{RQ1.} Does the use of \tdd impact the external quality of the developed \es? And if so, to what extent?
+    \item \textbf{RQ1.} Does the use of \tdd impact the quality of the developed \es? And if so, to what extent?
 
-    \noindent\textit{Aim}: The answer to this RQ has practical implications, especially within the Agile community. For example, in case the use of \tdd positively affects the external quality of \ess developed within implementation tasks, it would mean that it is the case to teach this development approach in academic contexts, with the ultimate goal of facilitating the adoption of this Agile development approach in the industry. That is, if the newcomers of the working market are familiar with TDD (because they learned and experienced it in the academic context), and it is shown that it produces better quality \ess, then the software industry could be encouraged to migrate their development from \notdd to \tdd.
+    \noindent\textit{Aim}: The answer to this RQ has practical implications, especially within the Agile community. For example, in case the use of \tdd positively affects the quality of \ess developed within implementation tasks, it would mean that it is the case to teach this development approach in academic contexts, with the ultimate goal of facilitating the adoption of this Agile development approach in the industry. That is, if the newcomers of the working market are familiar with TDD (because they learned and experienced it in the academic context), and it is shown that it produces better quality \ess, then the software industry could be encouraged to migrate their development from \notdd to \tdd.
 
     \item \textbf{RQ2.} Does the use of \tdd increase developers' productivity when developing \ess? And if so, to what extent?
 
-    \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach
-    improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
+    \noindent\textit{Aim}: A positive answer to this RQ has practical implications, since it would help us to further improve our body of knowledge in the context of \tdd applied to the development of \ess. For example, some software companies operating in the context of the development of \ess could be encouraged to use \tdd in case: \textit{(i)} there is evidence that this approach improves productivity and \textit{(ii)} developers are familiar with this approach before being hired (\eg \tdd has been learned at university).
 
     \item \textbf{RQ3.} Does the use of \tdd increase the number of test cases written by developers when developing \ess? And if so, to what extent?
 
-    \noindent\textit{Aim}: 
+    \noindent\textit{Aim}: If the adoption of \tdd were to result in a higher number of written test cases when developing \ess, using this approach would be beneficial to the industry. Not only more test cases would potentially cover more of the implemented source code, thus increasing reliability; the fact that tests are written as the first thing when using \tdd, a higher number of them would provide more documentations for developers and new contributors, especially for those aspects of \ess that concern lower-level details, such as hardware interaction. Finally, more tests would open up more refactoring opportunities when using \tdd; this could help with the optimization steps commonly performed in many \ess.
 \end{itemize}
 
 
@@ -167,13 +166,13 @@ The participants were asked to carry out each task by using either \tdd or the a
 
 
 As for the dependent variables considered in the studies, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
-The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others variables
+The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others variables (\ie $CYC$, $COG$, and $LOC$), they can further contribute to assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
 
 QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
 \[
     QLTY = \frac{\sum_{i=1}^{\#TUS} QLTY_i}{\#TUS} * 100 
 \]
-where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i$ is the external quality of the $i-th$ user story; to determine whether a user story was tackled or not, the asserts in the test suite corresponding to the story were checked: if at least one assert in the test suite for the story passed, than the story was considered as tackled. $\#TUS$ is formally defined as follows:
+where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i$ is the external quality of the $i-th$ tackled user story; to determine whether a user story was tackled or not, the asserts in the test suite corresponding to the story were checked: if at least one assert in the test suite for the story passed, than the story was considered as tackled. $\#TUS$ is formally defined as follows:
 \[
     \#TUS = \sum_{i=1}^{n} 
         \begin{cases}
@@ -181,13 +180,13 @@ where $\#TUS$ is the number of user stories a participant tackled, while $QLTY_i
                 0 & \text{otherwise}
         \end{cases}
 \]
-Finally, the quality of the $i-th$ user story (i.e., $QLTY_i$) is defined as the ratio of asserts passed for the acceptance suite of the $i-th$ user story over the total number of asserts in the acceptance suite for the same story. More formally:
+Finally, the quality of the $i-th$ user story (\ie $QLTY_i$) is defined as the ratio of asserts passed for the acceptance suite of the $i-th$ user story over the total number of asserts in the acceptance suite for the same story. More formally:
 \[
     QLTY_i = \frac{\#ASSERT_i(PASS)}{\#ASSERT_i(ALL)}
 \]
 As a result, the $QLTY$ measure deliberately excludes unattempted tasks and tasks with zero success; therefore, it represents a local measure of external quality calculated over the subset of user stories that the subject attempted. $QLTY$ is a ratio measure in the range $[0, 100]$.
 
-PROD estimates the productivity of a participant. It is computed as follows:
+The PROD variable estimates the productivity of the solution implemented by a participant. It is computed as follows:
 \[
     PROD = \frac{\#ASSERT(PASS)}{\#ASSERT(ALL)} * 100
 \]
@@ -196,14 +195,16 @@ where $ASSERT(PASS)$ is the total number of asserts that have passed, by conside
 The $TEST$ variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
 
-As for the additional three dependent variables, these were computed using SonarQube and provide additional insight regarding the quality in the implemented software solution, in terms of how hard the production code is to comprehend and therefore maintain. They can be defined as follows:
-(\textbf{$CYC$}) refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a program module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; it can be used as an estimate on how difficult the code will be to cover/test.
+As for the additional three dependent variables, these were computed using SonarQube and provide additional insight regarding the quality in the implemented software solution, in terms of how hard the production code is to comprehend and therefore maintain. 
 
-(\textbf{$COG$}) is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
+They can be defined as follows:
+\textbf{$CYC$} refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a code module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; the variable can also be used as an estimate on how difficult the code will be to cover/test.
+
+\textbf{$COG$} is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
     \item Code is not considered more complex when it uses shorthand syntax that the language provides for collapsing multiple statements into one.
-    \item Code is considered more complex for each "break in the linear flow of the code".
-    \item Code is considered more complex when "flow breaking structures are nested"
+    \item Code is considered more complex for each break in the linear flow of the code.
+    \item Code is considered more complex when flow breaking structures are nested.
 \end{enumerate}
 
 Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
@@ -218,7 +219,7 @@ Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse 
 
 \section{Analysis Methods}
 \subsection{Individual analysis}
-As a first way to examine the distribution of the dependent variables, we compute the descriptive statistics, for each of them (\ie $QLTY$, $PROD$, $TEST$, $CYC$, $COG$, and $LOC$). We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
+As a first way to examine the distribution of the dependent variables, we computed some descriptive statistics, for each of them (\ie $QLTY$, $PROD$, $TEST$, $CYC$, $COG$, and $LOC$). We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
 
 The information that can be extracted form a box plot chart includes:
 \begin{itemize}
