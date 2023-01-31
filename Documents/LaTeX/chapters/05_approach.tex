@@ -70,6 +70,14 @@ The participants for the experiments were later asked to carry out their task by
 
 \section{Experimental tasks design}
 The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language: in this case the design of a small \es. 
+All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \ess or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion designing the tasks with a higher level language such as \textit{Python} - which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
+Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier for them to get a grasp on the main implementation concepts for \ess. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks, with the native \texttt{unittest} package as the testing library.
+
+The target platform was considered even during the design of the two tasks of \textit{Exp1}, which in the end did not have to be effectively deployed on hardware; this was done in order to make the mocked implementation developed by the participants resemble as closely as possible the embedded implementation, in line with the approach proposed by Grenning \cite{TDDEC}. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software on GitHub \cite{GPIOMock}. Other mocked components included third party libraries for some individual sensors and actuators, like for the \textit{DHT11} temperature and humidity sensor.
+For \textit{Exp2}, another factor that influenced the design of the code kata was the availability of the hardware at the university, including sensors and actuators, as well as how hard/practical these would have been to test in real time; for example, testing a gas sensor by actually releasing gas close to it for extended period of times could be dangerous. For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
+
+The task developed for \textit{Exp2} was later deployed and tested inside a laboratory at the University of Salerno: each participant had their project uploaded on a \textit{Raspberry Pi} board and assisted as we ran a small acceptance test suite in real time and logged the results. 
+
 For \textit{Exp1}, the experimental tasks were:
 \begin{itemize}
     \item \textbf{\textit{IntelligentOffice}} (\textbf{IO}): task revolving around the implementation of a smart system to manage an office, by using different sensors (\ie infrared (IR) distance sensors, Real Time Clock (RTC)) to manage various aspects inside it. The system was responsible for detecting the presence of workers in four quadrants of the office by using IR sensors, manage the light level in the room with a smart light bulb, a photoresistor (or Light Dependent Resistor, LDR), and a set of blinds controlled by a servo motor, and monitor the CO2 levels, with the possibility of triggering an air vent system to balance said levels.
@@ -89,43 +97,32 @@ Further details on the experimental objects, including user stories, hardware us
 
 The material provided to the participants for each task included: \textit{(i)} a document containing the description of the task, made up of a high level description of the purpose of the system, instructions on the development approach (\ie \tdd or \notdd), and the list of user stories to implement, with each detailing the corresponding class/method to modify in the source code; and \textit{(ii)} a link to project template for the \textit{PyCharm IDE} that the participants had to import in their environment (\ie by either forking the GitHub repository or downloading a zip file); this template contained method stubs (\ie empty methods exposing the expected API signatures), utility functions, mocked libraries for the GPIO library and other components, as well as an example empty \texttt{unittest} test class.
 
-All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \ess or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion designing the tasks with a higher level language such as \textit{Python} - which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
-Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier for them to get a grasp on the main implementation concepts for \ess. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks, with the native \texttt{unittest} package as the testing library.
-
-The target platform was considered even during the design of the two tasks of \textit{Exp1}, which in the end did not have to be effectively deployed on hardware; this was done in order to make the mocked implementation developed by the participants resemble as closely as possible the embedded implementation. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software on GitHub \cite{GPIOMock}. Other mocked components included third party libraries for some individual sensors and actuators, like for the \textit{DHT11} temperature and humidity sensor.
-For \textit{Exp2}, another factor that influenced the design of the code kata was the availability of the hardware at the university, including sensors and actuators, as well as how hard/practical these would have been to test in real time; for example, testing a gas sensor by actually releasing gas close to it for extended period of times could be dangerous. For some sensors, on the other hand, this was not a concern since it was possible to manually trigger them by rotating an on-board potentiometer, effectively lowering or increasing the detection threshold for their respective measurements.
-
-The task developed for \textit{Exp2} was later deployed and tested inside a laboratory at the University of Salerno: each participant had their project uploaded on a \textit{Raspberry Pi} board and assisted as we ran a small acceptance test suite in real time and logged the results. 
-
-For each of these tasks, we prepared a corresponding acceptance test suite, as a mean to evaluate the implementations delivered by participants.
+For each of these tasks, we prepared a corresponding acceptance test suite, as a mean to evaluate the implementations delivered by participants, and extract the metrics on which to evaluate our empirical assessment.
 
 
 \section{Study design}
 The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022 and covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \es testing techniques.
 
-As the pre-questionnaire for the study highlighted, few students had unit testing experience, and almost no participants ha dealt with \tdd up to that point. For this reason, these topics were covered through a series of frontal lectures and exercise/homework sessions in the weeks preceding the studies.
-
-All the participants attended these lectures and training sessions during which they were trained on the main topics they would encounter during the future experimental tasks. The overall schedule for training sessions and studies was subdivided in the following days:
+As the survey pre-\textit{Exp1} highlighted, few students had unit testing experience, and almost no participants ha dealt with \tdd up to that point: for this reason, both topics were covered through a series of frontal lectures and exercise/homework sessions in the weeks preceding the studies. All the participants attended these lectures and training sessions during which they were trained on the main topics they would encounter during the future experimental tasks. The overall schedule for training sessions and studies was as follows:
 \begin{itemize}
     \item \textbf{D1.} Frontal lecture - Introduction on unit testing and its guidelines. Interactive exercise on unit testing.
     \item \textbf{D2.} Frontal lecture - Test scaffolding and \textit{Raspberry Pi}'s GPIO library. Interactive exercise on test scaffolding.
     \item \textbf{D3.} Frontal lecture - Introduction to Test-Driven Development. Interactive exercise on \tdd.
-    \item \textbf{D4.} Training task - \tdd exercise and homework.
-    \item \textbf{D6.} First experimental task for the baseline study - \textit{IntelligentOffice} (\textit{IO}).
-    \item \textbf{D7.} Second experimental task for the baseline study - \textit{CleaningRobot} (\textit{CR}).
-    \item \textbf{D8.} Start date for the replication study's task - \textit{SmartHome} (\textit{SH}).
+    \item \textbf{D4.} Training task - \tdd exercise and homework with the same structure as the experimental task.
+    \item \textbf{D6.} First task for \textit{Exp1} - (\textit{IO}).
+    \item \textbf{D7.} Second experimental task for \textit{Exp1} - (\textit{CR}).
+    \item \textbf{D8.} Start date for the task relative to \textit{Exp2} - (\textit{SH}).
 \end{itemize}
 
 
-The first task, \textit{IO} took place on Tuesday, December 6th 2022, while the second, \textit{CR} took place on Tuesday, December 13th 2022. 
+The first task, \textit{IO} took place on Tuesday, December $6^{th}$ 2022, while the second, \textit{CR} took place on Tuesday, December $13^{th}$ 2022. Finally, the start date for \textit{Exp2} (\ie the date when we sent out the documentation to the students) was December $19^{th}$ 2022, and the participants had to deliver their implementation by January $8^{th}$ 2023.
 
-
-The experimental design of our baseline study is an ABBA crossover \cite{DBLP:journals/tse/VegasAJ16}; it is a kind of within-participants design where each participant receives both treatments (\ie \textit{A} and \textit{B}). In ABBA crossover designs, there are two sequences (\ie \textit{G1} and \textit{G2}), defined as the order with which the treatments are administered to the participants, and two periods (\ie \textit{P1} and \textit{P2}), defined as the times at which each treatment is administered. The experimental groups correspond to the sequences. Also, to mitigate learning effects, each period is paired with a
+The design of \textit{Exp1} is an ABBA crossover \cite{DBLP:journals/tse/VegasAJ16}; it is a kind of \textit{within-participants} design where each participant receives both treatments (\ie \textit{A} and \textit{B} or, in our case, \tdd and \notdd). In ABBA crossover designs, there are two sequences (\ie \textit{G1} and \textit{G2}), defined as the order with which the treatments are administered to the participants, and two periods (\ie \textit{P1} and \textit{P2}), defined as the times at which each treatment is administered. The experimental groups correspond to the sequences. Also, to mitigate learning effects, each period is paired with a
 different experimental task.
 
-For the first period \textit{P1}, the group \textit{G1} was assigned the \tdd version of the first task, \textit{IntelligentOffice}, while the group \textit{G2} was assigned the \notdd version; on the other hand, during period \textit{P2}, the group \textit{G1} was assigned the \notdd version of the second task, \textit{CleaningRobot}, while the group \textit{G2} was assigned the \tdd version.
+For the first period \textit{P1}, the group \textit{G1} was assigned the \tdd version of the first task, \textit{IO}, while the group \textit{G2} was assigned the \notdd version; on the other hand, during period \textit{P2}, the group \textit{G1} was assigned the \notdd version of the second task, \textit{CR}, while the group \textit{G2} was assigned the \tdd version.
 Therefore, at the end of the baseline study, every participant had tackled each experimental object only once.
-As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SmartHome}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for done randomly.
+As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SH}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for done randomly.
 
 After each period of the controlled baseline study, participants were asked to fill out an online questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their perceived complexity and testing approach. 
 The structure of the post-questionnaires was made up of three interval scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd group, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period \textit{P2} contained an additional open-ended question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd, and compare them based on the two encountered tasks. 
@@ -134,18 +131,18 @@ The structure of the post-questionnaires was made up of three interval scale que
 \begin{itemize}
     \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
     \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
-    \item \textbf{Q3.} Applying (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
+    \item \textbf{Q3.} Applying this testing approach (\ie \tdd or \notdd) to accomplish the development task has been: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
 \end{itemize}
 
 \noindent As for the open-ended questions, these were:
 \begin{itemize}
     \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
-    \item Provide your feelings (both positive and negative) about (\ie \tdd or \notdd).
+    \item Provide your feelings (both positive and negative) about the testing approach you used (\ie \tdd or \notdd).
     \item Provide your feelings (both positive and negative) about the development task.
-    \item (\textbf{Task 2 only}) After applying (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two approaches and your preference for using one over the other?
+    \item (\textbf{Task 2 only}) After applying the testing approach (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two and your preference for using one over the other?
 \end{itemize}
 
-\noindent Finally, no formal questionnaire was provided for the replication study; however, after the hardware deployment step, each participant was individually interviewed about their overall experience with the studies; the structure of the final interview was:
+\noindent Finally, no formal questionnaire was provided for the replication study; however, after the hardware deployment and testing steps, each participant was individually interviewed about their overall experience with the studies; the structure of the final interview was:
 \begin{enumerate}
     \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
     \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
@@ -166,7 +163,7 @@ The structure of the post-questionnaires was made up of three interval scale que
 
 
 \section{Independent and dependent variables}
-The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Condition}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled study, and over an additional period for the non-controlled study, so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1, P2, and P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{Group}, which can assume the values \textit{G1} and \textit{G2}.
+The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Approach}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled baseline study (\textit{Exp1}), and over an additional period for the non-controlled replication study (\textit{Exp2}), so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1$, $P2$, and $P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{\textit{Group}}, which can assume the values \textit{G1} and \textit{G2}.
 
 
 As for the dependent variables considered in the studies, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
