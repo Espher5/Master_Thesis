@@ -237,10 +237,11 @@ The information that can be extracted form a box plot chart includes:
 \subsection{Aggregate analysis}
 Meta-analysis is a statistical method used to combine the results of multiple studies in order to obtain a more precise estimate of the effect of the treatment/intervention. Its goal is to increase the power of the analysis and to provide a more robust estimate of the treatment effect.
 There are different methods used to conduct a meta-analysis, but generally, the process involves identifying relevant studies, extracting data from them, and then analyzing the data using statistical techniques. The most common method of meta-analysis is the random-effects model, which accounts for between-study variation in addition to within-study variation.
-In our case, we considered the Standard Mean Difference (SMD) as the measure of effect size for the meta-analysis. It represents the difference between two groups' mean values, standardized by dividing the difference by the standard deviation; SMD can be used to determine the overall effect size when comparing the results of the different studies. 
+In our case, we considered the Standard Mean Difference (SMD) as the measure of effect size for the meta-analysis: it represents the difference between two groups' mean values, standardized by dividing the difference by the standard deviation; SMD can be used to determine the overall effect size when comparing the results of the different studies. 
 
 A forest plot is a common way to visually present the results of a meta-analysis: it is a representation of the effect estimates and their corresponding confidence intervals for each study included in the meta-analysis. The forest plot is divided into two parts: the left side shows the individual study results and the right side shows the overall effect estimate and its corresponding confidence interval.
 In a forest plot, the SMD is often displayed as a diamond shape, with the width of the diamond representing the confidence interval of the estimate. The position of the diamond on the x-axis indicates the magnitude and direction of the effect size.
+
 To read a forest plot chart, you need to understand the following elements:
 \begin{itemize}
     \item Study name: This is the name of the study that is represented in the plot.
@@ -249,12 +250,12 @@ To read a forest plot chart, you need to understand the following elements:
     \item 95\% Confidence interval: this is the range of values within which the true effect is likely to lie, typically shown as a horizontal line. In a forest plot, it is  displayed as the horizontal line running through the diamond shape representing the SMD estimate.
 \end{itemize}
 
-In our case, we considered the baseline and replication as the two studies for the meta-analysis.
+In our case, we considered the \textit{Exp1} and \textit{Exp2} as the two studies for the meta-analysis.
 
 
 
 \subsection{Thematic analysis}
-Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. The researcher then organizes the coded data into themes and sub-themes, which are then used to construct a narrative or report of the findings.
+Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. The researcher then organizes the coded data into themes and sub-themes, which are in turn used to construct a narrative or report of the findings.
 
 Template Analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In Template Analysis, it is permissible (though not obligatory) to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis. These are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand.
 
@@ -264,10 +265,9 @@ In our study, we used thematic analysis to analyze the open-ended questions of t
 
 \section{Results}
 \subsection{Dependent variable analysis}
-In this section we will report the values observed for each dependent variable during their individual analysis. For each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of each dependent variable, for the two separate conditions (\ie \tdd and \notdd), before considering the values of the variable for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches.
+In this section we will report the values observed for each dependent variable during their individual analysis. For each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of each dependent variable, for the two separate approaches (\ie \tdd and \notdd), before considering the values of the variable for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches in \textit{Exp1}.
 
-Besides the tables, box plot charts will be used to visualize the values assumed by the dependent variables.
-A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
+Besides the tables, box plot charts will be used to visualize the values for the statistics extracted from the dependent variables. A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
 
 As we discussed in the dependent variables' definition section, in the end we did not take into account the cyclomatic and cognitive complexities of the test code written by the participants during the experimental tasks. 
 Figure \ref{bp_task1_2_cyc_cog_test} shows the box plot chart for these metrics, relative to the experimental tasks for the baseline study:
@@ -287,7 +287,7 @@ Figure \ref{bp_task1_2_cyc_cog_test} shows the box plot chart for these metrics,
     \label{bp_task1_2_cyc_cog_test}
 \end{figure}
 
-Furthermore, we originally intended to also analyze the number of code smells in both the production and test code, however, as figure \ref{bp_task1_2_smells} highlights, there was no significant difference between the two conditions.
+Furthermore, we originally intended to also analyze the number of code smells in both the production and test code, however, as figure \ref{bp_task1_2_smells} highlights, there was no significant difference between the two approaches.
 
 \begin{figure}[h]
     \centering
@@ -297,22 +297,23 @@ Furthermore, we originally intended to also analyze the number of code smells in
 \end{figure}
 
 
-Starting with the first experimental task, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd}, as well as figure \ref{box_plots_task1} show the tables containing the extracted statistical measures and the box plot charts for the dependent variables, respectively.
+Starting with the first experimental task of \textit{Exp1}, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd}, as well as figure \ref{box_plots_task1} show the tables containing the extracted statistical measures and the box plot charts for the dependent variables, respectively.
 $QLTY$ and $PROD$ paint a similar picture, with both having a similar median and values distribution among the two groups (standard deviations of 10 and 10.73, respectively), with the group employing \tdd reporting slightly higher average values.
 As for the number of written tests, every participant in \textit{G1} (\tdd), except for an outlier, wrote a similar number of tests (\ie 9 or 10), with a standard deviation of only 1, compared to \textit{G2}, where the number of written test cases fluctuates a lot more; still, however, the median for \textit{G2} is 0, since a few participants did not write any tests at all.
 The other code quality metrics, $CYC$, $COG$, and $LOC$ are on average higher for the \tdd implementations.
 
-In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the \dots
-(see \ref{tab_dv_t2_tdd} and \ref{tab_dv_t2_notdd}, and figure \ref{box_plots_task2}).
-While the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled the task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a lower value for $PROD$ (21\% median and 38.6\% mean). 
-For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, resulting from a participant correctly and fully applying \tdd to the task.
+In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the extracted statistics highlight the opposite situation (see \ref{tab_dv_t2_tdd} and \ref{tab_dv_t2_notdd}, and figure \ref{box_plots_task2}):
+while the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled the task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a lower value for $PROD$ (21\% median and 38.6\% mean). 
+For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, resulting from a participant correctly and fully applying \tdd to all user stories of the task.
 
 If we considered both tasks 1 and 2 simultaneously (see tables \ref{tab_dv_t1_2_tdd} and \ref{tab_dv_t1_2_notdd}, and figure \ref{box_plots_task1_2}).
 $PROD$ has a much wider range of values for the \tdd group, given the result of task 2 and further highlighted by a standard deviation of 35, while for the \notdd group it is much more contained, ranging from 52\% to 84\%.
 
-Finally, the task in the replication study (see tables \ref{tab_dv_t3_tdd} and \ref{tab_dv_t3_notdd}, and figure \ref{box_plots_task3}), produced results in favor of \tdd.
-For the number of tests, we see a result in line with the first task, with the \tdd group producing on average more tests, and with the minimum values still well above the median of 3.5 for the \notdd group.
-Regarding the code complexity metrics, ... . A higher value for $LOC$ is expected for the \tdd group since this metric contains both the lines of code written in the source files of the production code and the ones contained in the test code, so its value is directly related to the $TEST$ variable.
+Finally, the task developed for \textit{Exp2} (see tables \ref{tab_dv_t3_tdd} and \ref{tab_dv_t3_notdd}, and figure \ref{box_plots_task3}), produced results slightly in favor of \tdd.
+First, $QLTY$ and $PROD$ go hand in hand for both approaches, suggesting that all stories have been tackled; the \tdd group produced results that are around 10\% better on average.
+For the number of tests, we see a result in line with the first task, with the \tdd group producing on average many more tests, and with the minimum values still well above the median of 3.5 for the \notdd group.
+Regarding the code complexity metrics, once again these are higher for the \tdd approach, even though, in the case of cyclomatic and cognitive complexity, the result are still not concerning from a maintainability point of view.
+Finally, a higher value for $LOC$ is expected for the \tdd group since this metric contains both the lines of code written in the source files of the production code and the ones contained in the test code, so its value is directly related to the $TEST$ variable.
 
 \input{chapters/05_approach_tables_and_box_plots.tex}
 
@@ -320,56 +321,28 @@ Regarding the code complexity metrics, ... . A higher value for $LOC$ is expecte
 The following figures display the results of the aggregate analysis on the variables of the baseline and replication studies through means of forest plot charts, one per variable. These plots report the Standard Mean Difference (SMD)and the corresponding 95\% Confidence Intervals (CIs), two statistics to assess between-study heterogeneity: the p-value from the Q-test and the $I^2$ statistic [12]  
 
 
-was chosen as the effect measure, as suggested 
+was chosen as the effect measure, as suggested \dots
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{\textwidth}
         \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
         \caption{QLTY}
         \label{fp1}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
+
+    \medskip
+
+    \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{figures/forest_plots/PROD.png}
         \caption{PROD}
-        \label{fp2}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
-        \caption{TEST}
-        \label{fp3}
-    \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
-        \caption{CYC}
-        \label{fp4}
-    \end{subfigure}
-
-    \medskip
-
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
-        \caption{COG}
         \label{fp5}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
-        \caption{LOC}
-        \label{fp6}
-    \end{subfigure}
-    \caption{Box plots for task 1, \textit{IntelligentOffice}}
-    \label{fpx}
+
+    \caption{Forest plot charts for the QLTY and PROD variables.}
+    \label{forest_plots_qlty_prod}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
-    \caption{Forest plot chart for the QLTY dependent variable}
-    \label{forest_plot}
-\end{figure}
 
 
 
@@ -385,14 +358,14 @@ Finally, question three was focused on the difficulty of the participants in app
 \begin{figure}[htbp]
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{figures/bar_charts/task1.png}
-        \caption{First experimental task, \textit{IntelligentOffice}}
+        \caption{First task for \textit{Exp1}, \textit{IO}.}
     \end{subfigure}
     
     \bigskip
     
     \begin{subfigure}{\textwidth}
         \includegraphics[width=\textwidth]{figures/bar_charts/task2.png}
-        \caption{Second experimental task, \textit{CleaningRobot}}
+        \caption{Second task for \textit{Exp1}, \textit{CR}.}
     \end{subfigure}
     
     \caption{Diverging stacked bar charts for the post-questionnaires}

@@ -3,3 +3,6 @@ cyclomatic
 photoresistor
 unittest
 GPIO
+IntelligentOffice
+CleaningRobot
+Photoresistor
