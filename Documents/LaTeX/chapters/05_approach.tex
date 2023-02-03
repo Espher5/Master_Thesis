@@ -548,13 +548,13 @@ Regarding the code complexity metrics, once again these are higher for the \tdd 
 \end{figure}
 
 \ \\ \
-Let's now consider both tasks 1 and 2 simultaneously; as for $QLTY$, the comparison between \tdd and \notdd seems in favor of the former for any experimental task. Indeed, by looking at figures \ref{box_plots_task1_2}.a and \ref{box_plots_task3}.a, we can notice how the boxes for \tdd in the charts are higher than, or comparable to the ones for \notdd. The same trend is confirmed by the mean and median values (see table \ref{tab_dv_t1_2}). Moreover, we can notice that the effect of \tdd on $QLTY$ is not uniform across the experimental tasks: the difference between \tdd and \notdd is wider for the experimental task in \textit{Exp2}, while it is more limited for the two
+Let's now consider both \textit{Exp1} and \textit{Exp2} simultaneously. As for $QLTY$, the comparison between \tdd and \notdd seems in favor of the former for any experimental task; indeed, by looking at figures \ref{box_plots_task1_2}.a - which aggregates the results for both tasks in \textit{Exp1} - and \ref{box_plots_task3}.a, we can notice how the boxes for \tdd in the charts are higher than, or comparable to the ones for \notdd. The same trend is confirmed by the mean and median values (see table \ref{tab_dv_t1_2}). Moreover, we can notice that the effect of \tdd on $QLTY$ is not uniform across the experimental tasks: the gap between \tdd and \notdd is wider for the experimental task in \textit{Exp2}, while it is more limited for the two
 experimental tasks in \textit{Exp1}.
 
-As for $PROD$, it seems that the effect of \tdd is contrasting across the experimental tasks. In particular, when considering the first experimental task in \textit{Exp1} and the one in \textit{Exp2}, the boxes for \tdd are  higher than the
-boxes for \notdd (figures \ref{box_plots_task1_2}.b and \ref{box_plots_task3}.b). On the contrary, the box for \tdd is lower than the one for YW in the second experimental task of \textit{Exp1}. Such a contrasting trend is confirmed when looking at the mean and median values (see table \ref{tab_dv_t1_2}).
+As for $PROD$, it seems that the effect of \tdd is contrasting across the experimental tasks; in particular, when considering the first task in \textit{Exp1} and the one in \textit{Exp2}, the boxes for \tdd are  higher than the
+boxes for \notdd (figures \ref{box_plots_task1}.b and \ref{box_plots_task3}.b). On the contrary, the box for \tdd is lower than the one for \notdd in the second experimental task of \textit{Exp1} (figures \ref{box_plots_task2}.b and \ref{box_plots_task3}.b). Such a contrasting trend is confirmed when looking at the mean and median values (see table \ref{tab_dv_t1_2}).
 
-Finally, if we consider the number of test cases produced by the participants (\ie the $TEST$ dependent variable), we can see how the boxes for \tdd are either higher than or comparable to the ones for \notdd. Moreover, the median values for both experiments are still higher for \tdd, while the majority of values in the boxes are close together, especially in \textit{Exp2}.
+Finally, if we consider the number of test cases written by the participants (\ie the $TEST$ dependent variable), we can see how - similarly to the $QLTY$ variable - the boxes for \tdd are either higher than or comparable to the ones for \notdd. Moreover, the median values for both experiments are still higher for \tdd, while the majority of values in the boxes are close together, especially in \textit{Exp2}.
 
 \begin{table}[H]
     \begin{center} 
@@ -612,15 +612,11 @@ Finally, if we consider the number of test cases produced by the participants (\
 
 
 
-
-
-
-
 \subsection{Meta-analysis}
 Figure \ref{fp_qlty_prod} displays the results of the aggregate analysis on the variables for \textit{Exp1} and \textit{Exp2} through means of forest plot charts, focusing on the $QLTY$ and $PROD$ variables.
-The SMDs relative to the $QLTY$ variable for the single experiments \ref{fp_qlty_prod}.a are both in favor of \tdd; in particular, the SMD is considered small (0.290) in \textit{Exp1} and large (0.950) in \textit{Exp2}, highlighting how the effect of \tdd on $QLTY$ is not uniform. 
+The SMDs relative to the $QLTY$ variable for the single experiments (see figure \ref{fp_qlty_prod}.a) are both in favor of \tdd; in particular, the SMD is considered small (0.290) in \textit{Exp1} and large (0.950) in \textit{Exp2}, highlighting how the effect of \tdd on $QLTY$ is not uniform; the overall SMD is in favor of \tdd and small (0.480).
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \begin{subfigure}{0.5\textwidth}
         \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
         \caption{QLTY}
@@ -631,20 +627,22 @@ The SMDs relative to the $QLTY$ variable for the single experiments \ref{fp_qlty
         \caption{PROD}
         \label{fp_prod}
     \end{subfigure}
-    \caption{Forest plot charts for the $QLTY$ and $PROD$ dependent variables.}
+    \caption{Forest plot charts for the $QLTY$ and $PROD$ variables.}
     \label{fp_qlty_prod}
 \end{figure}
 
-
-In figure \ref{fp_test}
-\begin{figure}[htbp]
+\begin{figure}[H]
     \includegraphics[width=\linewidth]{figures/forest_plots/TEST.png}
-    \caption{Forest plot chart for the $TEST$ dependent variable.}
+    \caption{Forest plot chart for the $TEST$ variable.}
     \label{fp_test}
 \end{figure}\hfil
 
+Figure \ref{fp_qlty_prod}.b displays the forest plot for the $PROD$ variable. Here, the SMD for \textit{Exp1} is in favor of \notdd and small (-0.380); this is due to the second experimental task, as expected from looking at the box plots charts in figure \ref{box_plots_task2}. For \textit{Exp2}, on the other hand, the SMD is in favor of \tdd and large (0.860). The joint SMD is still in favor of \tdd but is negligible (0.120); the hollow joint SMD indicates a higher heterogeneity ($I^2$ is more than 50\%).
 
+Finally, figure \ref{fp_test} plots the results for the meta-analysis relative to the $TEST$ variable. Here, similarly to what happens with the $QLTY$ variable, both experiments are in favor of \tdd: the SMD for \textit{Exp1} is small (0.230), which is again expected given the contrast between the first two experimental tasks, while the SMD for \textit{Exp2} is large (1.330). The joint SMD is still in favor of \tdd and medium (0.600).
     
+
+
 \subsection{Post-questionnaire Analysis}
 Fig \ref{bar_charts} summarizes the answers provided by the participants in the post-experiment questionnaires, comparing the responses by the employed condition (\tdd or \notdd).
 Regarding user story comprehensibility, in the first experimental task, \textit{IntelligentOffice}, the majority of participants have a similar agreement on the matter, with percentages of agreement of 88\% (\tdd) and 80\% (\notdd). As for the second task, \textit{CleaningRobot}, there is a more substantial difference, with only 40\% of the \tdd group having a positive perception of the user stories' comprehensibility, compared to the 87\% of the \notdd group.
