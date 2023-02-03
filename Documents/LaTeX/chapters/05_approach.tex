@@ -238,6 +238,7 @@ In our case, after considering the mean, standard deviation, and number of parti
     \theta = \frac{\mu_1 - \mu_2}{\sigma}
 \]
 Where $\mu_1$ and $\mu_2$ represent the two means, and $\sigma$ refers to the standard deviation, used to measure the amount of variation or dispersion of a set of values.
+We computed the SMD as \textit{Hedges' (adjusted) g.}; to obtain joint SMDs (one for each dependent variable), we leveraged random-effects meta-analysis models.
 \noindent Based on the guidelines proposed by Cohen \cite{Cohen:1992}, the SMD can be interpreted as: \textit{negligible}, if $|\text{SMD}| <$ 0.2; \textit{small}, if 0.2 $\le |\text{SMD}| <$ 0.5; \textit{medium}, if 0.5 $\le |\text{SMD}| <$ 0.8; or \textit{large}, otherwise \cite{DBLP:conf/esem/RomanoZBPS22}.
 
 \ \\ \
@@ -641,15 +642,18 @@ Figure \ref{fp_qlty_prod}.b displays the forest plot for the $PROD$ variable. He
 
 Finally, figure \ref{fp_test} plots the results for the meta-analysis relative to the $TEST$ variable. Here, similarly to what happens with the $QLTY$ variable, both experiments are in favor of \tdd: the SMD for \textit{Exp1} is small (0.230), which is again expected given the contrast between the first two experimental tasks, while the SMD for \textit{Exp2} is large (1.330). The joint SMD is still in favor of \tdd and medium (0.600).
     
+Considering that for all three variables, the 95\% CI interval contains the 0, the meta-analysis alone does not indicate a statistical significance for any of these variables.
+A non-significant result does not mean that the treatment has no effect or that the difference is not meaningful; it simply means that there is not enough evidence to support a claim of a significant effect. Therefore, we are in need of further replication to reach a statistical conclusion on the effects of \tdd on external quality, productivity, and number of tests.
+
 
 
 \subsection{Post-questionnaire Analysis}
-Fig \ref{bar_charts} summarizes the answers provided by the participants in the post-experiment questionnaires, comparing the responses by the employed condition (\tdd or \notdd).
-Regarding user story comprehensibility, in the first experimental task, \textit{IntelligentOffice}, the majority of participants have a similar agreement on the matter, with percentages of agreement of 88\% (\tdd) and 80\% (\notdd). As for the second task, \textit{CleaningRobot}, there is a more substantial difference, with only 40\% of the \tdd group having a positive perception of the user stories' comprehensibility, compared to the 87\% of the \notdd group.
+Figure \ref{bar_charts} summarizes the answers provided by the participants in the post-experiment questionnaires submitted at the end of each task for \textit{Exp1}, comparing the responses by the employed approach (\tdd or \notdd).
+Regarding user story comprehensibility, in the first experimental task, \textit{IO}, the participants had a similar level of agreement on the matter, with the majority finding the provided user stories easy or very easy. In the second task, \textit{CR}, there is a more substantial difference, with only 40\% of the \tdd group having a positive perception of the user stories' clarity, compared to the 87\% of the \notdd group.
 
-A similar trend can be noted for the second question, regarding the general task feasibility; here, in the first experimental task, the participants somewhat agree, with 50\% of the \tdd group and 40\% of the \notdd group feeling neutral about the difficulty of the task. In the second task, the answers are quite mixed, with 40\% of the participants in the \tdd finding the task at hand very difficult to understand, and the other 60\% equally split between finding the task hard, feeling neutral about it or considering it very easy.  On the other hand, all of the participants in the \notdd group agreed on feeling neutral about their ease in developing it.
+As for the second question, regarding the feelings of the participants on the general task difficulty, in the first experimental task the participants somewhat agree, with 50\% of the \tdd group and 40\% of the \notdd group feeling neutral about the difficulty of the task; no one in the \tdd group found the task very easy, however, compared to a 20\% in the \notdd group. In the second task, the answers are quite in favor of \notdd, with 60\% of the \tdd group having some difficulties with the implementation of the provided user stories; 20\% however found the task very easy. On the other hand, all of the participants in the \notdd group agreed on feeling neutral about their ease in developing the task.
 
-Finally, question three was focused on the difficulty of the participants in applying their reference condition (\ie \tdd or \notdd): for task 1, the \tdd group did not have a strong opinion on applying this technique, with 76\% feeling neutral about it, and the other 24\% finding the application of \tdd easy but not too easy; The \notdd group had also the majority of opinions feeling neutral about their approach (60\%), however this time 20\% of the participants felt very good about applying \notdd; this is probably due to their seniority with the approach.
+Finally, question three was focused on the difficulty of the participants in applying their reference condition: for task 1, the \tdd group did not have a strong opinion on applying this technique, with 75\% feeling neutral about it, and the other 25\% finding the application of \tdd easy but not too easy; as for the \notdd group, this had also the majority of opinions feeling neutral about their approach (60\%), however this time 20\% of the participants felt very good about applying \notdd; this is probably due to their seniority with the approach. This conveys the idea that \tdd was considered less easy to apply compared to \notdd; such a trend is even clearer when considering the second experimental task, where 80\% of the \tdd group had trouble with their approach(40\% answered "Very Hard" and 40\% answered "Hard"), compared to only 25\% for the participants that used \notdd.
 
 
 \begin{figure}[htbp]
@@ -665,26 +669,33 @@ Finally, question three was focused on the difficulty of the participants in app
         \caption{Second task for \textit{Exp1}, \textit{CR}.}
     \end{subfigure}
     
-    \caption{Diverging stacked bar charts for the post-questionnaires}
+    \caption{Diverging stacked bar charts for the post-questionnaires.}
     \label{bar_charts}
 \end{figure}
 
-As for the open-ended question, we performed thematic analysis in order to identify a base template on which to parse the answers provided by the participants in the post-questionnaires after the two tasks of the baseline study.
-The themes that we identified are:
+Moving to the open-ended question, we performed thematic analysis in order to identify a base template on which to parse the answers provided by the participants in the same post-questionnaires.
+The themes we identified are:
+
 \begin{enumerate}
-    \item Feelings on the development task.
-    \item Feelings on \tdd to accomplish the task.
-    \item Feelings on \notdd to accomplish the task.
-    \item Personal comparison thoughts between \tdd and \notdd.
+    \item General feelings on the development task.
+    \item Feelings on \tdd and \notdd to accomplish the task.
+    \item \notdd testing approach.
+    \item Personal comparison and thoughts between \tdd and \notdd.
 \end{enumerate}
 
-Most of the participants found the first development task not particularly challenging, with 6 out of 9 participants expressing a positive feeling about it; 2 out of the remaining 3 found some challenges and would have liked a bit more time, while the last participant did not answer. 
-For task 2, 2 out of 9 students had no issues with the task, while 6 found the task to be harder than the previous one: out of the latter, 3 reported struggling with implementing some user stories, while 3 simply stated that the task was more challenging, without voicing their struggles with it.
-Employing \tdd to approach the tasks was still not fully clear at the end of the first two tasks. For task 1, 2 participants expressed how getting into the \tdd mindset for a new task was not easy, while another student found this practice very useful and expressed their good feelings for having learned it. 
-In the second task, which was considered overall hardware, 3 out of five participants in the \tdd group expressed having trouble with it.
-As for the chosen \notdd approach, in the first task 3 out 5 participants dealing with this testing approach still wrote test cases after the production code, while the other 2 chose not to; for the second task, all 4 participants in the \notdd group tested their implementation.
-At the end of the second task, 4 participants expressed their preference with \tdd, while 3 were still more comfortable with \notdd. Finally, the last participant expressed how in their opinion the best approach to use depended on the requirement quality  for development task.
+Most of the participants found the first development task easy, with 6 out of 9 expressing a positive feeling about it; 2 out of the remaining 3 found some challenges and would have liked a bit more time, while the last participant did not answer. 
+For the second task, 2 out of 9 students had no issues with it, while 6 found the task to be harder than the previous one: out of the latter, 3 reported struggling with implementing some user stories, while the other 3 simply stated that the task was more challenging, without voicing in detail their struggles with it.
 
+Employing \tdd to tackle the tasks was still not fully clear at the end of \textit{Exp1}: for task 1, 2 participants expressed how getting into the \tdd mindset for a new problem was not so easy for them, while another student found this practice very useful and expressed their good feelings for having learned it. 
+In the second task, which as we've seen in the interval-scale questions was considered overall harder, 3 out of 5 participants in the \tdd group expressed having trouble with it.
+Out of the \notdd group, on the other hand, the majority had no particular issue with the approach in both tasks.
+However, in the post-questionnaire for \textit{CR} 2 participants expressed how in their opinion, since the task was harder, maybe employing \tdd would have made it easier, since it would have allowed them to tackle the user stories in a more incremental manner.
+
+As for the chosen \notdd approach, in the first task, 3 out 5 participants dealing with this testing approach still wrote test cases after the production code, while the other 2 chose not to; for the second task, all 4 participants in the \notdd group tested their implementation, which is in line with them finding \textit{CR} overall harder.
+
+At the end of the second task, 4 participants expressed their preference with \tdd, while 3 were still more comfortable with \notdd. Finally, the last participant expressed how in their opinion the best approach to use depended on how refined the requirements for the task to be implemented are, stating how they would prefer \tdd, but only if the functional requirements are clear, while for discovering new technologies, they wouldn't use \tdd for sure.
+
+\ \\ \
 Thematic analysis was also used to extract patterns from the final individual participant interview; the template identified the following main topics: 
 \begin{enumerate}
     \item Thoughts on the replication experiment.
@@ -692,18 +703,14 @@ Thematic analysis was also used to extract patterns from the final individual pa
     \item \notdd testing approach.
     \item Applying \tdd for \ess development.
     \item Prior participant testing experience.
-    \item ThoughtS on the overall experience with the studies, from the lectures and homeworks to the last development task.
+    \item Thoughts on the overall experience with the studies, from the lectures and homework to the last development task.
 \end{enumerate}
 
-For the first point, 5 out of 9 participants found the task straight forward and had no issues with its development, while the other 4 found it balanced, with some user stories requiring more thought before being implemented. Furthermore, 3 participants were already familiar with some of the sensors and actuators used for the task, either from previous university courses, or from personal experience.
-For this last task, 5 out of 9 participants were assigned the \tdd version, while the other 4 had to develop the \es using \notdd; out of the 5 that used \tdd, 4 of them performed some refactoring, while 1 did not. As for the \notdd group, half still wrote tests after implementing the user stories, while the other half did not.
+For the first point, 5 out of 9 participants found the task straight forward and had no issues with its development, while the other 4 found it balanced, with some user stories requiring more thought before being implemented, according to them. Furthermore, 3 participants were already familiar with some of the sensors and actuators used for the task, either from previous university courses, or from personal experience.
 
-To the questions "What can be done to improve the application of \tdd in the development of \ess", most participants expressed how they were still not comfortable providing a definitive answer on the matter, given their still limited experience with \tdd;
+In \textit{Exp2}, 5 out of 9 participants were assigned the \tdd version, while the other 4 had to develop the \es using \notdd; out of the 5 that used \tdd, 4 of them performed some refactoring, while 1 did not. As for the \notdd group, half still wrote tests after implementing the user stories, while the other half did not.
 
-Participants also spoke about their testing experience \dots . 
+To the questions "What can be done to improve the application of \tdd in the development of \ess", most participants expressed how they were still not comfortable providing a definitive answer on the matter, given their still limited experience with \tdd.
+Speaking of, participants also provided information about their testing experience prior to the study: 2 of them had no prior testing experience at all; 1 out of them expressed how learning \tdd, while a bit challenTging in the beginning, made sense and how they would definitely keep using this approach going forward. On the other hand, 4 students already had some unit testing experience, while 3 had limited and mostly theoretical knowledge of \tdd, obtained in a previous university course.
 
-2 participants had no prior testing experience at all before the start of the study; one out of them expressed how learning \tdd, while a bit challenging in the beginning, made sense and how they would definitely keep using this approach going forward. On the other hand, 4 students already had some unit testing experience from their, while 3 had limited and mostly theoretical experience with \tdd, obtained in a previous university course.
-
-Something very interesting that came up during the thematic analysis of the final interview, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step.
-Five out of the nine students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators on a real hardware platform. Keep in mind that there was no reference to this aspect in the scheduled interview, so each of the participants that showed interest in the topic, did so out of their initiative while discussing their thoughts on this task; also, each student was alone during their interview, so it is unlikely that the answers were influenced by each other.
-This suggests that future courses relating to \ess (even the ones not focusing on \tdd or \ess testing in general) should consider limiting the ... of mocked systems, in favor of more hardware deployment into their \dots. 
+Something very interesting that came up during the thematic analysis of the final interview, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step: 5 out of the 9 students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators and operating on a real hardware platform. Keep in mind that there was no reference to this aspect in the scheduled interview, so each of the participants that showed interest in the topic, did so out of their initiative while discussing their thoughts on this task; also, each student was alone during their interview, so it is unlikely that the answers were influenced by each other.
