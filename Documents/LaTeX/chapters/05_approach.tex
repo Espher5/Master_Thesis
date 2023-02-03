@@ -69,7 +69,7 @@ The participants for the experiments were later asked to carry out their task by
 
 
 \section{Experimental tasks design}
-The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language: in this case the design of a small \es. 
+The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language: in this case the design of a small \es, which would take around 2 hours to implement. 
 All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \ess or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion designing the tasks with a higher level language such as \textit{Python} - which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
 Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier for them to get a grasp on the main implementation concepts for \ess. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks, with the native \texttt{unittest} package as the testing library.
 
@@ -86,46 +86,43 @@ For \textit{Exp1}, the experimental tasks were:
 
 As for \textit{Exp2}, the replication study, the task was the following:
 \begin{itemize}
-    \item \textbf{\textit{SmartHome}} (\textbf{\textit{SH}}): this final task concerned the development of a system to
-    which allowed for handling light, temperature, and gas levels inside a room. By using a photoresistor and a smart light bulb, the system managed the light level inside the room to avoid wastefully turning the light on. Furthermore, two temperature sensors, one on the inside and one on the outside of the room were used to collect measurements, based on which a servo motor opened or closed a window in the room. Finally, the system was also equipped with an air quality
-    sensor to measure the gas levels inside the room and; in case of high amounts of gas detected, an active buzzer triggered an alarm.
+    \item \textbf{\textit{SmartHome}} (\textbf{\textit{SH}}): this final task concerned the development of a system which allowed the handling of light, temperature, and gas levels inside a room. By using an IR distance sensor, a photoresistor and a smart light bulb, the system managed the light level inside the room to avoid wastefully turning the light on when the user was not in the room or when it was already bright enough inside due to natural light. Furthermore, two temperature sensors, one on the inside and one on the outside of the room were used to collect measurements, based on which a servo motor opened or closed a window in the room. Finally, the system was also equipped with an air quality sensor to measure the gas levels inside the room; based on its measurements, in case of high amounts of gas particles detected in the air inside the room, an active buzzer would trigger an alarm to notify the user.
 \end{itemize}
 
-Further details on the experimental objects, including user stories, hardware used, and other information, are provided as an appendix to this thesis.
+Further details on the experimental objects, including user stories, sensors and actuators employed, and other information, are provided as an appendix to this thesis (\ref{appendix:A_IntelligengOffice}, \ref{appendix:B_CleaningRobot}, \ref{appendix:C_SmartHome}).
 
-The material provided to the participants for each task included: \textit{(i)} a document containing the description of the task, made up of a high level description of the purpose of the system, instructions on the development approach (\ie \tdd or \notdd), and the list of user stories to implement, with each detailing the corresponding class/method to modify in the source code; and \textit{(ii)} a link to project template for the \textit{PyCharm IDE} that the participants had to import in their environment (\ie by either forking the GitHub repository or downloading a zip file); this template contained method stubs (\ie empty methods exposing the expected API signatures), utility functions, mocked libraries for the GPIO library and other components, as well as an example empty \texttt{unittest} test class.
+The material provided to the participants for each task included: \textit{(i)} a document containing the description of the task, made up of a high level description of the purpose of the system, instructions on the development approach (\ie \tdd or \notdd), and the list of user stories to implement, with each detailing the corresponding class/method to modify in the source code; and \textit{(ii)} a link to project template for the \textit{PyCharm IDE} that the participants had to import in their environment (\ie by either forking the corresponding GitHub repository or downloading a zip file); this template contained method stubs (\ie empty methods exposing the expected API signatures), utility functions, mocked libraries for the GPIO features and other components, as well as an example empty \texttt{unittest} test class.
 
-For each of these tasks, we prepared a corresponding acceptance test suite, as a mean to evaluate the implementations delivered by participants, and extract the metrics on which to evaluate our empirical assessment.
+For each of these tasks, we prepared a corresponding acceptance test suite, as a mean to evaluate the implementations delivered by participants, and extract the metrics on which to base our empirical assessment.
 
 
 \section{Study design}
-The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022 and covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \es testing techniques.
+The \textit{Embedded Systems} course, during which the study was conducted, started in September 2022 and covered the following topics: modeling and design of an \es, state machines, sensors and actuators, embedded processors, memory architectures, embedded security and privacy concepts, embedded operating systems and scheduling, and \ess testing techniques.
 
-As the survey pre-\textit{Exp1} highlighted, few students had unit testing experience, and almost no participants ha dealt with \tdd up to that point: for this reason, both topics were covered through a series of frontal lectures and exercise/homework sessions in the weeks preceding the studies. All the participants attended these lectures and training sessions during which they were trained on the main topics they would encounter during the future experimental tasks. The overall schedule for training sessions and studies was as follows:
+As the survey pre-\textit{Exp1} highlighted, few students had unit testing experience, and almost no participants ha dealt with \tdd up to that point: for this reason, both topics were covered through a series of frontal lectures and exercise/homework sessions in the weeks preceding the \textit{Exp1}. All the participants attended these lectures and training sessions during which they had some theoretical and hands-on experiences with the main topics they would encounter during the future experimental tasks. The overall schedule for training sessions and studies was as follows:
 \begin{itemize}
-    \item \textbf{D1.} Frontal lecture - Introduction on unit testing and its guidelines. Interactive exercise on unit testing.
-    \item \textbf{D2.} Frontal lecture - Test scaffolding and \textit{Raspberry Pi}'s GPIO library. Interactive exercise on test scaffolding.
-    \item \textbf{D3.} Frontal lecture - Introduction to Test-Driven Development. Interactive exercise on \tdd.
-    \item \textbf{D4.} Training task - \tdd exercise and homework with the same structure as the experimental task.
-    \item \textbf{D6.} First task for \textit{Exp1} - (\textit{IO}).
-    \item \textbf{D7.} Second experimental task for \textit{Exp1} - (\textit{CR}).
-    \item \textbf{D8.} Start date for the task relative to \textit{Exp2} - (\textit{SH}).
+    \item \textbf{Day1.} Frontal lecture - Introduction on unit testing and its guidelines - Interactive exercise on unit testing.
+    \item \textbf{Day2.} Frontal lecture - Test scaffolding and \textit{Raspberry Pi}'s GPIO library - Interactive exercise on test scaffolding.
+    \item \textbf{Day3.} Frontal lecture - Introduction to Test-Driven Development - Interactive exercise on \tdd.
+    \item \textbf{Day4.} Training task - \tdd exercise and homework with the same structure as the future experimental task (\ie project template, a set of user stories, and 2 hours deadline).
+    \item \textbf{Day6.} First task for \textit{Exp1} (\textit{IO}).
+    \item \textbf{Day7.} Second task for \textit{Exp1} (\textit{CR}).
+    \item \textbf{Day8.} Start date for the task relative to \textit{Exp2} (\textit{SH}).
 \end{itemize}
 
 
-The first task, \textit{IO} took place on Tuesday, December $6^{th}$ 2022, while the second, \textit{CR} took place on Tuesday, December $13^{th}$ 2022. Finally, the start date for \textit{Exp2} (\ie the date when we sent out the documentation to the students) was December $19^{th}$ 2022, and the participants had to deliver their implementation by January $8^{th}$ 2023.
+The first task, \textit{IO} took place on Tuesday, December $6^{th}$ 2022, while the second, \textit{CR} took place on Tuesday, December $13^{th}$ 2022; both tasks required around 2 hours to be implemented by the participants. Finally, the start date for \textit{Exp2} (\ie the date when we sent out the documentation to the students) was December $19^{th}$ 2022, and the participants had to deliver their implementation by January $8^{th}$ 2023.
 
-The design of \textit{Exp1} is an ABBA crossover \cite{DBLP:journals/tse/VegasAJ16}; it is a kind of \textit{within-participants} design where each participant receives both treatments (\ie \textit{A} and \textit{B} or, in our case, \tdd and \notdd). In ABBA crossover designs, there are two sequences (\ie \textit{G1} and \textit{G2}), defined as the order with which the treatments are administered to the participants, and two periods (\ie \textit{P1} and \textit{P2}), defined as the times at which each treatment is administered. The experimental groups correspond to the sequences. Also, to mitigate learning effects, each period is paired with a
+The design of \textit{Exp1} is an ABBA crossover \cite{DBLP:journals/tse/VegasAJ16}; it is a kind of \textit{within-participants} design where each participant receives both treatments (\ie \textit{A} and \textit{B} or, in our case, \tdd and \notdd). In ABBA crossover designs, there are two sequences (\ie \textit{G1} and \textit{G2}), defined as the order with which the treatments are administered to the participants, and two periods (\ie \textit{P1} and \textit{P2}), defined as the times at which each treatment is administered; the experimental groups correspond to the sequences. Also, to mitigate learning effects, each period is paired with a
 different experimental task.
 
 For the first period \textit{P1}, the group \textit{G1} was assigned the \tdd version of the first task, \textit{IO}, while the group \textit{G2} was assigned the \notdd version; on the other hand, during period \textit{P2}, the group \textit{G1} was assigned the \notdd version of the second task, \textit{CR}, while the group \textit{G2} was assigned the \tdd version.
-Therefore, at the end of the baseline study, every participant had tackled each experimental object only once.
-As for the replication study, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SH}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for done randomly.
+Therefore, at the end of \textit{Exp1}, every participant had tackled each experimental object only once.
+As for \textit{Exp2}, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SH}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for this experiment was done randomly.
 
-After each period of the controlled baseline study, participants were asked to fill out an online questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their perceived complexity and testing approach. 
-The structure of the post-questionnaires was made up of three interval-scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd group, with the latter having an additional question, as the first open-ended question, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period \textit{P2} contained an additional open-ended question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd, and compare them based on the two encountered tasks. 
+After each period of \textit{Exp1}, participants were asked to fill out an online questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their perceived complexity and testing approach. 
+The structure of the post-questionnaires was made up of three interval-scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd group, with the latter having an additional question, as the first open-ended one, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period \textit{P2} for \textit{Exp1} contained an additional open-ended question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd, and compare them based on the two encountered tasks.More specifically, the interval-scale questions were:
 
-\noindent More specifically, the interval-scale questions were:
 \begin{itemize}
     \item \textbf{Q1.} Regarding the comprehensibility of the provided user stories, I have found them: (Very unclear $|$ Unclear $|$ Neither clear nor unclear $|$ Clear $|$ Very clear).
     \item \textbf{Q2.} I have found the development task: (Very difficult $|$ Difficult $|$ Neither easy nor difficult $|$ Easy $|$ Very easy).
@@ -134,7 +131,7 @@ The structure of the post-questionnaires was made up of three interval-scale que
 
 \noindent As for the open-ended questions, these were:
 \begin{itemize}
-    \item (\textbf{\notdd only}) Describe the no-TDD approach you have followed to accomplish the development task.
+    \item (\textbf{\notdd only}) Describe the \notdd approach you have followed to accomplish the development task.
     \item Provide your feelings (both positive and negative) about the testing approach you used (\ie \tdd or \notdd).
     \item Provide your feelings (both positive and negative) about the development task.
     \item (\textbf{Task 2 only}) After applying the testing approach (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two and your preference for using one over the other?
@@ -156,16 +153,15 @@ The structure of the post-questionnaires was made up of three interval-scale que
         \end{itemize}
 \end{enumerate}
 
-
+The answer for both the post-questionnaires and the final interviews, as well as their thematic analyses, are available as an appendix to this thesis (\ref{appendix:D_Thematic_Analysis_Baseline}, \ref{appendix:E_Thematic_Analysis_Replication}).
 
 
 
 \section{Independent and dependent variables}
-The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Approach}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled baseline study (\textit{Exp1}), and over an additional period for the non-controlled replication study (\textit{Exp2}), so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1$, $P2$, and $P3$. During the three periods both treatments (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{\textit{Group}}, which can assume the values \textit{G1} and \textit{G2}.
-
+The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Approach}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled baseline study (\textit{Exp1}), and over an additional period for the non-controlled replication study (\textit{Exp2}), so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1$, $P2$, and $P3$. During the three periods both approaches (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{\textit{Group}}, which can assume the values \textit{G1} and \textit{G2}.
 
 As for the dependent variables considered in the studies, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
-The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the others variables (\ie $CYC$, $COG$, and $LOC$), they can further contribute to assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
+The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the other variables (\ie $CYC$, $COG$, and $LOC$), they can further contribute to assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
 
 QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
 \[
@@ -191,26 +187,25 @@ The PROD variable estimates the productivity of the solution implemented by a pa
 \]
 where $ASSERT(PASS)$ is the total number of asserts that have passed, by considering all acceptance test suites, while $ASSERT(ALL)$ refers to the total number of asserts in the acceptance suites. The $PROD$ variable can assume values between 0 and 100, where a value close to 0 indicates low productivity in the implemented solution, while a value close to 1 refers to high productivity.
 
-The $TEST$ variable quantifies the number of unit tests a participant wrote. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
+The $TEST$ variable quantifies the number of unit tests a participant wrote in their implementation. It is defined as the number of assert statements in the test suite written by the participant; this variable ranges from 0 to $\infty$.
 
-
-As for the additional three dependent variables, these were computed using SonarQube and provide additional insight regarding the quality in the implemented software solution, in terms of how hard the production code is to comprehend and therefore maintain. 
+As for the additional three dependent variables, these were computed using SonarQube and provide additional insight regarding the quality in the implemented software solution, mostly in terms of how hard the production code is to comprehend and therefore maintain. 
 
 They can be defined as follows:
-\textbf{$CYC$} refers to the Cyclomatic Complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a code module. A program with a lower Cyclomatic Complexity is generally easier to understand and less "risky" to modify; the variable can also be used as an estimate on how difficult the code will be to cover/test.
+\textbf{$CYC$} refers to the cyclomatic complexity metric of the implemented solution; it is a value used to determine the stability and level of confidence in a program, and it measures the number of linearly-independent paths inside a code module; a program with a lower cyclomatic complexity is generally easier to understand and less "risky" to modify; the variable can also be used as an estimate on how difficult the code will be to cover/test.
 
-\textbf{$COG$} is the Cognitive Complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's Cognitive Complexity is based on a few rules \cite{CognitiveComplexity}:
+\textbf{$COG$} is the cognitive complexity of the solution; it is a measurement of how difficult a program module is to intuitively understand. A method's cognitive complexity is based on a few rules \cite{CognitiveComplexity}:
 \begin{enumerate}
     \item Code is not considered more complex when it uses shorthand syntax that the language provides for collapsing multiple statements into one.
     \item Code is considered more complex for each break in the linear flow of the code.
     \item Code is considered more complex when flow breaking structures are nested.
 \end{enumerate}
 
-Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source file and the test code source file.
+Finally, $LOC$ is the total number of lines of code written by the participant; it's defined as the sum of the individual lines of code in both the production code source files and the test code source files.
 
 For both $CYC$ and $COG$ we only considered the production code, since there was no noticeable difference, besides one outlier, between the same metrics in the test files of the participants.
 
-Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is; software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easy maintenance and extendability.
+Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is: software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easier maintenance and extendability.
 
 
 
@@ -218,17 +213,17 @@ Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse 
 
 \section{Analysis Methods}
 \subsection{Individual analysis}
-As a first way to examine the distribution of the dependent variables, we computed some descriptive statistics, for each of them (\ie $QLTY$, $PROD$, $TEST$, $CYC$, $COG$, and $LOC$). We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
+As a first way to examine the distributions of the dependent variables, we computed some descriptive statistics, for each of them. We organize this information inside a set of tables for each experimental task. Moreover, in order to provide a graphical representation of the data and to summarize the distributions, we employ box plot charts.
 
 The information that can be extracted form a box plot chart includes:
 \begin{itemize}
     \item \textbf{Minimum value}: the lowest value, excluding outliers (shown at the end of the lower whisker).
     \item \textbf{Maximum value}: the highest score, excluding outliers (shown at the end of the upper whisker).
     \item \textbf{Median}: marks the mid-point of the data and is shown by the line that divides the box into two parts. Half the values are greater than or equal to this value and half are less than this value.
-    \item \textbf{Inter-quartile range}: the middle “box” represents the middle 50\% of values for the group. The range of values from lower to upper quartile is referred to as the inter-quartile range. The middle 50\% of scores fall within the inter-quartile range.
+    \item \textbf{Inter-quartile range}: the middle “box” represents the middle 50\% of values for the group: the range of values from lower to upper quartile is referred to as the inter-quartile range; the middle 50\% of scores fall within the inter-quartile range.
     \item \textbf{Upper quartile}: 75\% of the scores fall below the upper quartile.
     \item \textbf{Lower quartile}: 25\% of scores fall below the lower quartile.
-    \item \textbf{Whiskers}: the upper and lower "whiskers" represent scores outside the middle 50\% (i.e. the lower 25\% of scores and the upper 25\% of scores).
+    \item \textbf{Whiskers}: the upper and lower "whiskers" represent scores outside the middle 50\% (\ie the lower 25\% of scores and the upper 25\% of scores).
     \item \textbf{Outliers}: observations that are numerically distant from the rest of the data. They are defined as data points that are located outside the whiskers of the box plot, and are represented by a dot.
 \end{itemize}
 
@@ -241,20 +236,19 @@ In our case, after considering the mean, standard deviation, and number of parti
 \[
     \theta = \frac{\mu_1 - \mu_2}{\sigma}
 \]
-
+Where $\mu_1$ and $\mu_2$ represent the two means, and $\sigma$ refers to the standard deviation, used to measure the amount of variation or dispersion of a set of values.
 \noindent Based on the guidelines proposed by Cohen \cite{Cohen:1992}, the SMD can be interpreted as: \textit{negligible}, if $|\text{SMD}| <$ 0.2; \textit{small}, if 0.2 $\le |\text{SMD}| <$ 0.5; \textit{medium}, if 0.5 $\le |\text{SMD}| <$ 0.8; or \textit{large}, otherwise \cite{DBLP:conf/esem/RomanoZBPS22}.
 
 \ \\ \
 A forest plot is a common way to visually present the results of a meta-analysis: it is a representation of the effect estimates and their corresponding confidence intervals for each study included in the meta-analysis. The forest plot is divided into two parts: the left side shows the individual study results and the right side shows the overall effect estimate and its corresponding confidence interval.
+In a forest plot, the box in the middle of each horizontal line (confidence interval, CI) represents the point estimate of the effect for a single study; the size of the box is proportional to the weight of the study in relation to the pooled estimate. The diamond represents the overall effect estimate of the meta-analysis; the placement of the center of the diamond on the $x$-axis represents the point estimate, and the width of the diamond represents the 95\% CI around the point estimate of the pooled effect.
 
 
 
 \subsection{Thematic analysis}
 Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. At this point researchers would organize the coded data into themes and sub-themes, which would in turn be used to construct a narrative or a report of the findings.
 
-Template Analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In Template Analysis, it is permissible (though not obligatory) to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis. These are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand.
-
-In our study, we used thematic analysis to analyze the open-ended questions of the post-questionnaires for the two experimental tasks of the baseline experiment, as well as the individual participant interviews of the replication study.
+Template analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In template analysis, it is permissible (though not obligatory) to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis. These are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand. In our study, we used thematic analysis to analyze the open-ended questions of the post-questionnaires for the two experimental tasks of the baseline experiment, as well as the individual participant interviews of the replication study.
 
 
 
