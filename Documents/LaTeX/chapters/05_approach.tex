@@ -137,7 +137,7 @@ The structure of the post-questionnaires was made up of three interval-scale que
     \item (\textbf{Task 2 only}) After applying the testing approach (\ie \tdd or \notdd) in the last exercise, do you have any thoughts on the differences between the two and your preference for using one over the other?
 \end{itemize}
 
-\noindent Finally, no formal questionnaire was provided for the replication study; however, after the hardware deployment and testing steps, each participant was individually interviewed about their overall experience with the studies; the structure of the final interview was:
+\noindent Finally, no formal questionnaire was provided for the replication study; however, after the hardware deployment and testing steps, each participant was individually interviewed about their overall experience with the studies; the structure of the final interview had a predefined script, as suggested by King \cite{King:2004}. The topics covered by the interview were:
 \begin{enumerate}
     \item Provide your feelings (both positive and negative) about the final development project, (\eg development pipeline, used technologies).
     \item Provide your feelings (both positive and negative) about the development approach (\ie \tdd or \notdd) used to accomplish the final development project:
@@ -240,25 +240,24 @@ Where $\mu_1$ and $\mu_2$ represent the two means, and $\sigma$ refers to the st
 \noindent Based on the guidelines proposed by Cohen \cite{Cohen:1992}, the SMD can be interpreted as: \textit{negligible}, if $|\text{SMD}| <$ 0.2; \textit{small}, if 0.2 $\le |\text{SMD}| <$ 0.5; \textit{medium}, if 0.5 $\le |\text{SMD}| <$ 0.8; or \textit{large}, otherwise \cite{DBLP:conf/esem/RomanoZBPS22}.
 
 \ \\ \
-A forest plot is a common way to visually present the results of a meta-analysis: it is a representation of the effect estimates and their corresponding confidence intervals for each study included in the meta-analysis. The forest plot is divided into two parts: the left side shows the individual study results and the right side shows the overall effect estimate and its corresponding confidence interval.
-In a forest plot, the box in the middle of each horizontal line (confidence interval, CI) represents the point estimate of the effect for a single study; the size of the box is proportional to the weight of the study in relation to the pooled estimate. The diamond represents the overall effect estimate of the meta-analysis; the placement of the center of the diamond on the $x$-axis represents the point estimate, and the width of the diamond represents the 95\% CI around the point estimate of the pooled effect.
+A forest plot is a common way to visually present the results of a meta-analysis: it is a representation of the effect estimates and their corresponding confidence intervals for each study included in the meta-analysis. The forest plot is divided into two parts: the left side shows the individual study results and the right side shows the overall effect estimate and its corresponding confidence interval; more specifically, the box in the middle of each horizontal line (\ie the confidence interval, CI) represents the point estimate of the effect for a single study; the size of the box is proportional to the weight of the study in relation to the pooled estimate. The diamond represents the overall effect estimate of the meta-analysis; the placement of the center of the diamond on the $x$-axis represents the point estimate, and the width of the diamond represents the 95\% CI around the point estimate of the pooled effect.
 
 
 
 \subsection{Thematic analysis}
 Thematic analysis is an approach widely used in qualitative psychology research to analyze data from interviews, focus groups, and other forms of open-ended data; this kind of analysis involves reading through the gathered unstructured data multiple times to identify recurrent patterns, concepts, or themes, and then coding these patterns using a set of codes or labels. At this point researchers would organize the coded data into themes and sub-themes, which would in turn be used to construct a narrative or a report of the findings.
 
-Template analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In template analysis, it is permissible (though not obligatory) to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis. These are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand. In our study, we used thematic analysis to analyze the open-ended questions of the post-questionnaires for the two experimental tasks of the baseline experiment, as well as the individual participant interviews of the replication study.
+Template analysis is a form of thematic analysis which emphasizes the use of hierarchical coding but balances a relatively high degree of structure in the process of analyzing textual data with the flexibility to adapt it to the needs of a particular study \cite{ThematicAnalysis}. In template analysis, it is common practice to start with some a priori themes, identified in advance as likely to be helpful and relevant to the analysis; these are always tentative, and may be redefined or removed if they do not prove to be useful for the analysis at hand. In our study, we used thematic analysis to analyze the open-ended questions of the post-questionnaires for the two experimental tasks of the baseline experiment, as well as the individual participant interviews of the replication study.
 
 
 
 \section{Results}
 \subsection{Dependent variable analysis}
-In this section we will report the values observed for each dependent variable during their individual analysis. For each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of each dependent variable, for the two separate approaches (\ie \tdd and \notdd), before considering the values of the variable for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches in \textit{Exp1}.
+In this section we will report the values observed for each dependent variable during their individual analysis; for each experimental task, we will provide a table summarizing the minimum and maximum values, mean, median, and standard deviation of the considered dependent variables, for the two separate approaches (\ie \tdd and \notdd), before considering the values of the variables for the first two tasks simultaneously, in order to provide an overview of the differences between the two testing approaches in \textit{Exp1}.
+Finally, we will compare the results for both experiments, in order to answer our research questions.
+Besides the tables, we show the box plot charts to visualize the values for the statistics extracted from the dependent variables.
 
-Besides the tables, box plot charts will be used to visualize the values for the statistics extracted from the dependent variables. A box plot chart is a type of chart often used in explanatory data analysis; it visually shows the distribution of numerical data and skewness through displaying the data quartiles (or percentiles) and averages.
-
-As we discussed in the dependent variables' definition section, in the end we did not take into account the cyclomatic and cognitive complexities of the test code written by the participants during the experimental tasks. 
+First, as we discussed in the dependent variables' definition section, in the end we did not take into account the cyclomatic and cognitive complexities of the test code written by the participants during the experimental tasks. 
 Figure \ref{bp_task1_2_cyc_cog_test} shows the box plot chart for these metrics, relative to the experimental tasks for the baseline study:
 
 \begin{figure}[htbp]
@@ -278,33 +277,262 @@ Figure \ref{bp_task1_2_cyc_cog_test} shows the box plot chart for these metrics,
 
 Furthermore, we originally intended to also analyze the number of code smells in both the production and test code, however, as figure \ref{bp_task1_2_smells} highlights, there was no significant difference between the two approaches.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth, scale=0.5]{figures/box_plots/SMELLS.png}
-    \caption{Number of code smells for the first two tasks}
+    \caption{Number of code smells for the two tasks of \textit{Exp1}.}
     \label{bp_task1_2_smells}
 \end{figure}
 
 
-Starting with the first experimental task of \textit{Exp1}, tables \ref{tab_dv_t1_tdd} and \ref{tab_dv_t1_notdd}, as well as figure \ref{box_plots_task1} show the tables containing the extracted statistical measures and the box plot charts for the dependent variables, respectively.
-$QLTY$ and $PROD$ paint a similar picture, with both having a similar median and values distribution among the two groups (standard deviations of 10 and 10.73, respectively), with the group employing \tdd reporting slightly higher average values.
+Starting with the first experimental task of \textit{Exp1}, tables \ref{tab_dv_t1}, as well as figure \ref{box_plots_task1} show the tables containing the extracted statistical measures and the box plot charts for the dependent variables, respectively.
+
+\begin{table}[H]
+    \begin{center} 
+        \begin{tabular}{|p{1.8cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
+            \hline
+                \multicolumn{6}{|c|}{\textit{Exp1} - \textit{IO} - TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std \\
+            \hline
+                QLTY & 73 & 96 & 81.12 & 77.77 & 10.73 \\
+                PROD & 72 & 96 & 83 & 82 & 10 \\
+                TEST & 8 & 10 & 9.5 & 10 & 1 \\
+                CYC & 21 & 28 & 24.75 & 25 & 2.87 \\
+                COG & 14 & 25 & 19 & 18.5 & 4.69 \\
+                LOC & 154 & 195 & 167 & 159.5 & 18.95 \\
+            \hline\hline
+                \multicolumn{6}{|c|}{\textit{Exp1} - \textit{IO} - NO-TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std\\
+            \hline
+                QLTY & 65.55 & 82 & 75.35 & 78.77 & 7.43 \\
+                PROD & 56 & 84 & 76 & 80 & 11.66 \\
+                TEST & 0 & 12 & 3.8 & 0 & 5.49 \\
+                CYC & 12 & 18 & 15.6 & 16 & 2.19 \\
+                COG & 9 & 17 & 14 & 15 & 3 \\
+                LOC & 74 & 157 & 111.6 & 100 & 33.69 \\
+            \hline
+        \end{tabular}
+        \caption{\label{tab_dv_t1}Dependent variables' statistics for task 1 of \textit{Exp1} - \textit{IO}}
+    \end{center}
+\end{table}
+
+Here, $QLTY$ and $PROD$ paint a similar picture, with both having a similar median and distribution of values among the two groups (standard deviations of 10 and 10.73, respectively), with the group employing \tdd reporting slightly higher average values.
 As for the number of written tests, every participant in \textit{G1} (\tdd), except for an outlier, wrote a similar number of tests (\ie 9 or 10), with a standard deviation of only 1, compared to \textit{G2}, where the number of written test cases fluctuates a lot more; still, however, the median for \textit{G2} is 0, since a few participants did not write any tests at all.
-The other code quality metrics, $CYC$, $COG$, and $LOC$ are on average higher for the \tdd implementations.
+The other code quality metrics, $CYC$, $COG$, and $LOC$ are on average higher for the \tdd implementations; a higher value of $LOC$ is generally expected for the \tdd implementation since this metric, considers the lines of code in both the production code and the test files. Again, $CYC$, $COG$ only refer to the production code.
 
-In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the extracted statistics highlight the opposite situation (see \ref{tab_dv_t2_tdd} and \ref{tab_dv_t2_notdd}, and figure \ref{box_plots_task2}):
-while the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled the task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a lower value for $PROD$ (21\% median and 38.6\% mean). 
-For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, resulting from a participant correctly and fully applying \tdd to all user stories of the task.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/QLTY.png}
+        \caption{QLTY}
+        \label{bp_task1_qlty}
+    \end{subfigure}\hfil
+        \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/PROD.png}
+        \caption{PROD}
+        \label{bp_task1_prod}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/TEST.png}
+        \caption{TEST}
+        \label{bp_task1_test}
+    \end{subfigure}
 
-If we considered both tasks 1 and 2 simultaneously (see tables \ref{tab_dv_t1_2_tdd} and \ref{tab_dv_t1_2_notdd}, and figure \ref{box_plots_task1_2}).
-$PROD$ has a much wider range of values for the \tdd group, given the result of task 2 and further highlighted by a standard deviation of 35, while for the \notdd group it is much more contained, ranging from 52\% to 84\%.
+    \medskip
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/CYC.png}
+        \caption{CYC}
+        \label{bp_task1_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/COG.png}
+        \caption{COG}
+        \label{bp_task1_cog}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task1/LOC.png}
+        \caption{LOC}
+        \label{bp_task1_loc}
+    \end{subfigure}
+    \caption{Box plots for task 1 of \textit{Exp1} - \textit{IO}.}
+    \label{box_plots_task1}
+\end{figure}
 
-Finally, the task developed for \textit{Exp2} (see tables \ref{tab_dv_t3_tdd} and \ref{tab_dv_t3_notdd}, and figure \ref{box_plots_task3}), produced results slightly in favor of \tdd.
+In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the extracted statistics highlight the opposite situation (see \ref{tab_dv_t2} and figure \ref{box_plots_task2}): while the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled this task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a much lower value for $PROD$ (21\% median and 38.6\% mean). 
+For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, possibli resulting from a participant "correctly" and fully applying \tdd to all user stories of the task.
+
+
+\begin{table}[H]
+    \begin{center} 
+        \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
+            \hline
+                \multicolumn{6}{|c|}{\textit{Exp1} - \textit{CR} - TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std\\
+            \hline
+                QLTY & 50 & 100 & 84.44 & 100 & 22.70 \\
+                PROD & 8 & 100 & 38.6 & 21 & 37.35 \\
+                TEST & 0 & 13 & 5.4 & 3 & 5.12 \\
+                CYC & 9 & 19 & 12 & 10 & 4.06 \\
+                COG & 2 & 40 & 12.8 & 4.0 & 15.91 \\
+                LOC & 80 & 203 & 128 & 115 & 45.61 \\
+            \hline\hline
+                \multicolumn{6}{|c|}{\textit{Exp1} - \textit{CR} - NO-TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std\\
+            \hline
+                QLTY & 74 & 94.43 & 83.07 & 81.94 & 10.17 \\
+                PROD & 52 & 73 & 60.5 & 58.5 & 10.24 \\
+                TEST & 5 & 12 & 9 & 9.5 & 2.94 \\
+                CYC & 16 & 36 & 23.5 & 21 & 9 \\
+                COG & 11 & 49 & 29 & 28 & 15.57 \\
+                LOC & 178 & 260 & 207.5 & 196 & 37.11 \\
+            \hline
+        \end{tabular}
+        \caption{\label{tab_dv_t2}Dependent variables' statistics for task 2 of \textit{Exp1} - \textit{CR}.}
+    \end{center}
+\end{table}
+
+In the task developed for \textit{Exp2}, on the other hand, (see tables \ref{tab_dv_t1} and figure \ref{box_plots_task3}), we see something much more in line with the first experimental task, with results slightly in favor of \tdd.
 First, $QLTY$ and $PROD$ go hand in hand for both approaches, suggesting that all stories have been tackled; the \tdd group produced results that are around 10\% better on average.
 For the number of tests, we see a result in line with the first task, with the \tdd group producing on average many more tests, and with the minimum values still well above the median of 3.5 for the \notdd group.
 Regarding the code complexity metrics, once again these are higher for the \tdd approach, even though, in the case of cyclomatic and cognitive complexity, the result are still not concerning from a maintainability point of view.
 Finally, a higher value for $LOC$ is expected for the \tdd group since this metric contains both the lines of code written in the source files of the production code and the ones contained in the test code, so its value is directly related to the $TEST$ variable.
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/QLTY.png}
+        \caption{QLTY}
+        \label{bp_task2_qlty}
+    \end{subfigure}\hfil
+        \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/PROD.png}
+        \caption{PROD}
+        \label{bp_task2_prod}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/TEST.png}
+        \caption{TEST}
+        \label{bp_task2_test}
+    \end{subfigure}
+
+    \medskip
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/CYC.png}
+        \caption{CYC}
+        \label{bp_task2_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/COG.png}
+        \caption{COG}
+        \label{bp_task2_cog}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task2/LOC.png}
+        \caption{LOC}
+        \label{bp_task2_loc}
+    \end{subfigure}
+    \caption{Box plots for task 2 of \textit{Exp1} - \textit{CR}.}
+    \label{box_plots_task2}
+\end{figure}
+
+
+
+\begin{table}[H]
+    \begin{center} 
+        \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
+            \hline
+                \multicolumn{6}{|c|}{\textit{Exp2} - TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std\\
+            \hline
+                QLTY & 85 & 100 & 95 & 100 & 7.07 \\
+                PROD & 83.33 & 100 & 93.33 & 100 & 9.13 \\
+                TEST & 7 & 18 & 11.6 & 12 & 4.15 \\
+                CYC & 15 & 30 & 22.6 & 20 & 6.58 \\
+                COG & 18 & 34 & 25.8 & 25 & 7.08 \\
+                LOC & 150 & 232 & 187 & 175 & 36.15 \\
+            \hline\hline
+                \multicolumn{6}{|c|}{\textit{Exp2} - NO-TDD} \\
+            \hline
+                Metric & Min & Max & Mean & Median & Std\\
+            \hline
+                QLTY & 80 & 100 & 86.25 & 82.5 & 9.46 \\
+                PROD & 75 & 100 & 83.33 & 79.16 & 11.78 \\
+                TEST & 0 & 11 & 4.5 & 3.5 & 5.44 \\
+                CYC & 16 & 23 & 19.5 & 19.5 & 2.88 \\
+                COG & 19 & 25 & 21 & 20 & 2.70 \\
+                LOC & 93 & 164 & 125.5 & 122.5 & 36.82 \\
+            \hline
+        \end{tabular}
+        \caption{\label{tab_dv_t3}Dependent variables' statistics for \textit{Exp2}.}
+    \end{center}
+\end{table}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/QLTY.png}
+        \caption{QLTY}
+        \label{bp_task3_qlty}
+    \end{subfigure}\hfil
+        \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/PROD.png}
+        \caption{PROD}
+        \label{bp_task3_prod}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/TEST.png}
+        \caption{TEST}
+        \label{bp_task3_test}
+    \end{subfigure}
+
+    \medskip
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/CYC.png}
+        \caption{CYC}
+        \label{bp_task3_cyc}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/COG.png}
+        \caption{COG}
+        \label{bp_task3_cog}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\linewidth]{figures/box_plots/task3/LOC.png}
+        \caption{LOC}
+        \label{bp_task3_loc}
+    \end{subfigure}
+    \caption{Box plots for \textit{Exp2}.}
+    \label{box_plots_task3}
+\end{figure}
+
+
+
+
+If we considered both tasks 1 and 2 simultaneously (see tables \ref{tab_dv_t1_2_tdd} and \ref{tab_dv_t1_2_notdd}, and figure \ref{box_plots_task1_2}).
+$PROD$ has a much wider range of values for the \tdd group, given the result of task 2 and further highlighted by a standard deviation of 35, while for the \notdd group it is much more contained, ranging from 52\% to 84\%.
+
+
+
 \input{chapters/05_approach_tables_and_box_plots.tex}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Meta-analysis}
 The following figures display the results of the aggregate analysis on the variables of the baseline and replication studies through means of forest plot charts, one per variable. These plots report the Standard Mean Difference (SMD)and the corresponding 95\% Confidence Intervals (CIs), two statistics to assess between-study heterogeneity: the p-value from the Q-test and the $I^2$ statistic [12]  
