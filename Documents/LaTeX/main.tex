@@ -1,79 +1,58 @@
-\documentclass[11pt, oneside]{book}
+%\documentclass[11pt, oneside]{book}
 
-\usepackage{array}
-\usepackage[printonlyused, withpage]{acronym}
-\usepackage[ruled, lined, linesnumbered, noend ]{algorithm2e}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage[toc,page]{appendix}
-\usepackage{caption}
-\usepackage{color}
-\usepackage[english]{babel} 
-\usepackage{epsfig}
-\usepackage{fancybox}
-\usepackage{float}
-\usepackage{framed}
-\usepackage[acronym, nomain]{glossaries}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{microtype}
-\usepackage{moreverb}
-\usepackage{multirow}
-\usepackage{nomencl}
-\usepackage{pdfpages}
-\usepackage{subcaption}
-\usepackage{todonotes}
-\usepackage{url}
+\documentclass[ egregdoesnotlikesansseriftitles,
+                a4paper,
+                final,
+                fontsize=13pt,
+                %twosides %For printing
+                oneside
+                ]{scrbook}
 
-% Table float box with bottom caption, box width adjusted to content
 
-\usepackage[utf8]{inputenc}
-\usepackage[final, bookmarks, breaklinks, colorlinks, allcolors=black]{hyperref}
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-\usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-\addbibresource{chapters/bibliography.bib} % The filename of the bibliography
+\newcommand{\myName}{Michelangelo Esposito}
+\newcommand{\myStudentID}{05225 00982}
+\newcommand{\myPlace}{Salerno}
+\newcommand{\myThesis}{Test}
+\newcommand{\myHochschule}{University of Salerno}
+\newcommand{\myUniversitySupervisor}{University Supervisor}
+\newcommand{\myTechnicalSupervisor}{Tech Supervisor}
 
+
+\input{auxfiles/doc_config.tex}
 \input{chapters/macro.tex}
 \input{chapters/list_of_abbreviations.tex}
+\addbibresource{chapters/bibliography.bib} % The filename of the bibliography
+
 
 \begin{document}
-    \begin{titlepage}
-        \begin{center}
-            \epsfig{file=figures/logo_standard.jpg,width=2.5truecm}\\[0.2truecm]
-            {\Large Universit\`a degli Studi di Salerno}\\[0.2truecm]
-            {\large Dipartimento di Informatica}\\
-            \hrulefill
-            \vfill
-            {\large Tesi di Laurea di II livello in }\\[0.2truecm]
-            {\Large Informatica}\\
-            \vfill\vfill
-            {\Huge An Empirical Assessment on the Effectiveness of Test-Driven Development Techniques for Embedded Systems}
-            \vfill\vfill
-            
-            
-            {\bf Supervisors} \hfill {\bf Candidate}\ \ \\
-            Giuseppe Scanniello \hfill Michelangelo Esposito\\
-            Simone Romano \hfill \ \ \\
-            
-            \vfill
-            \hrulefill 
-            
-            Academic Year 2021-2022
-        \end{center}
-    \end{titlepage}
+%----------------------------------------Preamble------------------------------------%
+    \input{auxfiles/cover.tex}
+    \input{auxfiles/acronyms.tex}
 
-
-    \pagenumbering{roman}
+    \pagenumbering{Roman}
+    \input{auxfiles/acknowledgements.tex}
     \input{chapters/00_abstract.tex}
+
     
-    \tableofcontents
-    \pagestyle{plain}
+    
+    \newpage
+    \renewcommand{\contentsname}{Table of Contents}
+    \tableofcontents\thispagestyle{plain}%\fancyhead[L]{CONTENTS}
+    \printglossary[type=\acronymtype]\thispagestyle{plain}
 
-    \input{chapters/list_of_figures.tex}
-    \input{chapters/list_of_tables.tex}
+    \newpage
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures\thispagestyle{plain}
 
-    \chapter{Introduction}
-    \setcounter{page}{1} 
+    \newpage
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables\thispagestyle{plain}
+    %\pagestyle{plain}
+
+%----------------------------------------Mainmatter------------------------------------%
+    \newpage
     \pagenumbering{arabic}
+
     \input{chapters/01_introduction.tex}
     \input{chapters/02_testing.tex}
     \input{chapters/03_embedded_systems.tex}
@@ -82,9 +61,13 @@
     \input{chapters/06_discussion.tex}
     \input{chapters/07_conclusions.tex}
 
-    \nocite{*}
+%----------------------------------------Endmatter------------------------------------%  
+    
+    
+    %Bibliography
     \printbibliography[title={Bibliography}] 
 
+    %Appendix
     \appendix
     \input{appendix/experimental_tasks/01_intelligent_office_tdd.tex}
     \input{appendix/experimental_tasks/02_cleaning_robot_no_tdd.tex}

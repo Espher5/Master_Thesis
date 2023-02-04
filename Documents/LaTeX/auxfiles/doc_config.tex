@@ -1,0 +1,83 @@
+\usepackage{array}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[toc,page]{appendix}
+\usepackage[sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage{caption}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage[english]{babel} 
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{framed}
+\usepackage[acronym, nomain]{glossaries}
+\usepackage{graphicx}
+\usepackage[final, bookmarks, breaklinks, colorlinks, allcolors=black]{hyperref}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{moreverb}
+\usepackage{multirow}
+\usepackage{nomencl}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{todonotes}
+\usepackage{url}
+
+\usepackage[a4paper,
+            top = 3cm, 
+            bottom = 2cm, 
+            left = 3cm, 
+            includehead, 
+            includefoot, 
+            right = 3cm]{geometry}
+
+%Set headers and footers
+\pagestyle{fancy}
+\fancyhf{}                                  %Clear all footers and headers
+%\fancyhead[L]{\leftmark}                   %Gives the chapter name
+
+%\fancyfoot[C]{\includegraphics[width = 0.15\textwidth]{Siemens-logo.png}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\setlength{\headheight}{16pt}
+
+
+\newboolean{draftBool}
+\setboolean{draftBool}{false}
+%Draft Watermark
+\ifdraftBool
+    \usepackage{background}
+    \backgroundsetup{contents={DRAFT},color={red},opacity = {0.1}}
+\fi
+
+\newboolean{dS}
+\setboolean{dS}{false}
+\ifdS
+    \fancyhead[RE,LO]{\textit{\rightmark}}                   %Gives the section name
+    \fancyhead[LE,RO]{\myName{}}
+    \fancyfoot[LE,RO]{\thepage}
+\else
+    \fancyhead[L]{\textit{\rightmark}}                   %Gives the section name
+    \fancyhead[R]{\myName{}}
+    \fancyfoot[C]{\thepage}
+\fi
+
+\setlength{\parindent}{0pt}                 %No indentation in new paragraphs
+\setlength{\parskip}{6pt}                   %Distance between paragraphs = 6pt
+
+\makeglossaries
+
+%Define Pagestyles
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[R]{\myName{}}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
