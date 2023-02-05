@@ -7,7 +7,7 @@ Today, developers often compromise on testing activities by identifying only a c
 There are many approaches to software testing, each having has its own goals and methods, as well as a different suite of tools built to support them and ensure that the testing process is always consistent, its execution is easily automated, and the test outcomes are always clear; furthermore, different techniques are often used in combination with each other to guarantee that a software product is thoroughly tested and conform to its specification. 
 More in detail, the main testing techniques are: 
 \begin{itemize}
-    \item \textbf{Unit Testing}: a method of testing individual units or components of a software product in isolation; its goal is to verify that each of these units is working correctly and meets its expected behavior. These kinds of tests are usually written by the developers who also wrote the corresponding production code, and they are run automatically as part of the build process. Techniques also exist to generate input configuration for unit test automatically, by searching among the input space for the program.
+    \item \textbf{Unit Testing}: a method of testing individual units or components of a software product in isolation; its goal is to verify that each of these units is working correctly and meets its expected behavior. These kinds of tests are usually written by the developers who also wrote the corresponding production code, and they are run automatically as part of the build process. Techniques also exist to generate input configuration for unit test automatically, by intelligently searching among the input space for the program.
     \item \textbf{Integration Testing}: two or more modules of an application are logically grouped together and tested as a whole. The focus of this type of testing is to find the defect on interface, communication, and data flow among modules. The top-down or bottom-up approach is used while integrating modules into the whole system.
     \item \textbf{System Testing}: a method of testing a complete software product against the specified requirements; can involve different activities, such as end-to-end testing - where it is ensured that the software meets the expected flow of operations when running in a real-world environment, on different hardware combinations, operating systems or web browsers, and with different input configurations - or smoke testing, where the goal is to verify that basic and critical functionality of the system under test is working fine at a very high level.
     \item \textbf{Acceptance Testing}: a method of testing a software product to ensure that it complies with the needs and expectations of the end user. The goal here is to verify that the software is fit for its intended purpose and that it meets the requirements of the user. Acceptance tests are often written by the end user or a representative of the end user.
@@ -70,7 +70,7 @@ Each new unit of code requires a repetition of this cycle \cite{GuidelinesTDD}. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=8cm, scale=0.2]{figures/tdd_cycle.jpg}
-    \caption{The Test Driven Development cycle.}
+    \caption{The Test-Driven Development cycle.}
     \label{tdd-cycle}
 \end{figure}
 
