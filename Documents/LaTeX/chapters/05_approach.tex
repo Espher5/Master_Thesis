@@ -1,4 +1,4 @@
-\chapter{Experimental Approach}
+\chapter{Experimentation}
 \label{chap:5_approach}
 \section{Overview}
 In this chapter we will present in detail the planning and approach we followed to establish the experiments on the application of \tdd for \ess, and provide an initial analysis of the results.
@@ -71,7 +71,7 @@ The participants for the experiments were later asked to carry out their task by
 
 \section{Experimental tasks design}
 The experimental objects designed for the studies are three code katas, \ie programming exercises aimed at practicing a technique or a programming language: in this case the design of a small \es, which would take around 2 hours to implement. 
-All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \ess or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion designing the tasks with a higher level language such as \textit{Python} - which is still employed for \ess, either in its standard form or in its \textit{MicroPython} variant - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
+All three tasks were designed according to a target platform, a \textit{Raspberry Pi Model 4}, and using the \textit{Python} programming language. As for why this environment was chosen, compared to other programming languages and platforms typically used for \ess or \iot projects (\eg \textit{Arduino} with \textit{C++}), in our opinion designing the tasks with a higher level language such as \textit{Python} - which is still employed for \ess (either in its standard form or in its \textit{MicroPython} variant), as well as for Web and Enterprise applications, as reported by IEEE Spectrum \cite{IEEESpectrum} - allowed us to focus more on the implementation and logic details than we would have done by designing the tasks orbiting around lower level language features and mechanisms.
 Furthermore, if we also take into account that some participants had a limited, mostly theoretical, knowledge of \ess prior to the course's end, we think that introducing these practical concepts with \textit{Python} made it easier for them to get a grasp on the main implementation concepts for \ess. Finally, participants relied on the \textit{PyCharm IDE} to implement all three tasks, with the native \texttt{unittest} package as the testing library.
 
 The target platform was considered even during the design of the two tasks of \textit{Exp1}, which in the end did not have to be effectively deployed on hardware; this was done in order to make the mocked implementations developed by the participants resemble as closely as possible the embedded implementations, in line with the approach proposed by Grenning \cite{TDDEC}. The main mocked component utilized was a facade for the \textit{Raspberry Pi}'s General Purpose Input/Output (GPIO) library, available as open source software on GitHub \cite{GPIOMock}. Other mocked components included third party libraries for some individual sensors and actuators, like for the \textit{DHT11} temperature and humidity sensor.
@@ -119,7 +119,7 @@ different experimental task.
 
 For the first period \textit{P1}, the group \textit{G1} was assigned the \tdd version of the first task, \textit{IO}, while the group \textit{G2} was assigned the \notdd version; on the other hand, during period \textit{P2}, the group \textit{G1} was assigned the \notdd version of the second task, \textit{CR}, while the group \textit{G2} was assigned the \tdd version.
 Therefore, at the end of \textit{Exp1}, every participant had tackled each experimental object only once.
-As for \textit{Exp2}, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SH}. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design. The assignment of the participants for this experiment was done randomly.
+As for \textit{Exp2}, the group structure remained the same, however each participant was randomly assigned the \tdd or \notdd version of the third and final experimental task, \textit{SH}; specifically, 5 students ended up in the \tdd group, while 4 formed the \notdd group. As a result, the design of this study is \textit{one-factor-with-two-treatments} \cite{DBLP:books/sp/WohlinRHOR00}, a kind of \textit{between-participants} design.
 
 After each period of \textit{Exp1}, participants were asked to fill out an online questionnaire, with the purpose of describing their general experience with the implementation of the task, focusing on their perceived complexity and testing approach. 
 The structure of the post-questionnaires was made up of three interval-scale questions, and a variable number of open-ended questions, two for the \tdd group and three for the \notdd group, with the latter having an additional question, as the first open-ended one, asking to provide information about the chosen approach for testing. Furthermore, the post-questionnaire presented at the end of period \textit{P2} for \textit{Exp1} contained an additional open-ended question: here, participants had to provide their feelings towards both testing practices, \tdd and \notdd, and compare them based on the two encountered tasks. More specifically, the interval-scale questions were:
@@ -161,7 +161,7 @@ The answer for both the post-questionnaires and the final interviews, as well as
 \section{Independent and dependent variables}
 The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Approach}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled baseline study (\textit{Exp1}), and over an additional period for the non-controlled replication study (\textit{Exp2}), so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1$, $P2$, and $P3$. During the three periods both approaches (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{\textit{Group}}, which can assume the values \textit{G1} and \textit{G2}.
 
-As for the dependent variables considered in the studies, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
+As for the dependent variables considered in the experiments, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
 The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the other variables (\ie $CYC$, $COG$, and $LOC$), they can further contribute to assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
 
 QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
@@ -624,12 +624,12 @@ Figure \ref{fp_qlty_prod} displays the results of the aggregate analysis on the 
 The SMDs relative to the $QLTY$ variable for the single experiments (see figure \ref{fp_qlty_prod}.a) are both in favor of \tdd; in particular, the SMD is considered small (0.290) in \textit{Exp1} and large (0.950) in \textit{Exp2}, highlighting how the effect of \tdd on $QLTY$ is not uniform and may depend on the tackled task; the overall SMD is still in favor of \tdd and small (0.480).
 
 \begin{figure}[H]
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{figures/forest_plots/QLTY.png}
         \caption{QLTY}
         \label{fp_qlty}
     \end{subfigure}\hfil
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\linewidth]{figures/forest_plots/PROD.png}
         \caption{PROD}
         \label{fp_prod}
@@ -680,7 +680,7 @@ Finally, question three was focused on the difficulty of the participants in app
 \end{figure}
 
 \newpage
-Moving to the open-ended question, we performed thematic analysis in order to identify a base template on which to parse the answers provided by the participants in the same post-questionnaires.
+Moving to the open-ended questions, we performed thematic analysis in order to identify a base template on which to parse the answers provided by the participants in the same post-questionnaires.
 The themes we identified are:
 
 \begin{enumerate}
@@ -702,7 +702,9 @@ As for the chosen \notdd approach, in the first task, 3 out 5 participants deali
 
 At the end of the second task, 4 participants expressed their preference with \tdd, while 3 were still more comfortable with \notdd. Finally, the last participant expressed how in their opinion the best approach to use depended on how refined the requirements for the task to be implemented are, stating how they would prefer \tdd, but only if the functional requirements are clear, while for discovering new technologies, they wouldn't use \tdd for sure.
 
-\ \\ \
+
+
+\subsection{Final interview analysis}
 Thematic analysis was also used to extract patterns from the final individual participant interview; the template identified the following main topics: 
 \begin{enumerate}
     \item Thoughts on the replication experiment.
@@ -715,9 +717,28 @@ Thematic analysis was also used to extract patterns from the final individual pa
 
 For the first point, 5 out of 9 participants found the task straight forward and had no issues with its development, while the other 4 found it balanced, with some user stories requiring more thought before being implemented, according to them. Furthermore, 3 participants were already familiar with some of the sensors and actuators used for the task, either from previous university courses, or from personal experience.
 
-In \textit{Exp2}, 5 out of 9 participants were assigned the \tdd version, while the other 4 had to develop the \es using \notdd; out of the 5 that used \tdd, 4 of them performed some refactoring, while 1 did not. As for the \notdd group, half still wrote tests after implementing the user stories, while the other half did not.
+As a reminder, for \textit{Exp2}, 5 out of 9 participants were assigned the \tdd version, while the other 4 had to develop the \es using \notdd; out of the 5 that used \tdd, 4 of them performed some minor refactoring either in the test cases or in the production code, while 1 did not.
+As for the \notdd group, half still wrote tests (although many less compared to the \tdd group, as we've seen from the gathered data) after implementing the user stories, while the other half did not.
 
-To the questions "What can be done to improve the application of \tdd in the development of \ess", most participants expressed how they were still not comfortable providing a definitive answer on the matter, given their still limited experience with \tdd.
+To the questions "What can be done to improve the application of \tdd in the development of \ess?", most participants expressed how they were still not comfortable providing a definitive answer on the matter, given their still limited experience with \tdd.
 Speaking of, participants also provided information about their testing experience prior to the study: 2 of them had no prior testing experience at all; 1 among them expressed how learning \tdd, while a bit challenging in the beginning, made sense the more they employed this approach, and how they would definitely keep using it going forward. On the other hand, 4 students already had some unit testing experience, while 3 had limited and mostly theoretical knowledge of \tdd, obtained in a previous university course.
 
-Something very interesting that came up during the thematic analysis of the final interview, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step: 5 out of the 9 students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators and operating on a real hardware platform. Keep in mind that there was no reference to this aspect in the script for the interview, so each of the participants that showed interest in the topic, did so out of their initiative while discussing their thoughts on this task; also, each student was alone during their interview, so it is unlikely that the answers were influenced by each other.
+Considering the last point, most students appreciated the overall experience and expressed how they enjoyed the mixture of theory and practice on \tdd and the other concepts explored. For example, participant 4 (\tdd) stated:
+\begin{mdframed}
+    \textit{"I enjoyed the overall experience made up of a mix of theory and practical stuff."}
+\end{mdframed}
+
+Something very interesting that came up during the thematic analysis of the final interview, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step: 5 out of the 9 students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators and operating on a real hardware platform. 
+Participants 2 and 3 for example, stated
+\begin{mdframed}
+    \textit{"Nice to see it run and test by yourself with hardware and with the sensors."}
+\end{mdframed}
+\begin{mdframed}
+    \textit{"I knew most of the sensors so developing this task was not hard for me, but still really cool to implement because I wanted to see it in action on real hardware."}
+\end{mdframed}
+
+Keep in mind that there was no reference to this aspect in the script for the interview, so each of the participants that showed interest in the topic, did so out of their initiative while discussing their thoughts on this task; also, each student was alone during their interview, so it is unlikely that the answers were influenced by each other.
+
+
+n the second task however, which I
+found much more complex, I feel like TDD was much more beneficial.

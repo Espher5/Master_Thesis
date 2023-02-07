@@ -59,6 +59,9 @@
 
 %----------------------------------------Endmatter------------------------------------%  
     %Bibliography
+    \newpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Bibliography}
     \printbibliography[title={Bibliography}] 
 
     %Appendix
@@ -75,11 +78,8 @@
         \input{appendix/thematic_analysis/04_thematic_analysis_baseline.tex}
         \input{appendix/thematic_analysis/05_thematic_analysis_replication.tex}
 
-        
-        \includepdf[pages={1-16}, scale=0.8 , pagecommand={
-            \chapter*{}
-            \label{appendix:F_Paper}
-            \pagestyle{appendix}
-            },frame]{appendix/paper/paper.pdf}
+        \chapter{Paper}
+        \label{appendix:F_Paper}
+        \includepdf[pages={1-}, scale=0.8 , pagecommand={\pagestyle{empty}},frame]{appendix/paper/paper1.pdf}
     \end{appendices}
 \end{document}
