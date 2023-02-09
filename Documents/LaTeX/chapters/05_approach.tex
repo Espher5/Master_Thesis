@@ -56,9 +56,9 @@ We identify our goal as follows:
 
 
 \section{Participants}
-The participants for both \textit{Exp1} and \textit{Exp2} were Computer Science students at the University of Salerno, in Italy; they were a mix of second-year Master's degree students in Salerno, and students visiting the university by means of the Erasmus program; this last group was further made up of Master's degree students and third-year Bachelor's degree students. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno, however not all students had a strong Computer Science background, and among those taking the course, 9 participated. 
+The participants for both \textit{Exp1} and \textit{Exp2} were Computer Science students at the University of Salerno, in Italy; they were a mix of second-year Master's degree students in Salerno, and students visiting the university by means of the Erasmus program. Both groups were enrolled in the \textit{Embedded Systems} course at the University of Salerno, however not all students had a strong Computer Science background, and among those taking the course, 9 participated. 
 
-Participating in the studies was voluntary: the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so, and \textit{(iii)} they could achieve the highest mark in the course even if they didn't participate. Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark for the course, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}.
+Participating in the studies was voluntary: the students were informed that \textit{(i)} any gathered data would be treated anonymously and shared for research purposes only; \textit{(ii)} they could drop out of the study at any time if they wished to do so, and \textit{(iii)} they could achieve the highest mark in the course even if they did not participate. Finally, as an incentive to encourage participation, those who took part in the studies were rewarded with 2 bonus points in their final mark for the course, in line with Carver \etal's advice \cite{DBLP:conf/metrics/CarverJMS03}.
 
 Before \textit{Exp1} took place, we collected some information on the participants' knowledge and experience with general programming and testing concepts, in order to get a general idea of their personal preparation before the studies. To this end, the participants were asked to fill out a form in which they had to rate their experience using an interval-scale questions system (where 1 means “very inexperienced” and 5 means “very experienced”). All the participants had programming experience and most of them rated such an experience as 3 out of 5 on the scale. 
 As for testing, the participants were mostly not experienced with unit testing, since most of them chose 1 or 2 on the scale to represent their unit-testing level of experience; finally, three students had heard about \tdd, from another university course, but none had had a practical experience with this technique before the study.
@@ -162,7 +162,8 @@ The answer for both the post-questionnaires and the final interviews, as well as
 The participants were asked to carry out each task by using either \tdd or the approach they preferred (\notdd), therefore one of the independent variables considered is \textbf{\textit{Approach}}, a nominal variable assuming two values, \tdd and \notdd. The data was collected over two periods for the controlled baseline study (\textit{Exp1}), and over an additional period for the non-controlled replication study (\textit{Exp2}), so a second independent variable is \textbf{\textit{Period}}, assuming the values $P1$, $P2$, and $P3$. During the three periods both approaches (\tdd or \notdd) were applied. Finally, since the participants were split into two groups, the last independent variable is \textbf{\textit{Group}}, which can assume the values \textit{G1} and \textit{G2}.
 
 As for the dependent variables considered in the experiments, these are: \textbf{\textit{QLTY}}, \textbf{\textit{PROD}}, \textbf{\textit{TEST}}, \textbf{\textit{CYC}}, \textbf{\textit{COG}}, \textbf{\textit{LOC}}.
-The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. As for the other variables (\ie $CYC$, $COG$, and $LOC$), they can further contribute to assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
+The variables $QLTY$, $PROD$ and $TEST$ have been used in previous empirical studies on \noess \cite{DBLP:journals/tse/ErdogmusMT05}, \cite{DBLP:journals/tse/FucciETOJ17}, \cite{DBLP:conf/esem/Fucci0BCSTJ18}, \cite{DBLP:journals/ese/TosunDFVTESOTJJ17}. 
+As for the other variables (\ie $CYC$, $COG$, and $LOC$), while they could just be used to assess constructs regarding code complexity, they can also be leveraged to further assess the quality of a software solution, since they have an impact on external attributes, such as efficiency, reliability, and maintainability.
 
 QLTY quantifies the external quality of the solution a participant implemented. It is formally defined as follows: 
 \[
@@ -206,7 +207,7 @@ Finally, $LOC$ is the total number of lines of code written by the participant; 
 
 For both $CYC$ and $COG$ we only considered the production code, since there was no noticeable difference, besides one outlier, between the same metrics in the test files of the participants.
 
-Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is: software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easier maintenance and extendability.
+Generally speaking, the higher the values of $CYC$, $COG$, and $LOC$, the worse it is: software with high cyclomatic and cognitive complexity is more difficult to understand, maintain, and extend, and is more prone to errors and bugs. It is good practice to keep these complexities (as well as the number of lines of code, although to a lesser extent) as low as possible for easier maintenance and extensibility.
 
 
 
@@ -369,7 +370,7 @@ A higher value of $LOC$ is generally expected for the \tdd implementation since 
 
 In task 2 (which, as emerged from the post-questionnaires, many participants found harder compared to the previous one), the extracted statistics highlight the opposite situation (see table \ref{tab_dv_t2} and figure \ref{box_plots_task2}): while the values for $QLTY$ are still higher for the \tdd group (\textit{G2} in this case), the same thing is not true for $PROD$; this suggests that among the participants that tackled this task using \tdd, there are some that only tackled the first user stories, and did so flawlessly, thus resulting in a high value for $QLTY$ (100\% median, and 84\% mean), and a much lower value for $PROD$ (21\% median and 38.6\% mean). 
 For the same reason, the average number of tests written is lower (5.4 average for \textit{G2} compared to the 9 average for \textit{G1}); the maximum value, however, is still higher for \textit{G2}, possibly resulting from a participant more extensively applying \tdd to all user stories of the task.
-Finally, this time the values of $CYC$ and $COG$ are higher for the \notdd group; this is just related to the latter implementing overall more stories. $LOC$ tells the same story.
+Finally, this time the values of $CYC$ and $COG$ are higher for the \notdd group; this is just related to the latter implementing overall more stories. The $LOC$ displays a similar behavior.
 
 
 \begin{table}[H]
@@ -404,9 +405,9 @@ Finally, this time the values of $CYC$ and $COG$ are higher for the \notdd group
 \end{table}
 
 In the task developed for \textit{Exp2}, on the other hand, (see table \ref{tab_dv_t3} and figure \ref{box_plots_task3}), we see something much more in line with the first experimental task, with results in favor of \tdd.
-First, $QLTY$ and $PROD$ go hand in hand for both approaches, suggesting that all stories that have been tackled are "balanced" (\ie there is no "hard" user story like in task 2); the \tdd group produced results that are around 10\% better on average.
+First, $QLTY$ and $PROD$ have a similar distribution of values for both approaches, suggesting that all stories that have been tackled are "balanced" (\ie there is no hard user story like there was in task 2); the \tdd group produced results that are around 10\% better on average.
 For the number of tests, we see again a result in line with the first task, with the \tdd group producing on average many more tests, and with the minimum value for this group still well above the median of 3.5 for the \notdd group.
-Regarding the code complexity metrics, once again these are higher for the \tdd approach, even though, in the case of cyclomatic and cognitive complexity, the result are still not concerning from a maintainability point of view.
+Regarding the three last variables associated with code complexity and quality, once again these are higher for the \tdd approach, even though, in the case of cyclomatic and cognitive complexity, the result are still not concerning from a maintainability point of view.
 
 \begin{figure}[H]
     \centering
@@ -563,6 +564,7 @@ boxes for \notdd (figures \ref{box_plots_task1}.b and \ref{box_plots_task3}.b). 
 
 Finally, if we consider the number of test cases written by the participants (\ie the $TEST$ dependent variable), we can see how - similarly to the $QLTY$ variable  (see figures \ref{box_plots_task1_2}.c and \ref{box_plots_task3}.c) - the boxes for \tdd are either higher than or comparable to the ones for \notdd. Moreover, the median values for both experiments are still higher for \tdd, while the majority of values in the boxes are close together, especially in \textit{Exp2}.
 
+
 \begin{table}[H]
     \begin{center} 
         \begin{tabular}{ |p{2cm}||p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|}
@@ -693,14 +695,36 @@ The themes we identified are:
 Most of the participants found the first development task easy, with 6 out of 9 expressing a positive feeling about it; 2 out of the remaining 3 found some challenges and would have liked a bit more time, while the last participant did not answer. 
 For the second task, 2 out of 9 students had no issues with it, while 6 found the task to be harder than the previous one: out of the latter, 3 reported struggling with implementing some user stories, while the other 3 simply stated that the task was more challenging, without voicing in detail their struggles with it.
 
-Employing \tdd to tackle the tasks was still not fully clear at the end of \textit{Exp1}: for task 1, 2 participants expressed how getting into the \tdd mindset for a new problem was not so easy for them, while another student found this practice very useful and expressed their good feelings for having learned it. 
-In the second task, which as we've seen in the interval-scale questions was considered overall harder, 3 out of 5 participants in the \tdd group expressed having trouble with it.
+
+Employing \tdd to tackle the tasks was still not fully clear at the end of \textit{Exp1}: for task 1, 2 participants expressed how getting into the \tdd mindset for a new problem was not so easy for them, while another student, participant 2, found this practice very useful and expressed their good feelings for having learned it:
+\begin{mdframed}
+    \textit{``I think TDD is very helpful, and I am glad that I can learn it."}
+\end{mdframed}
+
+
+In the second task, which as we have seen in the interval-scale questions was considered overall harder, 3 out of 5 participants in the \tdd group expressed having trouble with it.
+For example, participants 5 stated:
+\begin{mdframed}
+    \textit{``I think the CleaningRobot was harder than the IntelligentOffice, but maybe only because of \tdd."}
+\end{mdframed}
+
+While expressing a similar feeling, participant 8 also said how more experience with \tdd would be beneficial to them:
+\begin{mdframed}
+    \textit{``It is hard to think the other way around as a software developer, but I think in my opinion \tdd is very useful and if you are used to it, it can really help you a lot to improve your programming."}
+\end{mdframed}
+
 Out of the \notdd group, on the other hand, the majority had no particular issue with the approach in both tasks.
-However, in the post-questionnaire for \textit{CR} 2 participants expressed how in their opinion, since the task was harder, maybe employing \tdd would have made it easier, since it would have allowed them to tackle the user stories in a more incremental manner.
+However, in the post-questionnaire for \textit{CR} 2 participants expressed how in their opinion, since this task was harder, maybe employing \tdd would have made it easier, since it would have allowed them to tackle the user stories in a more incremental manner; for example, participant 3 said:
+\begin{mdframed}
+    \textit{``With \tdd I wouldn't have fallen into some pitfalls; I had to rewrite some code because I didn't know I broke some components with features that I added later. With \tdd I would have known way earlier."}
+\end{mdframed}
 
 As for the chosen \notdd approach, in the first task, 3 out 5 participants dealing with this testing approach still wrote test cases after the production code, while the other 2 chose not to; for the second task, all 4 participants in the \notdd group tested their implementation, which is in line with them finding \textit{CR} overall harder.
 
-At the end of the second task, 4 participants expressed their preference with \tdd, while 3 were still more comfortable with \notdd. Finally, the last participant expressed how in their opinion the best approach to use depended on how refined the requirements for the task to be implemented are, stating how they would prefer \tdd, but only if the functional requirements are clear, while for discovering new technologies, they wouldn't use \tdd for sure.
+At the end of the second task, 4 participants expressed their preference with \tdd, while 3 were still more comfortable with \notdd. Finally, one participant stated how in their opinion the best approach to use depends on how refined the requirements for the task to implement are, stating how they would prefer \tdd, but only if the functional requirements are clear, while for discovering new technologies, they wouldn't use \tdd for sure:
+\begin{mdframed}
+    \textit{``\tdd reduces bugs, if you break something with a refactoring you know it instantly, and the tests are like documentation. With \notdd bugs and functional errors are only known at the end of the testing phase, which for me is terrible. I would now prefer \tdd, but only if the functional requirements are clear. For discovering technology, I wouldn't use \tdd for sure."}
+\end{mdframed}
 
 
 
@@ -718,31 +742,31 @@ Thematic analysis was also used to extract patterns from the final individual pa
 For the first point, 5 out of 9 participants found the task straight forward and had no issues with its development, while the other 4 found it balanced, with some user stories requiring more thought before being implemented, according to them. Furthermore, 3 participants stated how they were already familiar with some of the sensors and actuators used for the task, either from previous university courses, or from personal experience.
 
 As a reminder, for \textit{Exp2}, 5 out of 9 participants were (randomly) assigned the \tdd version, while the other 4 had to develop the \es using \notdd; out of the 5 that used \tdd, 4 of them performed some minor refactoring, either in the test cases or in the production code, while 1 did not.
-As for the \notdd group, half still wrote tests (although many less compared to the \tdd group, as we've seen from the gathered data) after implementing the user stories, while the other half did not.
+As for the \notdd group, half still wrote tests (although many less compared to the \tdd group, as we have seen from the gathered data) after implementing the user stories, while the other half did not.
 
-When discussing the employment of \tdd and \notdd in the context of \ess and their strengths and weaknesses, some participants expressed how they were not comfortable providing a definitive answer on the matter, mostly given their still limited experience with \tdd. Others conveyed how the best approach depends on the task they're working on; for example, participant 7 said:
+When discussing the employment of \tdd and \notdd in the context of \ess and their strengths and weaknesses, some participants expressed how they were not comfortable providing a definitive answer on the matter, mostly given their still limited experience with \tdd. Others conveyed how the best approach depends on the task they are working on, similarly to what happened in the post-questionnaire for \textit{CR}; for example, participant 7 said:
 \begin{mdframed}
-    \textit{"The task (SR) was pretty easy for me; as a result \tdd for me was not really needed [...], it was a bit overkill. On the second task (CR), however, which I found much more complex, I feel like TDD was much more beneficial."}
+    \textit{``The task (SR) was pretty easy for me; as a result I think that \tdd was not really needed [...], it was a bit overkill. On the second task (CR), however, which I found much more complex, I feel like TDD was much more beneficial."}
 \end{mdframed}
 
 Participants also provided information about their testing experience prior to the study: 2 of them had no testing experience at all; on the other hand, 4 students already had some unit testing experience, while 3 had limited and mostly theoretical knowledge of \tdd, obtained in a previous university course.
 Concerning the learning experience with \tdd, while some participants expressed how at the end of the study they were still more comfortable using \notdd, one of the students among those with no prior testing, experience stated:
 \begin{mdframed}
-\textit{"I had no prior testing experience at all, so it was very nice to learn about it in the lectures, especially \tdd; I would use \tdd for sure going forward, especially with even more experience. The main challenge was getting into it in the beginning."}
+\textit{``I had no prior testing experience at all, so it was very nice to learn about it in the lectures, especially \tdd; I would use \tdd for sure going forward, especially with even more experience. The main challenge was getting into it in the beginning."}
 \end{mdframed}
 
 Considering the last point, most students appreciated the overall experience and expressed how they enjoyed the mixture of theory and practice on \tdd and the other concepts explored. For example, participant 4 (\tdd) stated:
 \begin{mdframed}
-    \textit{"I enjoyed the overall experience made up of a mix of theory and practical stuff."}
+    \textit{``I enjoyed the overall experience made up of a mix of theory and practical stuff."}
 \end{mdframed}
 
 Something very interesting that came up during the thematic analysis of these interviews, especially from the lecturer's point of view, is that participants expressed a high interest into the hardware deployment step: 5 out of the 9 students that have been interviewed, in fact, demonstrated genuine interest in seeing their developed \es in action, making use of real sensors and actuators and operating on a real hardware platform. 
-Participants 2 and 3 for example, stated
+Participants 2 and 3, for example, stated:
 \begin{mdframed}
-    \textit{"Nice to see it run and test by yourself with hardware and with the sensors."}
+    \textit{``Nice to see it run and test by yourself with hardware and with the sensors."}
 \end{mdframed}
 \begin{mdframed}
-    \textit{"I knew most of the sensors so developing this task was not hard for me, but still really cool to implement because I wanted to see it in action on real hardware."}
+    \textit{``I knew most of the sensors so developing this task was not hard for me, but still really cool to implement because I wanted to see it in action on real hardware."}
 \end{mdframed}
 
 Keep in mind that there was no reference to this aspect in the script for the interview, so each of the participants that showed interest in the topic, did so out of their initiative while discussing their thoughts on this task; also, each student was alone during their interview, so it is unlikely that the answers were influenced by each other.

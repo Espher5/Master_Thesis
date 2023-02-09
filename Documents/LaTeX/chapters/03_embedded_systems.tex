@@ -109,7 +109,7 @@ The benefits that would result from the usage of \tdd include:
 \end{itemize}
 
 
-\noindent In \cite{TDDEC}, the author proposes the "\textit{Embedded \tdd Cycle}", as a pipeline made of the following steps to responsibly and safely apply \tdd to \ess:
+\noindent In \cite{TDDEC}, the author proposes the \textit{``Embedded \tdd Cycle"}, as a pipeline made of the following steps to responsibly and safely apply \tdd to \ess:
 
 \begin{enumerate}
     \item \textbf{TDD micro-cycle}: this first stage is the one run most frequently, usually every few minutes. During this stage, a bulk of code is written in TDD fashion, and compiled to run on the host development system: doing so gives the developer fast feedback, not encumbered by the constraints of hardware reliability and/or availability, since there are no target compilers or lengthy upload processes. 
@@ -121,7 +121,7 @@ The benefits that would result from the usage of \tdd include:
     Finally, this stage should not run with every code change; instead, a target cross-compile should take place whenever a new language feature is used, a new header file is included or a new library call is performed.
     \item \textbf{Run unit tests in an evaluation board}: compiled code could potentially run differently in the host development system and the target embedded processor. In order to mitigate this risk, developers can run the unit tests on an evaluation board; with this, any behavior differences between environments would emerge, ad since runtime libraries are usually prone to bugs \cite{TDDEC}, the risk is real. If it's late in the development cycle, and a reliable target hardware is already available, this stage may reveal unnecessary.
     \item \textbf{Run unit tests in the target hardware}: the objective here is again to run the test suite, however this time doing so while exercising the real hardware. One additional aspect to this stage is that developers could also run target hardware-specific tests. These tests allow developers to characterize or learn how the target hardware behaves. An additional challenge in this stage is limited memory in the target: the entire unit test suite may not fit into the target. In that case, the tests can be reorganized into separate test suites, where each suite fits in memory. This, however, results in a more complicated build automation process.
-    \item \textbf{Run acceptance tests in the target hardware}: Finally, in order to make sure that the product's features work, automated and manual acceptance tests are run in the target environment. Here developers have to make sure that any of the hardware-dependent code that can't be fully tested automatically is tested manually.
+    \item \textbf{Run acceptance tests in the target hardware}: Finally, in order to make sure that the product's features work, automated and manual acceptance tests are run in the target environment. Here developers have to make sure that any of the hardware-dependent code that cannot be fully tested automatically is tested manually.
 \end{enumerate}
 
 Would this pipeline reveal beneficial, it could provide interesting cues for more research of \tdd applied to \ess.
