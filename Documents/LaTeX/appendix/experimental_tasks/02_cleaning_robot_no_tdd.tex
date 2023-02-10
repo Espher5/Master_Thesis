@@ -57,13 +57,13 @@ The robot has a status, namely a string (without white spaces) formatted as foll
 
 \noindent\textbf{Requirement}:
 \begin{itemize}
-    \item Implement \texttt{CleaningRobot.initialize\_robot $\,\to\,$ None} to set the status of the robot to "$(0,0,N)$".
+    \item Implement \texttt{CleaningRobot.initialize\_robot $\,\to\,$ None} to set the status of the robot to ``$(0,0,N)$".
     \item Implement \texttt{CleaningRobot.robot\_status()  $\,\to\,$ str} to retrieve the current status of the robot.
 \end{itemize}
 
 \noindent\textbf{Example}:
 \begin{itemize}
-    \item The robot status "$(0,0,N)$" indicates that the robot lies in the cell with $x$ and $y$ coordinates both equal to 0. The heading of the robot is $N$ - \ie it is pointing $North$.
+    \item The robot status ``$(0,0,N)$" indicates that the robot lies in the cell with $x$ and $y$ coordinates both equal to 0. The heading of the robot is $N$ - \ie it is pointing $North$.
 \end{itemize}
 
 
@@ -84,7 +84,7 @@ Since at this stage of development there is no way to determine the state of the
 
 \subsection{Robot movement}
 To move into the room, the robot must receive a command from the RMS; when this happens, the robot controls the wheel motor and the rotation motor in order to execute the command and finally returns its new status to the RMS.
-The robot moves one cell forward when it receives the command "$f$". If the robot receives the command "$r$" or "$l$", it turns right or left respectively - \ie it rotates clockwise or counterclockwise 90$^{\circ}$ around itself. The robot cannot move backwards.
+The robot moves one cell forward when it receives the command ``$f$". If the robot receives the command ``$r$" or ``$l$", it turns right or left respectively - \ie it rotates clockwise or counterclockwise 90$^{\circ}$ around itself. The robot cannot move backwards.
 The two motors that control the wheels of the robot and the rotation of the body are DC motors, and the pins to connect them to the main board have already been set up in the constructor of the \texttt{CleaningRobot} class.
 In order to control them, please use the following two methods in the \texttt{CleaningRobot} class:
 \begin{itemize}
@@ -101,9 +101,9 @@ In order to control them, please use the following two methods in the \texttt{Cl
 \ \\ \
 \noindent\textbf{Example}:
 \begin{itemize}
-    \item If the robot status is "$(0,0,N)$" and it receives the command "$f$", the robot moves one cell forward - \ie the robot controls the wheel motor in order to move one cell forward - and returns the new status "$(0,1,N)$". 
-    \item If the status of the robot is "$(0,0,N)$" and it receives the command "$r$", the robot rotates clockwise 90$^{\circ}$ - \ie the robot controls the rotation motor in order to rotate 90$^{\circ}$ - and returns the new status "$(0,0,E)$". Similarly, if it receives the command string "$l$", the robot rotates counterclockwise 90$^{\circ}$ and returns the new status "$(0,0,W)$".
-    \item If the  status of the robot is "$(1,1,N)$" and it receives the command "$f$", the robot moves forward and returns the new status "$(1,2,N)$". If the robot receives the command "$l$" afterwards, it turns left and returns the new status "$(1,2,W)$".
+    \item If the robot status is ``$(0,0,N)$" and it receives the command ``$f$", the robot moves one cell forward - \ie the robot controls the wheel motor in order to move one cell forward - and returns the new status ``$(0,1,N)$". 
+    \item If the status of the robot is ``$(0,0,N)$" and it receives the command ``$r$", the robot rotates clockwise 90$^{\circ}$ - \ie the robot controls the rotation motor in order to rotate 90$^{\circ}$ - and returns the new status ``$(0,0,E)$". Similarly, if it receives the command string ``$l$", the robot rotates counterclockwise 90$^{\circ}$ and returns the new status ``$(0,0,W)$".
+    \item If the  status of the robot is ``$(1,1,N)$" and it receives the command ``$f$", the robot moves forward and returns the new status ``$(1,2,N)$". If the robot receives the command ``$l$" afterwards, it turns left and returns the new status ``$(1,2,W)$".
 \end{itemize}
 
 \noindent\textbf{Hint}:
@@ -115,7 +115,7 @@ In order to control them, please use the following two methods in the \texttt{Cl
 
 \subsection{Obstacle detection}
 While executing a command, the robot can encounter an obstacle in a cell;  the robot uses the infrared distance sensor to determine if there is an obstacle in front of it and thus avoid bumping into it. 
-If an obstacle is detected, the robot cannot move beyond it; it will instead return its new status, including the positions of the encountered obstacle. In this case, the robot status is a string formatted as follows: "$(x,y,h)(x_o,y_o)$". The triple "$(x,y,h)$" represents the usual position and heading of the robot while the pair "$(x_o,y_o)$" represents the position of the encountered obstacle.
+If an obstacle is detected, the robot cannot move beyond it; it will instead return its new status, including the positions of the encountered obstacle. In this case, the robot status is a string formatted as follows: ``$(x,y,h)(x_o,y_o)$". The triple ``$(x,y,h)$" represents the usual position and heading of the robot while the pair ``$(x_o,y_o)$" represents the position of the encountered obstacle.
 In case multiple commands are executed in sequence, and multiple obstacles are found, the system only keeps track of the last one encountered.
 
 The infrared sensor is connected to the main board on pin 15 (BOARD mode); communication with the sensor happens via the GPIO \texttt{input} function. The pin has already been set up in the constructor of the \texttt{CleaningRobot class}. 
@@ -135,7 +135,7 @@ Finally, the output of the infrared sensor is an analog signal which changes int
 
 \noindent\textbf{Example}:
 \begin{itemize}
-    \item Let us suppose that there is an obstacle in the room at coordinates $(0,1)$ (see figure \ref{room_obstacle} below). The robot with initial status "$(0,0,N)$", after executing the command string "$f$", returns the following status: "$(0,0,N)(0,1)$".
+    \item Let us suppose that there is an obstacle in the room at coordinates $(0,1)$ (see figure \ref{room_obstacle} below). The robot with initial status ``$(0,0,N)$", after executing the command string "$f$", returns the following status: ``$(0,0,N)(0,1)$".
 \end{itemize}
 
 \begin{figure}[H]
