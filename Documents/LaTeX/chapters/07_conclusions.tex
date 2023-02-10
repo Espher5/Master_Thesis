@@ -12,32 +12,39 @@ Based on the gathered data, we delineated possible implications from the perspec
 Finally, despite we gathered evidence that \tdd can be successfully applied to the development of \ess, we foster replications of our experiments, especially by involving professional developers and the software industry. 
 Our investigation has the merit to justify such replications, as it is easier to recruit professional developers when initial evidence is available. 
 
-\subsection{Individual contribution to the experimentation}
-This small section concerns the individual contribution that I, as the author of this thesis, provided towards the planning, execution, and analysis of this study.
-Specifically, the steps I performed - overseen by my supervisors - are:
+\section{Personal contribution to the experimentation}
+This section concerns the personal contribution that I, as the author of this thesis, provided towards the planning, execution, and analysis of this study.
+Specifically, the steps I performed are:
 
 \begin{itemize}
-    \item \textbf{Participation to the planning of the study}. As the first step I discussed, along with my supervisors, interesting cues on which to focus for an experimental study on \tdd applied to \es.  
+    \item \textbf{Participation to the planning of the study}. As the first step I participated in a series of meeting with my supervisors during which the overall planning of the study was determined, including both experiments and the interviews.
 
-    \item \textbf{Development of the experimental material}. I assembled  the teaching material that was used for the initial lectures and training/homework sessions that took place before the beginning of the experiment. This material was made up of presentations, exercises, and project templates.
-    Similarly, I designed the experimental tasks, by defining a document for each of them, containing the goal of the task, development instructions, and the list of user stories to implement. Furthermore, for each task, I created a GitHub repository containing the project template that was later shared with the participants.
-    Finally, for the first two tasks, I defined the post-questionnaires that were filled by the students after they completed the implementations, as well as the script for the final interview, to be performed at the end of the study.
+    \item \textbf{Development of the experimental material}. I assembled  the teaching material that was used for the initial lectures and training/homework sessions that took place before the beginning of the study. This material was made up of presentations, exercises, and project templates.
+    Similarly, I designed the experimental tasks, by defining a document for each of them, detailing the goal of the task, development instructions, and the list of user stories to implement. Furthermore, for each task, I created a GitHub repository containing the project template that was later shared with the participants.
 
-    \item \textbf{Execution of the studies}. 
+    Besides designing the experimental tasks, I also defined the respective acceptance test suite for each of them; these suites were not delivered to the students, as they were part of the tools used to later extract the data from the delivered implementations.
+
+    Finally, I assembled the hardware necessary for the deployment of the final task; this included plugging the various sensors and actuators in a breadboard and wiring them to the main board (a \textit{Raspberry Pi}), as well as making sure that they worked and they measured their respective values according to their specifications.
+
+    \item \textbf{Execution of the study}. 
     I held the lectures and interactive training sessions to provide the students with the knowledge necessary to tackle the experiments. 
     Moreover, I oversaw the students during the execution of the first two experimental tasks, and provided assistance and clarification when necessary.
 
-    \item \textbf{Hardware deployment for the replication experiment}.
-    \dots
-    
-    \item\textbf{Final interviews}.
-    Once the hardware implementation was tested, I sat down with each participant individually and interviewed them according to the prepared template, in order to gather their feedback on the whole study, from the lectures, to the last task they implemented.
+    For the final task, I individually met each participant and oversaw them during the deployment and testing phases of their solution on the real hardware platform.
+    Once the hardware implementation was tested, I sat down with each participant and interviewed them according to a prepared script, in order to gather their feedback on the whole study, from the lectures, to the last task they implemented.
 
     \item \textbf{Data extraction}. 
-    Besides designing the experimental tasks, I also defined the respective acceptance test suite for each of them; these suites were organized in such a way that their execution was automated, and the test outputs were logged.
-    Once the participants to the study had submitted their developed system, I implemented a program to automatically scan their projects and run the acceptance suites on their source code, with the goal of extracting the metrics on which the analysis was later performed. 
-    After each execution, the \dots
+    Once the participants to the study had submitted their developed systems and the final task was deployed, I implemented a program in \textit{Python} to automatically scan their projects and run the acceptance suites on their source code, with the goal of extracting the metrics on which the analysis was later performed; these metrics include the number of test cases written by the participants, the number of user stories tackled in each task, as well as the number of test that passed in each acceptance suite.
+    The code complexity metrics, on the other hand, were extracted using \textit{SonarQube}.
+
+    Based on these initial metrics, the values for each dependent variable were extracted from the submitted software artifacts: for example, the number of tests that passed in the acceptance suite were used to compute the values for the $PROD$ variable.
+    These results were later organized in a spreadsheet, where I also reported the answers to the interval-scale questions for the post-questionnaires.
+
+    As for the final individual interviews, originally recorded with a microphone, they were transcribed and organized in a text file.
 
     \item\textbf{Data analysis}.
-    After extracting the raw data and organizing it in a spreadsheet, I built a notebook in which I performed  \dots
+    For the last step, I built a notebook using \textit{Python} and the \texttt{pandas} data analysis library, in which I performed the analysis steps reported in this thesis. More specifically, I defined a series of functions to build the box plot charts for each dependent variable in each of the tasks, to
+    I processed the information
+
+    Finally, I used thematic analysis to analyze the responses provided during the final interviews.
 \end{itemize}

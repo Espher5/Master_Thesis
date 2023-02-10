@@ -63,11 +63,15 @@ Quantitative and qualitative results suggest that the development pipeline propo
 Our preliminary results have the merit to justify such kinds of studies; moreover, we make our raw data publicly available online in order to allow, in the future, researchers to conduct secondary studies (\eg meta-analyses) on \tdd applied to \ess development.
 We also made our replication package, including the raw data, available online to allow researchers to replicate our study and ease the execution of secondary studies (\eg meta-analyses) on \tdd applied to \ess development \cite{RepPackage}.
 
+
+
+
+
 \section{Threats to validity}
 According to Campbell and Stanley \cite{ResearchOfTeaching}, threats to validity are either internal or external: internal validity concerns ``controlling" the aspects of the experiment's setting to ensure that the outcomes are caused only by the introduced techniques \cite{DBLP:conf/icse/SiegmundSA15}, while external validity refers to showing a real-world effect, but without knowing which factors actually caused the observed difference \cite{DBLP:conf/icse/SiegmundSA15}.
 Cook and Campbell extended the list of validity categories to: conclusion, internal, construct, and external validity \cite{QuasiExp}. The latter classification has often been adopted in past empirical software engineering studies \cite{DBLP:books/sp/WohlinRHOR00}. 
 
-In order to determine the potential threats to validity that may affect our studies, we referenced Wohlin \etal's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
+In order to determine the potential threats to validity that may affect our study, we referenced Wohlin \etal's guidelines \cite{DBLP:books/sp/WohlinRHOR00}.
 Completely avoiding/mitigating threats is often unfeasible, given the dependency between some of them: avoiding/mitigating a kind of threat (\ie in internal validity) might intensify or even introduce another kind of threat \cite{DBLP:books/sp/WohlinRHOR00}. As a result, there are inherent trade-offs between validities: with internal and external validities for example, the more we control extraneous factors in our study, the less we can generalize our findings to a broader context. As for our baseline and replication experiments, in the next subsections we will consider the different kinds of threat individually.
 
 \subsection{Threats to internal validity}
@@ -83,7 +87,7 @@ External validity represents the extent to which we can generalize the findings 
 
 The main external validity threat could be the one of \textit{interaction of selection and treatment}: since only students were involved in the study, some with no prior testing experience or even without a strong Computer Science background, the results could potentially not be applicable to professional developers. 
 However, the use of students has the advantage that they have more homogeneous backgrounds and skills and allow obtaining initial empirical evidence \cite{DBLP:conf/metrics/CarverJMS03, DBLP:journals/ese/HostRW00}.
-As for the threat of \textit{representation of the setting}, while one might be concerned that the implementation tasks and tools used in the studies are not really representative of the technologies that make up the majority of \ess, they are quite popular implementation tools for these systems. 
+As for the threat of \textit{representation of the setting}, while one might be concerned that the implementation tasks and tools used in the experiments are not really representative of the technologies that make up the majority of \ess, they are quite popular implementation tools for these systems. 
 However, we opted for \ess (\ie \textit{IO}, \textit{CR}, and \textit{SH}) that can be considered representative of the domain of interest for our study. Furthermore, to deal with external validity, we also asked the participants to base the \ess implementation on a recognized development pipeline \cite{TDDEC}. Finally, we asked the participants in \textit{Exp2} to deploy and test the \es (\ie \textit{SR}) in a real hardware environment.
 
 \subsection{Threats to construct validity}
