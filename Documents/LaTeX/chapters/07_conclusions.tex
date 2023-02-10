@@ -17,34 +17,26 @@ This section concerns the personal contribution that I, as the author of this th
 Specifically, the steps I performed are:
 
 \begin{itemize}
-    \item \textbf{Participation to the planning of the study}. As the first step I participated in a series of meeting with my supervisors during which the overall planning of the study was determined, including both experiments and the interviews.
+    \item \textbf{Participation to the planning of the study}. I participated in a series of meeting with my supervisors during which the overall planning of the study was determined, including both experiments and the interviews.
 
     \item \textbf{Development of the experimental material}. I assembled  the teaching material that was used for the initial lectures and training/homework sessions that took place before the beginning of the study. This material was made up of presentations, exercises, and project templates.
-    Similarly, I designed the experimental tasks, by defining a document for each of them, detailing the goal of the task, development instructions, and the list of user stories to implement. Furthermore, for each task, I created a GitHub repository containing the project template that was later shared with the participants.
-
-    Besides designing the experimental tasks, I also defined the respective acceptance test suite for each of them; these suites were not delivered to the students, as they were part of the tools used to later extract the data from the delivered implementations.
-
-    Finally, I assembled the hardware necessary for the deployment of the final task; this included plugging the various sensors and actuators in a breadboard and wiring them to the main board (a \textit{Raspberry Pi}), as well as making sure that they worked and they measured their respective values according to their specifications.
+    Similarly, I designed the experimental tasks, by defining a document for each of them, detailing the goal of the task, development instructions, and the list of user stories to implement. Furthermore, for each task, I created a GitHub repository containing the project template that was later shared with the participants. Besides designing the experimental tasks, I also defined the respective acceptance test suite for each of them; these suites were not delivered to the students, as they were part of the tools used to later extract the data from the delivered implementations. Finally, I assembled the hardware necessary for the deployment of the final task; this included plugging the various sensors and actuators in a breadboard and wiring them to the main board (a \textit{Raspberry Pi}), as well as making sure that they worked and they measured their respective values according to their specifications.
 
     \item \textbf{Execution of the study}. 
     I held the lectures and interactive training sessions to provide the students with the knowledge necessary to tackle the experiments. 
-    Moreover, I oversaw the students during the execution of the first two experimental tasks, and provided assistance and clarification when necessary.
-
-    For the final task, I individually met each participant and oversaw them during the deployment and testing phases of their solution on the real hardware platform.
+    Moreover, I oversaw the students during the execution of the first two experimental tasks, and provided assistance and clarification when necessary. For the final task, I individually met each participant and oversaw them during the deployment and testing phases of their solution on the real hardware platform.
     Once the hardware implementation was tested, I sat down with each participant and interviewed them according to a prepared script, in order to gather their feedback on the whole study, from the lectures, to the last task they implemented.
 
     \item \textbf{Data extraction}. 
-    Once the participants to the study had submitted their developed systems and the final task was deployed, I implemented a program in \textit{Python} to automatically scan their projects and run the acceptance suites on their source code, with the goal of extracting the metrics on which the analysis was later performed; these metrics include the number of test cases written by the participants, the number of user stories tackled in each task, as well as the number of test that passed in each acceptance suite.
-    The code complexity metrics, on the other hand, were extracted using \textit{SonarQube}.
-
-    Based on these initial metrics, the values for each dependent variable were extracted from the submitted software artifacts: for example, the number of tests that passed in the acceptance suite were used to compute the values for the $PROD$ variable.
-    These results were later organized in a spreadsheet, where I also reported the answers to the interval-scale questions for the post-questionnaires.
-
-    As for the final individual interviews, originally recorded with a microphone, they were transcribed and organized in a text file.
+    Once the participants to the study had submitted their developed systems and the final task was deployed, I implemented a program in \textit{Python} to automatically scan their projects and run the acceptance test suites on their source code, with the goal of extracting the metrics on which the analysis was later performed; these metrics include the number of test cases written by the participants, the number of user stories tackled in each task, as well as the number of test that passed in each acceptance suite.
+    Moreover, as for the code complexity metrics, these were extracted using the \textit{SonarQube} tool. Based on these initial metrics, the values for each dependent variable were extracted from the submitted software artifacts: for example, the number of tests that passed in the acceptance suite were used to compute the values for the $PROD$ variable.
+    These results were later organized in a spreadsheet, where I also reported the answers to the interval-scale questions for the post-questionnaires. As for the final individual interviews, originally recorded with a microphone, they were transcribed and organized in a text file.
 
     \item\textbf{Data analysis}.
-    For the last step, I built a notebook using \textit{Python} and the \texttt{pandas} data analysis library, in which I performed the analysis steps reported in this thesis. More specifically, I defined a series of functions to build the box plot charts for each dependent variable in each of the tasks, to
-    I processed the information
-
-    Finally, I used thematic analysis to analyze the responses provided during the final interviews.
+    For the last step, I built a notebook using \textit{Python} and the \texttt{pandas} data analysis library, in which I performed the analysis steps reported in this thesis. 
+    First, for each dependent variable, I computed their minimum and maximum values, their mean, their median, and their standard deviation, and organized them all in a set of tables.
+    Secondly, I built the box plot charts for each dependent variable for each of the tasks, to get a visual representation of their distributions.
+    In order to compare both experiments, using meta-analysis, I plotted the effect estimates and their corresponding confidence intervals for both experiments using forest plot charts.
+    As a way to analyze the responses provided in the interval-scale questions in the post-questionnaires, I created the bar charts in which these results are summarized, for the first two tasks.
+    Finally, I used thematic analysis to analyze the responses provided during the final interviews, and highlight any interesting cues provided by the students.
 \end{itemize}
